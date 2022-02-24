@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kuyormhdig",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-kuyormhdig",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sex",
+		"ToTableName": "IndividualCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SexId",
+				"ToColumnName": "SexId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Sex.cdm.json/Sex\",\"toEntity\":\"IndividualCustomer.cdm.json/IndividualCustomer\",\"joinPairs\":[{\"fromAttribute\":\"SexId\",\"toAttribute\":\"SexId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

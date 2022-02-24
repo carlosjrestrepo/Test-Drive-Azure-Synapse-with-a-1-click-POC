@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xlzsnofbbo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-xlzsnofbbo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "DoNotContactRegistry",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "RegulatoryPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"DoNotContactRegistry.cdm.json/DoNotContactRegistry\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"RegulatoryPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

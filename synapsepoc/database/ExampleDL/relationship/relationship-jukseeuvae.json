@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jukseeuvae",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-jukseeuvae",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CouponIssueReason",
+		"ToTableName": "CustomerAccountIssuedCoupon",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CouponIssueReasonId",
+				"ToColumnName": "CouponIssueReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CouponIssueReason.cdm.json/CouponIssueReason\",\"toEntity\":\"CustomerAccountIssuedCoupon.cdm.json/CustomerAccountIssuedCoupon\",\"joinPairs\":[{\"fromAttribute\":\"CouponIssueReasonId\",\"toAttribute\":\"CouponIssueReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

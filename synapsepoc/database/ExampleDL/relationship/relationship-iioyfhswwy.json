@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iioyfhswwy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-iioyfhswwy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankAccount",
+		"ToTableName": "CustomerAccountBankAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankAccountId",
+				"ToColumnName": "BankAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankAccount.cdm.json/BankAccount\",\"toEntity\":\"CustomerAccountBankAccount.cdm.json/CustomerAccountBankAccount\",\"joinPairs\":[{\"fromAttribute\":\"BankAccountId\",\"toAttribute\":\"BankAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

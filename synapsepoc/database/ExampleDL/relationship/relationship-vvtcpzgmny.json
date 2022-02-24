@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vvtcpzgmny",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-vvtcpzgmny",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountGuaranteeType",
+		"ToTableName": "CustomerAccountGuarantee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountGuaranteeTypeId",
+				"ToColumnName": "CustomerAccountGuaranteeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"toEntity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountGuaranteeTypeId\",\"toAttribute\":\"CustomerAccountGuaranteeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

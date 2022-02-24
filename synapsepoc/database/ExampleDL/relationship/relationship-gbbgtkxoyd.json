@@ -1,0 +1,30 @@
+{
+	"name": "relationship-gbbgtkxoyd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-gbbgtkxoyd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SurveyQuestion",
+		"ToTableName": "CustomerAccountSurveyQuestionResponse",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "QuestionId",
+				"ToColumnName": "QuestionId"
+			},
+			{
+				"FromColumnName": "SurveyId",
+				"ToColumnName": "SurveyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"toEntity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"joinPairs\":[{\"fromAttribute\":\"QuestionId\",\"toAttribute\":\"QuestionId\"},{\"fromAttribute\":\"SurveyId\",\"toAttribute\":\"SurveyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ozjmwdqjfn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-ozjmwdqjfn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BreachBehaviorFollowupActionType",
+		"ToTableName": "BreachBehaviorFollowupAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BreachBehaviorFollowupActionTypeId",
+				"ToColumnName": "BreachBehaviorFollowupActionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"toEntity\":\"BreachBehaviorFollowupAction.cdm.json/BreachBehaviorFollowupAction\",\"joinPairs\":[{\"fromAttribute\":\"BreachBehaviorFollowupActionTypeId\",\"toAttribute\":\"BreachBehaviorFollowupActionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

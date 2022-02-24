@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xmcqhqpbno",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-xmcqhqpbno",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PsychographicCriteria",
+		"ToTableName": "CustomerPsychographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PsychographicCriteriaId",
+				"ToColumnName": "PsychographicCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PsychographicCriteria.cdm.json/PsychographicCriteria\",\"toEntity\":\"CustomerPsychographicCriteria.cdm.json/CustomerPsychographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"PsychographicCriteriaId\",\"toAttribute\":\"PsychographicCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

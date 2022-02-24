@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bxdjxlnzpa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-bxdjxlnzpa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrganizationCriteria",
+		"ToTableName": "CustomerOrganizationCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationCriteriaId",
+				"ToColumnName": "OrganizationCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrganizationCriteria.cdm.json/OrganizationCriteria\",\"toEntity\":\"CustomerOrganizationCriteria.cdm.json/CustomerOrganizationCriteria\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationCriteriaId\",\"toAttribute\":\"OrganizationCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

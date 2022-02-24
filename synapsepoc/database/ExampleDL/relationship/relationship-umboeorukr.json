@@ -1,0 +1,34 @@
+{
+	"name": "relationship-umboeorukr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-umboeorukr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerBiometric",
+		"ToTableName": "CustomerAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BiometricTypeId",
+				"ToColumnName": "BiometricTypeId"
+			},
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "Timestamp",
+				"ToColumnName": "Timestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerBiometric.cdm.json/CustomerBiometric\",\"toEntity\":\"CustomerAuthenticationMethod.cdm.json/CustomerAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"BiometricTypeId\",\"toAttribute\":\"BiometricTypeId\"},{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"Timestamp\",\"toAttribute\":\"Timestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

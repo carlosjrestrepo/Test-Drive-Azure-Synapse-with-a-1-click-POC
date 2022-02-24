@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gddjpbmbtb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-gddjpbmbtb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ContactPurpose",
+		"ToTableName": "CustomerContactPurpose",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContactPurposeId",
+				"ToColumnName": "ContactPurposeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"toEntity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"joinPairs\":[{\"fromAttribute\":\"ContactPurposeId\",\"toAttribute\":\"ContactPurposeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

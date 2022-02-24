@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kwyglirmjj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-kwyglirmjj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "JobTitle",
+		"ToTableName": "CustomerSpouseEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "JobTitleId",
+				"ToColumnName": "JobTitleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"JobTitle.cdm.json/JobTitle\",\"toEntity\":\"CustomerSpouseEmployment.cdm.json/CustomerSpouseEmployment\",\"joinPairs\":[{\"fromAttribute\":\"JobTitleId\",\"toAttribute\":\"JobTitleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

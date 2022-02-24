@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pnhzrkyjgw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-pnhzrkyjgw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentMethod",
+		"ToTableName": "CustomerAccountPaymentMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentMethodId",
+				"ToColumnName": "PaymentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"toEntity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"joinPairs\":[{\"fromAttribute\":\"PaymentMethodId\",\"toAttribute\":\"PaymentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,140 @@
+{
+	"name": "ChurnPrevention",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "ChurnPrevention",
+		"Description": "The action(s) that can be taken in order to prevent churn of a customer account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChurnPreventionId",
+					"Description": "The unique identifier of a Churn Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnPrevention.cdm.json/ChurnPrevention",
+						"Name": "ChurnPreventionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChurnPreventionName",
+					"Description": "The name of a Churn Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnPrevention.cdm.json/ChurnPrevention",
+						"Name": "ChurnPreventionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChurnPreventionDescription",
+					"Description": "The description of a Churn Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnPrevention.cdm.json/ChurnPrevention",
+						"Name": "ChurnPreventionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChurnPreventionStandardCost",
+					"Description": "The standard or anticipated cost associated with performing the Churn Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnPrevention.cdm.json/ChurnPrevention",
+						"Name": "ChurnPreventionStandardCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChurnPreventionNote",
+					"Description": "A note or statement regarding the Churn Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnPrevention.cdm.json/ChurnPrevention",
+						"Name": "ChurnPreventionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/ChurnPrevention",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/ChurnPrevention",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChurnPreventionId\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionId\"},\"ChurnPreventionName\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionName\"},\"ChurnPreventionDescription\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionDescription\"},\"ChurnPreventionStandardCost\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionStandardCost\"},\"ChurnPreventionNote\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ChurnPrevention\",\"path\":\"ChurnPrevention.cdm.json/ChurnPrevention\"},\"description\":\"The action(s) that can be taken in order to prevent churn of a customer account.\",\"primaryKey\":[\"ChurnPreventionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Churn Prevention.\",\"isNullable\":false,\"name\":\"ChurnPreventionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Churn Prevention.\",\"isNullable\":true,\"name\":\"ChurnPreventionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Churn Prevention.\",\"isNullable\":true,\"name\":\"ChurnPreventionDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionStandardCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The standard or anticipated cost associated with performing the Churn Prevention.\",\"isNullable\":true,\"scale\":2,\"name\":\"ChurnPreventionStandardCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnPrevention.cdm.json/ChurnPrevention\",\"name\":\"ChurnPreventionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note or statement regarding the Churn Prevention.\",\"isNullable\":true,\"name\":\"ChurnPreventionNote\"}]}}}",
+			"Description": "The action(s) that can be taken in order to prevent churn of a customer account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "ChurnPreventionId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

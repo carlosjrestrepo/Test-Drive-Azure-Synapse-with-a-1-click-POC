@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fjyavcfaan",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-fjyavcfaan",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEventType",
+		"ToTableName": "CustomerAccountEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEventTypeId",
+				"ToColumnName": "CustomerAccountEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"toEntity\":\"CustomerAccountEvent.cdm.json/CustomerAccountEvent\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEventTypeId\",\"toAttribute\":\"CustomerAccountEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

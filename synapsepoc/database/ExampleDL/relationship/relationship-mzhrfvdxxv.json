@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mzhrfvdxxv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-mzhrfvdxxv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Consent",
+		"ToTableName": "CustomerAccountConsent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConsentId",
+				"ToColumnName": "ConsentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Consent.cdm.json/Consent\",\"toEntity\":\"CustomerAccountConsent.cdm.json/CustomerAccountConsent\",\"joinPairs\":[{\"fromAttribute\":\"ConsentId\",\"toAttribute\":\"ConsentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

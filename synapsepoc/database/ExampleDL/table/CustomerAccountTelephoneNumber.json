@@ -1,0 +1,204 @@
+{
+	"name": "CustomerAccountTelephoneNumber",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountTelephoneNumber",
+		"Description": "The customer account telephone number of the associated Telephone Number Type for the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TelephoneNumberTypeId",
+					"Description": "The unique identifier of a Telephone Number.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "TelephoneNumberTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TelephoneNumber",
+					"Description": "The complete, concatenated telephone number (area code + prefix + suffix + extension).",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "TelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the information is valid or effective as of.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the information is valid or effective as of.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PreferenceId",
+					"Description": "The unique identifier of a Preference.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "PreferenceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TelephoneNumberNote",
+					"Description": "A note, comment or additional information regarding the Telephone Number.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "TelephoneNumberNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TextCapableIndicator",
+					"Description": "Indicates whether the phone is capable of receiving text messages.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber",
+						"Name": "TextCapableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountTelephoneNumber",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountTelephoneNumber",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"CustomerAccountId\"},\"TelephoneNumberTypeId\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TelephoneNumberTypeId\"},\"TelephoneNumber\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TelephoneNumber\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"PeriodEndTimestamp\"},\"PreferenceId\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"PreferenceId\"},\"TelephoneNumberNote\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TelephoneNumberNote\"},\"LocationId\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"LocationId\"},\"TextCapableIndicator\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TextCapableIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountTelephoneNumber\",\"path\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\"},\"description\":\"The customer account telephone number of the associated Telephone Number Type for the indicated period.\",\"primaryKey\":[\"CustomerAccountId\",\"TelephoneNumberTypeId\",\"TelephoneNumber\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TelephoneNumberTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Telephone Number.\",\"isNullable\":false,\"name\":\"TelephoneNumberTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"description\":\"The complete, concatenated telephone number (area code + prefix + suffix + extension).\",\"isNullable\":false,\"scale\":0,\"name\":\"TelephoneNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp that the information is valid or effective as of.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp that the information is valid or effective as of.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"PreferenceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preference.\",\"isNullable\":true,\"name\":\"PreferenceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TelephoneNumberNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Telephone Number.\",\"isNullable\":true,\"name\":\"TelephoneNumberNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"name\":\"TextCapableIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the phone is capable of receiving text messages.\",\"isNullable\":true,\"name\":\"TextCapableIndicator\"}]}}}",
+			"Description": "The customer account telephone number of the associated Telephone Number Type for the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,TelephoneNumberTypeId,TelephoneNumber,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

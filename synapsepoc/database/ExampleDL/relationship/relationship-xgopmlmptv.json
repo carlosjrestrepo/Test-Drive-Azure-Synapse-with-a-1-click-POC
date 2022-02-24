@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xgopmlmptv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-xgopmlmptv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerChannelRelationshipType",
+		"ToTableName": "CustomerRelatedChannel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerChannelRelationshipTypeId",
+				"ToColumnName": "CustomerChannelRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerChannelRelationshipType.cdm.json/CustomerChannelRelationshipType\",\"toEntity\":\"CustomerRelatedChannel.cdm.json/CustomerRelatedChannel\",\"joinPairs\":[{\"fromAttribute\":\"CustomerChannelRelationshipTypeId\",\"toAttribute\":\"CustomerChannelRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

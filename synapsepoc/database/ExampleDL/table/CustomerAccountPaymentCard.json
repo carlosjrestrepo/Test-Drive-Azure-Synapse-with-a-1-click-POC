@@ -1,0 +1,252 @@
+{
+	"name": "CustomerAccountPaymentCard",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountPaymentCard",
+		"Description": "The Payment Card(s) authorized for use by the Customer Account to purchase products, goods or services.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardId",
+					"Description": "The unique identifier of a Payment Card.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PaymentCardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated Payment Card(s) are associated with the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated Payment Card(s) are associated with the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardIssuedToPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PaymentCardIssuedToPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardIssuedDate",
+					"Description": "The date that the credit card was issued.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PaymentCardIssuedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardExpirationDate",
+					"Description": "The expiration date of the payment card.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PaymentCardExpirationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerCode",
+					"Description": "A 17 character alphanumeric field that is used with Purchase Card transactions. The code is typically defined by the customer (cardholder) and used for accounting or project tracking purposes.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "CustomerCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BankIdentificationNumber",
+					"Description": "The first six digits of a Visa or MasterCard account number. This number is used to identify the card issuing institution.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "BankIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PinRequiredIndicator",
+					"Description": "As a security measure, some cards require a number to be punched into a keypad before a transaction can be completed. The number can usually be changed by the card holder.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PinRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PinNumber",
+					"Description": "As a security measure, some cards require a number to be punched into a keypad before a transaction can be completed. The number can usually be changed by the card holder.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "PinNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountPaymentCardNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Payment Card.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard",
+						"Name": "CustomerAccountPaymentCardNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountPaymentCard",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountPaymentCard",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"CustomerAccountId\"},\"PaymentCardId\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardId\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PeriodEndTimestamp\"},\"PaymentCardIssuedToPartyId\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardIssuedToPartyId\"},\"PaymentCardIssuedDate\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardIssuedDate\"},\"PaymentCardExpirationDate\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardExpirationDate\"},\"CustomerCode\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"CustomerCode\"},\"BankIdentificationNumber\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"BankIdentificationNumber\"},\"PinRequiredIndicator\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PinRequiredIndicator\"},\"PinNumber\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PinNumber\"},\"CustomerAccountPaymentCardNote\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"CustomerAccountPaymentCardNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountPaymentCard\",\"path\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\"},\"description\":\"The Payment Card(s) authorized for use by the Customer Account to purchase products, goods or services.\",\"primaryKey\":[\"CustomerAccountId\",\"PaymentCardId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Payment Card.\",\"isNullable\":false,\"name\":\"PaymentCardId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated Payment Card(s) are associated with the Customer Account.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the associated Payment Card(s) are associated with the Customer Account.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardIssuedToPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PaymentCardIssuedToPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardIssuedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the credit card was issued.\",\"isNullable\":true,\"name\":\"PaymentCardIssuedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PaymentCardExpirationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The expiration date of the payment card.\",\"isNullable\":true,\"name\":\"PaymentCardExpirationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"CustomerCode\"},\"dataType\":\"integer\",\"description\":\"A 17 character alphanumeric field that is used with Purchase Card transactions. The code is typically defined by the customer (cardholder) and used for accounting or project tracking purposes.\",\"isNullable\":true,\"name\":\"CustomerCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"BankIdentificationNumber\"},\"dataType\":\"integer\",\"description\":\"The first six digits of a Visa or MasterCard account number. This number is used to identify the card issuing institution.\",\"isNullable\":true,\"name\":\"BankIdentificationNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PinRequiredIndicator\"},\"dataType\":\"boolean\",\"description\":\"As a security measure, some cards require a number to be punched into a keypad before a transaction can be completed. The number can usually be changed by the card holder.\",\"isNullable\":true,\"name\":\"PinRequiredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"PinNumber\"},\"dataType\":\"integer\",\"description\":\"As a security measure, some cards require a number to be punched into a keypad before a transaction can be completed. The number can usually be changed by the card holder.\",\"isNullable\":true,\"name\":\"PinNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"name\":\"CustomerAccountPaymentCardNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Payment Card.\",\"isNullable\":true,\"name\":\"CustomerAccountPaymentCardNote\"}]}}}",
+			"Description": "The Payment Card(s) authorized for use by the Customer Account to purchase products, goods or services.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PaymentCardId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

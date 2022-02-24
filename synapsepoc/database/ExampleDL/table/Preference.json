@@ -1,0 +1,105 @@
+{
+	"name": "Preference",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "Preference",
+		"Description": "The preference associated with the associated characteristic.\n\nEx:\n- Do Not Contact\n- Preferred\n- Secondary Preference\n- Alternate Preference\n- None",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PreferenceId",
+					"Description": "The unique identifier of a Preference.",
+					"BaseAttributeReference": {
+						"Entity": "Preference.cdm.json/Preference",
+						"Name": "PreferenceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PreferenceName",
+					"Description": "The name of a Preference.",
+					"BaseAttributeReference": {
+						"Entity": "Preference.cdm.json/Preference",
+						"Name": "PreferenceName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PreferenceDescription",
+					"Description": "The description of a Preference.",
+					"BaseAttributeReference": {
+						"Entity": "Preference.cdm.json/Preference",
+						"Name": "PreferenceDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/Preference",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/Preference",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PreferenceId\":{\"entity\":\"Preference.cdm.json/Preference\",\"name\":\"PreferenceId\"},\"PreferenceName\":{\"entity\":\"Preference.cdm.json/Preference\",\"name\":\"PreferenceName\"},\"PreferenceDescription\":{\"entity\":\"Preference.cdm.json/Preference\",\"name\":\"PreferenceDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Preference\",\"path\":\"Preference.cdm.json/Preference\"},\"description\":\"The preference associated with the associated characteristic.\\n\\nEx:\\n- Do Not Contact\\n- Preferred\\n- Secondary Preference\\n- Alternate Preference\\n- None\",\"primaryKey\":[\"PreferenceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Preference.cdm.json/Preference\",\"name\":\"PreferenceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preference.\",\"isNullable\":false,\"name\":\"PreferenceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Preference.cdm.json/Preference\",\"name\":\"PreferenceName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Preference.\",\"isNullable\":true,\"name\":\"PreferenceName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Preference.cdm.json/Preference\",\"name\":\"PreferenceDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Preference.\",\"isNullable\":true,\"name\":\"PreferenceDescription\"}]}}}",
+			"Description": "The preference associated with the associated characteristic.\n\nEx:\n- Do Not Contact\n- Preferred\n- Secondary Preference\n- Alternate Preference\n- None",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "PreferenceId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

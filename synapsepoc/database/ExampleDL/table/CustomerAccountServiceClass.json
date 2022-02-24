@@ -1,0 +1,138 @@
+{
+	"name": "CustomerAccountServiceClass",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountServiceClass",
+		"Description": "The period in which the Customer Account had Service Class.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The start date of the period in which the Customer Account has Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The end date of the period in which the Customer Account has Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ServiceClassId",
+					"Description": "The unique identifier of a Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass",
+						"Name": "ServiceClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountServiceClassNote",
+					"Description": "A note regarding the Customer Account Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass",
+						"Name": "CustomerAccountServiceClassNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountServiceClass",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountServiceClass",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"PeriodEndDate\"},\"ServiceClassId\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"ServiceClassId\"},\"CustomerAccountServiceClassNote\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"CustomerAccountServiceClassNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountServiceClass\",\"path\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\"},\"description\":\"The period in which the Customer Account had Service Class.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The start date of the period in which the Customer Account has Service Class.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The end date of the period in which the Customer Account has Service Class.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"ServiceClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Class.\",\"isNullable\":true,\"name\":\"ServiceClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"name\":\"CustomerAccountServiceClassNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note regarding the Customer Account Service Class.\",\"isNullable\":true,\"name\":\"CustomerAccountServiceClassNote\"}]}}}",
+			"Description": "The period in which the Customer Account had Service Class.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

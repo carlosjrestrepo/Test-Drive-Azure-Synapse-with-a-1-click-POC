@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ugjjscqzgm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-ugjjscqzgm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OccupationGroup",
+		"ToTableName": "CustomerOccupationGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OccupationGroupId",
+				"ToColumnName": "OccupationGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OccupationGroup.cdm.json/OccupationGroup\",\"toEntity\":\"CustomerOccupationGroup.cdm.json/CustomerOccupationGroup\",\"joinPairs\":[{\"fromAttribute\":\"OccupationGroupId\",\"toAttribute\":\"OccupationGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

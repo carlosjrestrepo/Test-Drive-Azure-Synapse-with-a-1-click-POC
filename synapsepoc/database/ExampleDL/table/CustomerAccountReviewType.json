@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountReviewType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountReviewType",
+		"Description": "The type of review associated with the Customer Account.\n\nEx:\n- Payment Plan\n- Program Eligibility\n- Tariff Eligibility\n- Deposit Requirements",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountReviewTypeId",
+					"Description": "The unique identifier of a Customer Account Review Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReviewType.cdm.json/CustomerAccountReviewType",
+						"Name": "CustomerAccountReviewTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountReviewTypeName",
+					"Description": "The name of a Customer Account Review Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReviewType.cdm.json/CustomerAccountReviewType",
+						"Name": "CustomerAccountReviewTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountReviewTypeDescription",
+					"Description": "The description of a Customer Account Review Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReviewType.cdm.json/CustomerAccountReviewType",
+						"Name": "CustomerAccountReviewTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountReviewType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountReviewType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountReviewTypeId\":{\"entity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"name\":\"CustomerAccountReviewTypeId\"},\"CustomerAccountReviewTypeName\":{\"entity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"name\":\"CustomerAccountReviewTypeName\"},\"CustomerAccountReviewTypeDescription\":{\"entity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"name\":\"CustomerAccountReviewTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountReviewType\",\"path\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\"},\"description\":\"The type of review associated with the Customer Account.\\n\\nEx:\\n- Payment Plan\\n- Program Eligibility\\n- Tariff Eligibility\\n- Deposit Requirements\",\"primaryKey\":[\"CustomerAccountReviewTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"name\":\"CustomerAccountReviewTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Review Type.\",\"isNullable\":false,\"name\":\"CustomerAccountReviewTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"name\":\"CustomerAccountReviewTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Review Type.\",\"isNullable\":true,\"name\":\"CustomerAccountReviewTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"name\":\"CustomerAccountReviewTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Review Type.\",\"isNullable\":true,\"name\":\"CustomerAccountReviewTypeDescription\"}]}}}",
+			"Description": "The type of review associated with the Customer Account.\n\nEx:\n- Payment Plan\n- Program Eligibility\n- Tariff Eligibility\n- Deposit Requirements",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountReviewTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

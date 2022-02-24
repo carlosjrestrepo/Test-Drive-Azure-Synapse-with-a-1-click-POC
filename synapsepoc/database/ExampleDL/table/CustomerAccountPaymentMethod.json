@@ -1,0 +1,174 @@
+{
+	"name": "CustomerAccountPaymentMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountPaymentMethod",
+		"Description": "The Payment Method(s) that are acceptable or suitable from the Customer Account for purchases/transactions of the associated amount and period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PaymentMethodId",
+					"Description": "The unique identifier of a Payment Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "PaymentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumTransactionAmount",
+					"Description": "The minimum transaction amount in the associated transaction range for which the associated Payment Method(s) are acceptable or applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "MinimumTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumTransactionAmount",
+					"Description": "The maximum transaction amount in the associated transaction range for which the associated Payment Method(s) are acceptable or applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "MaximumTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated customer payment method information is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated customer payment method information is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerPaymentMethodNote",
+					"Description": "A note, comment or additional information regarding the customer payment method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod",
+						"Name": "CustomerPaymentMethodNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountPaymentMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountPaymentMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"CustomerAccountId\"},\"PaymentMethodId\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"PaymentMethodId\"},\"MinimumTransactionAmount\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"MinimumTransactionAmount\"},\"MaximumTransactionAmount\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"MaximumTransactionAmount\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"PeriodEndDate\"},\"CustomerPaymentMethodNote\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"CustomerPaymentMethodNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountPaymentMethod\",\"path\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\"},\"description\":\"The Payment Method(s) that are acceptable or suitable from the Customer Account for purchases/transactions of the associated amount and period.\",\"primaryKey\":[\"CustomerAccountId\",\"PaymentMethodId\",\"MinimumTransactionAmount\",\"MaximumTransactionAmount\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"PaymentMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Payment Method.\",\"isNullable\":false,\"name\":\"PaymentMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"MinimumTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum transaction amount in the associated transaction range for which the associated Payment Method(s) are acceptable or applicable.\",\"isNullable\":false,\"scale\":2,\"name\":\"MinimumTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"MaximumTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum transaction amount in the associated transaction range for which the associated Payment Method(s) are acceptable or applicable.\",\"isNullable\":false,\"scale\":2,\"name\":\"MaximumTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated customer payment method information is defined.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated customer payment method information is defined.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPaymentMethod.cdm.json/CustomerAccountPaymentMethod\",\"name\":\"CustomerPaymentMethodNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer payment method.\",\"isNullable\":true,\"name\":\"CustomerPaymentMethodNote\"}]}}}",
+			"Description": "The Payment Method(s) that are acceptable or suitable from the Customer Account for purchases/transactions of the associated amount and period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PaymentMethodId,MinimumTransactionAmount,MaximumTransactionAmount,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

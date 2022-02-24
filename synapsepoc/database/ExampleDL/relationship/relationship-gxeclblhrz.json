@@ -1,0 +1,34 @@
+{
+	"name": "relationship-gxeclblhrz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-gxeclblhrz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerIdentification",
+		"ToTableName": "CustomerRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "IdentificationId",
+				"ToColumnName": "IdentificationId"
+			},
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerIdentification.cdm.json/CustomerIdentification\",\"toEntity\":\"CustomerRelatedPartyAuthenticationMethod.cdm.json/CustomerRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"IdentificationId\",\"toAttribute\":\"IdentificationId\"},{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

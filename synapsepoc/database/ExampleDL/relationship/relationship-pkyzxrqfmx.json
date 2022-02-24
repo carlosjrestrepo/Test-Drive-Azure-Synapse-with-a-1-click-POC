@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pkyzxrqfmx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-pkyzxrqfmx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PropensityRating",
+		"ToTableName": "CustomerAccountPropensity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PropensityRatingId",
+				"ToColumnName": "PropensityRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PropensityRating.cdm.json/PropensityRating\",\"toEntity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"joinPairs\":[{\"fromAttribute\":\"PropensityRatingId\",\"toAttribute\":\"PropensityRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

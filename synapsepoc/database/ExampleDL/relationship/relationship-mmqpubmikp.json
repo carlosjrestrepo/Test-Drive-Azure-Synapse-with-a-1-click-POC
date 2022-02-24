@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mmqpubmikp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-mmqpubmikp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DoNotContactRegistry",
+		"ToTableName": "DoNotCallRegistryTelephone",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DoNotContactRegistryId",
+				"ToColumnName": "DoNotContactRegistryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DoNotContactRegistry.cdm.json/DoNotContactRegistry\",\"toEntity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"joinPairs\":[{\"fromAttribute\":\"DoNotContactRegistryId\",\"toAttribute\":\"DoNotContactRegistryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

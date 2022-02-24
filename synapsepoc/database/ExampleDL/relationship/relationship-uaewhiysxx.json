@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uaewhiysxx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-uaewhiysxx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BreachBehaviorType",
+		"ToTableName": "CustomerAccountBreachBehavior",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BreachBehaviorTypeId",
+				"ToColumnName": "BreachBehaviorTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BreachBehaviorType.cdm.json/BreachBehaviorType\",\"toEntity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"joinPairs\":[{\"fromAttribute\":\"BreachBehaviorTypeId\",\"toAttribute\":\"BreachBehaviorTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

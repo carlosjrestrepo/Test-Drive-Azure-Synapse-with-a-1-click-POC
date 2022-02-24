@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bjjpabnwhq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-bjjpabnwhq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Preference",
+		"ToTableName": "CustomerMeansOfTransportation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PreferenceId",
+				"ToColumnName": "PreferenceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Preference.cdm.json/Preference\",\"toEntity\":\"CustomerMeansOfTransportation.cdm.json/CustomerMeansOfTransportation\",\"joinPairs\":[{\"fromAttribute\":\"PreferenceId\",\"toAttribute\":\"PreferenceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

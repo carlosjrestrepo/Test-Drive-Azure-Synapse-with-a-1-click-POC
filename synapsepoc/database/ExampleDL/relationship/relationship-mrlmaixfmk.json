@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mrlmaixfmk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-mrlmaixfmk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentCard",
+		"ToTableName": "CustomerAccountAutomaticPayment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentCardId",
+				"ToColumnName": "PaymentCardId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentCard.cdm.json/PaymentCard\",\"toEntity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"joinPairs\":[{\"fromAttribute\":\"PaymentCardId\",\"toAttribute\":\"PaymentCardId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

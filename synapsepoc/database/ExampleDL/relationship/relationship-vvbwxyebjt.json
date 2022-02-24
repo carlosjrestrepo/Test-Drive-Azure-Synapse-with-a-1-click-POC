@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vvbwxyebjt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-vvbwxyebjt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChurnRiskRating",
+		"ToTableName": "CustomerAccountChurnPropensity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChurnRiskRatingId",
+				"ToColumnName": "ChurnRiskRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"toEntity\":\"CustomerAccountChurnPropensity.cdm.json/CustomerAccountChurnPropensity\",\"joinPairs\":[{\"fromAttribute\":\"ChurnRiskRatingId\",\"toAttribute\":\"ChurnRiskRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

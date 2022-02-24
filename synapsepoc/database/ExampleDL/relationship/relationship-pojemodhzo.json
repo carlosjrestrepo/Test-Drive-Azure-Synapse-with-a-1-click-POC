@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pojemodhzo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-pojemodhzo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ContactPurpose",
+		"ToTableName": "CustomerAccountContactPurpose",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContactPurposeId",
+				"ToColumnName": "ContactPurposeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"toEntity\":\"CustomerAccountContactPurpose.cdm.json/CustomerAccountContactPurpose\",\"joinPairs\":[{\"fromAttribute\":\"ContactPurposeId\",\"toAttribute\":\"ContactPurposeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

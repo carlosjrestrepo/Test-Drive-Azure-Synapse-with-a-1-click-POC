@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fpvwygzoka",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-fpvwygzoka",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingEvent",
+		"ToTableName": "MarketingEventCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingEventId",
+				"ToColumnName": "MarketingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingEvent.cdm.json/MarketingEvent\",\"toEntity\":\"MarketingEventCustomer.cdm.json/MarketingEventCustomer\",\"joinPairs\":[{\"fromAttribute\":\"MarketingEventId\",\"toAttribute\":\"MarketingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

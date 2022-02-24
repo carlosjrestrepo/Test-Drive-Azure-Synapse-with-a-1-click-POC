@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tnlilxzehv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-tnlilxzehv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "ConsentDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "LegalActionStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "LegalActionStatus",
+		"Description": "The status of the Legal Action.\n\nEx:\n- Filed\n- Pending\n- In Court\n- Resolved",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LegalActionStatusId",
+					"Description": "The unique identifier of a Legal Action Status.",
+					"BaseAttributeReference": {
+						"Entity": "LegalActionStatus.cdm.json/LegalActionStatus",
+						"Name": "LegalActionStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LegalActionStatusName",
+					"Description": "The name of a Legal Action Status.",
+					"BaseAttributeReference": {
+						"Entity": "LegalActionStatus.cdm.json/LegalActionStatus",
+						"Name": "LegalActionStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LegalActionStatusDescription",
+					"Description": "The description of a Legal Action Status.",
+					"BaseAttributeReference": {
+						"Entity": "LegalActionStatus.cdm.json/LegalActionStatus",
+						"Name": "LegalActionStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/LegalActionStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/LegalActionStatus",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LegalActionStatusId\":{\"entity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"name\":\"LegalActionStatusId\"},\"LegalActionStatusName\":{\"entity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"name\":\"LegalActionStatusName\"},\"LegalActionStatusDescription\":{\"entity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"name\":\"LegalActionStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LegalActionStatus\",\"path\":\"LegalActionStatus.cdm.json/LegalActionStatus\"},\"description\":\"The status of the Legal Action.\\n\\nEx:\\n- Filed\\n- Pending\\n- In Court\\n- Resolved\",\"primaryKey\":[\"LegalActionStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"name\":\"LegalActionStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Action Status.\",\"isNullable\":false,\"name\":\"LegalActionStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"name\":\"LegalActionStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Legal Action Status.\",\"isNullable\":true,\"name\":\"LegalActionStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"name\":\"LegalActionStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Legal Action Status.\",\"isNullable\":true,\"name\":\"LegalActionStatusDescription\"}]}}}",
+			"Description": "The status of the Legal Action.\n\nEx:\n- Filed\n- Pending\n- In Court\n- Resolved",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "LegalActionStatusId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,121 @@
+{
+	"name": "CustomerAccountNote",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountNote",
+		"Description": "A note regarding the Customer Account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountNote.cdm.json/CustomerAccountNote",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NotePurposeId",
+					"Description": "The unique identifier of a Note Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountNote.cdm.json/CustomerAccountNote",
+						"Name": "NotePurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountNoteTimestamp",
+					"Description": "The timestamp when the note was recorded.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountNote.cdm.json/CustomerAccountNote",
+						"Name": "CustomerAccountNoteTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountNote",
+					"Description": "A note, comment or additional information regarding the customer account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountNote.cdm.json/CustomerAccountNote",
+						"Name": "CustomerAccountNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountNote",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountNote",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"CustomerAccountId\"},\"NotePurposeId\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"NotePurposeId\"},\"CustomerAccountNoteTimestamp\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"CustomerAccountNoteTimestamp\"},\"CustomerAccountNote\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"CustomerAccountNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountNote\",\"path\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\"},\"description\":\"A note regarding the Customer Account.\",\"primaryKey\":[\"CustomerAccountId\",\"NotePurposeId\",\"CustomerAccountNoteTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"NotePurposeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Note Purpose.\",\"isNullable\":false,\"name\":\"NotePurposeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"CustomerAccountNoteTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the note was recorded.\",\"isNullable\":false,\"name\":\"CustomerAccountNoteTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"name\":\"CustomerAccountNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer account.\",\"isNullable\":true,\"name\":\"CustomerAccountNote\"}]}}}",
+			"Description": "A note regarding the Customer Account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,NotePurposeId,CustomerAccountNoteTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

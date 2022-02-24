@@ -1,0 +1,153 @@
+{
+	"name": "CustomerAccountSurveyQuestionResponse",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountSurveyQuestionResponse",
+		"Description": "The response by the Customer Account to the associated Survey Question.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SurveyId",
+					"Description": "The unique identifier of a Survey.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse",
+						"Name": "SurveyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "QuestionId",
+					"Description": "The unique identifier of a Question.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse",
+						"Name": "QuestionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ResponseDate",
+					"Description": "The date of the response to the Survey Question.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse",
+						"Name": "ResponseDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "QuestionResponseText",
+					"Description": "An Individual response to the associated question that cannot be addressed by a simple Question Response Rating and requires some amount of text that must be individually interpreted.\n\nAn example is a statement made in response to a Question as opposed to a standard \"Yes/No\" or scaled rating.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse",
+						"Name": "QuestionResponseText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "QuestionResponseRatingId",
+					"Description": "The identifier of a Question Response.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse",
+						"Name": "QuestionResponseRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountSurveyQuestionResponse",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountSurveyQuestionResponse",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"CustomerAccountId\"},\"SurveyId\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"SurveyId\"},\"QuestionId\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"QuestionId\"},\"ResponseDate\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"ResponseDate\"},\"QuestionResponseText\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"QuestionResponseText\"},\"QuestionResponseRatingId\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"QuestionResponseRatingId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountSurveyQuestionResponse\",\"path\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\"},\"description\":\"The response by the Customer Account to the associated Survey Question.\",\"primaryKey\":[\"CustomerAccountId\",\"SurveyId\",\"QuestionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"SurveyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Survey.\",\"isNullable\":false,\"name\":\"SurveyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"QuestionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Question.\",\"isNullable\":false,\"name\":\"QuestionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"ResponseDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the response to the Survey Question.\",\"isNullable\":true,\"name\":\"ResponseDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"QuestionResponseText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"An Individual response to the associated question that cannot be addressed by a simple Question Response Rating and requires some amount of text that must be individually interpreted.\\n\\nAn example is a statement made in response to a Question as opposed to a standard \\\"Yes/No\\\" or scaled rating.\",\"isNullable\":true,\"name\":\"QuestionResponseText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"name\":\"QuestionResponseRatingId\"},\"dataType\":\"integer\",\"description\":\"The identifier of a Question Response.\",\"isNullable\":true,\"name\":\"QuestionResponseRatingId\"}]}}}",
+			"Description": "The response by the Customer Account to the associated Survey Question.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,SurveyId,QuestionId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

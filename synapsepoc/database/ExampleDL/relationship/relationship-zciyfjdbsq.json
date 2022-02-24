@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zciyfjdbsq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-zciyfjdbsq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EthnicCategory",
+		"ToTableName": "CustomerEthnicCategory",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EthnicCategoryId",
+				"ToColumnName": "EthnicCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EthnicCategory.cdm.json/EthnicCategory\",\"toEntity\":\"CustomerEthnicCategory.cdm.json/CustomerEthnicCategory\",\"joinPairs\":[{\"fromAttribute\":\"EthnicCategoryId\",\"toAttribute\":\"EthnicCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

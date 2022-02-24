@@ -1,0 +1,26 @@
+{
+	"name": "relationship-geuuvzqkae",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-geuuvzqkae",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "CustomerAccountDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

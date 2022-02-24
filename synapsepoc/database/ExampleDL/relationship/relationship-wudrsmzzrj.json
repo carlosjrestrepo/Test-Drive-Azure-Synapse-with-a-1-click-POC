@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wudrsmzzrj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-wudrsmzzrj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentClassification",
+		"ToTableName": "CustomerSpouseEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentClassificationId",
+				"ToColumnName": "EmploymentClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"toEntity\":\"CustomerSpouseEmployment.cdm.json/CustomerSpouseEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentClassificationId\",\"toAttribute\":\"EmploymentClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

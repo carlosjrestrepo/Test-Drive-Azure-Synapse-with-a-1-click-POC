@@ -1,0 +1,138 @@
+{
+	"name": "CustomerAccountTypePeriod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountTypePeriod",
+		"Description": "The period in which the Customer Account was of Customer Account Type.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The start date of the period in which the Customer Account was of Customer Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The end date of the period in which the Customer Account was of Customer Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountTypeId",
+					"Description": "The unique identifier of a Customer Account Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod",
+						"Name": "CustomerAccountTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountTypePeriodNote",
+					"Description": "A note regarding the Customer Account Type Period.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod",
+						"Name": "CustomerAccountTypePeriodNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountTypePeriod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountTypePeriod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"PeriodEndDate\"},\"CustomerAccountTypeId\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"CustomerAccountTypeId\"},\"CustomerAccountTypePeriodNote\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"CustomerAccountTypePeriodNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountTypePeriod\",\"path\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\"},\"description\":\"The period in which the Customer Account was of Customer Account Type.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The start date of the period in which the Customer Account was of Customer Account Type.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The end date of the period in which the Customer Account was of Customer Account Type.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"CustomerAccountTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Type.\",\"isNullable\":true,\"name\":\"CustomerAccountTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountTypePeriod.cdm.json/CustomerAccountTypePeriod\",\"name\":\"CustomerAccountTypePeriodNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note regarding the Customer Account Type Period.\",\"isNullable\":true,\"name\":\"CustomerAccountTypePeriodNote\"}]}}}",
+			"Description": "The period in which the Customer Account was of Customer Account Type.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "PeriodBalanceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "PeriodBalanceType",
+		"Description": "The type of balance associated with Customer Account Balance and a Period.\n\nEx:\n- Minimum Balance\n- Average Balance\n- Maximum Balance\n- Starting Balance\n- Ending Balance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PeriodBalanceTypeId",
+					"Description": "The unique identifier of a Period Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodBalanceType.cdm.json/PeriodBalanceType",
+						"Name": "PeriodBalanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodBalanceTypeName",
+					"Description": "The name of a Period Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodBalanceType.cdm.json/PeriodBalanceType",
+						"Name": "PeriodBalanceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PeriodBalanceTypeDescription",
+					"Description": "The description of a Period Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodBalanceType.cdm.json/PeriodBalanceType",
+						"Name": "PeriodBalanceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/PeriodBalanceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/PeriodBalanceType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PeriodBalanceTypeId\":{\"entity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"name\":\"PeriodBalanceTypeId\"},\"PeriodBalanceTypeName\":{\"entity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"name\":\"PeriodBalanceTypeName\"},\"PeriodBalanceTypeDescription\":{\"entity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"name\":\"PeriodBalanceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PeriodBalanceType\",\"path\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\"},\"description\":\"The type of balance associated with Customer Account Balance and a Period.\\n\\nEx:\\n- Minimum Balance\\n- Average Balance\\n- Maximum Balance\\n- Starting Balance\\n- Ending Balance\",\"primaryKey\":[\"PeriodBalanceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"name\":\"PeriodBalanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Period Balance Type.\",\"isNullable\":false,\"name\":\"PeriodBalanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"name\":\"PeriodBalanceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Period Balance Type.\",\"isNullable\":true,\"name\":\"PeriodBalanceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"name\":\"PeriodBalanceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Period Balance Type.\",\"isNullable\":true,\"name\":\"PeriodBalanceTypeDescription\"}]}}}",
+			"Description": "The type of balance associated with Customer Account Balance and a Period.\n\nEx:\n- Minimum Balance\n- Average Balance\n- Maximum Balance\n- Starting Balance\n- Ending Balance",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "PeriodBalanceTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

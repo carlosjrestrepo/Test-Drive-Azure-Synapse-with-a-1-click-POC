@@ -1,0 +1,26 @@
+{
+	"name": "relationship-adnjepuwxk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-adnjepuwxk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentStatus",
+		"ToTableName": "CustomerSpouseEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentStatusId",
+				"ToColumnName": "EmploymentStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentStatus.cdm.json/EmploymentStatus\",\"toEntity\":\"CustomerSpouseEmployment.cdm.json/CustomerSpouseEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentStatusId\",\"toAttribute\":\"EmploymentStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

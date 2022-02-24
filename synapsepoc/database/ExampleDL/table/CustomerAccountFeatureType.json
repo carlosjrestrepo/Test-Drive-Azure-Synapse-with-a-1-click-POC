@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountFeatureType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountFeatureType",
+		"Description": "A Customer Account Feature Type that is associated with a customer account for a period of time.\n\nEx:\n- On-line customer account information access\n- On-line bill-pay\n- On-line billing\n- 24/7 customer service\n- Premier customer/customer account support",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountFeatureTypeId",
+					"Description": "The unique identifier of a Customer Account Feature Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType",
+						"Name": "CustomerAccountFeatureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeatureTypeName",
+					"Description": "The name of a Customer Account Feature Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType",
+						"Name": "CustomerAccountFeatureTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeatureTypeDescription",
+					"Description": "The description of a Customer Account Feature Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType",
+						"Name": "CustomerAccountFeatureTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountFeatureType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountFeatureType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountFeatureTypeId\":{\"entity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"name\":\"CustomerAccountFeatureTypeId\"},\"CustomerAccountFeatureTypeName\":{\"entity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"name\":\"CustomerAccountFeatureTypeName\"},\"CustomerAccountFeatureTypeDescription\":{\"entity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"name\":\"CustomerAccountFeatureTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountFeatureType\",\"path\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\"},\"description\":\"A Customer Account Feature Type that is associated with a customer account for a period of time.\\n\\nEx:\\n- On-line customer account information access\\n- On-line bill-pay\\n- On-line billing\\n- 24/7 customer service\\n- Premier customer/customer account support\",\"primaryKey\":[\"CustomerAccountFeatureTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"name\":\"CustomerAccountFeatureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Feature Type.\",\"isNullable\":false,\"name\":\"CustomerAccountFeatureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"name\":\"CustomerAccountFeatureTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Feature Type.\",\"isNullable\":true,\"name\":\"CustomerAccountFeatureTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"name\":\"CustomerAccountFeatureTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Feature Type.\",\"isNullable\":true,\"name\":\"CustomerAccountFeatureTypeDescription\"}]}}}",
+			"Description": "A Customer Account Feature Type that is associated with a customer account for a period of time.\n\nEx:\n- On-line customer account information access\n- On-line bill-pay\n- On-line billing\n- 24/7 customer service\n- Premier customer/customer account support",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountFeatureTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

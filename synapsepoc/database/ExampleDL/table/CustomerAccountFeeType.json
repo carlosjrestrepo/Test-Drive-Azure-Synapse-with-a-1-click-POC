@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountFeeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountFeeType",
+		"Description": "Fees that are assigned to customer accounts.\n\nEx:\n- Per Transaction Fee\n- Monthly Fee\n- Maintenance Fee\n- Application Fee\n- Credit Check Fee\n- Late Payment Fee\n- Change Reservation Fee\n- Upgrade Fee",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountFeeTypeId",
+					"Description": "The unique identifier of a Customer Account Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFeeType.cdm.json/CustomerAccountFeeType",
+						"Name": "CustomerAccountFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeeTypeName",
+					"Description": "The name of a Customer Account Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFeeType.cdm.json/CustomerAccountFeeType",
+						"Name": "CustomerAccountFeeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeeTypeDescription",
+					"Description": "The description of a Customer Account Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFeeType.cdm.json/CustomerAccountFeeType",
+						"Name": "CustomerAccountFeeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountFeeType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountFeeType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountFeeTypeId\":{\"entity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"name\":\"CustomerAccountFeeTypeId\"},\"CustomerAccountFeeTypeName\":{\"entity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"name\":\"CustomerAccountFeeTypeName\"},\"CustomerAccountFeeTypeDescription\":{\"entity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"name\":\"CustomerAccountFeeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountFeeType\",\"path\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\"},\"description\":\"Fees that are assigned to customer accounts.\\n\\nEx:\\n- Per Transaction Fee\\n- Monthly Fee\\n- Maintenance Fee\\n- Application Fee\\n- Credit Check Fee\\n- Late Payment Fee\\n- Change Reservation Fee\\n- Upgrade Fee\",\"primaryKey\":[\"CustomerAccountFeeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"name\":\"CustomerAccountFeeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Fee Type.\",\"isNullable\":false,\"name\":\"CustomerAccountFeeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"name\":\"CustomerAccountFeeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Fee Type.\",\"isNullable\":true,\"name\":\"CustomerAccountFeeTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"name\":\"CustomerAccountFeeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Fee Type.\",\"isNullable\":true,\"name\":\"CustomerAccountFeeTypeDescription\"}]}}}",
+			"Description": "Fees that are assigned to customer accounts.\n\nEx:\n- Per Transaction Fee\n- Monthly Fee\n- Maintenance Fee\n- Application Fee\n- Credit Check Fee\n- Late Payment Fee\n- Change Reservation Fee\n- Upgrade Fee",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountFeeTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

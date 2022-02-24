@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountEventStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountEventStatus",
+		"Description": "The status of the associated Customer Account Event.\n\nEx:\n- Recorded\n- Noted\n- Pending Resolution\n- Resolved\n- Historical\n- N/A",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountEventStatusId",
+					"Description": "The unique identifier of a Customer Account Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus",
+						"Name": "CustomerAccountEventStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventStatusName",
+					"Description": "The name of a Customer Account Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus",
+						"Name": "CustomerAccountEventStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventStatusDescription",
+					"Description": "The description of a Customer Account Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus",
+						"Name": "CustomerAccountEventStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountEventStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountEventStatus",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountEventStatusId\":{\"entity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"name\":\"CustomerAccountEventStatusId\"},\"CustomerAccountEventStatusName\":{\"entity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"name\":\"CustomerAccountEventStatusName\"},\"CustomerAccountEventStatusDescription\":{\"entity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"name\":\"CustomerAccountEventStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountEventStatus\",\"path\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\"},\"description\":\"The status of the associated Customer Account Event.\\n\\nEx:\\n- Recorded\\n- Noted\\n- Pending Resolution\\n- Resolved\\n- Historical\\n- N/A\",\"primaryKey\":[\"CustomerAccountEventStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"name\":\"CustomerAccountEventStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Event Status.\",\"isNullable\":false,\"name\":\"CustomerAccountEventStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"name\":\"CustomerAccountEventStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Event Status.\",\"isNullable\":true,\"name\":\"CustomerAccountEventStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"name\":\"CustomerAccountEventStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Event Status.\",\"isNullable\":true,\"name\":\"CustomerAccountEventStatusDescription\"}]}}}",
+			"Description": "The status of the associated Customer Account Event.\n\nEx:\n- Recorded\n- Noted\n- Pending Resolution\n- Resolved\n- Historical\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountEventStatusId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

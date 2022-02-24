@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vdpfpdqcwh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-vdpfpdqcwh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "MarketingProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "SponsoringPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"MarketingProgram.cdm.json/MarketingProgram\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"SponsoringPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

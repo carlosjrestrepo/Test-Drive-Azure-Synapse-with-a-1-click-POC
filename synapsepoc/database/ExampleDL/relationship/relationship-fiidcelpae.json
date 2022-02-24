@@ -1,0 +1,30 @@
+{
+	"name": "relationship-fiidcelpae",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-fiidcelpae",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountBreachBehavior",
+		"ToTableName": "BreachBehaviorFollowupAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BreachBehaviorTimestamp",
+				"ToColumnName": "BreachBehaviorTimestamp"
+			},
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"toEntity\":\"BreachBehaviorFollowupAction.cdm.json/BreachBehaviorFollowupAction\",\"joinPairs\":[{\"fromAttribute\":\"BreachBehaviorTimestamp\",\"toAttribute\":\"BreachBehaviorTimestamp\"},{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

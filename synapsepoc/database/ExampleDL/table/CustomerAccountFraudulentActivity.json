@@ -1,0 +1,172 @@
+{
+	"name": "CustomerAccountFraudulentActivity",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountFraudulentActivity",
+		"Description": "The one or more Fraudulent Activity(s) reported for the associated Customer Account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FraudPerpetratedTimestamp",
+					"Description": "The timestamp, or estimated date, that the Fraud was perpetrated or took place.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "FraudPerpetratedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FraudulentActivityTypeId",
+					"Description": "The unique identifier of a Fraudulent Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "FraudulentActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FraudulentActivityDescription",
+					"Description": "The description of the Fraudulent Activity.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "FraudulentActivityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FraudLossAmount",
+					"Description": "The estimated monetary loss that resulted from the Fraudulent Activity.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "FraudLossAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LegalActionInitiatedIndicator",
+					"Description": "A flag or indicator denoting that legal action has been initiated in conjunction with the associated Fraudulent Activity.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "LegalActionInitiatedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FraudulentActivityNote",
+					"Description": "A note, comment or additional information regarding the Fraudulent Activity.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity",
+						"Name": "FraudulentActivityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountFraudulentActivity",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountFraudulentActivity",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"CustomerAccountId\"},\"FraudPerpetratedTimestamp\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudPerpetratedTimestamp\"},\"FraudulentActivityTypeId\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudulentActivityTypeId\"},\"FraudulentActivityDescription\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudulentActivityDescription\"},\"FraudLossAmount\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudLossAmount\"},\"LegalActionInitiatedIndicator\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"LegalActionInitiatedIndicator\"},\"FraudulentActivityNote\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudulentActivityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountFraudulentActivity\",\"path\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\"},\"description\":\"The one or more Fraudulent Activity(s) reported for the associated Customer Account.\",\"primaryKey\":[\"CustomerAccountId\",\"FraudPerpetratedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudPerpetratedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp, or estimated date, that the Fraud was perpetrated or took place.\",\"isNullable\":false,\"name\":\"FraudPerpetratedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudulentActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Fraudulent Activity Type.\",\"isNullable\":false,\"name\":\"FraudulentActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudulentActivityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Fraudulent Activity.\",\"isNullable\":true,\"name\":\"FraudulentActivityDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudLossAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated monetary loss that resulted from the Fraudulent Activity.\",\"isNullable\":true,\"scale\":2,\"name\":\"FraudLossAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"LegalActionInitiatedIndicator\"},\"dataType\":\"boolean\",\"description\":\"A flag or indicator denoting that legal action has been initiated in conjunction with the associated Fraudulent Activity.\",\"isNullable\":true,\"name\":\"LegalActionInitiatedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"name\":\"FraudulentActivityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Fraudulent Activity.\",\"isNullable\":true,\"name\":\"FraudulentActivityNote\"}]}}}",
+			"Description": "The one or more Fraudulent Activity(s) reported for the associated Customer Account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,FraudPerpetratedTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

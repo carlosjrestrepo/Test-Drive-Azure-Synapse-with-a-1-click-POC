@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dwnhdblcco",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-dwnhdblcco",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OptInStatusType",
+		"ToTableName": "CustomerAccountContactPurpose",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OptInStatusTypeId",
+				"ToColumnName": "OptInStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"toEntity\":\"CustomerAccountContactPurpose.cdm.json/CustomerAccountContactPurpose\",\"joinPairs\":[{\"fromAttribute\":\"OptInStatusTypeId\",\"toAttribute\":\"OptInStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

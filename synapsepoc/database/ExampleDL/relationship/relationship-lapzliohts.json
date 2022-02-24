@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lapzliohts",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-lapzliohts",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Certification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "CertificationBodyPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Certification.cdm.json/Certification\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"CertificationBodyPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

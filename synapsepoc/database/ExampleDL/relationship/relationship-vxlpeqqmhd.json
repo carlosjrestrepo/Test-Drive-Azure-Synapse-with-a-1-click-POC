@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vxlpeqqmhd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-vxlpeqqmhd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BankAccount",
+		"ToTableName": "Payment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BankAccountId",
+				"ToColumnName": "BankAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BankAccount.cdm.json/BankAccount\",\"toEntity\":\"Payment.cdm.json/Payment\",\"joinPairs\":[{\"fromAttribute\":\"BankAccountId\",\"toAttribute\":\"BankAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

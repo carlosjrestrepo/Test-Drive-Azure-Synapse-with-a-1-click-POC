@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xexlhenuqn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-xexlhenuqn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChurnReason",
+		"ToTableName": "CustomerAccountChurnPropensity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChurnReasonId",
+				"ToColumnName": "ChurnReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChurnReason.cdm.json/ChurnReason\",\"toEntity\":\"CustomerAccountChurnPropensity.cdm.json/CustomerAccountChurnPropensity\",\"joinPairs\":[{\"fromAttribute\":\"ChurnReasonId\",\"toAttribute\":\"ChurnReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

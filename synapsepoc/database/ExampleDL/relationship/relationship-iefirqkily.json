@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iefirqkily",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-iefirqkily",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinanceTerm",
+		"ToTableName": "CustomerAccountFinanceTerm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinanceTermId",
+				"ToColumnName": "FinanceTermId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"toEntity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"joinPairs\":[{\"fromAttribute\":\"FinanceTermId\",\"toAttribute\":\"FinanceTermId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vtbutdlnci",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-vtbutdlnci",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LanguageUsage",
+		"ToTableName": "CustomerLanguageUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LanguageUsageId",
+				"ToColumnName": "LanguageUsageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LanguageUsage.cdm.json/LanguageUsage\",\"toEntity\":\"CustomerLanguageUsage.cdm.json/CustomerLanguageUsage\",\"joinPairs\":[{\"fromAttribute\":\"LanguageUsageId\",\"toAttribute\":\"LanguageUsageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

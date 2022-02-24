@@ -1,0 +1,154 @@
+{
+	"name": "CustomerConsent",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerConsent",
+		"Description": "Consent provided by the customer during the specified period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerConsent.cdm.json/CustomerConsent",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ConsentId",
+					"Description": "The unique identifier of the Consent.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerConsent.cdm.json/CustomerConsent",
+						"Name": "ConsentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerConsent.cdm.json/CustomerConsent",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerConsent.cdm.json/CustomerConsent",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProofOfConsentDocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerConsent.cdm.json/CustomerConsent",
+						"Name": "ProofOfConsentDocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerConsentNote",
+					"Description": "A note, comment or additional information regarding the customer consent.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerConsent.cdm.json/CustomerConsent",
+						"Name": "CustomerConsentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerConsent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerConsent",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"CustomerId\"},\"ConsentId\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"ConsentId\"},\"PeriodStartDate\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"PeriodEndDate\"},\"ProofOfConsentDocumentId\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"ProofOfConsentDocumentId\"},\"CustomerConsentNote\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"CustomerConsentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerConsent\",\"path\":\"CustomerConsent.cdm.json/CustomerConsent\"},\"description\":\"Consent provided by the customer during the specified period.\",\"primaryKey\":[\"CustomerId\",\"ConsentId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"ConsentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Consent.\",\"isNullable\":false,\"name\":\"ConsentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated data is effective or 'as-of'.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated data is effective or 'as-of'.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"ProofOfConsentDocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":true,\"name\":\"ProofOfConsentDocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"name\":\"CustomerConsentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer consent.\",\"isNullable\":true,\"name\":\"CustomerConsentNote\"}]}}}",
+			"Description": "Consent provided by the customer during the specified period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerId,ConsentId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

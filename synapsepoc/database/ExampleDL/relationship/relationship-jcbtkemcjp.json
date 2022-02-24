@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jcbtkemcjp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-jcbtkemcjp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkerClass",
+		"ToTableName": "CustomerWorkerClass",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkerClassId",
+				"ToColumnName": "WorkerClassId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkerClass.cdm.json/WorkerClass\",\"toEntity\":\"CustomerWorkerClass.cdm.json/CustomerWorkerClass\",\"joinPairs\":[{\"fromAttribute\":\"WorkerClassId\",\"toAttribute\":\"WorkerClassId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

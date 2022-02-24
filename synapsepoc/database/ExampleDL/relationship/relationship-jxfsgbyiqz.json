@@ -1,0 +1,30 @@
+{
+	"name": "relationship-jxfsgbyiqz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-jxfsgbyiqz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerName",
+		"ToTableName": "CustomerNameSuffix",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "CustomerNameId",
+				"ToColumnName": "CustomerNameId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerName.cdm.json/CustomerName\",\"toEntity\":\"CustomerNameSuffix.cdm.json/CustomerNameSuffix\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"CustomerNameId\",\"toAttribute\":\"CustomerNameId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

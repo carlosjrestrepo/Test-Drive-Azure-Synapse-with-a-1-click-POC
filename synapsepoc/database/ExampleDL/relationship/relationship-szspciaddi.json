@@ -1,0 +1,34 @@
+{
+	"name": "relationship-szspciaddi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-szspciaddi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerBiometric",
+		"ToTableName": "CustomerRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BiometricTypeId",
+				"ToColumnName": "BiometricTypeId"
+			},
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "Timestamp",
+				"ToColumnName": "Timestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerBiometric.cdm.json/CustomerBiometric\",\"toEntity\":\"CustomerRelatedPartyAuthenticationMethod.cdm.json/CustomerRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"BiometricTypeId\",\"toAttribute\":\"BiometricTypeId\"},{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"Timestamp\",\"toAttribute\":\"Timestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

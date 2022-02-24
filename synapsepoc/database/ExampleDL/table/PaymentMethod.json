@@ -1,0 +1,105 @@
+{
+	"name": "PaymentMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "PaymentMethod",
+		"Description": "The means of payment.\n\nEx:\n- Charge to account\n- VISA\n- MasterCard\n- American Express\n- Discover Card\n- Store Credit Card\n- Cash\n- Debit card\n- Personal check\n- Company check\n- Gift Card\n- Wire Transfer\n- Letter of Credit\n- Credit Line\n- COD\n- PayPal\n- Gift Certificates",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PaymentMethodId",
+					"Description": "The unique identifier of a Payment Method.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentMethod.cdm.json/PaymentMethod",
+						"Name": "PaymentMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentMethodName",
+					"Description": "The name of the Payment Method.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentMethod.cdm.json/PaymentMethod",
+						"Name": "PaymentMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PaymentMethodDescription",
+					"Description": "The description of the Payment Method.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentMethod.cdm.json/PaymentMethod",
+						"Name": "PaymentMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/PaymentMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/PaymentMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PaymentMethodId\":{\"entity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"name\":\"PaymentMethodId\"},\"PaymentMethodName\":{\"entity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"name\":\"PaymentMethodName\"},\"PaymentMethodDescription\":{\"entity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"name\":\"PaymentMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PaymentMethod\",\"path\":\"PaymentMethod.cdm.json/PaymentMethod\"},\"description\":\"The means of payment.\\n\\nEx:\\n- Charge to account\\n- VISA\\n- MasterCard\\n- American Express\\n- Discover Card\\n- Store Credit Card\\n- Cash\\n- Debit card\\n- Personal check\\n- Company check\\n- Gift Card\\n- Wire Transfer\\n- Letter of Credit\\n- Credit Line\\n- COD\\n- PayPal\\n- Gift Certificates\",\"primaryKey\":[\"PaymentMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"name\":\"PaymentMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Payment Method.\",\"isNullable\":false,\"name\":\"PaymentMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"name\":\"PaymentMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Payment Method.\",\"isNullable\":true,\"name\":\"PaymentMethodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"name\":\"PaymentMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Payment Method.\",\"isNullable\":true,\"name\":\"PaymentMethodDescription\"}]}}}",
+			"Description": "The means of payment.\n\nEx:\n- Charge to account\n- VISA\n- MasterCard\n- American Express\n- Discover Card\n- Store Credit Card\n- Cash\n- Debit card\n- Personal check\n- Company check\n- Gift Card\n- Wire Transfer\n- Letter of Credit\n- Credit Line\n- COD\n- PayPal\n- Gift Certificates",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "PaymentMethodId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

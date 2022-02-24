@@ -1,0 +1,256 @@
+{
+	"name": "CustomerAccountBreachBehavior",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountBreachBehavior",
+		"Description": "The one or more Breach Behaviors reported for the associated Customer Account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorTimestamp",
+					"Description": "The timestamp of the breach or on which the Breach Behavior was performed.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachBehaviorTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorTypeId",
+					"Description": "The unique identifier of a Breach Behavior.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachBehaviorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorDescription",
+					"Description": "A description of the Breach Behavior.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachBehaviorDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorReportedTimestamp",
+					"Description": "The date that the breach behavior was reported to the Brokerage Firm.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachBehaviorReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BreachResultedInLossToOrganizationIndicator",
+					"Description": "A flag or indicator denoting that the Breach Behavior resulted in a financial loss by the organization.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachResultedInLossToOrganizationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BreachLossAmount",
+					"Description": "The amount of the loss incurred by the Organization.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachLossAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LegalActionInitiatedIndicator",
+					"Description": "A flag or indicator denoting that legal action has been initiated in conjunction with the associated Breach Behavior.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "LegalActionInitiatedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorResolutionNote",
+					"Description": "Notes, comments or additional information regarding the resolution of the Breach Behavior.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachBehaviorResolutionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorNote",
+					"Description": "Notes, comments or additional information regarding the resolution of the Breach Behavior.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachBehaviorNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BreachFollowUpActionDescription",
+					"Description": "A description of the follow-up action that was performed or the action taken by the company.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachFollowUpActionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BreachFollowUpActionTimestamp",
+					"Description": "The timestamp that the follow-up action was performed.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior",
+						"Name": "BreachFollowUpActionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountBreachBehavior",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountBreachBehavior",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"CustomerAccountId\"},\"BreachBehaviorTimestamp\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorTimestamp\"},\"BreachBehaviorTypeId\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorTypeId\"},\"BreachBehaviorDescription\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorDescription\"},\"BreachBehaviorReportedTimestamp\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorReportedTimestamp\"},\"BreachResultedInLossToOrganizationIndicator\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachResultedInLossToOrganizationIndicator\"},\"BreachLossAmount\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachLossAmount\"},\"LegalActionInitiatedIndicator\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"LegalActionInitiatedIndicator\"},\"BreachBehaviorResolutionNote\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorResolutionNote\"},\"BreachBehaviorNote\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorNote\"},\"BreachFollowUpActionDescription\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachFollowUpActionDescription\"},\"BreachFollowUpActionTimestamp\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachFollowUpActionTimestamp\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountBreachBehavior\",\"path\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\"},\"description\":\"The one or more Breach Behaviors reported for the associated Customer Account.\",\"primaryKey\":[\"CustomerAccountId\",\"BreachBehaviorTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the breach or on which the Breach Behavior was performed.\",\"isNullable\":false,\"name\":\"BreachBehaviorTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Breach Behavior.\",\"isNullable\":false,\"name\":\"BreachBehaviorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the Breach Behavior.\",\"isNullable\":true,\"name\":\"BreachBehaviorDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorReportedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The date that the breach behavior was reported to the Brokerage Firm.\",\"isNullable\":true,\"name\":\"BreachBehaviorReportedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachResultedInLossToOrganizationIndicator\"},\"dataType\":\"boolean\",\"description\":\"A flag or indicator denoting that the Breach Behavior resulted in a financial loss by the organization.\",\"isNullable\":true,\"name\":\"BreachResultedInLossToOrganizationIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachLossAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the loss incurred by the Organization.\",\"isNullable\":true,\"scale\":2,\"name\":\"BreachLossAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"LegalActionInitiatedIndicator\"},\"dataType\":\"boolean\",\"description\":\"A flag or indicator denoting that legal action has been initiated in conjunction with the associated Breach Behavior.\",\"isNullable\":true,\"name\":\"LegalActionInitiatedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorResolutionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the resolution of the Breach Behavior.\",\"isNullable\":true,\"name\":\"BreachBehaviorResolutionNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachBehaviorNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the resolution of the Breach Behavior.\",\"isNullable\":true,\"name\":\"BreachBehaviorNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachFollowUpActionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the follow-up action that was performed or the action taken by the company.\",\"isNullable\":true,\"name\":\"BreachFollowUpActionDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountBreachBehavior.cdm.json/CustomerAccountBreachBehavior\",\"name\":\"BreachFollowUpActionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the follow-up action was performed.\",\"isNullable\":true,\"name\":\"BreachFollowUpActionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"}]}}}",
+			"Description": "The one or more Breach Behaviors reported for the associated Customer Account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,BreachBehaviorTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

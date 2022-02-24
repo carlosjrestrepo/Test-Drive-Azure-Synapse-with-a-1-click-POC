@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ymevghmgrv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-ymevghmgrv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssociationType",
+		"ToTableName": "Association",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssociationTypeId",
+				"ToColumnName": "AssociationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssociationType.cdm.json/AssociationType\",\"toEntity\":\"Association.cdm.json/Association\",\"joinPairs\":[{\"fromAttribute\":\"AssociationTypeId\",\"toAttribute\":\"AssociationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

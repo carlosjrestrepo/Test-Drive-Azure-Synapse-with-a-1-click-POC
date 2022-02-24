@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cmqxvebkrs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-cmqxvebkrs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountChannelRelationshipType",
+		"ToTableName": "CustomerAccountRelatedChannel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountChannelRelationshipTypeId",
+				"ToColumnName": "CustomerAccountChannelRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountChannelRelationshipType.cdm.json/CustomerAccountChannelRelationshipType\",\"toEntity\":\"CustomerAccountRelatedChannel.cdm.json/CustomerAccountRelatedChannel\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountChannelRelationshipTypeId\",\"toAttribute\":\"CustomerAccountChannelRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

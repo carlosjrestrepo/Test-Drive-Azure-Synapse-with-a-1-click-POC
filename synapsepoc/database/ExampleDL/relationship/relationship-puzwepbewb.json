@@ -1,0 +1,26 @@
+{
+	"name": "relationship-puzwepbewb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-puzwepbewb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Preference",
+		"ToTableName": "CustomerLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PreferenceId",
+				"ToColumnName": "PreferenceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Preference.cdm.json/Preference\",\"toEntity\":\"CustomerLocation.cdm.json/CustomerLocation\",\"joinPairs\":[{\"fromAttribute\":\"PreferenceId\",\"toAttribute\":\"PreferenceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kxgindfmkx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-kxgindfmkx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceClass",
+		"ToTableName": "CustomerAccountServiceClass",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceClassId",
+				"ToColumnName": "ServiceClassId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceClass.cdm.json/ServiceClass\",\"toEntity\":\"CustomerAccountServiceClass.cdm.json/CustomerAccountServiceClass\",\"joinPairs\":[{\"fromAttribute\":\"ServiceClassId\",\"toAttribute\":\"ServiceClassId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

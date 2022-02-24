@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ctfnvxzsbi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-ctfnvxzsbi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BenefitCriteria",
+		"ToTableName": "ProductBenefitCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BenefitCriteriaId",
+				"ToColumnName": "BenefitCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BenefitCriteria.cdm.json/BenefitCriteria\",\"toEntity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"joinPairs\":[{\"fromAttribute\":\"BenefitCriteriaId\",\"toAttribute\":\"BenefitCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

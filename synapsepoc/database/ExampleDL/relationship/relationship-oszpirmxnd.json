@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oszpirmxnd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-oszpirmxnd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "CustomerConsent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "ProofOfConsentDocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"ProofOfConsentDocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

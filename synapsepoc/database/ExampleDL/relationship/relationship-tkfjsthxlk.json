@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tkfjsthxlk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-tkfjsthxlk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountFeatureType",
+		"ToTableName": "CustomerAccountFeature",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountFeatureTypeId",
+				"ToColumnName": "CustomerAccountFeatureTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"toEntity\":\"CustomerAccountFeature.cdm.json/CustomerAccountFeature\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountFeatureTypeId\",\"toAttribute\":\"CustomerAccountFeatureTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

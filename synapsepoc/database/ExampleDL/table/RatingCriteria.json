@@ -1,0 +1,105 @@
+{
+	"name": "RatingCriteria",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "RatingCriteria",
+		"Description": "The criteria by which Satisfaction is rated.\n\nEx:\n- Service\n- Cost\n- Quality\n- Charges\n- Customer Support\n- Cleanliness",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RatingCriteriaId",
+					"Description": "The unique identifier of a Rating Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "RatingCriteria.cdm.json/RatingCriteria",
+						"Name": "RatingCriteriaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RatingCriteriaName",
+					"Description": "The name of a Rating Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "RatingCriteria.cdm.json/RatingCriteria",
+						"Name": "RatingCriteriaName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RatingCriteriaDescription",
+					"Description": "The description of a Rating Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "RatingCriteria.cdm.json/RatingCriteria",
+						"Name": "RatingCriteriaDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/RatingCriteria",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/RatingCriteria",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RatingCriteriaId\":{\"entity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"name\":\"RatingCriteriaId\"},\"RatingCriteriaName\":{\"entity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"name\":\"RatingCriteriaName\"},\"RatingCriteriaDescription\":{\"entity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"name\":\"RatingCriteriaDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RatingCriteria\",\"path\":\"RatingCriteria.cdm.json/RatingCriteria\"},\"description\":\"The criteria by which Satisfaction is rated.\\n\\nEx:\\n- Service\\n- Cost\\n- Quality\\n- Charges\\n- Customer Support\\n- Cleanliness\",\"primaryKey\":[\"RatingCriteriaId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"name\":\"RatingCriteriaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Rating Criteria.\",\"isNullable\":false,\"name\":\"RatingCriteriaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"name\":\"RatingCriteriaName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Rating Criteria.\",\"isNullable\":true,\"name\":\"RatingCriteriaName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RatingCriteria.cdm.json/RatingCriteria\",\"name\":\"RatingCriteriaDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Rating Criteria.\",\"isNullable\":true,\"name\":\"RatingCriteriaDescription\"}]}}}",
+			"Description": "The criteria by which Satisfaction is rated.\n\nEx:\n- Service\n- Cost\n- Quality\n- Charges\n- Customer Support\n- Cleanliness",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "RatingCriteriaId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

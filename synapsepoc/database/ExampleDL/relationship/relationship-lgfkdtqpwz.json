@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lgfkdtqpwz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-lgfkdtqpwz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Certification",
+		"ToTableName": "CustomerCertification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CertificationId",
+				"ToColumnName": "CertificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Certification.cdm.json/Certification\",\"toEntity\":\"CustomerCertification.cdm.json/CustomerCertification\",\"joinPairs\":[{\"fromAttribute\":\"CertificationId\",\"toAttribute\":\"CertificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

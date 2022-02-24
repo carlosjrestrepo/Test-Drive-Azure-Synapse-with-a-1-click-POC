@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mnhwgjzect",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-mnhwgjzect",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChurnReason",
+		"ToTableName": "CustomerAccountChurnFromParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChurnReasonId",
+				"ToColumnName": "ChurnReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChurnReason.cdm.json/ChurnReason\",\"toEntity\":\"CustomerAccountChurnFromParty.cdm.json/CustomerAccountChurnFromParty\",\"joinPairs\":[{\"fromAttribute\":\"ChurnReasonId\",\"toAttribute\":\"ChurnReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

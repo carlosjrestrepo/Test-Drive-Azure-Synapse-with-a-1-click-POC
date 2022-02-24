@@ -1,0 +1,26 @@
+{
+	"name": "relationship-myrbnkhvco",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-myrbnkhvco",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PhysicalCharacteristic",
+		"ToTableName": "CustomerPhysicalCharacteristic",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PhysicalCharacteristicId",
+				"ToColumnName": "PhysicalCharacteristicId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PhysicalCharacteristic.cdm.json/PhysicalCharacteristic\",\"toEntity\":\"CustomerPhysicalCharacteristic.cdm.json/CustomerPhysicalCharacteristic\",\"joinPairs\":[{\"fromAttribute\":\"PhysicalCharacteristicId\",\"toAttribute\":\"PhysicalCharacteristicId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,30 @@
+{
+	"name": "relationship-zyndglrtjp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-zyndglrtjp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PartyOrganization",
+		"ToTableName": "PartyOrganizationRelationship",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationId",
+				"ToColumnName": "OrganizationId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"toEntity\":\"PartyOrganizationRelationship.cdm.json/PartyOrganizationRelationship\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationId\",\"toAttribute\":\"OrganizationId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

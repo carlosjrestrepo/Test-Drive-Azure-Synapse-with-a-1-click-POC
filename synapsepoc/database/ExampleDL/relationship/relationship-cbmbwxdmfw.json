@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cbmbwxdmfw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-cbmbwxdmfw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SicIndustry",
+		"ToTableName": "LegalEntityCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SicIndustryCode",
+				"ToColumnName": "SicIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SicIndustry.cdm.json/SicIndustry\",\"toEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"joinPairs\":[{\"fromAttribute\":\"SicIndustryCode\",\"toAttribute\":\"SicIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

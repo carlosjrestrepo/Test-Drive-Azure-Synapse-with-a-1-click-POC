@@ -1,0 +1,104 @@
+{
+	"name": "ProductBenefitCriteria",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "ProductBenefitCriteria",
+		"Description": "The one or more benefits assigned to the associated Product for which specific information can be gather and applied to an individual.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBenefitCriteria.cdm.json/ProductBenefitCriteria",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BenefitCriteriaId",
+					"Description": "The unique identifier of a Benefit Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBenefitCriteria.cdm.json/ProductBenefitCriteria",
+						"Name": "BenefitCriteriaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductBenefitCriteriaNote",
+					"Description": "A note, comment or additional information regarding the product benefit criteria.",
+					"BaseAttributeReference": {
+						"Entity": "ProductBenefitCriteria.cdm.json/ProductBenefitCriteria",
+						"Name": "ProductBenefitCriteriaNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/ProductBenefitCriteria",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/ProductBenefitCriteria",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"name\":\"ProductId\"},\"BenefitCriteriaId\":{\"entity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"name\":\"BenefitCriteriaId\"},\"ProductBenefitCriteriaNote\":{\"entity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"name\":\"ProductBenefitCriteriaNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductBenefitCriteria\",\"path\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\"},\"description\":\"The one or more benefits assigned to the associated Product for which specific information can be gather and applied to an individual.\",\"primaryKey\":[\"ProductId\",\"BenefitCriteriaId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"name\":\"BenefitCriteriaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Benefit Criteria.\",\"isNullable\":false,\"name\":\"BenefitCriteriaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"name\":\"ProductBenefitCriteriaNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the product benefit criteria.\",\"isNullable\":true,\"name\":\"ProductBenefitCriteriaNote\"}]}}}",
+			"Description": "The one or more benefits assigned to the associated Product for which specific information can be gather and applied to an individual.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "ProductId,BenefitCriteriaId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

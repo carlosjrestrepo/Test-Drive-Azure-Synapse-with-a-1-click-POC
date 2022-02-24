@@ -1,0 +1,155 @@
+{
+	"name": "CustomerAccountCurrencyUsage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "CustomerAccountCurrencyUsage",
+		"Description": "The specific application of one or more Currency(s) for different usage or purpose related to the Customer Account for the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CurrencyUsageId",
+					"Description": "The unique identifier of a Currency Use.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage",
+						"Name": "CurrencyUsageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the information.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the information.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CurrencyUsageNote",
+					"Description": "A note, comment or additional information regarding the Currency usage as applied to the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage",
+						"Name": "CurrencyUsageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountCurrencyUsage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/ExampleDL/CustomerAccountCurrencyUsage",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"CustomerAccountId\"},\"CurrencyUsageId\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"CurrencyUsageId\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"PeriodEndTimestamp\"},\"CurrencyUsageNote\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"CurrencyUsageNote\"},\"IsoCurrencyCode\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountCurrencyUsage\",\"path\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\"},\"description\":\"The specific application of one or more Currency(s) for different usage or purpose related to the Customer Account for the indicated period.\",\"primaryKey\":[\"CustomerAccountId\",\"CurrencyUsageId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"CurrencyUsageId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Currency Use.\",\"isNullable\":false,\"name\":\"CurrencyUsageId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the information.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the information.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"CurrencyUsageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Currency usage as applied to the Customer Account.\",\"isNullable\":true,\"name\":\"CurrencyUsageNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCurrencyUsage.cdm.json/CustomerAccountCurrencyUsage\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"}]}}}",
+			"Description": "The specific application of one or more Currency(s) for different usage or purpose related to the Customer Account for the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CurrencyUsageId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

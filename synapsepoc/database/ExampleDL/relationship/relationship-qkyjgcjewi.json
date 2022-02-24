@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qkyjgcjewi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-qkyjgcjewi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmailType",
+		"ToTableName": "CustomerAccountEmail",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmailTypeId",
+				"ToColumnName": "EmailTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmailType.cdm.json/EmailType\",\"toEntity\":\"CustomerAccountEmail.cdm.json/CustomerAccountEmail\",\"joinPairs\":[{\"fromAttribute\":\"EmailTypeId\",\"toAttribute\":\"EmailTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

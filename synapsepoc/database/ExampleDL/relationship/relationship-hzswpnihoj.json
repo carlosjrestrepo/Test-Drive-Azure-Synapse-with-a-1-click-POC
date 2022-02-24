@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hzswpnihoj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-hzswpnihoj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProgramParticipationStatus",
+		"ToTableName": "CustomerAccountProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProgramParticipationStatusId",
+				"ToColumnName": "ProgramParticipationStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"toEntity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"joinPairs\":[{\"fromAttribute\":\"ProgramParticipationStatusId\",\"toAttribute\":\"ProgramParticipationStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

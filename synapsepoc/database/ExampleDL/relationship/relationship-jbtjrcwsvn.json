@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jbtjrcwsvn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-jbtjrcwsvn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Religion",
+		"ToTableName": "CustomerReligion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReligionId",
+				"ToColumnName": "ReligionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Religion.cdm.json/Religion\",\"toEntity\":\"CustomerReligion.cdm.json/CustomerReligion\",\"joinPairs\":[{\"fromAttribute\":\"ReligionId\",\"toAttribute\":\"ReligionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

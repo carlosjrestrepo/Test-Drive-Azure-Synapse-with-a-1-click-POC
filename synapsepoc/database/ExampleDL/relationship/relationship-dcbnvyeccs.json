@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dcbnvyeccs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-dcbnvyeccs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEventStatus",
+		"ToTableName": "CustomerAccountEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEventStatusId",
+				"ToColumnName": "CustomerAccountEventStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEventStatus.cdm.json/CustomerAccountEventStatus\",\"toEntity\":\"CustomerAccountEvent.cdm.json/CustomerAccountEvent\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEventStatusId\",\"toAttribute\":\"CustomerAccountEventStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

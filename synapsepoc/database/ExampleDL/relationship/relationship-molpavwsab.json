@@ -1,0 +1,26 @@
+{
+	"name": "relationship-molpavwsab",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-molpavwsab",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OptInStatusType",
+		"ToTableName": "CustomerAccountContactPurposeStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OptInStatusTypeId",
+				"ToColumnName": "OptInStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"toEntity\":\"CustomerAccountContactPurposeStatus.cdm.json/CustomerAccountContactPurposeStatus\",\"joinPairs\":[{\"fromAttribute\":\"OptInStatusTypeId\",\"toAttribute\":\"OptInStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wmcmnpgygs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-wmcmnpgygs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Employee",
+		"ToTableName": "CustomerAccountRelatedEmployee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmployeeId",
+				"ToColumnName": "EmployeeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Employee.cdm.json/Employee\",\"toEntity\":\"CustomerAccountRelatedEmployee.cdm.json/CustomerAccountRelatedEmployee\",\"joinPairs\":[{\"fromAttribute\":\"EmployeeId\",\"toAttribute\":\"EmployeeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

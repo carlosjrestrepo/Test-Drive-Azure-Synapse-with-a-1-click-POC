@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wuqjugrpuj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-wuqjugrpuj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingProgram",
+		"ToTableName": "CustomerProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingProgramId",
+				"ToColumnName": "MarketingProgramId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingProgram.cdm.json/MarketingProgram\",\"toEntity\":\"CustomerProgram.cdm.json/CustomerProgram\",\"joinPairs\":[{\"fromAttribute\":\"MarketingProgramId\",\"toAttribute\":\"MarketingProgramId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

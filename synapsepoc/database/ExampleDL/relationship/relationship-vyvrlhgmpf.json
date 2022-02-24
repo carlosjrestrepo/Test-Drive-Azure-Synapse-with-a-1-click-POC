@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vyvrlhgmpf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-vyvrlhgmpf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SicMajorGroup",
+		"ToTableName": "SicIndustryGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SicMajorGroupCode",
+				"ToColumnName": "SicMajorGroupCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SicMajorGroup.cdm.json/SicMajorGroup\",\"toEntity\":\"SicIndustryGroup.cdm.json/SicIndustryGroup\",\"joinPairs\":[{\"fromAttribute\":\"SicMajorGroupCode\",\"toAttribute\":\"SicMajorGroupCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

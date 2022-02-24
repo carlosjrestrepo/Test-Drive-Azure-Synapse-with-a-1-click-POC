@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bomlqrhwcr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-bomlqrhwcr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PartyOrganizationType",
+		"ToTableName": "PartyOrganization",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyOrganizationTypeId",
+				"ToColumnName": "PartyOrganizationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"toEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"joinPairs\":[{\"fromAttribute\":\"PartyOrganizationTypeId\",\"toAttribute\":\"PartyOrganizationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

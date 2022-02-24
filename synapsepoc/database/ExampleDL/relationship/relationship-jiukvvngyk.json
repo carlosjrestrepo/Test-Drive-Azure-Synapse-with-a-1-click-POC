@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jiukvvngyk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "ExampleDL"
+		},
+		"Name": "relationship-jiukvvngyk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAccountReview",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ReviewedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ReviewedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}
