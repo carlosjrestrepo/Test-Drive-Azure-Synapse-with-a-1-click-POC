@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xunxutulpb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-xunxutulpb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountFeeType",
+		"ToTableName": "CustomerAccountFee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountFeeTypeId",
+				"ToColumnName": "CustomerAccountFeeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountFeeType.cdm.json/CustomerAccountFeeType\",\"toEntity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountFeeTypeId\",\"toAttribute\":\"CustomerAccountFeeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

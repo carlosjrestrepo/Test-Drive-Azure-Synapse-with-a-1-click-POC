@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zlwsspxdsh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-zlwsspxdsh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "ChannelAggregateProductReturns",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"ChannelAggregateProductReturns.cdm.json/ChannelAggregateProductReturns\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

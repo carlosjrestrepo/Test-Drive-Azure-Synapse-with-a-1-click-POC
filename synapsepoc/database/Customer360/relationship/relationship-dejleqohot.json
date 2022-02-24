@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dejleqohot",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-dejleqohot",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalEntityForm",
+		"ToTableName": "LegalEntity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalEntityFormId",
+				"ToColumnName": "LegalEntityFormId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalEntityForm.cdm.json/LegalEntityForm\",\"toEntity\":\"LegalEntity.cdm.json/LegalEntity\",\"joinPairs\":[{\"fromAttribute\":\"LegalEntityFormId\",\"toAttribute\":\"LegalEntityFormId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

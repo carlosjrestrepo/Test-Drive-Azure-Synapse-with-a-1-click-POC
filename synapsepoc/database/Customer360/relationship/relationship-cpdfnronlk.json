@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cpdfnronlk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-cpdfnronlk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Cluster",
+		"ToTableName": "ClusterCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClusterId",
+				"ToColumnName": "ClusterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Cluster.cdm.json/Cluster\",\"toEntity\":\"ClusterCustomer.cdm.json/ClusterCustomer\",\"joinPairs\":[{\"fromAttribute\":\"ClusterId\",\"toAttribute\":\"ClusterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

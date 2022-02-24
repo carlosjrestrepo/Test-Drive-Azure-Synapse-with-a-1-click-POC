@@ -1,0 +1,239 @@
+{
+	"name": "Scope3Category6BusinessTravelSpendBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category6BusinessTravelSpendBasedMethod",
+		"Description": "Spend-based method\n\nIf it is not possible to use either the fuel- or distance-based methods, companies may use the spend-based method.\n\nThe calculation method is same as the spend-based method described in Category 4: Upstream Transportation and Distribution, with the difference that the activity data is the amount spent on business travel by type/mode of transport",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessTravelTypeId",
+					"Description": "The identifier of the business travel type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "BusinessTravelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AmountSpentOnBusinessTravelType",
+					"Description": "The amount spent on the business travel type.\n\n- Amount spent on transportation by type (e.g. road, rail, air, barge), using market values (e.g., dollars)",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "AmountSpentOnBusinessTravelType"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AmountSpentOnBusinessTravelCurrencyCode",
+					"Description": "The business travel currency type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "AmountSpentOnBusinessTravelCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BusinessTravelHotelNights",
+					"Description": "The business travel nights spent in hotels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "BusinessTravelHotelNights"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessTravelHotelCostAmount",
+					"Description": "The cost of the business travel hotel stays.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "BusinessTravelHotelCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BusinessTravelHotelCostCurrencyCode",
+					"Description": "The currency associated with the business travel hotel costs.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "BusinessTravelHotelCostCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category6BusinessTravelSpendBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category6BusinessTravelSpendBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"BusinessTravelTypeId\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"AmountSpentOnBusinessTravelType\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"AmountSpentOnBusinessTravelType\"},\"AmountSpentOnBusinessTravelCurrencyCode\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"AmountSpentOnBusinessTravelCurrencyCode\"},\"BusinessTravelHotelNights\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelHotelNights\"},\"BusinessTravelHotelCostAmount\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelHotelCostAmount\"},\"BusinessTravelHotelCostCurrencyCode\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelHotelCostCurrencyCode\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category6BusinessTravelSpendBasedMethod\",\"path\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\"},\"description\":\"Spend-based method\\n\\nIf it is not possible to use either the fuel- or distance-based methods, companies may use the spend-based method.\\n\\nThe calculation method is same as the spend-based method described in Category 4: Upstream Transportation and Distribution, with the difference that the activity data is the amount spent on business travel by type/mode of transport\",\"primaryKey\":[\"ReportingLegalEntityId\",\"BusinessTravelTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelTypeId\"},\"dataType\":\"integer\",\"description\":\"The identifier of the business travel type.\",\"isNullable\":false,\"name\":\"BusinessTravelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"AmountSpentOnBusinessTravelType\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount spent on the business travel type.\\n\\n- Amount spent on transportation by type (e.g. road, rail, air, barge), using market values (e.g., dollars)\",\"isNullable\":true,\"scale\":2,\"name\":\"AmountSpentOnBusinessTravelType\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"AmountSpentOnBusinessTravelCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The business travel currency type.\",\"isNullable\":true,\"name\":\"AmountSpentOnBusinessTravelCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelHotelNights\"},\"dataType\":\"integer\",\"description\":\"The business travel nights spent in hotels.\",\"isNullable\":true,\"name\":\"BusinessTravelHotelNights\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelHotelCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The cost of the business travel hotel stays.\",\"isNullable\":true,\"scale\":2,\"name\":\"BusinessTravelHotelCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"BusinessTravelHotelCostCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The currency associated with the business travel hotel costs.\",\"isNullable\":true,\"name\":\"BusinessTravelHotelCostCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor UOM.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Spend-based method\n\nIf it is not possible to use either the fuel- or distance-based methods, companies may use the spend-based method.\n\nThe calculation method is same as the spend-based method described in Category 4: Upstream Transportation and Distribution, with the difference that the activity data is the amount spent on business travel by type/mode of transport",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,BusinessTravelTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kozxjpaomm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-kozxjpaomm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TelephoneNumberType",
+		"ToTableName": "CustomerAccountTelephoneNumber",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TelephoneNumberTypeId",
+				"ToColumnName": "TelephoneNumberTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TelephoneNumberType.cdm.json/TelephoneNumberType\",\"toEntity\":\"CustomerAccountTelephoneNumber.cdm.json/CustomerAccountTelephoneNumber\",\"joinPairs\":[{\"fromAttribute\":\"TelephoneNumberTypeId\",\"toAttribute\":\"TelephoneNumberTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

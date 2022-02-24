@@ -1,0 +1,138 @@
+{
+	"name": "CustomerAccountRestriction",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountRestriction",
+		"Description": "The one or more Customer Account Restrictions applied to a specific Customer Account for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestriction.cdm.json/CustomerAccountRestriction",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRestrictionTypeId",
+					"Description": "The unique identifier of a Customer Account Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestriction.cdm.json/CustomerAccountRestriction",
+						"Name": "CustomerAccountRestrictionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Account Restriction is applied or in effect.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestriction.cdm.json/CustomerAccountRestriction",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Account Restriction is applied or in effect.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestriction.cdm.json/CustomerAccountRestriction",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRestrictionNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Restriction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestriction.cdm.json/CustomerAccountRestriction",
+						"Name": "CustomerAccountRestrictionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountRestriction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountRestriction",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"CustomerAccountId\"},\"CustomerAccountRestrictionTypeId\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"CustomerAccountRestrictionTypeId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"PeriodEndDate\"},\"CustomerAccountRestrictionNote\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"CustomerAccountRestrictionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountRestriction\",\"path\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\"},\"description\":\"The one or more Customer Account Restrictions applied to a specific Customer Account for the associated period.\",\"primaryKey\":[\"CustomerAccountId\",\"CustomerAccountRestrictionTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"CustomerAccountRestrictionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Restriction Type.\",\"isNullable\":false,\"name\":\"CustomerAccountRestrictionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the Account Restriction is applied or in effect.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the Account Restriction is applied or in effect.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"name\":\"CustomerAccountRestrictionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Restriction.\",\"isNullable\":true,\"name\":\"CustomerAccountRestrictionNote\"}]}}}",
+			"Description": "The one or more Customer Account Restrictions applied to a specific Customer Account for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CustomerAccountRestrictionTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,174 @@
+{
+	"name": "CustomerAccountFinanceTerm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountFinanceTerm",
+		"Description": "The Finance Term(s) that may be extended to the associated Customer Account for the indicated purchase/transaction amounts for the indicated period. \n\nEx:\nCustomer Account purchases of $500-1,000 are offered the following Finance Term(s) for the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FinanceTermId",
+					"Description": "The unique identifier of a Finance Term.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "FinanceTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumTransactionAmount",
+					"Description": "The minimum transaction amount in the associated transaction range for which the associated Finance Term(s) are acceptable or applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "MinimumTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumTransactionAmount",
+					"Description": "The maximum transaction amount in the associated transaction range for which the associated Finance Term(s) are acceptable or applicable.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "MaximumTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated customer finance term is offered.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated customer finance term is offered.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerFinanceTermNote",
+					"Description": "Notes, comments or additional information regarding the Customer Finance Term.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm",
+						"Name": "CustomerFinanceTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountFinanceTerm",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountFinanceTerm",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"CustomerAccountId\"},\"FinanceTermId\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"FinanceTermId\"},\"MinimumTransactionAmount\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"MinimumTransactionAmount\"},\"MaximumTransactionAmount\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"MaximumTransactionAmount\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"PeriodEndDate\"},\"CustomerFinanceTermNote\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"CustomerFinanceTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountFinanceTerm\",\"path\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\"},\"description\":\"The Finance Term(s) that may be extended to the associated Customer Account for the indicated purchase/transaction amounts for the indicated period. \\n\\nEx:\\nCustomer Account purchases of $500-1,000 are offered the following Finance Term(s) for the indicated period.\",\"primaryKey\":[\"CustomerAccountId\",\"FinanceTermId\",\"MinimumTransactionAmount\",\"MaximumTransactionAmount\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"FinanceTermId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Finance Term.\",\"isNullable\":false,\"name\":\"FinanceTermId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"MinimumTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum transaction amount in the associated transaction range for which the associated Finance Term(s) are acceptable or applicable.\",\"isNullable\":false,\"scale\":2,\"name\":\"MinimumTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"MaximumTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum transaction amount in the associated transaction range for which the associated Finance Term(s) are acceptable or applicable.\",\"isNullable\":false,\"scale\":2,\"name\":\"MaximumTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated customer finance term is offered.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated customer finance term is offered.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFinanceTerm.cdm.json/CustomerAccountFinanceTerm\",\"name\":\"CustomerFinanceTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Customer Finance Term.\",\"isNullable\":true,\"name\":\"CustomerFinanceTermNote\"}]}}}",
+			"Description": "The Finance Term(s) that may be extended to the associated Customer Account for the indicated purchase/transaction amounts for the indicated period. \n\nEx:\nCustomer Account purchases of $500-1,000 are offered the following Finance Term(s) for the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,FinanceTermId,MinimumTransactionAmount,MaximumTransactionAmount,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

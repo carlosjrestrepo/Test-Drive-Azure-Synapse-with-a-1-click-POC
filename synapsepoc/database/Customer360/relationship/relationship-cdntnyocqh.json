@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cdntnyocqh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-cdntnyocqh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LocationType",
+		"ToTableName": "CustomerAccountLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationTypeId",
+				"ToColumnName": "LocationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LocationType.cdm.json/LocationType\",\"toEntity\":\"CustomerAccountLocation.cdm.json/CustomerAccountLocation\",\"joinPairs\":[{\"fromAttribute\":\"LocationTypeId\",\"toAttribute\":\"LocationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uihdtpyicc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-uihdtpyicc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEmployeeRelationshipType",
+		"ToTableName": "CustomerAccountRelatedEmployee",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEmployeeRelationshipTypeId",
+				"ToColumnName": "CustomerAccountEmployeeRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEmployeeRelationshipType.cdm.json/CustomerAccountEmployeeRelationshipType\",\"toEntity\":\"CustomerAccountRelatedEmployee.cdm.json/CustomerAccountRelatedEmployee\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEmployeeRelationshipTypeId\",\"toAttribute\":\"CustomerAccountEmployeeRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

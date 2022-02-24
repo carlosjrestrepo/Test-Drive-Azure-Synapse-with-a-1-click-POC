@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jqqikgjodd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-jqqikgjodd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PeriodBalanceType",
+		"ToTableName": "CustomerAccountPeriodBalance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodBalanceTypeId",
+				"ToColumnName": "PeriodBalanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PeriodBalanceType.cdm.json/PeriodBalanceType\",\"toEntity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"joinPairs\":[{\"fromAttribute\":\"PeriodBalanceTypeId\",\"toAttribute\":\"PeriodBalanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

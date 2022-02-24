@@ -1,0 +1,172 @@
+{
+	"name": "CustomerAccountAutomaticPayment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountAutomaticPayment",
+		"Description": "The Customer Account Automatic Payment including the amount and method for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated automatic payment is associated with the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated automatic payment is associated with the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticPaymentAmount",
+					"Description": "The amount of the automatic payment for the specified period.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "AutomaticPaymentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountAutomaticPaymentNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Automatic Payment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "CustomerAccountAutomaticPaymentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BankAccountId",
+					"Description": "The unique identifier of a Bank Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "BankAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PaymentCardId",
+					"Description": "The unique identifier of a Payment Card.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment",
+						"Name": "PaymentCardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountAutomaticPayment",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountAutomaticPayment",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"PeriodEndDate\"},\"AutomaticPaymentAmount\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"AutomaticPaymentAmount\"},\"CustomerAccountAutomaticPaymentNote\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"CustomerAccountAutomaticPaymentNote\"},\"BankAccountId\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"BankAccountId\"},\"PaymentCardId\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"PaymentCardId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountAutomaticPayment\",\"path\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\"},\"description\":\"The Customer Account Automatic Payment including the amount and method for the associated period.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated automatic payment is associated with the Customer Account.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated automatic payment is associated with the Customer Account.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"AutomaticPaymentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the automatic payment for the specified period.\",\"isNullable\":true,\"scale\":2,\"name\":\"AutomaticPaymentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"CustomerAccountAutomaticPaymentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Automatic Payment.\",\"isNullable\":true,\"name\":\"CustomerAccountAutomaticPaymentNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"BankAccountId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Bank Account.\",\"isNullable\":true,\"name\":\"BankAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"name\":\"PaymentCardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Payment Card.\",\"isNullable\":true,\"name\":\"PaymentCardId\"}]}}}",
+			"Description": "The Customer Account Automatic Payment including the amount and method for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

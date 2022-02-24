@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gdbdjdxdxm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-gdbdjdxdxm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Survey",
+		"ToTableName": "SurveyQuestion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SurveyId",
+				"ToColumnName": "SurveyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Survey.cdm.json/Survey\",\"toEntity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"joinPairs\":[{\"fromAttribute\":\"SurveyId\",\"toAttribute\":\"SurveyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

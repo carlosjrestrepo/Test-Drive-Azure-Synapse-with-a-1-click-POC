@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rbmekekfbr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-rbmekekfbr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LanguageUsage",
+		"ToTableName": "CustomerAccountLanguageUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LanguageUsageId",
+				"ToColumnName": "LanguageUsageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LanguageUsage.cdm.json/LanguageUsage\",\"toEntity\":\"CustomerAccountLanguageUsage.cdm.json/CustomerAccountLanguageUsage\",\"joinPairs\":[{\"fromAttribute\":\"LanguageUsageId\",\"toAttribute\":\"LanguageUsageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

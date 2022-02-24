@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rwenrwzdnz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-rwenrwzdnz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransportationRequirement",
+		"ToTableName": "CustomerMeansOfTransportation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransportationRequirementId",
+				"ToColumnName": "TransportationRequirementId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"toEntity\":\"CustomerMeansOfTransportation.cdm.json/CustomerMeansOfTransportation\",\"joinPairs\":[{\"fromAttribute\":\"TransportationRequirementId\",\"toAttribute\":\"TransportationRequirementId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

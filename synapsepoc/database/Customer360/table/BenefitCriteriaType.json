@@ -1,0 +1,105 @@
+{
+	"name": "BenefitCriteriaType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "BenefitCriteriaType",
+		"Description": "Benefit Criteria Type is a means of classifying, grouping or categorizing specific Benefit Criteria at a higher level for analysis and presentation.\n\nThe Benefit Criteria is the specific variable or value that may be linked to a Market Segment.\n\nThe Benefit Type is the larger category to which the Benefit Criteria belongs.\n\nThe following are examples:\n\nBenefit Criteria:  Long Term Appreciation\nBenefit Type:  Investment Objective\n\nBenefit Criteria:  Retirement Savings\nBenefit Type:  Investment Objective",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BenefitCriteriaTypeId",
+					"Description": "The unique identifier of a Benefit Criteria Type.",
+					"BaseAttributeReference": {
+						"Entity": "BenefitCriteriaType.cdm.json/BenefitCriteriaType",
+						"Name": "BenefitCriteriaTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BenefitCriteriaTypeName",
+					"Description": "The name of the Benefit Criteria Type.",
+					"BaseAttributeReference": {
+						"Entity": "BenefitCriteriaType.cdm.json/BenefitCriteriaType",
+						"Name": "BenefitCriteriaTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BenefitCriteriaTypeDescription",
+					"Description": "The description of the Benefit Criteria Type.",
+					"BaseAttributeReference": {
+						"Entity": "BenefitCriteriaType.cdm.json/BenefitCriteriaType",
+						"Name": "BenefitCriteriaTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/BenefitCriteriaType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/BenefitCriteriaType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BenefitCriteriaTypeId\":{\"entity\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\",\"name\":\"BenefitCriteriaTypeId\"},\"BenefitCriteriaTypeName\":{\"entity\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\",\"name\":\"BenefitCriteriaTypeName\"},\"BenefitCriteriaTypeDescription\":{\"entity\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\",\"name\":\"BenefitCriteriaTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BenefitCriteriaType\",\"path\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\"},\"description\":\"Benefit Criteria Type is a means of classifying, grouping or categorizing specific Benefit Criteria at a higher level for analysis and presentation.\\n\\nThe Benefit Criteria is the specific variable or value that may be linked to a Market Segment.\\n\\nThe Benefit Type is the larger category to which the Benefit Criteria belongs.\\n\\nThe following are examples:\\n\\nBenefit Criteria:  Long Term Appreciation\\nBenefit Type:  Investment Objective\\n\\nBenefit Criteria:  Retirement Savings\\nBenefit Type:  Investment Objective\",\"primaryKey\":[\"BenefitCriteriaTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\",\"name\":\"BenefitCriteriaTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Benefit Criteria Type.\",\"isNullable\":false,\"name\":\"BenefitCriteriaTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\",\"name\":\"BenefitCriteriaTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Benefit Criteria Type.\",\"isNullable\":true,\"name\":\"BenefitCriteriaTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BenefitCriteriaType.cdm.json/BenefitCriteriaType\",\"name\":\"BenefitCriteriaTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Benefit Criteria Type.\",\"isNullable\":true,\"name\":\"BenefitCriteriaTypeDescription\"}]}}}",
+			"Description": "Benefit Criteria Type is a means of classifying, grouping or categorizing specific Benefit Criteria at a higher level for analysis and presentation.\n\nThe Benefit Criteria is the specific variable or value that may be linked to a Market Segment.\n\nThe Benefit Type is the larger category to which the Benefit Criteria belongs.\n\nThe following are examples:\n\nBenefit Criteria:  Long Term Appreciation\nBenefit Type:  Investment Objective\n\nBenefit Criteria:  Retirement Savings\nBenefit Type:  Investment Objective",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "BenefitCriteriaTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

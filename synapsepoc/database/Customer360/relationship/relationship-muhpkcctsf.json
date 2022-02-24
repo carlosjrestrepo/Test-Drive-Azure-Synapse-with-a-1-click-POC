@@ -1,0 +1,26 @@
+{
+	"name": "relationship-muhpkcctsf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-muhpkcctsf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinanceTerm",
+		"ToTableName": "CustomerFinanceTerm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinanceTermId",
+				"ToColumnName": "FinanceTermId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"toEntity\":\"CustomerFinanceTerm.cdm.json/CustomerFinanceTerm\",\"joinPairs\":[{\"fromAttribute\":\"FinanceTermId\",\"toAttribute\":\"FinanceTermId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

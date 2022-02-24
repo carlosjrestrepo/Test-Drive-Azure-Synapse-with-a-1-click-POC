@@ -1,0 +1,268 @@
+{
+	"name": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+		"Description": "The Spend-based method  estimates emissions for goods and services by collecting data on the economic value of goods and services purchased and multiplying it by relevant secondary (e.g., industry average) emission factors (e.g., average emissions per monetary value of goods).\n\nIf the supplier-specific method, hybrid method, and average-data method are not feasible (e.g., due to data limitations),companies should apply the average spend based method by collecting data on the economic value of purchased goods\nand services and multiplying them by the relevant EEIO emission factors.\n\nActivity data needed\n\n- Amount spent on purchased goods or services, by product type, using market values (e.g., dollars)\n\n- Where applicable, inflation data to convert market values between the year of the EEIO emissions factors and the year of the activity data.\n\nEmission factors needed\n- Cradle-to-gate emission factors of the purchased goods or services per unit of economic value (e.g., kg CO2 e/$).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "GoodTypeId",
+					"Description": "The unique identifier of a good/service type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "GoodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesUnits",
+					"Description": "The quantity of units of purchased goods and services.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PurchasedGoodsServicesUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesUomId",
+					"Description": "The purchased goods/services UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PurchasedGoodsServicesUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesEmissionFactor",
+					"Description": "The purchased goods/services emission factor.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PurchasedGoodsServicesEmissionFactor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesEmissionFactorUomId",
+					"Description": "The purchased goods/services factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PurchasedGoodsServicesEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsAndServicesMarketValueAmount",
+					"Description": "The market value of the purchased goods and services.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PurchasedGoodsAndServicesMarketValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsAndServicesMarketValueCurrencyCode",
+					"Description": "The purchased goods/services market value currency.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "PurchasedGoodsAndServicesMarketValueCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The total CO2e emission UOM ID.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"VendorId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"VendorId\"},\"GoodTypeId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"GoodTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"PurchasedGoodsServicesUnits\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesUnits\"},\"PurchasedGoodsServicesUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesUomId\"},\"PurchasedGoodsServicesEmissionFactor\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesEmissionFactor\"},\"PurchasedGoodsServicesEmissionFactorUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesEmissionFactorUomId\"},\"PurchasedGoodsAndServicesMarketValueAmount\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsAndServicesMarketValueAmount\"},\"PurchasedGoodsAndServicesMarketValueCurrencyCode\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"path\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\"},\"description\":\"The Spend-based method  estimates emissions for goods and services by collecting data on the economic value of goods and services purchased and multiplying it by relevant secondary (e.g., industry average) emission factors (e.g., average emissions per monetary value of goods).\\n\\nIf the supplier-specific method, hybrid method, and average-data method are not feasible (e.g., due to data limitations),companies should apply the average spend based method by collecting data on the economic value of purchased goods\\nand services and multiplying them by the relevant EEIO emission factors.\\n\\nActivity data needed\\n\\n- Amount spent on purchased goods or services, by product type, using market values (e.g., dollars)\\n\\n- Where applicable, inflation data to convert market values between the year of the EEIO emissions factors and the year of the activity data.\\n\\nEmission factors needed\\n- Cradle-to-gate emission factors of the purchased goods or services per unit of economic value (e.g., kg CO2 e/$).\",\"primaryKey\":[\"ReportingLegalEntityId\",\"VendorId\",\"GoodTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":false,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"GoodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a good/service type.\",\"isNullable\":false,\"name\":\"GoodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of units of purchased goods and services.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesUomId\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services UOM.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesEmissionFactor\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services emission factor.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesEmissionFactor\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsServicesEmissionFactorUomId\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services factor UOM.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesEmissionFactorUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsAndServicesMarketValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The market value of the purchased goods and services.\",\"isNullable\":true,\"scale\":2,\"name\":\"PurchasedGoodsAndServicesMarketValueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The purchased goods/services market value currency.\",\"isNullable\":true,\"name\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission UOM ID.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "The Spend-based method  estimates emissions for goods and services by collecting data on the economic value of goods and services purchased and multiplying it by relevant secondary (e.g., industry average) emission factors (e.g., average emissions per monetary value of goods).\n\nIf the supplier-specific method, hybrid method, and average-data method are not feasible (e.g., due to data limitations),companies should apply the average spend based method by collecting data on the economic value of purchased goods\nand services and multiplying them by the relevant EEIO emission factors.\n\nActivity data needed\n\n- Amount spent on purchased goods or services, by product type, using market values (e.g., dollars)\n\n- Where applicable, inflation data to convert market values between the year of the EEIO emissions factors and the year of the activity data.\n\nEmission factors needed\n- Cradle-to-gate emission factors of the purchased goods or services per unit of economic value (e.g., kg CO2 e/$).",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,VendorId,GoodTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

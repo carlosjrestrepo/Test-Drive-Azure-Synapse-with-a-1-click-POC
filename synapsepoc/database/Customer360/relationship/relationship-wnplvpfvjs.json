@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wnplvpfvjs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-wnplvpfvjs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEventRelationshipType",
+		"ToTableName": "RelatedCustomerAccountEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEventRelationshipTypeId",
+				"ToColumnName": "CustomerAccountEventRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"toEntity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEventRelationshipTypeId\",\"toAttribute\":\"CustomerAccountEventRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

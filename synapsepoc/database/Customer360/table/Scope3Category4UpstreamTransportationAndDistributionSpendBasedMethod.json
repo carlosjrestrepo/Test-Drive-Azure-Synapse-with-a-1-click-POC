@@ -1,0 +1,236 @@
+{
+	"name": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+		"Description": "Companies may use the following methods to calculate scope 3 emissions from transportation:\n\n- Spend-based method, which involves determining the amount of money spent on each mode of business travel transport and applying secondary (EEIO) emission factors.\n\nIf the fuel-based method and distance method cannot be applied (e.g., due to data limitations), companies should apply the spend-based method to calculate the emissions from transportation. In this method, the amount spent on transportation by type is multiplied by the relevant EEIO emission factors.\n\nThe spend-based method is effective for screening purposes; however it has high levels of uncertainty and the fuel-based and distance-based methods are\nrecommended for accounting for transportation emissions.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransportModeId",
+					"Description": "The identifier of a transport mode.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "TransportModeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransportationProviderPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "TransportationProviderPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AmountSpentOnTransportationMode",
+					"Description": "The amount spent on the transportation mode.\n\nActivity data needed\n\n- Amount spent on transportation by type (e.g. road, rail, air, barge), using market values (e.g., dollars)",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "AmountSpentOnTransportationMode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransportationModeCurrencyCode",
+					"Description": "The currency associated with the transportation mode.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "TransportationModeCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionsUnits",
+					"Description": "The fugitive emissions units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "FugitiveEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionsUomId",
+					"Description": "The fugitive emissions units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "FugitiveEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"TransportModeId\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TransportModeId\"},\"TransportationProviderPartyId\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TransportationProviderPartyId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"AmountSpentOnTransportationMode\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"AmountSpentOnTransportationMode\"},\"TransportationModeCurrencyCode\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TransportationModeCurrencyCode\"},\"FugitiveEmissionsUnits\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"FugitiveEmissionsUnits\"},\"FugitiveEmissionsUomId\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"FugitiveEmissionsUomId\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"path\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\"},\"description\":\"Companies may use the following methods to calculate scope 3 emissions from transportation:\\n\\n- Spend-based method, which involves determining the amount of money spent on each mode of business travel transport and applying secondary (EEIO) emission factors.\\n\\nIf the fuel-based method and distance method cannot be applied (e.g., due to data limitations), companies should apply the spend-based method to calculate the emissions from transportation. In this method, the amount spent on transportation by type is multiplied by the relevant EEIO emission factors.\\n\\nThe spend-based method is effective for screening purposes; however it has high levels of uncertainty and the fuel-based and distance-based methods are\\nrecommended for accounting for transportation emissions.\",\"primaryKey\":[\"ReportingLegalEntityId\",\"TransportModeId\",\"TransportationProviderPartyId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TransportModeId\"},\"dataType\":\"integer\",\"description\":\"The identifier of a transport mode.\",\"isNullable\":false,\"name\":\"TransportModeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TransportationProviderPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"TransportationProviderPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"AmountSpentOnTransportationMode\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount spent on the transportation mode.\\n\\nActivity data needed\\n\\n- Amount spent on transportation by type (e.g. road, rail, air, barge), using market values (e.g., dollars)\",\"isNullable\":true,\"scale\":2,\"name\":\"AmountSpentOnTransportationMode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TransportationModeCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The currency associated with the transportation mode.\",\"isNullable\":true,\"name\":\"TransportationModeCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"FugitiveEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The fugitive emissions units.\",\"isNullable\":true,\"name\":\"FugitiveEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"FugitiveEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The fugitive emissions units of measure.\",\"isNullable\":true,\"name\":\"FugitiveEmissionsUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor units of measure.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Companies may use the following methods to calculate scope 3 emissions from transportation:\n\n- Spend-based method, which involves determining the amount of money spent on each mode of business travel transport and applying secondary (EEIO) emission factors.\n\nIf the fuel-based method and distance method cannot be applied (e.g., due to data limitations), companies should apply the spend-based method to calculate the emissions from transportation. In this method, the amount spent on transportation by type is multiplied by the relevant EEIO emission factors.\n\nThe spend-based method is effective for screening purposes; however it has high levels of uncertainty and the fuel-based and distance-based methods are\nrecommended for accounting for transportation emissions.",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,TransportModeId,TransportationProviderPartyId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "CustomerStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerStatusType",
+		"Description": "Identifies whether a customer is a current or prospective customer.\n\nCURRENT CUSTOMER\nA current customer has purchased products or services and is considered a 'current' customer as defined by the company. \n\nPROSPECTIVE CUSTOMER\nA prospective customer has the potential to be a consumer or customer of a product or service based on the criteria that they have the financial ability, desire to acquire products or services and are located where those products and services can be provided.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerStatusTypeId",
+					"Description": "The unique identifier of a Customer Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerStatusType.cdm.json/CustomerStatusType",
+						"Name": "CustomerStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerStatusTypeName",
+					"Description": "The name of a Customer Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerStatusType.cdm.json/CustomerStatusType",
+						"Name": "CustomerStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerStatusTypeDescription",
+					"Description": "The description of a Customer Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerStatusType.cdm.json/CustomerStatusType",
+						"Name": "CustomerStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerStatusType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerStatusTypeId\":{\"entity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"name\":\"CustomerStatusTypeId\"},\"CustomerStatusTypeName\":{\"entity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"name\":\"CustomerStatusTypeName\"},\"CustomerStatusTypeDescription\":{\"entity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"name\":\"CustomerStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerStatusType\",\"path\":\"CustomerStatusType.cdm.json/CustomerStatusType\"},\"description\":\"Identifies whether a customer is a current or prospective customer.\\n\\nCURRENT CUSTOMER\\nA current customer has purchased products or services and is considered a 'current' customer as defined by the company. \\n\\nPROSPECTIVE CUSTOMER\\nA prospective customer has the potential to be a consumer or customer of a product or service based on the criteria that they have the financial ability, desire to acquire products or services and are located where those products and services can be provided.\",\"primaryKey\":[\"CustomerStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"name\":\"CustomerStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Status Type.\",\"isNullable\":false,\"name\":\"CustomerStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"name\":\"CustomerStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Status Type.\",\"isNullable\":true,\"name\":\"CustomerStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"name\":\"CustomerStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Status Type.\",\"isNullable\":true,\"name\":\"CustomerStatusTypeDescription\"}]}}}",
+			"Description": "Identifies whether a customer is a current or prospective customer.\n\nCURRENT CUSTOMER\nA current customer has purchased products or services and is considered a 'current' customer as defined by the company. \n\nPROSPECTIVE CUSTOMER\nA prospective customer has the potential to be a consumer or customer of a product or service based on the criteria that they have the financial ability, desire to acquire products or services and are located where those products and services can be provided.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerStatusTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bfhvlgsomc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-bfhvlgsomc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEventType",
+		"ToTableName": "CustomerAccountEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEventTypeId",
+				"ToColumnName": "CustomerAccountEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"toEntity\":\"CustomerAccountEvent.cdm.json/CustomerAccountEvent\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEventTypeId\",\"toAttribute\":\"CustomerAccountEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

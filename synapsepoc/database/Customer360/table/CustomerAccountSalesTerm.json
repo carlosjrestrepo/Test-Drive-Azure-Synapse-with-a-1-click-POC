@@ -1,0 +1,174 @@
+{
+	"name": "CustomerAccountSalesTerm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountSalesTerm",
+		"Description": "The Sales Term(s) that are offered or provided to the customer account for purchases/transactions of the associated amounts during the indicated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SalesTermId",
+					"Description": "The unique identifier of a Sales Term.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "SalesTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumTransactionAmount",
+					"Description": "The minimum transaction amount in the associated transaction range for which the associated Sales Term(s) are offered or extended.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "MinimumTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumTransactionAmount",
+					"Description": "The maximum transaction amount in the associated transaction range for which the associated Sales Term(s) are offered or extended.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "MaximumTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated customer sales term information is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated customer sales term information is defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerSalesTermNote",
+					"Description": "A note, comment or additional information regarding the customer sales term.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm",
+						"Name": "CustomerSalesTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountSalesTerm",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountSalesTerm",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"CustomerAccountId\"},\"SalesTermId\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"SalesTermId\"},\"MinimumTransactionAmount\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"MinimumTransactionAmount\"},\"MaximumTransactionAmount\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"MaximumTransactionAmount\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"PeriodEndDate\"},\"CustomerSalesTermNote\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"CustomerSalesTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountSalesTerm\",\"path\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\"},\"description\":\"The Sales Term(s) that are offered or provided to the customer account for purchases/transactions of the associated amounts during the indicated period.\",\"primaryKey\":[\"CustomerAccountId\",\"SalesTermId\",\"MinimumTransactionAmount\",\"MaximumTransactionAmount\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"SalesTermId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Sales Term.\",\"isNullable\":false,\"name\":\"SalesTermId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"MinimumTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum transaction amount in the associated transaction range for which the associated Sales Term(s) are offered or extended.\",\"isNullable\":false,\"scale\":2,\"name\":\"MinimumTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"MaximumTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum transaction amount in the associated transaction range for which the associated Sales Term(s) are offered or extended.\",\"isNullable\":false,\"scale\":2,\"name\":\"MaximumTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated customer sales term information is defined.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated customer sales term information is defined.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSalesTerm.cdm.json/CustomerAccountSalesTerm\",\"name\":\"CustomerSalesTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer sales term.\",\"isNullable\":true,\"name\":\"CustomerSalesTermNote\"}]}}}",
+			"Description": "The Sales Term(s) that are offered or provided to the customer account for purchases/transactions of the associated amounts during the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,SalesTermId,MinimumTransactionAmount,MaximumTransactionAmount,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

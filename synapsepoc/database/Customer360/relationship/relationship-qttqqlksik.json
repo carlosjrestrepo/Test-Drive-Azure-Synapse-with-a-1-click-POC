@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qttqqlksik",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-qttqqlksik",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinancialProduct",
+		"ToTableName": "FinancialProductHeldByLegalEntity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinancialProduct.cdm.json/FinancialProduct\",\"toEntity\":\"FinancialProductHeldByLegalEntity.cdm.json/FinancialProductHeldByLegalEntity\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

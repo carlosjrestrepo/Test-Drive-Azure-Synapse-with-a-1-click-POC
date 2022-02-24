@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountGuaranteeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountGuaranteeType",
+		"Description": "The type of guarantee associated with the Customer Account.\n\nEx:\n- Guarantee\n- Letter Of Credit\n- Surety Bond\n- Landlord Agreement\n- Power Of Attorney",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountGuaranteeTypeId",
+					"Description": "The unique identifier of a Customer Account Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType",
+						"Name": "CustomerAccountGuaranteeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountGuaranteeTypeName",
+					"Description": "The name of a Customer Account Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType",
+						"Name": "CustomerAccountGuaranteeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountGuaranteeTypeDescription",
+					"Description": "The description of a Customer Account Guarantee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType",
+						"Name": "CustomerAccountGuaranteeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountGuaranteeType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountGuaranteeType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountGuaranteeTypeId\":{\"entity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"name\":\"CustomerAccountGuaranteeTypeId\"},\"CustomerAccountGuaranteeTypeName\":{\"entity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"name\":\"CustomerAccountGuaranteeTypeName\"},\"CustomerAccountGuaranteeTypeDescription\":{\"entity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"name\":\"CustomerAccountGuaranteeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountGuaranteeType\",\"path\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\"},\"description\":\"The type of guarantee associated with the Customer Account.\\n\\nEx:\\n- Guarantee\\n- Letter Of Credit\\n- Surety Bond\\n- Landlord Agreement\\n- Power Of Attorney\",\"primaryKey\":[\"CustomerAccountGuaranteeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"name\":\"CustomerAccountGuaranteeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Guarantee Type.\",\"isNullable\":false,\"name\":\"CustomerAccountGuaranteeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"name\":\"CustomerAccountGuaranteeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Guarantee Type.\",\"isNullable\":true,\"name\":\"CustomerAccountGuaranteeTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuaranteeType.cdm.json/CustomerAccountGuaranteeType\",\"name\":\"CustomerAccountGuaranteeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Guarantee Type.\",\"isNullable\":true,\"name\":\"CustomerAccountGuaranteeTypeDescription\"}]}}}",
+			"Description": "The type of guarantee associated with the Customer Account.\n\nEx:\n- Guarantee\n- Letter Of Credit\n- Surety Bond\n- Landlord Agreement\n- Power Of Attorney",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountGuaranteeTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

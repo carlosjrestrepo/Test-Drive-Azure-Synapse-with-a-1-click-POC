@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tgwrgqdkep",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-tgwrgqdkep",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerRelationshipType",
+		"ToTableName": "RelatedCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerRelationshipTypeId",
+				"ToColumnName": "CustomerRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"toEntity\":\"RelatedCustomer.cdm.json/RelatedCustomer\",\"joinPairs\":[{\"fromAttribute\":\"CustomerRelationshipTypeId\",\"toAttribute\":\"CustomerRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

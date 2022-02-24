@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sjfdblqojb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-sjfdblqojb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category2CapitalGoodsSpendBasedMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "PurchasedGoodsAndServicesMarketValueCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

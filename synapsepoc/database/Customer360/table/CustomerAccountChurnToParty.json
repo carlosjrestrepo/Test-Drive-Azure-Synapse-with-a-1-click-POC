@@ -1,0 +1,155 @@
+{
+	"name": "CustomerAccountChurnToParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountChurnToParty",
+		"Description": "The party to whom the customer account churned to and the primary reason why.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ChurnToPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty",
+						"Name": "ChurnToPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ChurnReasonId",
+					"Description": "The unique identifier of a Churn Reason.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty",
+						"Name": "ChurnReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChurnToDate",
+					"Description": "The date that the customer account churned-to the associated party.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty",
+						"Name": "ChurnToDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ChurnAmount",
+					"Description": "The amount moved to the churn-to Party from the customer account in the associated churn instance.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty",
+						"Name": "ChurnAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChurnReasonNote",
+					"Description": "A note, comment or additional information regarding the churn-to reason.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty",
+						"Name": "ChurnReasonNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountChurnToParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountChurnToParty",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"CustomerAccountId\"},\"ChurnToPartyId\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnToPartyId\"},\"ChurnReasonId\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnReasonId\"},\"ChurnToDate\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnToDate\"},\"ChurnAmount\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnAmount\"},\"ChurnReasonNote\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnReasonNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountChurnToParty\",\"path\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\"},\"description\":\"The party to whom the customer account churned to and the primary reason why.\",\"primaryKey\":[\"CustomerAccountId\",\"ChurnToPartyId\",\"ChurnReasonId\",\"ChurnToDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnToPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"ChurnToPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnReasonId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Churn Reason.\",\"isNullable\":false,\"name\":\"ChurnReasonId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnToDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the customer account churned-to the associated party.\",\"isNullable\":false,\"name\":\"ChurnToDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount moved to the churn-to Party from the customer account in the associated churn instance.\",\"isNullable\":true,\"scale\":2,\"name\":\"ChurnAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"name\":\"ChurnReasonNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the churn-to reason.\",\"isNullable\":true,\"name\":\"ChurnReasonNote\"}]}}}",
+			"Description": "The party to whom the customer account churned to and the primary reason why.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ChurnToPartyId,ChurnReasonId,ChurnToDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

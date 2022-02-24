@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wpkaguyhrm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-wpkaguyhrm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ContactPurpose",
+		"ToTableName": "CustomerAccountContactPurpose",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContactPurposeId",
+				"ToColumnName": "ContactPurposeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"toEntity\":\"CustomerAccountContactPurpose.cdm.json/CustomerAccountContactPurpose\",\"joinPairs\":[{\"fromAttribute\":\"ContactPurposeId\",\"toAttribute\":\"ContactPurposeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

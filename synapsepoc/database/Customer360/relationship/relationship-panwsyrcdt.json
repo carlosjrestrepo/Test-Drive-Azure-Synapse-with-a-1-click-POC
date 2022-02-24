@@ -1,0 +1,38 @@
+{
+	"name": "relationship-panwsyrcdt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-panwsyrcdt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IsoCurrencyConversion",
+		"ToTableName": "WireTransfer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConvertFromIsoCurrencyCode",
+				"ToColumnName": "ConvertFromIsoCurrencyCode"
+			},
+			{
+				"FromColumnName": "ConvertToIsoCurrencyCode",
+				"ToColumnName": "ConvertToIsoCurrencyCode"
+			},
+			{
+				"FromColumnName": "CurrencyConversionTimestamp",
+				"ToColumnName": "CurrencyConversionTimestamp"
+			},
+			{
+				"FromColumnName": "ExchangeRateTypeId",
+				"ToColumnName": "ExchangeRateTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IsoCurrencyConversion.cdm.json/IsoCurrencyConversion\",\"toEntity\":\"WireTransfer.cdm.json/WireTransfer\",\"joinPairs\":[{\"fromAttribute\":\"ConvertFromIsoCurrencyCode\",\"toAttribute\":\"ConvertFromIsoCurrencyCode\"},{\"fromAttribute\":\"ConvertToIsoCurrencyCode\",\"toAttribute\":\"ConvertToIsoCurrencyCode\"},{\"fromAttribute\":\"CurrencyConversionTimestamp\",\"toAttribute\":\"CurrencyConversionTimestamp\"},{\"fromAttribute\":\"ExchangeRateTypeId\",\"toAttribute\":\"ExchangeRateTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,104 @@
+{
+	"name": "CustomerAccountDocument",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountDocument",
+		"Description": "A document associated with the customer account.\n\nIt is important to know what documentation is available related to customers, orders, service etc. as well as the location of that information.     \n\nInformation is a corporate asset when used properly and available for use by the widest appropriate numbers of users.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountDocument.cdm.json/CustomerAccountDocument",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountDocument.cdm.json/CustomerAccountDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountDocumentNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Document.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountDocument.cdm.json/CustomerAccountDocument",
+						"Name": "CustomerAccountDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountDocument",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountDocument",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"name\":\"CustomerAccountId\"},\"DocumentId\":{\"entity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"name\":\"DocumentId\"},\"CustomerAccountDocumentNote\":{\"entity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"name\":\"CustomerAccountDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountDocument\",\"path\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\"},\"description\":\"A document associated with the customer account.\\n\\nIt is important to know what documentation is available related to customers, orders, service etc. as well as the location of that information.     \\n\\nInformation is a corporate asset when used properly and available for use by the widest appropriate numbers of users.\",\"primaryKey\":[\"CustomerAccountId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountDocument.cdm.json/CustomerAccountDocument\",\"name\":\"CustomerAccountDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Document.\",\"isNullable\":true,\"name\":\"CustomerAccountDocumentNote\"}]}}}",
+			"Description": "A document associated with the customer account.\n\nIt is important to know what documentation is available related to customers, orders, service etc. as well as the location of that information.     \n\nInformation is a corporate asset when used properly and available for use by the widest appropriate numbers of users.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,DocumentId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

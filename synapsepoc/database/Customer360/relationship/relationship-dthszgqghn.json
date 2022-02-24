@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dthszgqghn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-dthszgqghn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DoNotContactRegistry",
+		"ToTableName": "DoNotCallRegistryTelephone",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DoNotContactRegistryId",
+				"ToColumnName": "DoNotContactRegistryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DoNotContactRegistry.cdm.json/DoNotContactRegistry\",\"toEntity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"joinPairs\":[{\"fromAttribute\":\"DoNotContactRegistryId\",\"toAttribute\":\"DoNotContactRegistryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,154 @@
+{
+	"name": "CustomerAccountPropensity",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountPropensity",
+		"Description": "The propensity(ies) associated or exhibited by the customer account over time.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPropensity.cdm.json/CustomerAccountPropensity",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PropensityTypeId",
+					"Description": "The unique identifier of a Propensity Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPropensity.cdm.json/CustomerAccountPropensity",
+						"Name": "PropensityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPropensity.cdm.json/CustomerAccountPropensity",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPropensity.cdm.json/CustomerAccountPropensity",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PropensityRatingId",
+					"Description": "The unique identifier of a Propensity Rating.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPropensity.cdm.json/CustomerAccountPropensity",
+						"Name": "PropensityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountPropensityNote",
+					"Description": "Notes, comments or additional information regarding the customer account propensity.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPropensity.cdm.json/CustomerAccountPropensity",
+						"Name": "CustomerAccountPropensityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPropensity",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPropensity",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"CustomerAccountId\"},\"PropensityTypeId\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PropensityTypeId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PeriodEndDate\"},\"PropensityRatingId\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PropensityRatingId\"},\"CustomerAccountPropensityNote\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"CustomerAccountPropensityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountPropensity\",\"path\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\"},\"description\":\"The propensity(ies) associated or exhibited by the customer account over time.\",\"primaryKey\":[\"CustomerAccountId\",\"PropensityTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PropensityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Propensity Type.\",\"isNullable\":false,\"name\":\"PropensityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated data is effective or 'as-of'.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated data is effective or 'as-of'.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"PropensityRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Propensity Rating.\",\"isNullable\":false,\"name\":\"PropensityRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPropensity.cdm.json/CustomerAccountPropensity\",\"name\":\"CustomerAccountPropensityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the customer account propensity.\",\"isNullable\":true,\"name\":\"CustomerAccountPropensityNote\"}]}}}",
+			"Description": "The propensity(ies) associated or exhibited by the customer account over time.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PropensityTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

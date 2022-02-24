@@ -1,0 +1,138 @@
+{
+	"name": "CustomerReferenceGroup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerReferenceGroup",
+		"Description": "The Reference Group(s) that have been identified as those for which the Individual Customer has membership.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerReferenceGroup.cdm.json/CustomerReferenceGroup",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReferenceGroupId",
+					"Description": "The unique identifier of a Reference Group.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerReferenceGroup.cdm.json/CustomerReferenceGroup",
+						"Name": "ReferenceGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerReferenceGroup.cdm.json/CustomerReferenceGroup",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerReferenceGroup.cdm.json/CustomerReferenceGroup",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerReferenceGroupNote",
+					"Description": "A note, comment or additional information regarding the Individual Customer/Reference Group relationship.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerReferenceGroup.cdm.json/CustomerReferenceGroup",
+						"Name": "CustomerReferenceGroupNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerReferenceGroup",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerReferenceGroup",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"CustomerId\"},\"ReferenceGroupId\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"ReferenceGroupId\"},\"PeriodStartDate\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"PeriodEndDate\"},\"CustomerReferenceGroupNote\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"CustomerReferenceGroupNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerReferenceGroup\",\"path\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\"},\"description\":\"The Reference Group(s) that have been identified as those for which the Individual Customer has membership.\",\"primaryKey\":[\"CustomerId\",\"ReferenceGroupId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"ReferenceGroupId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reference Group.\",\"isNullable\":false,\"name\":\"ReferenceGroupId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated data is effective or 'as-of'.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated data is effective or 'as-of'.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"name\":\"CustomerReferenceGroupNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Individual Customer/Reference Group relationship.\",\"isNullable\":true,\"name\":\"CustomerReferenceGroupNote\"}]}}}",
+			"Description": "The Reference Group(s) that have been identified as those for which the Individual Customer has membership.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerId,ReferenceGroupId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

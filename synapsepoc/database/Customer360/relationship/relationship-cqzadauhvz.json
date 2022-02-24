@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cqzadauhvz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-cqzadauhvz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentMethod",
+		"ToTableName": "TransactionPaymentMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentMethodId",
+				"ToColumnName": "PaymentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"toEntity\":\"TransactionPaymentMethod.cdm.json/TransactionPaymentMethod\",\"joinPairs\":[{\"fromAttribute\":\"PaymentMethodId\",\"toAttribute\":\"PaymentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "ChurnRiskRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "ChurnRiskRating",
+		"Description": "The rating or likelihood that a customer account will churn based on the associated risk(s).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChurnRiskRatingId",
+					"Description": "The unique identifier of a Churn Risk Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnRiskRating.cdm.json/ChurnRiskRating",
+						"Name": "ChurnRiskRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChurnRiskRatingName",
+					"Description": "The name of a Churn Risk Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnRiskRating.cdm.json/ChurnRiskRating",
+						"Name": "ChurnRiskRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChurnRiskRatingDescription",
+					"Description": "The description of a Churn Risk Rating.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnRiskRating.cdm.json/ChurnRiskRating",
+						"Name": "ChurnRiskRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ChurnRiskRating",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ChurnRiskRating",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChurnRiskRatingId\":{\"entity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"name\":\"ChurnRiskRatingId\"},\"ChurnRiskRatingName\":{\"entity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"name\":\"ChurnRiskRatingName\"},\"ChurnRiskRatingDescription\":{\"entity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"name\":\"ChurnRiskRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ChurnRiskRating\",\"path\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\"},\"description\":\"The rating or likelihood that a customer account will churn based on the associated risk(s).\",\"primaryKey\":[\"ChurnRiskRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"name\":\"ChurnRiskRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Churn Risk Rating.\",\"isNullable\":false,\"name\":\"ChurnRiskRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"name\":\"ChurnRiskRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Churn Risk Rating.\",\"isNullable\":true,\"name\":\"ChurnRiskRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnRiskRating.cdm.json/ChurnRiskRating\",\"name\":\"ChurnRiskRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Churn Risk Rating.\",\"isNullable\":true,\"name\":\"ChurnRiskRatingDescription\"}]}}}",
+			"Description": "The rating or likelihood that a customer account will churn based on the associated risk(s).",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "ChurnRiskRatingId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

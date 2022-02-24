@@ -1,0 +1,173 @@
+{
+	"name": "CustomerAccountPeriodBalance",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountPeriodBalance",
+		"Description": "The Customer Account balance of the associated type as of the period shown.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodBalanceTypeId",
+					"Description": "The unique identifier of a Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "PeriodBalanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated balance is defined for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated balance is defined for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "BalanceAmount",
+					"Description": "The Customer Account balance amount reported of the associated Period Balance Type during the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "BalanceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp that the associated period balance first occurred.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPeriodBalance",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPeriodBalance",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"CustomerAccountId\"},\"PeriodBalanceTypeId\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"PeriodBalanceTypeId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"PeriodEndDate\"},\"BalanceAmount\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"BalanceAmount\"},\"Timestamp\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"Timestamp\"},\"IsoCurrencyCode\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountPeriodBalance\",\"path\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\"},\"description\":\"The Customer Account balance of the associated type as of the period shown.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodBalanceTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"PeriodBalanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Balance Type.\",\"isNullable\":false,\"name\":\"PeriodBalanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated balance is defined for the Customer Account.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated balance is defined for the Customer Account.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"BalanceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The Customer Account balance amount reported of the associated Period Balance Type during the associated period.\",\"isNullable\":true,\"scale\":2,\"name\":\"BalanceAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated period balance first occurred.\",\"isNullable\":false,\"name\":\"Timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPeriodBalance.cdm.json/CustomerAccountPeriodBalance\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"}]}}}",
+			"Description": "The Customer Account balance of the associated type as of the period shown.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodBalanceTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

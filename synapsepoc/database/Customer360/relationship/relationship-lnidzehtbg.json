@@ -1,0 +1,34 @@
+{
+	"name": "relationship-lnidzehtbg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-lnidzehtbg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChannelOrderCommission",
+		"ToTableName": "ChannelOrderPartyCommission",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelId",
+				"ToColumnName": "ChannelId"
+			},
+			{
+				"FromColumnName": "CommissionAwardedDate",
+				"ToColumnName": "CommissionAwardedDate"
+			},
+			{
+				"FromColumnName": "TransactionId",
+				"ToColumnName": "TransactionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChannelOrderCommission.cdm.json/ChannelOrderCommission\",\"toEntity\":\"ChannelOrderPartyCommission.cdm.json/ChannelOrderPartyCommission\",\"joinPairs\":[{\"fromAttribute\":\"ChannelId\",\"toAttribute\":\"ChannelId\"},{\"fromAttribute\":\"CommissionAwardedDate\",\"toAttribute\":\"CommissionAwardedDate\"},{\"fromAttribute\":\"TransactionId\",\"toAttribute\":\"TransactionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

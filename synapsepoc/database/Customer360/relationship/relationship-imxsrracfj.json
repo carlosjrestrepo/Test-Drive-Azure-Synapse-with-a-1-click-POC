@@ -1,0 +1,26 @@
+{
+	"name": "relationship-imxsrracfj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-imxsrracfj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category7EmployeeCommutingFuelBasedMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "TransportationServicesSpentCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"TransportationServicesSpentCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

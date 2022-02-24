@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vaoehukdax",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-vaoehukdax",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAccountCreditRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ApprovingPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAccountCreditRequest.cdm.json/CustomerAccountCreditRequest\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ApprovingPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

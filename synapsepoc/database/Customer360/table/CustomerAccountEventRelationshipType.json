@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountEventRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountEventRelationshipType",
+		"Description": "The nature of the relationship between two or more Customer Account Event(s).\n\nEx:\n- Account frozen due to fraudulent activity event",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountEventRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Account Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType",
+						"Name": "CustomerAccountEventRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventRelationshipTypeName",
+					"Description": "The name of a Customer Account Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType",
+						"Name": "CustomerAccountEventRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventRelationshipTypeDescription",
+					"Description": "The description of a Customer Account Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType",
+						"Name": "CustomerAccountEventRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountEventRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountEventRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountEventRelationshipTypeId\":{\"entity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"name\":\"CustomerAccountEventRelationshipTypeId\"},\"CustomerAccountEventRelationshipTypeName\":{\"entity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"name\":\"CustomerAccountEventRelationshipTypeName\"},\"CustomerAccountEventRelationshipTypeDescription\":{\"entity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"name\":\"CustomerAccountEventRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountEventRelationshipType\",\"path\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\"},\"description\":\"The nature of the relationship between two or more Customer Account Event(s).\\n\\nEx:\\n- Account frozen due to fraudulent activity event\",\"primaryKey\":[\"CustomerAccountEventRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"name\":\"CustomerAccountEventRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Event Relationship Type.\",\"isNullable\":false,\"name\":\"CustomerAccountEventRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"name\":\"CustomerAccountEventRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Event Relationship Type.\",\"isNullable\":true,\"name\":\"CustomerAccountEventRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventRelationshipType.cdm.json/CustomerAccountEventRelationshipType\",\"name\":\"CustomerAccountEventRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Event Relationship Type.\",\"isNullable\":true,\"name\":\"CustomerAccountEventRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between two or more Customer Account Event(s).\n\nEx:\n- Account frozen due to fraudulent activity event",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountEventRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,300 @@
+{
+	"name": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+		"Description": "The purchased goods and services from the associated supplier.\n\nActivity data needed \n- Mass or number of units of purchased goods or services for a given year (e.g., kg, hours spent). \n\nCompanies may organize the above data more efficiently by differentiating purchased goods or services into mass and other categories of units (e.g., volume), where appropriate. \n\nEmission factors needed \n\n- Cradle-to-gate emission factors of the purchased goods or services per unit of mass or unit of product (e.g., kg CO2 e/kg or kg CO2 e/hour spent).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "GoodTypeId",
+					"Description": "The unique identifier of a good/service type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "GoodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesUnits",
+					"Description": "The purchased goods/services units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsServicesUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesUomId",
+					"Description": "The purchased goods/services unit of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsServicesUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesMassUnits",
+					"Description": "The mass of purchased goods/services.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsServicesMassUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesMassUomId",
+					"Description": "The purchased goods/services mass UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsServicesMassUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsAndServicesEmissionFactor",
+					"Description": "The purchased goods/services emission factor",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsAndServicesEmissionFactor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsAndServicesEmissionFactorUomId",
+					"Description": "The purchased goods/services emission factor units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsAndServicesEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesAmount",
+					"Description": "The purchased goods/services amount.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsServicesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsServicesCurrencyCode",
+					"Description": "The purchased goods/services amount currency.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "PurchasedGoodsServicesCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The total CO2e emission UOM ID.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"VendorId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"VendorId\"},\"GoodTypeId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"GoodTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"PurchasedGoodsServicesUnits\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesUnits\"},\"PurchasedGoodsServicesUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesUomId\"},\"PurchasedGoodsServicesMassUnits\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesMassUnits\"},\"PurchasedGoodsServicesMassUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesMassUomId\"},\"PurchasedGoodsAndServicesEmissionFactor\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsAndServicesEmissionFactor\"},\"PurchasedGoodsAndServicesEmissionFactorUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsAndServicesEmissionFactorUomId\"},\"PurchasedGoodsServicesAmount\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesAmount\"},\"PurchasedGoodsServicesCurrencyCode\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesCurrencyCode\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"path\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\"},\"description\":\"The purchased goods and services from the associated supplier.\\n\\nActivity data needed \\n- Mass or number of units of purchased goods or services for a given year (e.g., kg, hours spent). \\n\\nCompanies may organize the above data more efficiently by differentiating purchased goods or services into mass and other categories of units (e.g., volume), where appropriate. \\n\\nEmission factors needed \\n\\n- Cradle-to-gate emission factors of the purchased goods or services per unit of mass or unit of product (e.g., kg CO2 e/kg or kg CO2 e/hour spent).\",\"primaryKey\":[\"ReportingLegalEntityId\",\"VendorId\",\"GoodTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":false,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"GoodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a good/service type.\",\"isNullable\":false,\"name\":\"GoodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesUnits\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services units.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesUomId\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services unit of measure.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesMassUnits\"},\"dataType\":\"integer\",\"description\":\"The mass of purchased goods/services.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesMassUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesMassUomId\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services mass UOM.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesMassUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsAndServicesEmissionFactor\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services emission factor\",\"isNullable\":true,\"name\":\"PurchasedGoodsAndServicesEmissionFactor\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsAndServicesEmissionFactorUomId\"},\"dataType\":\"integer\",\"description\":\"The purchased goods/services emission factor units of measure.\",\"isNullable\":true,\"name\":\"PurchasedGoodsAndServicesEmissionFactorUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The purchased goods/services amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"PurchasedGoodsServicesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"PurchasedGoodsServicesCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The purchased goods/services amount currency.\",\"isNullable\":true,\"name\":\"PurchasedGoodsServicesCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodsAndServicesAverageDataMethod.cdm.json/Scope3Category1PurchasedGoodsAndServicesAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission UOM ID.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "The purchased goods and services from the associated supplier.\n\nActivity data needed \n- Mass or number of units of purchased goods or services for a given year (e.g., kg, hours spent). \n\nCompanies may organize the above data more efficiently by differentiating purchased goods or services into mass and other categories of units (e.g., volume), where appropriate. \n\nEmission factors needed \n\n- Cradle-to-gate emission factors of the purchased goods or services per unit of mass or unit of product (e.g., kg CO2 e/kg or kg CO2 e/hour spent).",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,VendorId,GoodTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

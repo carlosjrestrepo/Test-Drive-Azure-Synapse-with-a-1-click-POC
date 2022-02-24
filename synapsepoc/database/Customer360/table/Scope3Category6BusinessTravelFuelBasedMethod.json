@@ -1,0 +1,383 @@
+{
+	"name": "Scope3Category6BusinessTravelFuelBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category6BusinessTravelFuelBasedMethod",
+		"Description": "Fuel-based method\n\nThe calculation methodology for the fuel-based method does not differ from the fuel-based method in category 4 (Upstream transport and distribution).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelTypeId",
+					"Description": "The unique identifier of a fuel type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageUnits",
+					"Description": "The fuel usage units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelUsageUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageUomId",
+					"Description": "The fuel usage UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelUsageUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionsUnits",
+					"Description": "The fugitive emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FugitiveEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionsUomId",
+					"Description": "The fugitive emissions UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FugitiveEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageCostAmount",
+					"Description": "The fuel usage costs amount.\n\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\n\n- Amount spent on fuels and the average price of fuels\n- Distance travelled and the vehicle's fuel efficiency\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\naverage price of fuels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelUsageCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageCostCurrencyCode",
+					"Description": "The fuel usage associated currency.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelUsageCostCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalDistanceTraveledUnits",
+					"Description": "The total distance traveled units.\n\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\n\n- Amount spent on fuels and the average price of fuels\n- Distance travelled and the vehicle's fuel efficiency\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\naverage price of fuels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "TotalDistanceTraveledUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalDistanceTraveledUomId",
+					"Description": "The distance traveled UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "TotalDistanceTraveledUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransportationServicesSpentAmount",
+					"Description": "The amount spent on transportation services. \n\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\n\n- Amount spent on fuels and the average price of fuels\n- Distance travelled and the vehicle's fuel efficiency\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\naverage price of fuels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "TransportationServicesSpentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransportationServicesSpentCurrencyCode",
+					"Description": "The transportation services currency.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "TransportationServicesSpentCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FuelEmissionFactorUnits",
+					"Description": "The fuel emissions factor units.\n\nCompanies should collect:\n\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\ne/liters, CO2 e/Btu)\n\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\nconsumed (e.g., kg CO2 e/kWh)\n\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelEmissionFactorUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelEmissionFactorUomId",
+					"Description": "The fuel emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FuelEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionFactorUnits",
+					"Description": "The fugitive emission factor units.\n\nCompanies should collect:\n\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\ne/liters, CO2 e/Btu)\n\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\nconsumed (e.g., kg CO2 e/kWh)\n\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FugitiveEmissionFactorUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionFactorUomId",
+					"Description": "The fugitive emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "FugitiveEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category6BusinessTravelFuelBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category6BusinessTravelFuelBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"FuelTypeId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"FuelUsageUnits\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageUnits\"},\"FuelUsageUomId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageUomId\"},\"FugitiveEmissionsUnits\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionsUnits\"},\"FugitiveEmissionsUomId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionsUomId\"},\"FuelUsageCostAmount\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageCostAmount\"},\"FuelUsageCostCurrencyCode\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageCostCurrencyCode\"},\"TotalDistanceTraveledUnits\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUnits\"},\"TotalDistanceTraveledUomId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUomId\"},\"TransportationServicesSpentAmount\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TransportationServicesSpentAmount\"},\"TransportationServicesSpentCurrencyCode\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TransportationServicesSpentCurrencyCode\"},\"FuelEmissionFactorUnits\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelEmissionFactorUnits\"},\"FuelEmissionFactorUomId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelEmissionFactorUomId\"},\"FugitiveEmissionFactorUnits\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUnits\"},\"FugitiveEmissionFactorUomId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUomId\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category6BusinessTravelFuelBasedMethod\",\"path\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\"},\"description\":\"Fuel-based method\\n\\nThe calculation methodology for the fuel-based method does not differ from the fuel-based method in category 4 (Upstream transport and distribution).\",\"primaryKey\":[\"ReportingLegalEntityId\",\"FuelTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fuel type.\",\"isNullable\":false,\"name\":\"FuelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageUnits\"},\"dataType\":\"integer\",\"description\":\"The fuel usage units.\",\"isNullable\":true,\"name\":\"FuelUsageUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageUomId\"},\"dataType\":\"integer\",\"description\":\"The fuel usage UOM.\",\"isNullable\":true,\"name\":\"FuelUsageUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The fugitive emission units.\",\"isNullable\":true,\"name\":\"FugitiveEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The fugitive emissions UOM.\",\"isNullable\":true,\"name\":\"FugitiveEmissionsUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The fuel usage costs amount.\\n\\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\\n\\n- Amount spent on fuels and the average price of fuels\\n- Distance travelled and the vehicle's fuel efficiency\\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\\naverage price of fuels.\",\"isNullable\":true,\"scale\":2,\"name\":\"FuelUsageCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelUsageCostCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The fuel usage associated currency.\",\"isNullable\":true,\"name\":\"FuelUsageCostCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUnits\"},\"dataType\":\"integer\",\"description\":\"The total distance traveled units.\\n\\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\\n\\n- Amount spent on fuels and the average price of fuels\\n- Distance travelled and the vehicle's fuel efficiency\\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\\naverage price of fuels.\",\"isNullable\":true,\"name\":\"TotalDistanceTraveledUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUomId\"},\"dataType\":\"integer\",\"description\":\"The distance traveled UOM.\",\"isNullable\":true,\"name\":\"TotalDistanceTraveledUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TransportationServicesSpentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount spent on transportation services. \\n\\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\\n\\n- Amount spent on fuels and the average price of fuels\\n- Distance travelled and the vehicle's fuel efficiency\\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\\naverage price of fuels.\",\"isNullable\":true,\"scale\":2,\"name\":\"TransportationServicesSpentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TransportationServicesSpentCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The transportation services currency.\",\"isNullable\":true,\"name\":\"TransportationServicesSpentCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelEmissionFactorUnits\"},\"dataType\":\"integer\",\"description\":\"The fuel emissions factor units.\\n\\nCompanies should collect:\\n\\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\\ne/liters, CO2 e/Btu)\\n\\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\\nconsumed (e.g., kg CO2 e/kWh)\\n\\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)\",\"isNullable\":true,\"name\":\"FuelEmissionFactorUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FuelEmissionFactorUomId\"},\"dataType\":\"integer\",\"description\":\"The fuel emission factor UOM.\",\"isNullable\":true,\"name\":\"FuelEmissionFactorUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUnits\"},\"dataType\":\"integer\",\"description\":\"The fugitive emission factor units.\\n\\nCompanies should collect:\\n\\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\\ne/liters, CO2 e/Btu)\\n\\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\\nconsumed (e.g., kg CO2 e/kWh)\\n\\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)\",\"isNullable\":true,\"name\":\"FugitiveEmissionFactorUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUomId\"},\"dataType\":\"integer\",\"description\":\"The fugitive emission factor UOM.\",\"isNullable\":true,\"name\":\"FugitiveEmissionFactorUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelFuelBasedMethod.cdm.json/Scope3Category6BusinessTravelFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor UOM.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Fuel-based method\n\nThe calculation methodology for the fuel-based method does not differ from the fuel-based method in category 4 (Upstream transport and distribution).",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,FuelTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

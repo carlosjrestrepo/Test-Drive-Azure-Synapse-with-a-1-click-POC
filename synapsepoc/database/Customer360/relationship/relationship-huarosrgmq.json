@@ -1,0 +1,26 @@
+{
+	"name": "relationship-huarosrgmq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-huarosrgmq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AuthenticationMethod",
+		"ToTableName": "CustomerRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AuthenticationMethodId",
+				"ToColumnName": "AuthenticationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"toEntity\":\"CustomerRelatedPartyAuthenticationMethod.cdm.json/CustomerRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"AuthenticationMethodId\",\"toAttribute\":\"AuthenticationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

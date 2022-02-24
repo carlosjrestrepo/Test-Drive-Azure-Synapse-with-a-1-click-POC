@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wyeowjqsrn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-wyeowjqsrn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountRestrictionType",
+		"ToTableName": "CustomerAccountRestriction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountRestrictionTypeId",
+				"ToColumnName": "CustomerAccountRestrictionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"toEntity\":\"CustomerAccountRestriction.cdm.json/CustomerAccountRestriction\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountRestrictionTypeId\",\"toAttribute\":\"CustomerAccountRestrictionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

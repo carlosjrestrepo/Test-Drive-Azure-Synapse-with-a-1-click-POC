@@ -1,0 +1,26 @@
+{
+	"name": "relationship-emrajqlvcs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-emrajqlvcs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category1PurchasedGoodAndServicesHybridMethodPurchasedGoods",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "GoodsServicesPurchaseCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodPurchasedGoods.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodPurchasedGoods\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"GoodsServicesPurchaseCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

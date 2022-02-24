@@ -1,0 +1,34 @@
+{
+	"name": "relationship-uaewesvaik",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-uaewesvaik",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEvent",
+		"ToTableName": "RelatedCustomerAccountEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEventTimestamp",
+				"ToColumnName": "RelatedCustomerAccountEventTimestamp"
+			},
+			{
+				"FromColumnName": "CustomerAccountEventTypeId",
+				"ToColumnName": "RelatedCustomerAccountEventTypeId"
+			},
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "RelatedCustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEvent.cdm.json/CustomerAccountEvent\",\"toEntity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEventTimestamp\",\"toAttribute\":\"RelatedCustomerAccountEventTimestamp\"},{\"fromAttribute\":\"CustomerAccountEventTypeId\",\"toAttribute\":\"RelatedCustomerAccountEventTypeId\"},{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"RelatedCustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vybgcaclrw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-vybgcaclrw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentStatus",
+		"ToTableName": "CustomerEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentStatusId",
+				"ToColumnName": "EmploymentStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentStatus.cdm.json/EmploymentStatus\",\"toEntity\":\"CustomerEmployment.cdm.json/CustomerEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentStatusId\",\"toAttribute\":\"EmploymentStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

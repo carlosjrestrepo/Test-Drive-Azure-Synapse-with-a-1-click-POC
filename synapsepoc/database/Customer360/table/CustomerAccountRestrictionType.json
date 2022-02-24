@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountRestrictionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountRestrictionType",
+		"Description": "A type of customer account restriction that may be applied to a Customer Account.\n\nEx:\n- Cash purchases only\n- No non-US purchases allowed\n- Purchases require management approval\n- Minimum Initial Purchase\n- Minimum Subsequent Purchase\n- Account shipments to US locations only\n- Government Business Only",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountRestrictionTypeId",
+					"Description": "The unique identifier of a Customer Account Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType",
+						"Name": "CustomerAccountRestrictionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRestrictionTypeName",
+					"Description": "The name of a Customer Account Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType",
+						"Name": "CustomerAccountRestrictionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRestrictionTypeDescription",
+					"Description": "The description of a Customer Account Restriction Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType",
+						"Name": "CustomerAccountRestrictionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountRestrictionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountRestrictionType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountRestrictionTypeId\":{\"entity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"name\":\"CustomerAccountRestrictionTypeId\"},\"CustomerAccountRestrictionTypeName\":{\"entity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"name\":\"CustomerAccountRestrictionTypeName\"},\"CustomerAccountRestrictionTypeDescription\":{\"entity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"name\":\"CustomerAccountRestrictionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountRestrictionType\",\"path\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\"},\"description\":\"A type of customer account restriction that may be applied to a Customer Account.\\n\\nEx:\\n- Cash purchases only\\n- No non-US purchases allowed\\n- Purchases require management approval\\n- Minimum Initial Purchase\\n- Minimum Subsequent Purchase\\n- Account shipments to US locations only\\n- Government Business Only\",\"primaryKey\":[\"CustomerAccountRestrictionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"name\":\"CustomerAccountRestrictionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Restriction Type.\",\"isNullable\":false,\"name\":\"CustomerAccountRestrictionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"name\":\"CustomerAccountRestrictionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Restriction Type.\",\"isNullable\":true,\"name\":\"CustomerAccountRestrictionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountRestrictionType.cdm.json/CustomerAccountRestrictionType\",\"name\":\"CustomerAccountRestrictionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Restriction Type.\",\"isNullable\":true,\"name\":\"CustomerAccountRestrictionTypeDescription\"}]}}}",
+			"Description": "A type of customer account restriction that may be applied to a Customer Account.\n\nEx:\n- Cash purchases only\n- No non-US purchases allowed\n- Purchases require management approval\n- Minimum Initial Purchase\n- Minimum Subsequent Purchase\n- Account shipments to US locations only\n- Government Business Only",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountRestrictionTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

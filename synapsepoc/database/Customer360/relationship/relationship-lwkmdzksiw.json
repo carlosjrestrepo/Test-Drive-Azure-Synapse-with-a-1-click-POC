@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lwkmdzksiw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-lwkmdzksiw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentCard",
+		"ToTableName": "CustomerAccountPaymentCard",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentCardId",
+				"ToColumnName": "PaymentCardId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentCard.cdm.json/PaymentCard\",\"toEntity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"joinPairs\":[{\"fromAttribute\":\"PaymentCardId\",\"toAttribute\":\"PaymentCardId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

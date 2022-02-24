@@ -1,0 +1,189 @@
+{
+	"name": "ScheduledLearningEventPartyFee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "ScheduledLearningEventPartyFee",
+		"Description": "A fee or charge associated with an Individual Party for the Scheduled Learning Event.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ScheduledLearningEventId",
+					"Description": "The unique identifier of a Scheduled Learning Event.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "ScheduledLearningEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LearningEventFeeTypeId",
+					"Description": "The unique identifier of the Learning Event Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "LearningEventFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FeeDueAmount",
+					"Description": "The amount of the fee due.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "FeeDueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FeePaidAmount",
+					"Description": "The amount of the fee paid.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "FeePaidAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FeeNote",
+					"Description": "A note, comment or additional information regarding the fee.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "FeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FeePaymentStatusId",
+					"Description": "The unique identifier of a Fee Payment Status.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "FeePaymentStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ScheduledLearningEventPartyFee",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ScheduledLearningEventPartyFee",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ScheduledLearningEventId\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"ScheduledLearningEventId\"},\"LearningEventFeeTypeId\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"LearningEventFeeTypeId\"},\"PartyId\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"PartyId\"},\"FeeDueAmount\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeeDueAmount\"},\"FeePaidAmount\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeePaidAmount\"},\"FeeNote\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeeNote\"},\"FeePaymentStatusId\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeePaymentStatusId\"},\"IsoCurrencyCode\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ScheduledLearningEventPartyFee\",\"path\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\"},\"description\":\"A fee or charge associated with an Individual Party for the Scheduled Learning Event.\",\"primaryKey\":[\"ScheduledLearningEventId\",\"LearningEventFeeTypeId\",\"PartyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"ScheduledLearningEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Scheduled Learning Event.\",\"isNullable\":false,\"name\":\"ScheduledLearningEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"LearningEventFeeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Learning Event Fee Type.\",\"isNullable\":false,\"name\":\"LearningEventFeeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeeDueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the fee due.\",\"isNullable\":true,\"scale\":2,\"name\":\"FeeDueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeePaidAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the fee paid.\",\"isNullable\":true,\"scale\":2,\"name\":\"FeePaidAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the fee.\",\"isNullable\":true,\"name\":\"FeeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"FeePaymentStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Fee Payment Status.\",\"isNullable\":true,\"name\":\"FeePaymentStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ScheduledLearningEventPartyFee.cdm.json/ScheduledLearningEventPartyFee\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"}]}}}",
+			"Description": "A fee or charge associated with an Individual Party for the Scheduled Learning Event.",
+			"DisplayFolderInfo": "{\"name\":\"Training & Education\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "ScheduledLearningEventId,LearningEventFeeTypeId,PartyId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

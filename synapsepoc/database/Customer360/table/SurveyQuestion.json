@@ -1,0 +1,103 @@
+{
+	"name": "SurveyQuestion",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "SurveyQuestion",
+		"Description": "The question(s) included with the associated Survey.\n\nA question may be asked on one or more Surveys.   This enables the organization to ask the same question in many different scenarios and correlate the response by geography, individual, individual type, product, market, market segment or other criteria.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SurveyId",
+					"Description": "The unique identifier of a Survey.",
+					"BaseAttributeReference": {
+						"Entity": "SurveyQuestion.cdm.json/SurveyQuestion",
+						"Name": "SurveyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "QuestionId",
+					"Description": "The unique identifier of a Question.",
+					"BaseAttributeReference": {
+						"Entity": "SurveyQuestion.cdm.json/SurveyQuestion",
+						"Name": "QuestionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SurveyQuestionPositionNumber",
+					"Description": "The position of the question on the survey.",
+					"BaseAttributeReference": {
+						"Entity": "SurveyQuestion.cdm.json/SurveyQuestion",
+						"Name": "SurveyQuestionPositionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/SurveyQuestion",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/SurveyQuestion",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SurveyId\":{\"entity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"name\":\"SurveyId\"},\"QuestionId\":{\"entity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"name\":\"QuestionId\"},\"SurveyQuestionPositionNumber\":{\"entity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"name\":\"SurveyQuestionPositionNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SurveyQuestion\",\"path\":\"SurveyQuestion.cdm.json/SurveyQuestion\"},\"description\":\"The question(s) included with the associated Survey.\\n\\nA question may be asked on one or more Surveys.   This enables the organization to ask the same question in many different scenarios and correlate the response by geography, individual, individual type, product, market, market segment or other criteria.\",\"primaryKey\":[\"SurveyId\",\"QuestionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"name\":\"SurveyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Survey.\",\"isNullable\":false,\"name\":\"SurveyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"name\":\"QuestionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Question.\",\"isNullable\":false,\"name\":\"QuestionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"name\":\"SurveyQuestionPositionNumber\"},\"dataType\":\"integer\",\"description\":\"The position of the question on the survey.\",\"isNullable\":true,\"name\":\"SurveyQuestionPositionNumber\"}]}}}",
+			"Description": "The question(s) included with the associated Survey.\n\nA question may be asked on one or more Surveys.   This enables the organization to ask the same question in many different scenarios and correlate the response by geography, individual, individual type, product, market, market segment or other criteria.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Service & Contact Management\",\"colorCode\":\"#Ef6950\"}",
+			"PrimaryKeys": "SurveyId,QuestionId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

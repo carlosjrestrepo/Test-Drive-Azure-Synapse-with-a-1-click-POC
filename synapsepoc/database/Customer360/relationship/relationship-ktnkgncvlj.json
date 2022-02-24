@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ktnkgncvlj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ktnkgncvlj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAccountChurnToParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ChurnToPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAccountChurnToParty.cdm.json/CustomerAccountChurnToParty\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ChurnToPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

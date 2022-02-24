@@ -1,0 +1,34 @@
+{
+	"name": "relationship-xzygvxknan",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-xzygvxknan",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountEvent",
+		"ToTableName": "RelatedCustomerAccountEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountEventTimestamp",
+				"ToColumnName": "CustomerAccountEventTimestamp"
+			},
+			{
+				"FromColumnName": "CustomerAccountEventTypeId",
+				"ToColumnName": "CustomerAccountEventTypeId"
+			},
+			{
+				"FromColumnName": "CustomerAccountId",
+				"ToColumnName": "CustomerAccountId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountEvent.cdm.json/CustomerAccountEvent\",\"toEntity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountEventTimestamp\",\"toAttribute\":\"CustomerAccountEventTimestamp\"},{\"fromAttribute\":\"CustomerAccountEventTypeId\",\"toAttribute\":\"CustomerAccountEventTypeId\"},{\"fromAttribute\":\"CustomerAccountId\",\"toAttribute\":\"CustomerAccountId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

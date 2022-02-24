@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hxwsgjxlpy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-hxwsgjxlpy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAccountChurnFromParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ChurnFromPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAccountChurnFromParty.cdm.json/CustomerAccountChurnFromParty\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ChurnFromPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hxmokaiqoq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-hxmokaiqoq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Promotion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PromotingPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Promotion.cdm.json/Promotion\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PromotingPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

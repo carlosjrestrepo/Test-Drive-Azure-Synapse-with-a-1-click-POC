@@ -1,0 +1,208 @@
+{
+	"name": "CurrencyExchange",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CurrencyExchange",
+		"Description": "An exchange (conversion) of currency from one denomination to another.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransferFromCurrencyId",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "TransferFromCurrencyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransferFromCurrencyTransactionAmount",
+					"Description": "The transfer-from currency amount associated with the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "TransferFromCurrencyTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransferToCurrencyId",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "TransferToCurrencyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransferToCurrencyTransactionAmount",
+					"Description": "The transfer-to currency amount associated with the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "TransferToCurrencyTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ConvertFromIsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "ConvertFromIsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ConvertToIsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "ConvertToIsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExchangeRateTypeId",
+					"Description": "The unique identifier of a Exchange Rate Type.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "ExchangeRateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CurrencyConversionTimestamp",
+					"Description": "The timestamp for which the currency conversion is provided.",
+					"BaseAttributeReference": {
+						"Entity": "CurrencyExchange.cdm.json/CurrencyExchange",
+						"Name": "CurrencyConversionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CurrencyExchange",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CurrencyExchange",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransactionId\"},\"TransferFromCurrencyId\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferFromCurrencyId\"},\"TransferFromCurrencyTransactionAmount\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferFromCurrencyTransactionAmount\"},\"TransferToCurrencyId\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferToCurrencyId\"},\"TransferToCurrencyTransactionAmount\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferToCurrencyTransactionAmount\"},\"ConvertFromIsoCurrencyCode\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"ConvertFromIsoCurrencyCode\"},\"ConvertToIsoCurrencyCode\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"ConvertToIsoCurrencyCode\"},\"ExchangeRateTypeId\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"ExchangeRateTypeId\"},\"CurrencyConversionTimestamp\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"CurrencyConversionTimestamp\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CurrencyExchange\",\"path\":\"CurrencyExchange.cdm.json/CurrencyExchange\"},\"description\":\"An exchange (conversion) of currency from one denomination to another.\",\"primaryKey\":[\"TransactionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferFromCurrencyId\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"TransferFromCurrencyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferFromCurrencyTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The transfer-from currency amount associated with the transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"TransferFromCurrencyTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferToCurrencyId\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"TransferToCurrencyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"TransferToCurrencyTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The transfer-to currency amount associated with the transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"TransferToCurrencyTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"ConvertFromIsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"ConvertFromIsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"ConvertToIsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"ConvertToIsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"ExchangeRateTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Exchange Rate Type.\",\"isNullable\":true,\"name\":\"ExchangeRateTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrencyExchange.cdm.json/CurrencyExchange\",\"name\":\"CurrencyConversionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp for which the currency conversion is provided.\",\"isNullable\":true,\"name\":\"CurrencyConversionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"}]}}}",
+			"Description": "An exchange (conversion) of currency from one denomination to another.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

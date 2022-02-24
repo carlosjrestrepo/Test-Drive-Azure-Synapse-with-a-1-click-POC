@@ -1,0 +1,30 @@
+{
+	"name": "relationship-tfgpdhcbbt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-tfgpdhcbbt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerFinancialProfile",
+		"ToTableName": "FinancialProfileAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "Date",
+				"ToColumnName": "Date"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerFinancialProfile.cdm.json/CustomerFinancialProfile\",\"toEntity\":\"FinancialProfileAsset.cdm.json/FinancialProfileAsset\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"Date\",\"toAttribute\":\"Date\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

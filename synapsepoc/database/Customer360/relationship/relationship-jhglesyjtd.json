@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jhglesyjtd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-jhglesyjtd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "EmissionsFromProjectFinanceAverageDataMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "ProjectConstructionCostCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"ProjectConstructionCostCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-behaicfeua",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-behaicfeua",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CreditStatusType",
+		"ToTableName": "CustomerAccountCreditStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CreditStatusTypeId",
+				"ToColumnName": "CreditStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"toEntity\":\"CustomerAccountCreditStatus.cdm.json/CustomerAccountCreditStatus\",\"joinPairs\":[{\"fromAttribute\":\"CreditStatusTypeId\",\"toAttribute\":\"CreditStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

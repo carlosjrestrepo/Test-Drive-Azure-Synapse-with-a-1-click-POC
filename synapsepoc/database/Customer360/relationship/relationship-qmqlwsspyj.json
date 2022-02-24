@@ -1,0 +1,30 @@
+{
+	"name": "relationship-qmqlwsspyj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-qmqlwsspyj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProductBenefitCriteria",
+		"ToTableName": "CustomerProductBenefitCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BenefitCriteriaId",
+				"ToColumnName": "BenefitCriteriaId"
+			},
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProductBenefitCriteria.cdm.json/ProductBenefitCriteria\",\"toEntity\":\"CustomerProductBenefitCriteria.cdm.json/CustomerProductBenefitCriteria\",\"joinPairs\":[{\"fromAttribute\":\"BenefitCriteriaId\",\"toAttribute\":\"BenefitCriteriaId\"},{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

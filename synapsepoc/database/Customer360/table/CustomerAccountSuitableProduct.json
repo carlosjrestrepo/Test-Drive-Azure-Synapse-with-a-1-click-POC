@@ -1,0 +1,154 @@
+{
+	"name": "CustomerAccountSuitableProduct",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountSuitableProduct",
+		"Description": "One of more Product(s) that have been judged to be suitable for marketing to the associated Customer Account for the period indicated.\n\nFor example, a family with small children is targeted for school lunch products via promotions, advertising etc. whereby a retired couple would not.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated Product(s) are identified as suitable for the associated Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated Product(s) are identified as suitable for the associated Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ProductSuitabilityNote",
+					"Description": "Notes, comments or additional information regarding the Product suitability for the associated Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "ProductSuitabilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductSuitabilityRatingId",
+					"Description": "The unique identifier of a Product Suitability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct",
+						"Name": "ProductSuitabilityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountSuitableProduct",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountSuitableProduct",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"CustomerAccountId\"},\"ProductId\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodEndDate\"},\"ProductSuitabilityNote\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityNote\"},\"ProductSuitabilityRatingId\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityRatingId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountSuitableProduct\",\"path\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\"},\"description\":\"One of more Product(s) that have been judged to be suitable for marketing to the associated Customer Account for the period indicated.\\n\\nFor example, a family with small children is targeted for school lunch products via promotions, advertising etc. whereby a retired couple would not.\",\"primaryKey\":[\"CustomerAccountId\",\"ProductId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated Product(s) are identified as suitable for the associated Customer Account.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated Product(s) are identified as suitable for the associated Customer Account.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Product suitability for the associated Customer Account.\",\"isNullable\":true,\"name\":\"ProductSuitabilityNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountSuitableProduct.cdm.json/CustomerAccountSuitableProduct\",\"name\":\"ProductSuitabilityRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Product Suitability Rating.\",\"isNullable\":true,\"name\":\"ProductSuitabilityRatingId\"}]}}}",
+			"Description": "One of more Product(s) that have been judged to be suitable for marketing to the associated Customer Account for the period indicated.\n\nFor example, a family with small children is targeted for school lunch products via promotions, advertising etc. whereby a retired couple would not.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,ProductId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

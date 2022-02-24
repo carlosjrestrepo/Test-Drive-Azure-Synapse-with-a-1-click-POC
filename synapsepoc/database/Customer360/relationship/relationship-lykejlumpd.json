@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lykejlumpd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-lykejlumpd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "JobTitle",
+		"ToTableName": "CustomerAuthorizedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "JobTitleId",
+				"ToColumnName": "JobTitleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"JobTitle.cdm.json/JobTitle\",\"toEntity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"joinPairs\":[{\"fromAttribute\":\"JobTitleId\",\"toAttribute\":\"JobTitleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

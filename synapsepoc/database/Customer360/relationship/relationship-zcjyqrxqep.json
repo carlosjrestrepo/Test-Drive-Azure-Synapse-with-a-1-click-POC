@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zcjyqrxqep",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-zcjyqrxqep",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "EmissionsFromProjectFinanceAndDebtInvestmentWithKnownUseOfProceeds",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "TotalProjectCostsCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"EmissionsFromProjectFinanceAndDebtInvestmentWithKnownUseOfProceeds.cdm.json/EmissionsFromProjectFinanceAndDebtInvestmentWithKnownUseOfProceeds\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"TotalProjectCostsCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

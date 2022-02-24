@@ -1,0 +1,222 @@
+{
+	"name": "EmissionsFromProjectFinanceAverageDataMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "EmissionsFromProjectFinanceAverageDataMethod",
+		"Description": "Average-data method, which involves using EEIO data to estimate the scope 1 and scope 2 emissions from the investee company and allocating emissions based on share of total project costs (total equity plus debt).\n\nEmissions from project finance and debt investments with known use proceeds = sum across projects in the construction phase:  ((project construction cost in the reporting year ($) x emission factor of relevant construction sector (kg CO2\ne/$ revenue)) x share of total project costs (%))",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProjectId",
+					"Description": "The unique identifier of a Project.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "ProjectId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProjectConstructionCostAmount",
+					"Description": "The project construction cost amount.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "ProjectConstructionCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProjectConstructionCostCurrencyCode",
+					"Description": "The project construction cost amount currency.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "ProjectConstructionCostCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EmissionFactorOfRelevantConstructionSector",
+					"Description": "The emission factor of the relevant construction sector.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "EmissionFactorOfRelevantConstructionSector"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShareOfTotalProjectCostsPercentage",
+					"Description": "The percentage share of total project costs.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "ShareOfTotalProjectCostsPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The total CO2e emission UOM ID.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/EmissionsFromProjectFinanceAverageDataMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/EmissionsFromProjectFinanceAverageDataMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"ProjectId\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ProjectId\"},\"PeriodStartTimestamp\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"ProjectConstructionCostAmount\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ProjectConstructionCostAmount\"},\"ProjectConstructionCostCurrencyCode\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ProjectConstructionCostCurrencyCode\"},\"EmissionFactorOfRelevantConstructionSector\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"EmissionFactorOfRelevantConstructionSector\"},\"ShareOfTotalProjectCostsPercentage\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ShareOfTotalProjectCostsPercentage\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmissionsFromProjectFinanceAverageDataMethod\",\"path\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\"},\"description\":\"Average-data method, which involves using EEIO data to estimate the scope 1 and scope 2 emissions from the investee company and allocating emissions based on share of total project costs (total equity plus debt).\\n\\nEmissions from project finance and debt investments with known use proceeds = sum across projects in the construction phase:  ((project construction cost in the reporting year ($) x emission factor of relevant construction sector (kg CO2\\ne/$ revenue)) x share of total project costs (%))\",\"primaryKey\":[\"ReportingLegalEntityId\",\"ProjectId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ProjectId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Project.\",\"isNullable\":false,\"name\":\"ProjectId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ProjectConstructionCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The project construction cost amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"ProjectConstructionCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ProjectConstructionCostCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The project construction cost amount currency.\",\"isNullable\":true,\"name\":\"ProjectConstructionCostCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"EmissionFactorOfRelevantConstructionSector\"},\"dataType\":\"integer\",\"description\":\"The emission factor of the relevant construction sector.\",\"isNullable\":true,\"name\":\"EmissionFactorOfRelevantConstructionSector\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"ShareOfTotalProjectCostsPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage share of total project costs.\",\"isNullable\":true,\"scale\":8,\"name\":\"ShareOfTotalProjectCostsPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromProjectFinanceAverageDataMethod.cdm.json/EmissionsFromProjectFinanceAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission UOM ID.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Average-data method, which involves using EEIO data to estimate the scope 1 and scope 2 emissions from the investee company and allocating emissions based on share of total project costs (total equity plus debt).\n\nEmissions from project finance and debt investments with known use proceeds = sum across projects in the construction phase:  ((project construction cost in the reporting year ($) x emission factor of relevant construction sector (kg CO2\ne/$ revenue)) x share of total project costs (%))",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,ProjectId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

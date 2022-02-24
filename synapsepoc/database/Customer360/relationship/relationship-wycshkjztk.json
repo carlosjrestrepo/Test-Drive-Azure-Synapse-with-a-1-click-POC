@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wycshkjztk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-wycshkjztk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LeadSource",
+		"ToTableName": "CustomerLead",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LeadSourceId",
+				"ToColumnName": "LeadSourceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LeadSource.cdm.json/LeadSource\",\"toEntity\":\"CustomerLead.cdm.json/CustomerLead\",\"joinPairs\":[{\"fromAttribute\":\"LeadSourceId\",\"toAttribute\":\"LeadSourceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-akdlcoikdw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-akdlcoikdw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BillingCycle",
+		"ToTableName": "ConsumerLoan",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillingCycleId",
+				"ToColumnName": "BillingCycleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BillingCycle.cdm.json/BillingCycle\",\"toEntity\":\"ConsumerLoan.cdm.json/ConsumerLoan\",\"joinPairs\":[{\"fromAttribute\":\"BillingCycleId\",\"toAttribute\":\"BillingCycleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

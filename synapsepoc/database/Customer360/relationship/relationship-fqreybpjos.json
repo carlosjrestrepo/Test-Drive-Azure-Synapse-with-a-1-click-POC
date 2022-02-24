@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fqreybpjos",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-fqreybpjos",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaicsIndustry",
+		"ToTableName": "NaicsNationalIndustry",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaicsIndustryCode",
+				"ToColumnName": "NaicsIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaicsIndustry.cdm.json/NaicsIndustry\",\"toEntity\":\"NaicsNationalIndustry.cdm.json/NaicsNationalIndustry\",\"joinPairs\":[{\"fromAttribute\":\"NaicsIndustryCode\",\"toAttribute\":\"NaicsIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

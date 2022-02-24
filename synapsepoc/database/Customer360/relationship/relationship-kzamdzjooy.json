@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kzamdzjooy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-kzamdzjooy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CurrencyUsage",
+		"ToTableName": "PartyCurrencyUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CurrencyUsageId",
+				"ToColumnName": "CurrencyUsageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CurrencyUsage.cdm.json/CurrencyUsage\",\"toEntity\":\"PartyCurrencyUsage.cdm.json/PartyCurrencyUsage\",\"joinPairs\":[{\"fromAttribute\":\"CurrencyUsageId\",\"toAttribute\":\"CurrencyUsageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

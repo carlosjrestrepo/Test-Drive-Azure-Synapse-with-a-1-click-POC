@@ -1,0 +1,38 @@
+{
+	"name": "relationship-lunoiruduq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-lunoiruduq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IsoCurrencyConversion",
+		"ToTableName": "Payment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConvertFromIsoCurrencyCode",
+				"ToColumnName": "ConvertFromIsoCurrencyCode"
+			},
+			{
+				"FromColumnName": "ConvertToIsoCurrencyCode",
+				"ToColumnName": "ConvertToIsoCurrencyCode"
+			},
+			{
+				"FromColumnName": "CurrencyConversionTimestamp",
+				"ToColumnName": "CurrencyConversionTimestamp"
+			},
+			{
+				"FromColumnName": "ExchangeRateTypeId",
+				"ToColumnName": "ExchangeRateTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IsoCurrencyConversion.cdm.json/IsoCurrencyConversion\",\"toEntity\":\"Payment.cdm.json/Payment\",\"joinPairs\":[{\"fromAttribute\":\"ConvertFromIsoCurrencyCode\",\"toAttribute\":\"ConvertFromIsoCurrencyCode\"},{\"fromAttribute\":\"ConvertToIsoCurrencyCode\",\"toAttribute\":\"ConvertToIsoCurrencyCode\"},{\"fromAttribute\":\"CurrencyConversionTimestamp\",\"toAttribute\":\"CurrencyConversionTimestamp\"},{\"fromAttribute\":\"ExchangeRateTypeId\",\"toAttribute\":\"ExchangeRateTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

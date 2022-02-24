@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hjcvmaiaon",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-hjcvmaiaon",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountFeatureType",
+		"ToTableName": "CustomerAccountFeature",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountFeatureTypeId",
+				"ToColumnName": "CustomerAccountFeatureTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountFeatureType.cdm.json/CustomerAccountFeatureType\",\"toEntity\":\"CustomerAccountFeature.cdm.json/CustomerAccountFeature\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountFeatureTypeId\",\"toAttribute\":\"CustomerAccountFeatureTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

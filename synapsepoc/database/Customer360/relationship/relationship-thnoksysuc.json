@@ -1,0 +1,26 @@
+{
+	"name": "relationship-thnoksysuc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-thnoksysuc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "QuestionResponseRating",
+		"ToTableName": "CustomerAccountSurveyQuestionResponse",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "QuestionResponseRatingId",
+				"ToColumnName": "QuestionResponseRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"QuestionResponseRating.cdm.json/QuestionResponseRating\",\"toEntity\":\"CustomerAccountSurveyQuestionResponse.cdm.json/CustomerAccountSurveyQuestionResponse\",\"joinPairs\":[{\"fromAttribute\":\"QuestionResponseRatingId\",\"toAttribute\":\"QuestionResponseRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xbnpsisjup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-xbnpsisjup",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BillingCycle",
+		"ToTableName": "CreditCardPayment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BillingCycleId",
+				"ToColumnName": "BillingCycleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BillingCycle.cdm.json/BillingCycle\",\"toEntity\":\"CreditCardPayment.cdm.json/CreditCardPayment\",\"joinPairs\":[{\"fromAttribute\":\"BillingCycleId\",\"toAttribute\":\"BillingCycleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

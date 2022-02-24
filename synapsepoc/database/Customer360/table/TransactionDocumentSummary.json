@@ -1,0 +1,247 @@
+{
+	"name": "TransactionDocumentSummary",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "TransactionDocumentSummary",
+		"Description": "A document associated with the transaction.\n\nEx:\n- Invoice\n- Credit Memo\n- Exchange Memo\n- Return Allowance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionDocumentNote",
+					"Description": "A note, comment or additional information regarding the Transaction Document.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TransactionDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentProductRelatedAmount",
+					"Description": "The total transaction document product related amount.\n\nEx:\n- Total Invoice Amount",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentProductRelatedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentServiceRelatedAmount",
+					"Description": "The total transaction document service related amount.\n\nEx:\n- Total Installation Service Amount",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentServiceRelatedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentOtherChargesRelatedAmount",
+					"Description": "The total transaction document other charges related amount.\n\nEx:\n- Total due amount",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentOtherChargesRelatedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentAdjustmentsAmount",
+					"Description": "The total transaction document adjustment(s) amount.\n\nEx:\n- Total Refund Amount\n- Total Rebate Amount",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentAdjustmentsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentTaxesAmount",
+					"Description": "The total transaction document axes related amount .",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentTaxesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentDueCustomerAmount",
+					"Description": "The total transaction document total due customer amount.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentDueCustomerAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionDocumentDueCompanyAmount",
+					"Description": "The total transaction document total due company amount.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "TotalTransactionDocumentDueCompanyAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentSummary.cdm.json/TransactionDocumentSummary",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionDocumentSummary",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionDocumentSummary",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TransactionId\"},\"DocumentId\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"DocumentId\"},\"TransactionDocumentNote\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TransactionDocumentNote\"},\"TotalTransactionDocumentProductRelatedAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentProductRelatedAmount\"},\"TotalTransactionDocumentServiceRelatedAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentServiceRelatedAmount\"},\"TotalTransactionDocumentOtherChargesRelatedAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentOtherChargesRelatedAmount\"},\"TotalTransactionDocumentAdjustmentsAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentAdjustmentsAmount\"},\"TotalTransactionDocumentTaxesAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentTaxesAmount\"},\"TotalTransactionDocumentDueCustomerAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentDueCustomerAmount\"},\"TotalTransactionDocumentDueCompanyAmount\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentDueCompanyAmount\"},\"IsoCurrencyCode\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionDocumentSummary\",\"path\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\"},\"description\":\"A document associated with the transaction.\\n\\nEx:\\n- Invoice\\n- Credit Memo\\n- Exchange Memo\\n- Return Allowance\",\"primaryKey\":[\"TransactionId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TransactionDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Transaction Document.\",\"isNullable\":true,\"name\":\"TransactionDocumentNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentProductRelatedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document product related amount.\\n\\nEx:\\n- Total Invoice Amount\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentProductRelatedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentServiceRelatedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document service related amount.\\n\\nEx:\\n- Total Installation Service Amount\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentServiceRelatedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentOtherChargesRelatedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document other charges related amount.\\n\\nEx:\\n- Total due amount\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentOtherChargesRelatedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentAdjustmentsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document adjustment(s) amount.\\n\\nEx:\\n- Total Refund Amount\\n- Total Rebate Amount\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentAdjustmentsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentTaxesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document axes related amount .\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentTaxesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentDueCustomerAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document total due customer amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentDueCustomerAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"TotalTransactionDocumentDueCompanyAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total transaction document total due company amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionDocumentDueCompanyAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentSummary.cdm.json/TransactionDocumentSummary\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"}]}}}",
+			"Description": "A document associated with the transaction.\n\nEx:\n- Invoice\n- Credit Memo\n- Exchange Memo\n- Return Allowance",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId,DocumentId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

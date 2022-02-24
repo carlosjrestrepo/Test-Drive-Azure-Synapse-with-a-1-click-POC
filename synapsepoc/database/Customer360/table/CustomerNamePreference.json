@@ -1,0 +1,154 @@
+{
+	"name": "CustomerNamePreference",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerNamePreference",
+		"Description": "The customer's specified preference for using a particular name.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerNamePreference.cdm.json/CustomerNamePreference",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NamePreferenceId",
+					"Description": "The unique identifier of a name preference.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerNamePreference.cdm.json/CustomerNamePreference",
+						"Name": "NamePreferenceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date of the associated Customer Name Preference.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerNamePreference.cdm.json/CustomerNamePreference",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date of the associated Customer Name Preference.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerNamePreference.cdm.json/CustomerNamePreference",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerNameId",
+					"Description": "The unique identifier of a Customer Name.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerNamePreference.cdm.json/CustomerNamePreference",
+						"Name": "CustomerNameId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerNamePreferenceNote",
+					"Description": "A note, comment or additional information regarding the customer name preference.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerNamePreference.cdm.json/CustomerNamePreference",
+						"Name": "CustomerNamePreferenceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerNamePreference",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerNamePreference",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"CustomerId\"},\"NamePreferenceId\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"NamePreferenceId\"},\"PeriodStartDate\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"PeriodEndDate\"},\"CustomerNameId\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"CustomerNameId\"},\"CustomerNamePreferenceNote\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"CustomerNamePreferenceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerNamePreference\",\"path\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\"},\"description\":\"The customer's specified preference for using a particular name.\",\"primaryKey\":[\"CustomerId\",\"NamePreferenceId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"NamePreferenceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a name preference.\",\"isNullable\":false,\"name\":\"NamePreferenceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date of the associated Customer Name Preference.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date of the associated Customer Name Preference.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"CustomerNameId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Name.\",\"isNullable\":true,\"name\":\"CustomerNameId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"name\":\"CustomerNamePreferenceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer name preference.\",\"isNullable\":true,\"name\":\"CustomerNamePreferenceNote\"}]}}}",
+			"Description": "The customer's specified preference for using a particular name.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerId,NamePreferenceId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

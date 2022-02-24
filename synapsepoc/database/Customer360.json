@@ -1,0 +1,23 @@
+{
+	"name": "Customer360",
+	"properties": {
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Banking\",\"Version\":\"0.1.0\"}}}"
+		},
+		"Name": "Customer360",
+		"EntityType": "DATABASE",
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

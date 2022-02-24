@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hlwvvlngpb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-hlwvvlngpb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "TransportationProviderPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionSpendBasedMethod\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"TransportationProviderPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

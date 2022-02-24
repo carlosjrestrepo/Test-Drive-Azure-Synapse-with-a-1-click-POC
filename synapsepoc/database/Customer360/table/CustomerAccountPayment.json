@@ -1,0 +1,122 @@
+{
+	"name": "CustomerAccountPayment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountPayment",
+		"Description": "The one or more payments applied to a customer account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PaymentId",
+					"Description": "The unique identifier of a Payment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPayment.cdm.json/CustomerAccountPayment",
+						"Name": "PaymentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPayment.cdm.json/CustomerAccountPayment",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AmountAppliedToCustomerAccount",
+					"Description": "The amount of the associated payment applied to the customer account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPayment.cdm.json/CustomerAccountPayment",
+						"Name": "AmountAppliedToCustomerAccount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountPaymentNote",
+					"Description": "A note, comment or additional information regarding the customer account payment.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPayment.cdm.json/CustomerAccountPayment",
+						"Name": "CustomerAccountPaymentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPayment",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPayment",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PaymentId\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"PaymentId\"},\"CustomerAccountId\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"CustomerAccountId\"},\"AmountAppliedToCustomerAccount\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"AmountAppliedToCustomerAccount\"},\"CustomerAccountPaymentNote\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"CustomerAccountPaymentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountPayment\",\"path\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\"},\"description\":\"The one or more payments applied to a customer account.\",\"primaryKey\":[\"PaymentId\",\"CustomerAccountId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"PaymentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Payment.\",\"isNullable\":false,\"name\":\"PaymentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"AmountAppliedToCustomerAccount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the associated payment applied to the customer account.\",\"isNullable\":true,\"scale\":2,\"name\":\"AmountAppliedToCustomerAccount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"name\":\"CustomerAccountPaymentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer account payment.\",\"isNullable\":true,\"name\":\"CustomerAccountPaymentNote\"}]}}}",
+			"Description": "The one or more payments applied to a customer account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "PaymentId,CustomerAccountId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

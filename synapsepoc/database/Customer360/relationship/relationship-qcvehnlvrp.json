@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qcvehnlvrp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-qcvehnlvrp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransportationMode",
+		"ToTableName": "CustomerMeansOfTransportation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransportationModeId",
+				"ToColumnName": "TransportationModeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransportationMode.cdm.json/TransportationMode\",\"toEntity\":\"CustomerMeansOfTransportation.cdm.json/CustomerMeansOfTransportation\",\"joinPairs\":[{\"fromAttribute\":\"TransportationModeId\",\"toAttribute\":\"TransportationModeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

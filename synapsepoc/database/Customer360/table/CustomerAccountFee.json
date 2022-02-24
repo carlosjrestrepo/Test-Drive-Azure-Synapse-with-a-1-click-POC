@@ -1,0 +1,189 @@
+{
+	"name": "CustomerAccountFee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountFee",
+		"Description": "The one of more fees that are applicable to the associated Customer Account for the period or applied on a date.\n\nThis key structure can accommodate both period fees such as an administration fee for a period or a one time fee in which the period start date key is used.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeeTypeId",
+					"Description": "The unique identifier of a Customer Account Fee Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "CustomerAccountFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FeeIncurredTimestamp",
+					"Description": "The timestamp of the associated Customer Account Fee.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "FeeIncurredTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeeAmount",
+					"Description": "The amount of the associated fee.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "CustomerAccountFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BillingCycleId",
+					"Description": "The unique identifier of a Billing Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "BillingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeeDueDate",
+					"Description": "The date that the fee is due to be paid.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "CustomerAccountFeeDueDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeePaidDate",
+					"Description": "The date that the fee was paid.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "CustomerAccountFeePaidDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountFeeNote",
+					"Description": "A note, comment or additional information regarding the customer account fee.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountFee.cdm.json/CustomerAccountFee",
+						"Name": "CustomerAccountFeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountFee",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountFee",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountId\"},\"CustomerAccountFeeTypeId\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeTypeId\"},\"FeeIncurredTimestamp\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"FeeIncurredTimestamp\"},\"CustomerAccountFeeAmount\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeAmount\"},\"BillingCycleId\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"BillingCycleId\"},\"CustomerAccountFeeDueDate\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeDueDate\"},\"CustomerAccountFeePaidDate\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeePaidDate\"},\"CustomerAccountFeeNote\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountFee\",\"path\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\"},\"description\":\"The one of more fees that are applicable to the associated Customer Account for the period or applied on a date.\\n\\nThis key structure can accommodate both period fees such as an administration fee for a period or a one time fee in which the period start date key is used.\",\"primaryKey\":[\"CustomerAccountId\",\"CustomerAccountFeeTypeId\",\"FeeIncurredTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Fee Type.\",\"isNullable\":false,\"name\":\"CustomerAccountFeeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"FeeIncurredTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the associated Customer Account Fee.\",\"isNullable\":false,\"name\":\"FeeIncurredTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the associated fee.\",\"isNullable\":true,\"scale\":2,\"name\":\"CustomerAccountFeeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"BillingCycleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Billing Cycle.\",\"isNullable\":true,\"name\":\"BillingCycleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeDueDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the fee is due to be paid.\",\"isNullable\":true,\"name\":\"CustomerAccountFeeDueDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeePaidDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the fee was paid.\",\"isNullable\":true,\"name\":\"CustomerAccountFeePaidDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountFee.cdm.json/CustomerAccountFee\",\"name\":\"CustomerAccountFeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer account fee.\",\"isNullable\":true,\"name\":\"CustomerAccountFeeNote\"}]}}}",
+			"Description": "The one of more fees that are applicable to the associated Customer Account for the period or applied on a date.\n\nThis key structure can accommodate both period fees such as an administration fee for a period or a one time fee in which the period start date key is used.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CustomerAccountFeeTypeId,FeeIncurredTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

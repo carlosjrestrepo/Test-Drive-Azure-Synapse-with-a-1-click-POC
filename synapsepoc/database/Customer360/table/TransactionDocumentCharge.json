@@ -1,0 +1,155 @@
+{
+	"name": "TransactionDocumentCharge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "TransactionDocumentCharge",
+		"Description": "A charge applied to a transaction document.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChargeId",
+					"Description": "The unique identifier of a Charge.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentCharge.cdm.json/TransactionDocumentCharge",
+						"Name": "ChargeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentCharge.cdm.json/TransactionDocumentCharge",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentCharge.cdm.json/TransactionDocumentCharge",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ChargeAmount",
+					"Description": "The amount of the charge.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentCharge.cdm.json/TransactionDocumentCharge",
+						"Name": "ChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeNote",
+					"Description": "A note, comment or additional information regarding the charge.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentCharge.cdm.json/TransactionDocumentCharge",
+						"Name": "ChargeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionDocumentCharge.cdm.json/TransactionDocumentCharge",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionDocumentCharge",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionDocumentCharge",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChargeId\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"ChargeId\"},\"TransactionId\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"TransactionId\"},\"DocumentId\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"DocumentId\"},\"ChargeAmount\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"ChargeAmount\"},\"ChargeNote\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"ChargeNote\"},\"IsoCurrencyCode\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionDocumentCharge\",\"path\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\"},\"description\":\"A charge applied to a transaction document.\",\"primaryKey\":[\"ChargeId\",\"TransactionId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"ChargeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Charge.\",\"isNullable\":false,\"name\":\"ChargeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"ChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the charge.\",\"isNullable\":true,\"scale\":2,\"name\":\"ChargeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"ChargeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the charge.\",\"isNullable\":true,\"name\":\"ChargeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionDocumentCharge.cdm.json/TransactionDocumentCharge\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"}]}}}",
+			"Description": "A charge applied to a transaction document.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "ChargeId,TransactionId,DocumentId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

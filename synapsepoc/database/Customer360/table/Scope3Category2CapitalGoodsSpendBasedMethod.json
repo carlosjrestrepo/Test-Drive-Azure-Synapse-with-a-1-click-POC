@@ -1,0 +1,236 @@
+{
+	"name": "Scope3Category2CapitalGoodsSpendBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category2CapitalGoodsSpendBasedMethod",
+		"Description": "Activity data needed\n\n- Amount spent on capital goods by capital good type, using market values (e.g., dollars)\n\n- Where applicable, inflation data to convert market values between the year of the EEIO emissions factors and the year of the activity data.\n\nEmission factors needed\n- Cradle-to-gate emission factors of the purchased capital goods per unit of economic value (e.g., kg CO2 e/$).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CapitalGoodsTypeId",
+					"Description": "The unique identifier of a Capital Goods Type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "CapitalGoodsTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedCapitalGoodsUnits",
+					"Description": "The quantity of units of purchased capital goods.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "PurchasedCapitalGoodsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedCapitalGoodsUomId",
+					"Description": "The purchased capital goods units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "PurchasedCapitalGoodsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedCapitalGoodsMarketValueAmount",
+					"Description": "The market value of the purchased capital goods.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "PurchasedCapitalGoodsMarketValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedGoodsAndServicesMarketValueCurrencyCode",
+					"Description": "The currency of the purchased goods and services market value.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "PurchasedGoodsAndServicesMarketValueCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emissions factor units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category2CapitalGoodsSpendBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category2CapitalGoodsSpendBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"VendorId\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"VendorId\"},\"CapitalGoodsTypeId\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"CapitalGoodsTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"PurchasedCapitalGoodsUnits\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedCapitalGoodsUnits\"},\"PurchasedCapitalGoodsUomId\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedCapitalGoodsUomId\"},\"PurchasedCapitalGoodsMarketValueAmount\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedCapitalGoodsMarketValueAmount\"},\"PurchasedGoodsAndServicesMarketValueCurrencyCode\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category2CapitalGoodsSpendBasedMethod\",\"path\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\"},\"description\":\"Activity data needed\\n\\n- Amount spent on capital goods by capital good type, using market values (e.g., dollars)\\n\\n- Where applicable, inflation data to convert market values between the year of the EEIO emissions factors and the year of the activity data.\\n\\nEmission factors needed\\n- Cradle-to-gate emission factors of the purchased capital goods per unit of economic value (e.g., kg CO2 e/$).\",\"primaryKey\":[\"ReportingLegalEntityId\",\"VendorId\",\"CapitalGoodsTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":false,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"CapitalGoodsTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Capital Goods Type.\",\"isNullable\":false,\"name\":\"CapitalGoodsTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedCapitalGoodsUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of units of purchased capital goods.\",\"isNullable\":true,\"name\":\"PurchasedCapitalGoodsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedCapitalGoodsUomId\"},\"dataType\":\"integer\",\"description\":\"The purchased capital goods units of measure.\",\"isNullable\":true,\"name\":\"PurchasedCapitalGoodsUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedCapitalGoodsMarketValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The market value of the purchased capital goods.\",\"isNullable\":true,\"scale\":2,\"name\":\"PurchasedCapitalGoodsMarketValueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The currency of the purchased goods and services market value.\",\"isNullable\":true,\"name\":\"PurchasedGoodsAndServicesMarketValueCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsSpendBasedMethod.cdm.json/Scope3Category2CapitalGoodsSpendBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emissions factor units of measure.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Activity data needed\n\n- Amount spent on capital goods by capital good type, using market values (e.g., dollars)\n\n- Where applicable, inflation data to convert market values between the year of the EEIO emissions factors and the year of the activity data.\n\nEmission factors needed\n- Cradle-to-gate emission factors of the purchased capital goods per unit of economic value (e.g., kg CO2 e/$).",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,VendorId,CapitalGoodsTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

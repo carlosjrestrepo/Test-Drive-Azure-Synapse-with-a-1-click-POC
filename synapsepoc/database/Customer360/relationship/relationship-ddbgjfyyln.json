@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ddbgjfyyln",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ddbgjfyyln",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IndustryPreference",
+		"ToTableName": "CustomerSicIndustry",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IndustryPreferenceId",
+				"ToColumnName": "IndustryPreferenceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IndustryPreference.cdm.json/IndustryPreference\",\"toEntity\":\"CustomerSicIndustry.cdm.json/CustomerSicIndustry\",\"joinPairs\":[{\"fromAttribute\":\"IndustryPreferenceId\",\"toAttribute\":\"IndustryPreferenceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

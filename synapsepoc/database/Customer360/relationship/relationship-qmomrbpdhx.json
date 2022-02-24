@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qmomrbpdhx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-qmomrbpdhx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PromotionType",
+		"ToTableName": "Promotion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PromotionTypeId",
+				"ToColumnName": "PromotionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PromotionType.cdm.json/PromotionType\",\"toEntity\":\"Promotion.cdm.json/Promotion\",\"joinPairs\":[{\"fromAttribute\":\"PromotionTypeId\",\"toAttribute\":\"PromotionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

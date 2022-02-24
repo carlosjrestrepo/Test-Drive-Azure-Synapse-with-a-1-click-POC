@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kjntupchpg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-kjntupchpg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAccountPaymentCard",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PaymentCardIssuedToPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAccountPaymentCard.cdm.json/CustomerAccountPaymentCard\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PaymentCardIssuedToPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

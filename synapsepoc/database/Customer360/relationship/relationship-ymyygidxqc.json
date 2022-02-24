@@ -1,0 +1,34 @@
+{
+	"name": "relationship-ymyygidxqc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ymyygidxqc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerSecurityQuestion",
+		"ToTableName": "CustomerAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			},
+			{
+				"FromColumnName": "SecurityQuestionNumber",
+				"ToColumnName": "SecurityQuestionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerSecurityQuestion.cdm.json/CustomerSecurityQuestion\",\"toEntity\":\"CustomerAuthenticationMethod.cdm.json/CustomerAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"},{\"fromAttribute\":\"SecurityQuestionNumber\",\"toAttribute\":\"SecurityQuestionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

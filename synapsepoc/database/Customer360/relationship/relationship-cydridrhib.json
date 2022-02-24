@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cydridrhib",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-cydridrhib",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Promotion",
+		"ToTableName": "CustomerAccountPromotion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PromotionId",
+				"ToColumnName": "PromotionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Promotion.cdm.json/Promotion\",\"toEntity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"joinPairs\":[{\"fromAttribute\":\"PromotionId\",\"toAttribute\":\"PromotionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

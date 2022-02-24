@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zyulxacjnr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-zyulxacjnr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChurnReason",
+		"ToTableName": "ChurnReasonPrevention",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChurnReasonId",
+				"ToColumnName": "ChurnReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChurnReason.cdm.json/ChurnReason\",\"toEntity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"joinPairs\":[{\"fromAttribute\":\"ChurnReasonId\",\"toAttribute\":\"ChurnReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

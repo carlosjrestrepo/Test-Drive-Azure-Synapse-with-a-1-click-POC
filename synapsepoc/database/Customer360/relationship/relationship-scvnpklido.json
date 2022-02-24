@@ -1,0 +1,26 @@
+{
+	"name": "relationship-scvnpklido",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-scvnpklido",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAssetFinancialAssessment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "AssessedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAssetFinancialAssessment.cdm.json/CustomerAssetFinancialAssessment\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"AssessedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

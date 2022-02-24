@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bpjwdzyift",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-bpjwdzyift",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category2CapitalGoodsHybridMethodMaterialsInput",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "MaterialsPurchasedValueCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category2CapitalGoodsHybridMethodMaterialsInput.cdm.json/Scope3Category2CapitalGoodsHybridMethodMaterialsInput\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"MaterialsPurchasedValueCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

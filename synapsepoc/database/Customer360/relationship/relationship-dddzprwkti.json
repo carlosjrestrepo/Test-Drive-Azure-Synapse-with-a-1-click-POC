@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dddzprwkti",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-dddzprwkti",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "MarketingProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "SponsoringPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"MarketingProgram.cdm.json/MarketingProgram\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"SponsoringPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

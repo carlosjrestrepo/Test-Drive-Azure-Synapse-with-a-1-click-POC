@@ -1,0 +1,105 @@
+{
+	"name": "FraudulentActivityType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "FraudulentActivityType",
+		"Description": "An intentional illegal activity intended to obtain products, goods or services from the without authorization or payment or incur a loss for the company.\n\nEx:\n- Billing fraud\n- Using stolen credit card\n- Identity theft",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FraudulentActivityTypeId",
+					"Description": "The unique identifier of a Fraudulent Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "FraudulentActivityType.cdm.json/FraudulentActivityType",
+						"Name": "FraudulentActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FraudulentActivityTypeName",
+					"Description": "The name of the Fraudulent Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "FraudulentActivityType.cdm.json/FraudulentActivityType",
+						"Name": "FraudulentActivityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FraudulentActivityTypeDescription",
+					"Description": "The description of the Fraudulent Activity Type.",
+					"BaseAttributeReference": {
+						"Entity": "FraudulentActivityType.cdm.json/FraudulentActivityType",
+						"Name": "FraudulentActivityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/FraudulentActivityType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/FraudulentActivityType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FraudulentActivityTypeId\":{\"entity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"name\":\"FraudulentActivityTypeId\"},\"FraudulentActivityTypeName\":{\"entity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"name\":\"FraudulentActivityTypeName\"},\"FraudulentActivityTypeDescription\":{\"entity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"name\":\"FraudulentActivityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FraudulentActivityType\",\"path\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\"},\"description\":\"An intentional illegal activity intended to obtain products, goods or services from the without authorization or payment or incur a loss for the company.\\n\\nEx:\\n- Billing fraud\\n- Using stolen credit card\\n- Identity theft\",\"primaryKey\":[\"FraudulentActivityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"name\":\"FraudulentActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Fraudulent Activity Type.\",\"isNullable\":false,\"name\":\"FraudulentActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"name\":\"FraudulentActivityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Fraudulent Activity Type.\",\"isNullable\":true,\"name\":\"FraudulentActivityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"name\":\"FraudulentActivityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Fraudulent Activity Type.\",\"isNullable\":true,\"name\":\"FraudulentActivityTypeDescription\"}]}}}",
+			"Description": "An intentional illegal activity intended to obtain products, goods or services from the without authorization or payment or incur a loss for the company.\n\nEx:\n- Billing fraud\n- Using stolen credit card\n- Identity theft",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "FraudulentActivityTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

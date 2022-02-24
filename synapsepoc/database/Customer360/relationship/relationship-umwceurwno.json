@@ -1,0 +1,26 @@
+{
+	"name": "relationship-umwceurwno",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-umwceurwno",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FraudulentActivityType",
+		"ToTableName": "CustomerAccountFraudulentActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FraudulentActivityTypeId",
+				"ToColumnName": "FraudulentActivityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FraudulentActivityType.cdm.json/FraudulentActivityType\",\"toEntity\":\"CustomerAccountFraudulentActivity.cdm.json/CustomerAccountFraudulentActivity\",\"joinPairs\":[{\"fromAttribute\":\"FraudulentActivityTypeId\",\"toAttribute\":\"FraudulentActivityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

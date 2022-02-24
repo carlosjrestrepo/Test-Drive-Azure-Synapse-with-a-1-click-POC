@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ncnmgqtnza",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ncnmgqtnza",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category6BusinessTravelSpendBasedMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "AmountSpentOnBusinessTravelCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category6BusinessTravelSpendBasedMethod.cdm.json/Scope3Category6BusinessTravelSpendBasedMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"AmountSpentOnBusinessTravelCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

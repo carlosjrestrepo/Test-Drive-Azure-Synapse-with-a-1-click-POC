@@ -1,0 +1,124 @@
+{
+	"name": "CustomerAccountCreditLimit",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountCreditLimit",
+		"Description": "The amount of total and total per order credit that may be extended to the Customer Account as of the associated date.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp for which the associated credit extension information is presented.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PerOrderCreditLimitAmount",
+					"Description": "The maximum amount of credit that may be applied to any single Customer Account order or transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit",
+						"Name": "PerOrderCreditLimitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalCreditLimitAmount",
+					"Description": "The total amount of credit that may be accumulated by the Customer for all Orders.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit",
+						"Name": "TotalCreditLimitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountCreditLimit",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountCreditLimit",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"CustomerAccountId\"},\"Timestamp\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"Timestamp\"},\"PerOrderCreditLimitAmount\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"PerOrderCreditLimitAmount\"},\"TotalCreditLimitAmount\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"TotalCreditLimitAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountCreditLimit\",\"path\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\"},\"description\":\"The amount of total and total per order credit that may be extended to the Customer Account as of the associated date.\",\"primaryKey\":[\"CustomerAccountId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp for which the associated credit extension information is presented.\",\"isNullable\":false,\"name\":\"Timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"PerOrderCreditLimitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum amount of credit that may be applied to any single Customer Account order or transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"PerOrderCreditLimitAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountCreditLimit.cdm.json/CustomerAccountCreditLimit\",\"name\":\"TotalCreditLimitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of credit that may be accumulated by the Customer for all Orders.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalCreditLimitAmount\"}]}}}",
+			"Description": "The amount of total and total per order credit that may be extended to the Customer Account as of the associated date.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,Timestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

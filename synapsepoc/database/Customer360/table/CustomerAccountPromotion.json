@@ -1,0 +1,206 @@
+{
+	"name": "CustomerAccountPromotion",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountPromotion",
+		"Description": "The Promotion(s) associated with the Customer Account during the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PromotionId",
+					"Description": "The unique identifier of a Promotion.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PromotionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated payment card - promotion relationship is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated payment card - promotion relationship is in effect.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PromotionPointsEarned",
+					"Description": "The Promotion Points Earned during this transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PromotionPointsEarned"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PromotionPointsRedeemed",
+					"Description": "The Promotion Points Redeemed during this transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PromotionPointsRedeemed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PromotionAmountEarned",
+					"Description": "The Promotion Amount Earned during this transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PromotionAmountEarned"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PromotionAmountSpent",
+					"Description": "The Promotion Amount Spent during this transaction.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "PromotionAmountSpent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountPromotionNote",
+					"Description": "A note, comment or additional information regarding the customer account promotion.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountPromotion.cdm.json/CustomerAccountPromotion",
+						"Name": "CustomerAccountPromotionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPromotion",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountPromotion",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"CustomerAccountId\"},\"PromotionId\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionId\"},\"PeriodStartTimestamp\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PeriodEndTimestamp\"},\"PromotionPointsEarned\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionPointsEarned\"},\"PromotionPointsRedeemed\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionPointsRedeemed\"},\"PromotionAmountEarned\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionAmountEarned\"},\"PromotionAmountSpent\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionAmountSpent\"},\"CustomerAccountPromotionNote\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"CustomerAccountPromotionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountPromotion\",\"path\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\"},\"description\":\"The Promotion(s) associated with the Customer Account during the associated period.\",\"primaryKey\":[\"CustomerAccountId\",\"PromotionId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Promotion.\",\"isNullable\":false,\"name\":\"PromotionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated payment card - promotion relationship is in effect.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the associated payment card - promotion relationship is in effect.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionPointsEarned\"},\"dataType\":\"integer\",\"description\":\"The Promotion Points Earned during this transaction.\",\"isNullable\":true,\"name\":\"PromotionPointsEarned\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionPointsRedeemed\"},\"dataType\":\"integer\",\"description\":\"The Promotion Points Redeemed during this transaction.\",\"isNullable\":true,\"name\":\"PromotionPointsRedeemed\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionAmountEarned\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The Promotion Amount Earned during this transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"PromotionAmountEarned\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"PromotionAmountSpent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The Promotion Amount Spent during this transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"PromotionAmountSpent\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountPromotion.cdm.json/CustomerAccountPromotion\",\"name\":\"CustomerAccountPromotionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer account promotion.\",\"isNullable\":true,\"name\":\"CustomerAccountPromotionNote\"}]}}}",
+			"Description": "The Promotion(s) associated with the Customer Account during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PromotionId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

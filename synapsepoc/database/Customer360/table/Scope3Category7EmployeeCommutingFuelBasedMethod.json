@@ -1,0 +1,399 @@
+{
+	"name": "Scope3Category7EmployeeCommutingFuelBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category7EmployeeCommutingFuelBasedMethod",
+		"Description": "Fuel-based method\n\nIf data is available on the quantity or amount spent on fuel by employees for commuting, companies may apply the fuel-based method. The calculation methodology for the fuel-based method is the same as the fuel-based method in category 4 (Upstream transport and distribution).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "LegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeCommutingTypeId",
+					"Description": "The identifier of an employee commuting type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "EmployeeCommutingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelTypeId",
+					"Description": "The unique identifier of a fuel type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageUnits",
+					"Description": "The fuel usage units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelUsageUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageUomId",
+					"Description": "The fuel usage UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelUsageUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionsUnits",
+					"Description": "The fugitive emissions units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FugitiveEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionsUomId",
+					"Description": "The fugitive emissions UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FugitiveEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageCostAmount",
+					"Description": "The fuel usage cost amount.\n\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\n\n- Amount spent on fuels and the average price of fuels\n- Distance travelled and the vehicle's fuel efficiency\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\naverage price of fuels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelUsageCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FuelUsageCostCurrencyCode",
+					"Description": "The fuel usage cost currency.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelUsageCostCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalDistanceTraveledUnits",
+					"Description": "Where fuel use data is unavailable, the company may derive fuel use by using the:\n\n- Amount spent on fuels and the average price of fuels\n- Distance travelled and the vehicle's fuel efficiency\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\naverage price of fuels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "TotalDistanceTraveledUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalDistanceTraveledUomId",
+					"Description": "The total distanced traveled UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "TotalDistanceTraveledUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransportationServicesSpentAmount",
+					"Description": "The amount of transportation services spent.\n\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\n\n- Amount spent on fuels and the average price of fuels\n- Distance travelled and the vehicle's fuel efficiency\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\naverage price of fuels.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "TransportationServicesSpentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TransportationServicesSpentCurrencyCode",
+					"Description": "The transportation services spent currency.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "TransportationServicesSpentCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FuelEmissionFactorUnits",
+					"Description": "The fuel emission factor units.\n\nCompanies should collect:\n\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\ne/liters, CO2 e/Btu)\n\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\nconsumed (e.g., kg CO2 e/kWh)\n\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelEmissionFactorUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelEmissionFactorUomId",
+					"Description": "The fuel emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FuelEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionFactorUnits",
+					"Description": "The fugitive emission factor units.\n\nCompanies should collect:\n\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\ne/liters, CO2 e/Btu)\n\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\nconsumed (e.g., kg CO2 e/kWh)\n\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FugitiveEmissionFactorUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FugitiveEmissionFactorUomId",
+					"Description": "The emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "FugitiveEmissionFactorUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category7EmployeeCommutingFuelBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category7EmployeeCommutingFuelBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LegalEntityId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"LegalEntityId\"},\"EmployeeCommutingTypeId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"EmployeeCommutingTypeId\"},\"FuelTypeId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"FuelUsageUnits\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageUnits\"},\"FuelUsageUomId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageUomId\"},\"FugitiveEmissionsUnits\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionsUnits\"},\"FugitiveEmissionsUomId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionsUomId\"},\"FuelUsageCostAmount\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageCostAmount\"},\"FuelUsageCostCurrencyCode\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageCostCurrencyCode\"},\"TotalDistanceTraveledUnits\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUnits\"},\"TotalDistanceTraveledUomId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUomId\"},\"TransportationServicesSpentAmount\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TransportationServicesSpentAmount\"},\"TransportationServicesSpentCurrencyCode\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TransportationServicesSpentCurrencyCode\"},\"FuelEmissionFactorUnits\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelEmissionFactorUnits\"},\"FuelEmissionFactorUomId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelEmissionFactorUomId\"},\"FugitiveEmissionFactorUnits\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUnits\"},\"FugitiveEmissionFactorUomId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUomId\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category7EmployeeCommutingFuelBasedMethod\",\"path\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\"},\"description\":\"Fuel-based method\\n\\nIf data is available on the quantity or amount spent on fuel by employees for commuting, companies may apply the fuel-based method. The calculation methodology for the fuel-based method is the same as the fuel-based method in category 4 (Upstream transport and distribution).\",\"primaryKey\":[\"LegalEntityId\",\"EmployeeCommutingTypeId\",\"FuelTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"LegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"LegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"EmployeeCommutingTypeId\"},\"dataType\":\"integer\",\"description\":\"The identifier of an employee commuting type.\",\"isNullable\":false,\"name\":\"EmployeeCommutingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fuel type.\",\"isNullable\":false,\"name\":\"FuelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageUnits\"},\"dataType\":\"integer\",\"description\":\"The fuel usage units.\",\"isNullable\":true,\"name\":\"FuelUsageUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageUomId\"},\"dataType\":\"integer\",\"description\":\"The fuel usage UOM.\",\"isNullable\":true,\"name\":\"FuelUsageUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The fugitive emissions units.\",\"isNullable\":true,\"name\":\"FugitiveEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The fugitive emissions UOM.\",\"isNullable\":true,\"name\":\"FugitiveEmissionsUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The fuel usage cost amount.\\n\\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\\n\\n- Amount spent on fuels and the average price of fuels\\n- Distance travelled and the vehicle's fuel efficiency\\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\\naverage price of fuels.\",\"isNullable\":true,\"scale\":2,\"name\":\"FuelUsageCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelUsageCostCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The fuel usage cost currency.\",\"isNullable\":true,\"name\":\"FuelUsageCostCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUnits\"},\"dataType\":\"integer\",\"description\":\"Where fuel use data is unavailable, the company may derive fuel use by using the:\\n\\n- Amount spent on fuels and the average price of fuels\\n- Distance travelled and the vehicle's fuel efficiency\\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\\naverage price of fuels.\",\"isNullable\":true,\"name\":\"TotalDistanceTraveledUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalDistanceTraveledUomId\"},\"dataType\":\"integer\",\"description\":\"The total distanced traveled UOM.\",\"isNullable\":true,\"name\":\"TotalDistanceTraveledUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TransportationServicesSpentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of transportation services spent.\\n\\nWhere fuel use data is unavailable, the company may derive fuel use by using the:\\n\\n- Amount spent on fuels and the average price of fuels\\n- Distance travelled and the vehicle's fuel efficiency\\n- Amount spent on transportation services, fuel cost share (as percent of total cost of transportation services) and the\\naverage price of fuels.\",\"isNullable\":true,\"scale\":2,\"name\":\"TransportationServicesSpentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TransportationServicesSpentCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The transportation services spent currency.\",\"isNullable\":true,\"name\":\"TransportationServicesSpentCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelEmissionFactorUnits\"},\"dataType\":\"integer\",\"description\":\"The fuel emission factor units.\\n\\nCompanies should collect:\\n\\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\\ne/liters, CO2 e/Btu)\\n\\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\\nconsumed (e.g., kg CO2 e/kWh)\\n\\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)\",\"isNullable\":true,\"name\":\"FuelEmissionFactorUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FuelEmissionFactorUomId\"},\"dataType\":\"integer\",\"description\":\"The fuel emission factor UOM.\",\"isNullable\":true,\"name\":\"FuelEmissionFactorUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUnits\"},\"dataType\":\"integer\",\"description\":\"The fugitive emission factor units.\\n\\nCompanies should collect:\\n\\n- Fuel emission factors, expressed in units of emissions per unit of energy consumed (e.g., kg CO2\\ne/liters, CO2 e/Btu)\\n\\n- For electric vehicles (if applicable), electricity emission factors, expressed in units of emissions per unit of electricity\\nconsumed (e.g., kg CO2 e/kWh)\\n\\n- Fugitive emission factors, expressed in units of emissions per unit (e.g., kg CO2 e/kg refrigerant leakage)\",\"isNullable\":true,\"name\":\"FugitiveEmissionFactorUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"FugitiveEmissionFactorUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor UOM.\",\"isNullable\":true,\"name\":\"FugitiveEmissionFactorUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category7EmployeeCommutingFuelBasedMethod.cdm.json/Scope3Category7EmployeeCommutingFuelBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor UOM.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Fuel-based method\n\nIf data is available on the quantity or amount spent on fuel by employees for commuting, companies may apply the fuel-based method. The calculation methodology for the fuel-based method is the same as the fuel-based method in category 4 (Upstream transport and distribution).",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "LegalEntityId,EmployeeCommutingTypeId,FuelTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

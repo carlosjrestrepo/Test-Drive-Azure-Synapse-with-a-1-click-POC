@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rjniorkilw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-rjniorkilw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerPartyRelationshipType",
+		"ToTableName": "CustomerRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerPartyRelationshipTypeId",
+				"ToColumnName": "CustomerPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerPartyRelationshipType.cdm.json/CustomerPartyRelationshipType\",\"toEntity\":\"CustomerRelatedParty.cdm.json/CustomerRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CustomerPartyRelationshipTypeId\",\"toAttribute\":\"CustomerPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

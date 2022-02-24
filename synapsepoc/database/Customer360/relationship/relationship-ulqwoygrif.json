@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ulqwoygrif",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ulqwoygrif",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Payment",
+		"ToTableName": "CustomerAccountPayment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentId",
+				"ToColumnName": "PaymentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Payment.cdm.json/Payment\",\"toEntity\":\"CustomerAccountPayment.cdm.json/CustomerAccountPayment\",\"joinPairs\":[{\"fromAttribute\":\"PaymentId\",\"toAttribute\":\"PaymentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

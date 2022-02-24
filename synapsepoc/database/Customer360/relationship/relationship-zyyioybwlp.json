@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zyyioybwlp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-zyyioybwlp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Employer",
+		"ToTableName": "CustomerEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmployerId",
+				"ToColumnName": "EmployerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Employer.cdm.json/Employer\",\"toEntity\":\"CustomerEmployment.cdm.json/CustomerEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmployerId\",\"toAttribute\":\"EmployerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dgqrufjqre",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-dgqrufjqre",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssociationType",
+		"ToTableName": "Association",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssociationTypeId",
+				"ToColumnName": "AssociationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssociationType.cdm.json/AssociationType\",\"toEntity\":\"Association.cdm.json/Association\",\"joinPairs\":[{\"fromAttribute\":\"AssociationTypeId\",\"toAttribute\":\"AssociationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

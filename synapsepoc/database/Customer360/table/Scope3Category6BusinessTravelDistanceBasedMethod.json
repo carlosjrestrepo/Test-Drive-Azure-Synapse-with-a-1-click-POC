@@ -1,0 +1,236 @@
+{
+	"name": "Scope3Category6BusinessTravelDistanceBasedMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category6BusinessTravelDistanceBasedMethod",
+		"Description": "If data on fuel use is unavailable, companies may use the distance-based method.\n\nThe distance-based method involves multiplying activity data (i.e., vehicle-kilometers or person-kilometers travelled by vehicle type) by emission factors (typically default national emission factors by vehicle type). \n\nVehicle types include all categories of aircraft, rail, subway, bus, automobile, etc. \n\nCompanies should collect data on:\n\n- Total distance travelled by each mode of transport (air, train, bus, car, etc.) for employees in the reporting year.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessTravelTypeId",
+					"Description": "The identifier of the business travel type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "BusinessTravelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransportationVehicleId",
+					"Description": "The unique identifier of a Transportation Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "TransportationVehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TotalDistanceTraveledUnits",
+					"Description": "The total distance traveled units.\n\nCompanies should collect data on:\n- Total distance travelled by each mode of transport (air, train, bus, car, etc.) for employees in the reporting year.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "TotalDistanceTraveledUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalDistanceTraveledUomId",
+					"Description": "The distance traveled UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "TotalDistanceTraveledUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BusinessTravelCostAmount",
+					"Description": "The total business travel costs.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "BusinessTravelCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BustinessTravelCostCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "BustinessTravelCostCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category6BusinessTravelDistanceBasedMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category6BusinessTravelDistanceBasedMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"BusinessTravelTypeId\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"BusinessTravelTypeId\"},\"TransportationVehicleId\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TransportationVehicleId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"TotalDistanceTraveledUnits\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalDistanceTraveledUnits\"},\"TotalDistanceTraveledUomId\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalDistanceTraveledUomId\"},\"BusinessTravelCostAmount\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"BusinessTravelCostAmount\"},\"BustinessTravelCostCurrencyCode\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"BustinessTravelCostCurrencyCode\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category6BusinessTravelDistanceBasedMethod\",\"path\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\"},\"description\":\"If data on fuel use is unavailable, companies may use the distance-based method.\\n\\nThe distance-based method involves multiplying activity data (i.e., vehicle-kilometers or person-kilometers travelled by vehicle type) by emission factors (typically default national emission factors by vehicle type). \\n\\nVehicle types include all categories of aircraft, rail, subway, bus, automobile, etc. \\n\\nCompanies should collect data on:\\n\\n- Total distance travelled by each mode of transport (air, train, bus, car, etc.) for employees in the reporting year.\",\"primaryKey\":[\"ReportingLegalEntityId\",\"BusinessTravelTypeId\",\"TransportationVehicleId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"BusinessTravelTypeId\"},\"dataType\":\"integer\",\"description\":\"The identifier of the business travel type.\",\"isNullable\":false,\"name\":\"BusinessTravelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TransportationVehicleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transportation Vehicle.\",\"isNullable\":false,\"name\":\"TransportationVehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalDistanceTraveledUnits\"},\"dataType\":\"integer\",\"description\":\"The total distance traveled units.\\n\\nCompanies should collect data on:\\n- Total distance travelled by each mode of transport (air, train, bus, car, etc.) for employees in the reporting year.\",\"isNullable\":true,\"name\":\"TotalDistanceTraveledUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalDistanceTraveledUomId\"},\"dataType\":\"integer\",\"description\":\"The distance traveled UOM.\",\"isNullable\":true,\"name\":\"TotalDistanceTraveledUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"BusinessTravelCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total business travel costs.\",\"isNullable\":true,\"scale\":2,\"name\":\"BusinessTravelCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"BustinessTravelCostCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"BustinessTravelCostCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor UOM.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "If data on fuel use is unavailable, companies may use the distance-based method.\n\nThe distance-based method involves multiplying activity data (i.e., vehicle-kilometers or person-kilometers travelled by vehicle type) by emission factors (typically default national emission factors by vehicle type). \n\nVehicle types include all categories of aircraft, rail, subway, bus, automobile, etc. \n\nCompanies should collect data on:\n\n- Total distance travelled by each mode of transport (air, train, bus, car, etc.) for employees in the reporting year.",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,BusinessTravelTypeId,TransportationVehicleId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

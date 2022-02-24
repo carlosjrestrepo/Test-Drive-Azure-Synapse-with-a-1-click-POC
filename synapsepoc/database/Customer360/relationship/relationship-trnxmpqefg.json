@@ -1,0 +1,34 @@
+{
+	"name": "relationship-trnxmpqefg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-trnxmpqefg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BadDebtWriteOff",
+		"ToTableName": "WriteOffRelatedTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalEntityId",
+				"ToColumnName": "LegalEntityId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			},
+			{
+				"FromColumnName": "WriteOffDate",
+				"ToColumnName": "WriteOffDate"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BadDebtWriteOff.cdm.json/BadDebtWriteOff\",\"toEntity\":\"WriteOffRelatedTransaction.cdm.json/WriteOffRelatedTransaction\",\"joinPairs\":[{\"fromAttribute\":\"LegalEntityId\",\"toAttribute\":\"LegalEntityId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"},{\"fromAttribute\":\"WriteOffDate\",\"toAttribute\":\"WriteOffDate\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

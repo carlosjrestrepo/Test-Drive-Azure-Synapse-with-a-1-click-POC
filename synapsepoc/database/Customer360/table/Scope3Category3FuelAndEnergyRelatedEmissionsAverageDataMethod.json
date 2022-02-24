@@ -1,0 +1,252 @@
+{
+	"name": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+		"Description": "This activity includes the extraction, production, and transportation of fuels consumed by the reporting company.\n\nCompanies may use either of the following methods to calculate scope 3 emissions from upstream emissions of purchased fuels:\n\n- Average-data method, which involves estimating emissions by using secondary (e.g., industry average) emission factors for upstream emissions per unit of consumption (e.g., kg CO2 e/kWh).",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelTypeId",
+					"Description": "The unique identifier of a fuel type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FuelConsumedQuantityUnits",
+					"Description": "The quantity of fuel consumed.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelConsumedQuantityUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelConsumedQuantityUomId",
+					"Description": "The fuel consumption units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelConsumedQuantityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelPurchasedValueAmount",
+					"Description": "The retail value of the fuel purchased.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelPurchasedValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FuelPurchasedCurrencyId",
+					"Description": "The currency associated with the fuel purchased amount.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelPurchasedCurrencyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FuelResoldQuantityUnits",
+					"Description": "The fuel quantity units that was purchased and is resold.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelResoldQuantityUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelResoldQuantityUomId",
+					"Description": "The fuel resold quantity units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "FuelResoldQuantityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor units of measure.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"FuelTypeId\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"FuelConsumedQuantityUnits\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelConsumedQuantityUnits\"},\"FuelConsumedQuantityUomId\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelConsumedQuantityUomId\"},\"FuelPurchasedValueAmount\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelPurchasedValueAmount\"},\"FuelPurchasedCurrencyId\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelPurchasedCurrencyId\"},\"FuelResoldQuantityUnits\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelResoldQuantityUnits\"},\"FuelResoldQuantityUomId\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelResoldQuantityUomId\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"path\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\"},\"description\":\"This activity includes the extraction, production, and transportation of fuels consumed by the reporting company.\\n\\nCompanies may use either of the following methods to calculate scope 3 emissions from upstream emissions of purchased fuels:\\n\\n- Average-data method, which involves estimating emissions by using secondary (e.g., industry average) emission factors for upstream emissions per unit of consumption (e.g., kg CO2 e/kWh).\",\"primaryKey\":[\"ReportingLegalEntityId\",\"FuelTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fuel type.\",\"isNullable\":false,\"name\":\"FuelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelConsumedQuantityUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of fuel consumed.\",\"isNullable\":true,\"name\":\"FuelConsumedQuantityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelConsumedQuantityUomId\"},\"dataType\":\"integer\",\"description\":\"The fuel consumption units of measure.\",\"isNullable\":true,\"name\":\"FuelConsumedQuantityUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelPurchasedValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The retail value of the fuel purchased.\",\"isNullable\":true,\"scale\":2,\"name\":\"FuelPurchasedValueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelPurchasedCurrencyId\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The currency associated with the fuel purchased amount.\",\"isNullable\":true,\"name\":\"FuelPurchasedCurrencyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelResoldQuantityUnits\"},\"dataType\":\"integer\",\"description\":\"The fuel quantity units that was purchased and is resold.\",\"isNullable\":true,\"name\":\"FuelResoldQuantityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"FuelResoldQuantityUomId\"},\"dataType\":\"integer\",\"description\":\"The fuel resold quantity units of measure.\",\"isNullable\":true,\"name\":\"FuelResoldQuantityUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod.cdm.json/Scope3Category3FuelAndEnergyRelatedEmissionsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor units of measure.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "This activity includes the extraction, production, and transportation of fuels consumed by the reporting company.\n\nCompanies may use either of the following methods to calculate scope 3 emissions from upstream emissions of purchased fuels:\n\n- Average-data method, which involves estimating emissions by using secondary (e.g., industry average) emission factors for upstream emissions per unit of consumption (e.g., kg CO2 e/kWh).",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,FuelTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

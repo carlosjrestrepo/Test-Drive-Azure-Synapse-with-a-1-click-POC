@@ -1,0 +1,26 @@
+{
+	"name": "relationship-twxxtddyty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-twxxtddyty",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Association",
+		"ToTableName": "CustomerAssociation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssociationId",
+				"ToColumnName": "AssociationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Association.cdm.json/Association\",\"toEntity\":\"CustomerAssociation.cdm.json/CustomerAssociation\",\"joinPairs\":[{\"fromAttribute\":\"AssociationId\",\"toAttribute\":\"AssociationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

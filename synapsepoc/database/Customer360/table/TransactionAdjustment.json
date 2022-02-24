@@ -1,0 +1,139 @@
+{
+	"name": "TransactionAdjustment",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "TransactionAdjustment",
+		"Description": "An adjustment applied to a Transaction.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAdjustment.cdm.json/TransactionAdjustment",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentId",
+					"Description": "The unique identifier of an Adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAdjustment.cdm.json/TransactionAdjustment",
+						"Name": "AdjustmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentAmount",
+					"Description": "The amount of the adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAdjustment.cdm.json/TransactionAdjustment",
+						"Name": "AdjustmentAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AdjustmentNote",
+					"Description": "A note, comment or additional information regarding an Adjustment.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAdjustment.cdm.json/TransactionAdjustment",
+						"Name": "AdjustmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionAdjustment.cdm.json/TransactionAdjustment",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionAdjustment",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionAdjustment",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"TransactionId\"},\"AdjustmentId\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"AdjustmentId\"},\"AdjustmentAmount\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"AdjustmentAmount\"},\"AdjustmentNote\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"AdjustmentNote\"},\"IsoCurrencyCode\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"IsoCurrencyCode\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionAdjustment\",\"path\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\"},\"description\":\"An adjustment applied to a Transaction.\",\"primaryKey\":[\"TransactionId\",\"AdjustmentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"AdjustmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Adjustment.\",\"isNullable\":false,\"name\":\"AdjustmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"AdjustmentAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the adjustment.\",\"isNullable\":true,\"scale\":2,\"name\":\"AdjustmentAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"AdjustmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding an Adjustment.\",\"isNullable\":true,\"name\":\"AdjustmentNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionAdjustment.cdm.json/TransactionAdjustment\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"}]}}}",
+			"Description": "An adjustment applied to a Transaction.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId,AdjustmentId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

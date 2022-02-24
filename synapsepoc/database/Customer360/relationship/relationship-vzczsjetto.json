@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vzczsjetto",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-vzczsjetto",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BalanceType",
+		"ToTableName": "CustomerAccountBalance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BalanceTypeId",
+				"ToColumnName": "BalanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BalanceType.cdm.json/BalanceType\",\"toEntity\":\"CustomerAccountBalance.cdm.json/CustomerAccountBalance\",\"joinPairs\":[{\"fromAttribute\":\"BalanceTypeId\",\"toAttribute\":\"BalanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

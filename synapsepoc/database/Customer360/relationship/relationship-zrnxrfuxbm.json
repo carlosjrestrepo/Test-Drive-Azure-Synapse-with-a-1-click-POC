@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zrnxrfuxbm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-zrnxrfuxbm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProgramParticipationStatus",
+		"ToTableName": "CustomerAccountProgram",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProgramParticipationStatusId",
+				"ToColumnName": "ProgramParticipationStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProgramParticipationStatus.cdm.json/ProgramParticipationStatus\",\"toEntity\":\"CustomerAccountProgram.cdm.json/CustomerAccountProgram\",\"joinPairs\":[{\"fromAttribute\":\"ProgramParticipationStatusId\",\"toAttribute\":\"ProgramParticipationStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

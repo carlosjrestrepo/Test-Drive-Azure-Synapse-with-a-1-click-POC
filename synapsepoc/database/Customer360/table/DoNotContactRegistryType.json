@@ -1,0 +1,105 @@
+{
+	"name": "DoNotContactRegistryType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "DoNotContactRegistryType",
+		"Description": "The type of do not contact registry.\n\nEx:\n- email\n- telephone\n- mail",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DoNotContactRegistryTypeId",
+					"Description": "The unique identifier of a Do Not Contact Registry Type.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotContactRegistryType.cdm.json/DoNotContactRegistryType",
+						"Name": "DoNotContactRegistryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DoNotContactRegistryTypeName",
+					"Description": "The name of a Do Not Contact Registry Type.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotContactRegistryType.cdm.json/DoNotContactRegistryType",
+						"Name": "DoNotContactRegistryTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DoNotContactRegistryTypeDescription",
+					"Description": "The description of a Do Not Contact Registry Type.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotContactRegistryType.cdm.json/DoNotContactRegistryType",
+						"Name": "DoNotContactRegistryTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/DoNotContactRegistryType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/DoNotContactRegistryType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DoNotContactRegistryTypeId\":{\"entity\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\",\"name\":\"DoNotContactRegistryTypeId\"},\"DoNotContactRegistryTypeName\":{\"entity\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\",\"name\":\"DoNotContactRegistryTypeName\"},\"DoNotContactRegistryTypeDescription\":{\"entity\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\",\"name\":\"DoNotContactRegistryTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DoNotContactRegistryType\",\"path\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\"},\"description\":\"The type of do not contact registry.\\n\\nEx:\\n- email\\n- telephone\\n- mail\",\"primaryKey\":[\"DoNotContactRegistryTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\",\"name\":\"DoNotContactRegistryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Do Not Contact Registry Type.\",\"isNullable\":false,\"name\":\"DoNotContactRegistryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\",\"name\":\"DoNotContactRegistryTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Do Not Contact Registry Type.\",\"isNullable\":true,\"name\":\"DoNotContactRegistryTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotContactRegistryType.cdm.json/DoNotContactRegistryType\",\"name\":\"DoNotContactRegistryTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Do Not Contact Registry Type.\",\"isNullable\":true,\"name\":\"DoNotContactRegistryTypeDescription\"}]}}}",
+			"Description": "The type of do not contact registry.\n\nEx:\n- email\n- telephone\n- mail",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "DoNotContactRegistryTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

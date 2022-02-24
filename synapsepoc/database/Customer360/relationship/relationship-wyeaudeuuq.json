@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wyeaudeuuq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-wyeaudeuuq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NamePreference",
+		"ToTableName": "CustomerNamePreference",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NamePreferenceId",
+				"ToColumnName": "NamePreferenceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NamePreference.cdm.json/NamePreference\",\"toEntity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"joinPairs\":[{\"fromAttribute\":\"NamePreferenceId\",\"toAttribute\":\"NamePreferenceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

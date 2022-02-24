@@ -1,0 +1,105 @@
+{
+	"name": "CustomerRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerRelationshipType",
+		"Description": "The  type or nature of relationship between two customers.\n\nEx:\n- Subsidiary / Parent\n- Related Through Parent Company\n- Replaced By\n- Competitor",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerRelationshipType.cdm.json/CustomerRelationshipType",
+						"Name": "CustomerRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerRelationshipTypeName",
+					"Description": "The name of a Customer Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerRelationshipType.cdm.json/CustomerRelationshipType",
+						"Name": "CustomerRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerRelationshipTypeDescription",
+					"Description": "The description of a Customer Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerRelationshipType.cdm.json/CustomerRelationshipType",
+						"Name": "CustomerRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerRelationshipTypeId\":{\"entity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"name\":\"CustomerRelationshipTypeId\"},\"CustomerRelationshipTypeName\":{\"entity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"name\":\"CustomerRelationshipTypeName\"},\"CustomerRelationshipTypeDescription\":{\"entity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"name\":\"CustomerRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerRelationshipType\",\"path\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\"},\"description\":\"The  type or nature of relationship between two customers.\\n\\nEx:\\n- Subsidiary / Parent\\n- Related Through Parent Company\\n- Replaced By\\n- Competitor\",\"primaryKey\":[\"CustomerRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"name\":\"CustomerRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Relationship Type.\",\"isNullable\":false,\"name\":\"CustomerRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"name\":\"CustomerRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Relationship Type.\",\"isNullable\":true,\"name\":\"CustomerRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"name\":\"CustomerRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Relationship Type.\",\"isNullable\":true,\"name\":\"CustomerRelationshipTypeDescription\"}]}}}",
+			"Description": "The  type or nature of relationship between two customers.\n\nEx:\n- Subsidiary / Parent\n- Related Through Parent Company\n- Replaced By\n- Competitor",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

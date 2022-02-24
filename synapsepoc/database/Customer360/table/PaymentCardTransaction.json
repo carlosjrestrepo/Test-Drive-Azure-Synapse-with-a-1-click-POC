@@ -1,0 +1,1191 @@
+{
+	"name": "PaymentCardTransaction",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "PaymentCardTransaction",
+		"Description": "A Transaction related to Payment Card processing or related activities.\n\nThe following are the basic steps that occur when a payment card is processed. \n\n1. Cardholder presents the credit card at the point-of-sale. \n\n2. For  either Internet or Keyed in transactions, the cardholder provides the merchant with the account number, expiration date, billing address and any special codes on the payment card. \n\n3. Merchant swipes the card or enters the information by hand, enters the purchase amount and transmits the authorization request to the Acquirer. \n\n4. Acquirer electronically sends the authorization request into Interchange. \n\n5. Interchange passes on the authorization request to the Issuer. \n\n6. Issuer approves or declines the transaction. \n\n7. Interchange forwards the Issuer's authorization response to the Acquirer. \n\n8. Acquirer forwards the response to the Merchant. \n\n9. Merchant receives the authorization response and completes the transaction accordingly. \n\n10. Merchant closes the batch and submits the transactions to the acquirer through their merchant account. \n\n11. Acquirer electronically submits transactions into Interchange for settlement. The acquirer also credits the merchant's checking account for the submitted transactions once settlement information is received from the Interchange (aka \"funding\"). \n\n12. Interchange facilitates settlement by sending settled transaction information to the issuer and acquirer and providing both with information on what to credit the merchant, how much to debit the cardholder and the type and amount of the interchange fees that are to be paid by the acquirer to the issuer. \n\n13. Issuer posts the transactions to the cardholder account and sends the monthly statements to its cardholders. \n\n14. Cardholder receives statements and pays issuer.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique number that identifies Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionReceivedTimestamp",
+					"Description": "The timestamp the transaction was received.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionReceivedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionConfirmationTimestamp",
+					"Description": "The timestamp that the transaction was confirmed.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionConfirmationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionAuthorizationTimestamp",
+					"Description": "Timestamp that the transaction was authorized.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionAuthorizationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InitiatedByMerchantId",
+					"Description": "The Merchant Identification (MID) is a unique number that identifies your merchant account to payment processing networks and to your payment software.\n\nA series or group of digits that uniquely identifies the merchant to the merchant signing bank for account and billing purposes. \n\nWhen a merchant retains the services of a credit card processor, it is issued a merchant ID.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "InitiatedByMerchantId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InitiatedByMerchantAccountNumber",
+					"Description": "The account number of the merchant.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "InitiatedByMerchantAccountNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReceivedByMerchantId",
+					"Description": "The Merchant Identification (MID) is a unique number that identifies your merchant account to payment processing networks and to your payment software.\n\nA series or group of digits that uniquely identifies the merchant to the merchant signing bank for account and billing purposes. \n\nWhen a merchant retains the services of a credit card processor, it is issued a merchant ID.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "ReceivedByMerchantId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReceivedByMerchantAccountNumber",
+					"Description": "The account number of the merchant.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "ReceivedByMerchantAccountNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PaymentGatewayId",
+					"Description": "The unique identifier of a Payment Gateway.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "PaymentGatewayId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionPostingTimestamp",
+					"Description": "The timestamp of updating individual cardholder account balances to reflect merchandise sales, instant cash, cash advances, adjustments, payments, and any other charges or credits.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionPostingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionAuthorizationCode",
+					"Description": "A 6-digit code that a credit card issuing bank returns in an electronic message to the merchant's POS equipment that indicates approval of the transaction. The code serves as proof of authorization.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionAuthorizationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCaptureFundsAvailableDate",
+					"Description": "The date that funds are available.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionCaptureFundsAvailableDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "TransactionChargebackPeriod",
+					"Description": "The number of days from the processing date or endorsement date transaction during which the issuer may initiate a chargeback.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionChargebackPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProcessingTimestamp",
+					"Description": "The timestamp on which the transaction is processed by the acquiring bank.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "ProcessingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTypeId",
+					"Description": "The unique identifier of a Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalTransactionAmount",
+					"Description": "The amount of the transaction",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TotalTransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizationAmount",
+					"Description": "Currency amount approved.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizationAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "HoldbackChargeAmount",
+					"Description": "The amount of holdback charge.\n\nA portion of the revenue from a merchant's credit card transactions, held in reserve by the merchant account provider to cover possible disputed charges, chargeback fees, and other expenses. After a predetermined time, holdbacks are turned over to the merchant. Note: Merchant account providers almost never pay interest on holdbacks.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "HoldbackChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalLocalTaxAmount",
+					"Description": "The total amount of Local taxes applied to the purchase.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TotalLocalTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalStateTaxAmount",
+					"Description": "The total amount of State taxes applied to the purchase.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TotalStateTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalFederalTaxAmount",
+					"Description": "The total amount of Federal taxes applied to the purchase.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TotalFederalTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalVatTaxAmount",
+					"Description": "The total amount of VAT applied to the purchase.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TotalVatTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalTaxAmount",
+					"Description": "The total amount of all taxes applied to the purchase.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TotalTaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Code10AuthorizationPurchaseIndicator",
+					"Description": "If the merchant suspects a card is fraudulent at the time of the transaction, the merchant can call their voice authorization phone number and ask for a code 10. The voice operator will instruct the merchant on how to proceed.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "Code10AuthorizationPurchaseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizedReservedAmount",
+					"Description": "The authorized reserve amount at the time of the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizedReservedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OpenToBuyAmount",
+					"Description": "Dollar amount of credit remaining for customer at the time of authorization.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "OpenToBuyAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizedAvailableCreditAmount",
+					"Description": "The amount of credit authorized in regard to the transaction or at the time of the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizedAvailableCreditAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MerchantName",
+					"Description": "The name of the merchant.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "MerchantName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionAmount",
+					"Description": "The amount of the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DateOfSale",
+					"Description": "The date of the transaction 'sale'.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "DateOfSale"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MerchantCategoryCode",
+					"Description": "Level I purchasing card data includes the same information captured during a traditional credit card purchase transaction. This includes: total purchase amount, date, merchant category code and supplier/retailer name.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "MerchantCategoryCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MerchantPostalCode",
+					"Description": "The merchant's postal code.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "MerchantPostalCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 6,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TaxIdentification",
+					"Description": "The merchant's tax id number.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TaxIdentification"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TaxAmount",
+					"Description": "The amount of taxes.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TaxAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerCode",
+					"Description": "A 17 character alphanumeric field that is used with Purchase Card transactions. The code is typically defined by the customer (cardholder) and used for accounting or project tracking purposes.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "CustomerCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvoiceNumber",
+					"Description": "The invoice number that is assigned to the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "InvoiceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OrderNumber",
+					"Description": "A 17 character alphanumeric field that may be used between the Cardholder and the Merchant for accounting or tracking purposes.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "OrderNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionApprovedIndicator",
+					"Description": "Indicates that the transaction was approved.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionApprovedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DeniedTransactionIndicator",
+					"Description": "Indicates that the transaction was denied.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "DeniedTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PriorAuthorizationTransactionIndicator",
+					"Description": "An authorization usually done before a transaction takes place. The approved authorization request may be held for an extended length of time before a card is present or not.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "PriorAuthorizationTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VisaValidationCode",
+					"Description": "A unique 4 character value that VISA includes as part of the CPS/ATM program in each authorization response to ensure that key authorization fields are preserved in the clearing or settlement record.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "VisaValidationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 3,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MailPhoneTransactionIndicator",
+					"Description": "A transaction where a cardholder orders goods or services from a merchant by telephone, mail or other means of telecommunication, and neither the card nor the cardholder is present at the merchant outlet.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "MailPhoneTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OnUsTransactionIndicator",
+					"Description": "A transaction that is authorized, cleared, and settled in a single online message.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "OnUsTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OnlineTransactionIndicator",
+					"Description": "A transaction that is authorized, cleared, and settled in a single online message.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "OnlineTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CardholderPresentIndicator",
+					"Description": "Indicates that the cardholder was present for the transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "CardholderPresentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizationOnlyTransactionIndicator",
+					"Description": "A transaction created to reserve an amount against a credit card's available limit for intended purchases; the settlement may occur within three to five days, depending on the card type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizationOnlyTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FraudulentTransactionIndicator",
+					"Description": "A transaction unauthorized by the cardholder of a bankcard. Such transactions are categorized as lost, stolen, not received, issued on a fraudulent application, counterfeit, fraudulent processing of transactions, account takeover, or other fraudulent conditions as defined by the card company or the member company.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "FraudulentTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TransactionSoftDeclineIndicator",
+					"Description": "A declined authorization attempt that does not necessarily mean the card is bad (i.e., call referral, issuer unavailable or cardholder over limit). These transactions may be resubmitted a day or two later in an attempt to obtain a valid authorization.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionSoftDeclineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizedTransactionIndicator",
+					"Description": "Transaction that has been approved.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizedTransactionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TransactionExceededTimelinessIndicator",
+					"Description": "A transaction that is deposited too late to qualify for the best interchange rate.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionExceededTimelinessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProcessorId",
+					"Description": "The unique identifier of a Processor.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "ProcessorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AcquirerId",
+					"Description": "The unique identifier of an Acquirer.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AcquirerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MerchantId",
+					"Description": "The Merchant Identification (MID) is a unique number that identifies your merchant account to payment processing networks and to your payment software.\n\nA series or group of digits that uniquely identifies the merchant to the merchant signing bank for account and billing purposes. \n\nWhen a merchant retains the services of a credit card processor, it is issued a merchant ID.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "MerchantId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PosDeviceId",
+					"Description": "The unique identifier of a POS Device.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "PosDeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AtmId",
+					"Description": "The unique identifier of the ATM.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AtmId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionRequestTypeId",
+					"Description": "The unique identifier of a transaction request type.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionRequestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionSubmissionModeId",
+					"Description": "The unique identifier of a transaction submission mode.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionSubmissionModeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionTaxStatusId",
+					"Description": "The unique identifier of the transaction tax status.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionTaxStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizationMethodId",
+					"Description": "The unique identifier of an authorization method.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AuthorizationResponseId",
+					"Description": "The unique identifier of an authorization response.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "AuthorizationResponseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeclineReasonId",
+					"Description": "The unique identifier of a decline reason.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "DeclineReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCategoryId",
+					"Description": "The unique identifier of a transaction category.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MacCode",
+					"Description": "The MAC Code.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "MacCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionConfirmationNumber",
+					"Description": "The transaction confirmation number provided to confirm that the transaction was executed.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionConfirmationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 16,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionCurrencyConversionTimestamp",
+					"Description": "The timestamp upon which currencies are converted  in relation to the associated transaction, which allows you to value the currencies for that transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionCurrencyConversionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TransactionNote",
+					"Description": "A note, comment or additional information regarding the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentCardTransaction.cdm.json/PaymentCardTransaction",
+						"Name": "TransactionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/PaymentCardTransaction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/PaymentCardTransaction",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionId\"},\"TransactionReceivedTimestamp\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionReceivedTimestamp\"},\"TransactionConfirmationTimestamp\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionConfirmationTimestamp\"},\"TransactionAuthorizationTimestamp\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionAuthorizationTimestamp\"},\"InitiatedByMerchantId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"InitiatedByMerchantId\"},\"InitiatedByMerchantAccountNumber\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"InitiatedByMerchantAccountNumber\"},\"ReceivedByMerchantId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ReceivedByMerchantId\"},\"ReceivedByMerchantAccountNumber\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ReceivedByMerchantAccountNumber\"},\"PaymentGatewayId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"PaymentGatewayId\"},\"TransactionPostingTimestamp\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionPostingTimestamp\"},\"TransactionAuthorizationCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionAuthorizationCode\"},\"TransactionCaptureFundsAvailableDate\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionCaptureFundsAvailableDate\"},\"TransactionChargebackPeriod\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionChargebackPeriod\"},\"ProcessingTimestamp\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ProcessingTimestamp\"},\"TransactionTypeId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionTypeId\"},\"TotalTransactionAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalTransactionAmount\"},\"AuthorizationAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationAmount\"},\"HoldbackChargeAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"HoldbackChargeAmount\"},\"TotalLocalTaxAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalLocalTaxAmount\"},\"TotalStateTaxAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalStateTaxAmount\"},\"TotalFederalTaxAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalFederalTaxAmount\"},\"TotalVatTaxAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalVatTaxAmount\"},\"TotalTaxAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalTaxAmount\"},\"Code10AuthorizationPurchaseIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"Code10AuthorizationPurchaseIndicator\"},\"AuthorizedReservedAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizedReservedAmount\"},\"OpenToBuyAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OpenToBuyAmount\"},\"AuthorizedAvailableCreditAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizedAvailableCreditAmount\"},\"MerchantName\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantName\"},\"TransactionAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionAmount\"},\"DateOfSale\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"DateOfSale\"},\"MerchantCategoryCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantCategoryCode\"},\"MerchantPostalCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantPostalCode\"},\"TaxIdentification\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TaxIdentification\"},\"TaxAmount\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TaxAmount\"},\"CustomerCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"CustomerCode\"},\"InvoiceNumber\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"InvoiceNumber\"},\"OrderNumber\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OrderNumber\"},\"TransactionApprovedIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionApprovedIndicator\"},\"DeniedTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"DeniedTransactionIndicator\"},\"PriorAuthorizationTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"PriorAuthorizationTransactionIndicator\"},\"VisaValidationCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"VisaValidationCode\"},\"MailPhoneTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MailPhoneTransactionIndicator\"},\"OnUsTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OnUsTransactionIndicator\"},\"OnlineTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OnlineTransactionIndicator\"},\"CardholderPresentIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"CardholderPresentIndicator\"},\"AuthorizationOnlyTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationOnlyTransactionIndicator\"},\"FraudulentTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"FraudulentTransactionIndicator\"},\"TransactionSoftDeclineIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionSoftDeclineIndicator\"},\"AuthorizedTransactionIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizedTransactionIndicator\"},\"TransactionExceededTimelinessIndicator\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionExceededTimelinessIndicator\"},\"CustomerAccountId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"CustomerAccountId\"},\"ProcessorId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ProcessorId\"},\"AcquirerId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AcquirerId\"},\"MerchantId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantId\"},\"PosDeviceId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"PosDeviceId\"},\"AtmId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AtmId\"},\"TransactionRequestTypeId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionRequestTypeId\"},\"TransactionSubmissionModeId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionSubmissionModeId\"},\"TransactionTaxStatusId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionTaxStatusId\"},\"AuthorizationMethodId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationMethodId\"},\"AuthorizationResponseId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationResponseId\"},\"DeclineReasonId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"DeclineReasonId\"},\"TransactionCategoryId\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionCategoryId\"},\"MacCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MacCode\"},\"IsoCurrencyCode\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"IsoCurrencyCode\"},\"TransactionConfirmationNumber\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionConfirmationNumber\"},\"TransactionCurrencyConversionTimestamp\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionCurrencyConversionTimestamp\"},\"TransactionNote\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PaymentCardTransaction\",\"path\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\"},\"description\":\"A Transaction related to Payment Card processing or related activities.\\n\\nThe following are the basic steps that occur when a payment card is processed. \\n\\n1. Cardholder presents the credit card at the point-of-sale. \\n\\n2. For  either Internet or Keyed in transactions, the cardholder provides the merchant with the account number, expiration date, billing address and any special codes on the payment card. \\n\\n3. Merchant swipes the card or enters the information by hand, enters the purchase amount and transmits the authorization request to the Acquirer. \\n\\n4. Acquirer electronically sends the authorization request into Interchange. \\n\\n5. Interchange passes on the authorization request to the Issuer. \\n\\n6. Issuer approves or declines the transaction. \\n\\n7. Interchange forwards the Issuer's authorization response to the Acquirer. \\n\\n8. Acquirer forwards the response to the Merchant. \\n\\n9. Merchant receives the authorization response and completes the transaction accordingly. \\n\\n10. Merchant closes the batch and submits the transactions to the acquirer through their merchant account. \\n\\n11. Acquirer electronically submits transactions into Interchange for settlement. The acquirer also credits the merchant's checking account for the submitted transactions once settlement information is received from the Interchange (aka \\\"funding\\\"). \\n\\n12. Interchange facilitates settlement by sending settled transaction information to the issuer and acquirer and providing both with information on what to credit the merchant, how much to debit the cardholder and the type and amount of the interchange fees that are to be paid by the acquirer to the issuer. \\n\\n13. Issuer posts the transactions to the cardholder account and sends the monthly statements to its cardholders. \\n\\n14. Cardholder receives statements and pays issuer.\",\"primaryKey\":[\"TransactionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionReceivedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp the transaction was received.\",\"isNullable\":true,\"name\":\"TransactionReceivedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionConfirmationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the transaction was confirmed.\",\"isNullable\":true,\"name\":\"TransactionConfirmationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionAuthorizationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"Timestamp that the transaction was authorized.\",\"isNullable\":true,\"name\":\"TransactionAuthorizationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"InitiatedByMerchantId\"},\"dataType\":\"integer\",\"description\":\"The Merchant Identification (MID) is a unique number that identifies your merchant account to payment processing networks and to your payment software.\\n\\nA series or group of digits that uniquely identifies the merchant to the merchant signing bank for account and billing purposes. \\n\\nWhen a merchant retains the services of a credit card processor, it is issued a merchant ID.\",\"isNullable\":true,\"name\":\"InitiatedByMerchantId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"InitiatedByMerchantAccountNumber\"},\"dataType\":\"string\",\"dataTypeLength\":16,\"description\":\"The account number of the merchant.\",\"isNullable\":true,\"name\":\"InitiatedByMerchantAccountNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ReceivedByMerchantId\"},\"dataType\":\"integer\",\"description\":\"The Merchant Identification (MID) is a unique number that identifies your merchant account to payment processing networks and to your payment software.\\n\\nA series or group of digits that uniquely identifies the merchant to the merchant signing bank for account and billing purposes. \\n\\nWhen a merchant retains the services of a credit card processor, it is issued a merchant ID.\",\"isNullable\":true,\"name\":\"ReceivedByMerchantId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ReceivedByMerchantAccountNumber\"},\"dataType\":\"string\",\"dataTypeLength\":16,\"description\":\"The account number of the merchant.\",\"isNullable\":true,\"name\":\"ReceivedByMerchantAccountNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"PaymentGatewayId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Payment Gateway.\",\"isNullable\":true,\"name\":\"PaymentGatewayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionPostingTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of updating individual cardholder account balances to reflect merchandise sales, instant cash, cash advances, adjustments, payments, and any other charges or credits.\",\"isNullable\":true,\"name\":\"TransactionPostingTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionAuthorizationCode\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A 6-digit code that a credit card issuing bank returns in an electronic message to the merchant's POS equipment that indicates approval of the transaction. The code serves as proof of authorization.\",\"isNullable\":true,\"name\":\"TransactionAuthorizationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionCaptureFundsAvailableDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that funds are available.\",\"isNullable\":true,\"name\":\"TransactionCaptureFundsAvailableDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionChargebackPeriod\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"description\":\"The number of days from the processing date or endorsement date transaction during which the issuer may initiate a chargeback.\",\"isNullable\":true,\"scale\":0,\"name\":\"TransactionChargebackPeriod\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ProcessingTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp on which the transaction is processed by the acquiring bank.\",\"isNullable\":true,\"name\":\"ProcessingTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Type.\",\"isNullable\":false,\"name\":\"TransactionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalTransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the transaction\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Currency amount approved.\",\"isNullable\":true,\"scale\":2,\"name\":\"AuthorizationAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"HoldbackChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of holdback charge.\\n\\nA portion of the revenue from a merchant's credit card transactions, held in reserve by the merchant account provider to cover possible disputed charges, chargeback fees, and other expenses. After a predetermined time, holdbacks are turned over to the merchant. Note: Merchant account providers almost never pay interest on holdbacks.\",\"isNullable\":true,\"scale\":2,\"name\":\"HoldbackChargeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalLocalTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of Local taxes applied to the purchase.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalLocalTaxAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalStateTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of State taxes applied to the purchase.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalStateTaxAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalFederalTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of Federal taxes applied to the purchase.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalFederalTaxAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalVatTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of VAT applied to the purchase.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalVatTaxAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TotalTaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of all taxes applied to the purchase.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTaxAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"Code10AuthorizationPurchaseIndicator\"},\"dataType\":\"boolean\",\"description\":\"If the merchant suspects a card is fraudulent at the time of the transaction, the merchant can call their voice authorization phone number and ask for a code 10. The voice operator will instruct the merchant on how to proceed.\",\"isNullable\":true,\"name\":\"Code10AuthorizationPurchaseIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizedReservedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The authorized reserve amount at the time of the transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"AuthorizedReservedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OpenToBuyAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Dollar amount of credit remaining for customer at the time of authorization.\",\"isNullable\":true,\"scale\":2,\"name\":\"OpenToBuyAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizedAvailableCreditAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of credit authorized in regard to the transaction or at the time of the transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"AuthorizedAvailableCreditAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the merchant.\",\"isNullable\":true,\"name\":\"MerchantName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"TransactionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"DateOfSale\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the transaction 'sale'.\",\"isNullable\":true,\"name\":\"DateOfSale\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantCategoryCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"Level I purchasing card data includes the same information captured during a traditional credit card purchase transaction. This includes: total purchase amount, date, merchant category code and supplier/retailer name.\",\"isNullable\":true,\"name\":\"MerchantCategoryCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantPostalCode\"},\"dataType\":\"string\",\"dataTypeLength\":6,\"description\":\"The merchant's postal code.\",\"isNullable\":true,\"name\":\"MerchantPostalCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TaxIdentification\"},\"dataType\":\"integer\",\"description\":\"The merchant's tax id number.\",\"isNullable\":true,\"name\":\"TaxIdentification\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TaxAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of taxes.\",\"isNullable\":true,\"scale\":2,\"name\":\"TaxAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"CustomerCode\"},\"dataType\":\"integer\",\"description\":\"A 17 character alphanumeric field that is used with Purchase Card transactions. The code is typically defined by the customer (cardholder) and used for accounting or project tracking purposes.\",\"isNullable\":true,\"name\":\"CustomerCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"InvoiceNumber\"},\"dataType\":\"integer\",\"description\":\"The invoice number that is assigned to the transaction.\",\"isNullable\":true,\"name\":\"InvoiceNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OrderNumber\"},\"dataType\":\"integer\",\"description\":\"A 17 character alphanumeric field that may be used between the Cardholder and the Merchant for accounting or tracking purposes.\",\"isNullable\":true,\"name\":\"OrderNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionApprovedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the transaction was approved.\",\"isNullable\":true,\"name\":\"TransactionApprovedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"DeniedTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the transaction was denied.\",\"isNullable\":true,\"name\":\"DeniedTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"PriorAuthorizationTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"An authorization usually done before a transaction takes place. The approved authorization request may be held for an extended length of time before a card is present or not.\",\"isNullable\":true,\"name\":\"PriorAuthorizationTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"VisaValidationCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":3,\"description\":\"A unique 4 character value that VISA includes as part of the CPS/ATM program in each authorization response to ensure that key authorization fields are preserved in the clearing or settlement record.\",\"isNullable\":true,\"scale\":0,\"name\":\"VisaValidationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MailPhoneTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"A transaction where a cardholder orders goods or services from a merchant by telephone, mail or other means of telecommunication, and neither the card nor the cardholder is present at the merchant outlet.\",\"isNullable\":true,\"name\":\"MailPhoneTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OnUsTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"A transaction that is authorized, cleared, and settled in a single online message.\",\"isNullable\":true,\"name\":\"OnUsTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"OnlineTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"A transaction that is authorized, cleared, and settled in a single online message.\",\"isNullable\":true,\"name\":\"OnlineTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"CardholderPresentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the cardholder was present for the transaction.\",\"isNullable\":true,\"name\":\"CardholderPresentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationOnlyTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"A transaction created to reserve an amount against a credit card's available limit for intended purchases; the settlement may occur within three to five days, depending on the card type.\",\"isNullable\":true,\"name\":\"AuthorizationOnlyTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"FraudulentTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"A transaction unauthorized by the cardholder of a bankcard. Such transactions are categorized as lost, stolen, not received, issued on a fraudulent application, counterfeit, fraudulent processing of transactions, account takeover, or other fraudulent conditions as defined by the card company or the member company.\",\"isNullable\":true,\"name\":\"FraudulentTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionSoftDeclineIndicator\"},\"dataType\":\"boolean\",\"description\":\"A declined authorization attempt that does not necessarily mean the card is bad (i.e., call referral, issuer unavailable or cardholder over limit). These transactions may be resubmitted a day or two later in an attempt to obtain a valid authorization.\",\"isNullable\":true,\"name\":\"TransactionSoftDeclineIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizedTransactionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Transaction that has been approved.\",\"isNullable\":true,\"name\":\"AuthorizedTransactionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionExceededTimelinessIndicator\"},\"dataType\":\"boolean\",\"description\":\"A transaction that is deposited too late to qualify for the best interchange rate.\",\"isNullable\":true,\"name\":\"TransactionExceededTimelinessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":true,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"ProcessorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Processor.\",\"isNullable\":true,\"name\":\"ProcessorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AcquirerId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Acquirer.\",\"isNullable\":false,\"name\":\"AcquirerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MerchantId\"},\"dataType\":\"integer\",\"description\":\"The Merchant Identification (MID) is a unique number that identifies your merchant account to payment processing networks and to your payment software.\\n\\nA series or group of digits that uniquely identifies the merchant to the merchant signing bank for account and billing purposes. \\n\\nWhen a merchant retains the services of a credit card processor, it is issued a merchant ID.\",\"isNullable\":true,\"name\":\"MerchantId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"PosDeviceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a POS Device.\",\"isNullable\":true,\"name\":\"PosDeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AtmId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the ATM.\",\"isNullable\":false,\"name\":\"AtmId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionRequestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a transaction request type.\",\"isNullable\":true,\"name\":\"TransactionRequestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionSubmissionModeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a transaction submission mode.\",\"isNullable\":true,\"name\":\"TransactionSubmissionModeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionTaxStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the transaction tax status.\",\"isNullable\":false,\"name\":\"TransactionTaxStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an authorization method.\",\"isNullable\":false,\"name\":\"AuthorizationMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"AuthorizationResponseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an authorization response.\",\"isNullable\":true,\"name\":\"AuthorizationResponseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"DeclineReasonId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a decline reason.\",\"isNullable\":false,\"name\":\"DeclineReasonId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a transaction category.\",\"isNullable\":true,\"name\":\"TransactionCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"MacCode\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The MAC Code.\",\"isNullable\":true,\"name\":\"MacCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionConfirmationNumber\"},\"dataType\":\"string\",\"dataTypeLength\":16,\"description\":\"The transaction confirmation number provided to confirm that the transaction was executed.\",\"isNullable\":true,\"name\":\"TransactionConfirmationNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionCurrencyConversionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp upon which currencies are converted  in relation to the associated transaction, which allows you to value the currencies for that transaction.\",\"isNullable\":true,\"name\":\"TransactionCurrencyConversionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentCardTransaction.cdm.json/PaymentCardTransaction\",\"name\":\"TransactionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Transaction.\",\"isNullable\":true,\"name\":\"TransactionNote\"}]}}}",
+			"Description": "A Transaction related to Payment Card processing or related activities.\n\nThe following are the basic steps that occur when a payment card is processed. \n\n1. Cardholder presents the credit card at the point-of-sale. \n\n2. For  either Internet or Keyed in transactions, the cardholder provides the merchant with the account number, expiration date, billing address and any special codes on the payment card. \n\n3. Merchant swipes the card or enters the information by hand, enters the purchase amount and transmits the authorization request to the Acquirer. \n\n4. Acquirer electronically sends the authorization request into Interchange. \n\n5. Interchange passes on the authorization request to the Issuer. \n\n6. Issuer approves or declines the transaction. \n\n7. Interchange forwards the Issuer's authorization response to the Acquirer. \n\n8. Acquirer forwards the response to the Merchant. \n\n9. Merchant receives the authorization response and completes the transaction accordingly. \n\n10. Merchant closes the batch and submits the transactions to the acquirer through their merchant account. \n\n11. Acquirer electronically submits transactions into Interchange for settlement. The acquirer also credits the merchant's checking account for the submitted transactions once settlement information is received from the Interchange (aka \"funding\"). \n\n12. Interchange facilitates settlement by sending settled transaction information to the issuer and acquirer and providing both with information on what to credit the merchant, how much to debit the cardholder and the type and amount of the interchange fees that are to be paid by the acquirer to the issuer. \n\n13. Issuer posts the transactions to the cardholder account and sends the monthly statements to its cardholders. \n\n14. Cardholder receives statements and pays issuer.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

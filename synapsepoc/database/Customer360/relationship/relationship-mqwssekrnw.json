@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mqwssekrnw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-mqwssekrnw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category6BusinessTravelDistanceBasedMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "BustinessTravelCostCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category6BusinessTravelDistanceBasedMethod.cdm.json/Scope3Category6BusinessTravelDistanceBasedMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"BustinessTravelCostCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

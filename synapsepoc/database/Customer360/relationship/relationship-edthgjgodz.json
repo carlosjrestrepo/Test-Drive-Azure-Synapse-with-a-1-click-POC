@@ -1,0 +1,26 @@
+{
+	"name": "relationship-edthgjgodz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-edthgjgodz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Coupon",
+		"ToTableName": "CustomerAccountIssuedCoupon",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CouponId",
+				"ToColumnName": "CouponId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Coupon.cdm.json/Coupon\",\"toEntity\":\"CustomerAccountIssuedCoupon.cdm.json/CustomerAccountIssuedCoupon\",\"joinPairs\":[{\"fromAttribute\":\"CouponId\",\"toAttribute\":\"CouponId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

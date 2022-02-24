@@ -1,0 +1,136 @@
+{
+	"name": "CustomerContactPurpose",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerContactPurpose",
+		"Description": "A contact method by which the customer could be contacted regarding the intended contact purpose.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerContactPurpose.cdm.json/CustomerContactPurpose",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ContactPurposeId",
+					"Description": "The unique identifier of the Contact Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerContactPurpose.cdm.json/CustomerContactPurpose",
+						"Name": "ContactPurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContactMethodId",
+					"Description": "The unique identifier of a Contact Method.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerContactPurpose.cdm.json/CustomerContactPurpose",
+						"Name": "ContactMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OptInStatusTypeId",
+					"Description": "The unique identifier of an Opt-In Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerContactPurpose.cdm.json/CustomerContactPurpose",
+						"Name": "OptInStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerContactPurposeNote",
+					"Description": "A note, comment or additional information regarding the customer contact purpose.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerContactPurpose.cdm.json/CustomerContactPurpose",
+						"Name": "CustomerContactPurposeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerContactPurpose",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerContactPurpose",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"CustomerId\"},\"ContactPurposeId\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"ContactPurposeId\"},\"ContactMethodId\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"ContactMethodId\"},\"OptInStatusTypeId\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"OptInStatusTypeId\"},\"CustomerContactPurposeNote\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"CustomerContactPurposeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerContactPurpose\",\"path\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\"},\"description\":\"A contact method by which the customer could be contacted regarding the intended contact purpose.\",\"primaryKey\":[\"CustomerId\",\"ContactPurposeId\",\"ContactMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"ContactPurposeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Contact Purpose.\",\"isNullable\":false,\"name\":\"ContactPurposeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"ContactMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Contact Method.\",\"isNullable\":false,\"name\":\"ContactMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"OptInStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Opt-In Status Type.\",\"isNullable\":true,\"name\":\"OptInStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerContactPurpose.cdm.json/CustomerContactPurpose\",\"name\":\"CustomerContactPurposeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer contact purpose.\",\"isNullable\":true,\"name\":\"CustomerContactPurposeNote\"}]}}}",
+			"Description": "A contact method by which the customer could be contacted regarding the intended contact purpose.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CustomerId,ContactPurposeId,ContactMethodId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

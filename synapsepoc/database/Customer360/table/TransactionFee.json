@@ -1,0 +1,156 @@
+{
+	"name": "TransactionFee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "TransactionFee",
+		"Description": "The fee(s) applied to a corresponding transaction.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionFee.cdm.json/TransactionFee",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransactionFeeTypeId",
+					"Description": "The unique identifier of a Fee.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionFee.cdm.json/TransactionFee",
+						"Name": "TransactionFeeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp of the associated fee.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionFee.cdm.json/TransactionFee",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FeeAmount",
+					"Description": "The fee amount applied.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionFee.cdm.json/TransactionFee",
+						"Name": "FeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionFee.cdm.json/TransactionFee",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransactionFeeNote",
+					"Description": "A note, comment or additional information regarding the transaction fee.",
+					"BaseAttributeReference": {
+						"Entity": "TransactionFee.cdm.json/TransactionFee",
+						"Name": "TransactionFeeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionFee",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/TransactionFee",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"TransactionId\"},\"TransactionFeeTypeId\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"TransactionFeeTypeId\"},\"Timestamp\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"Timestamp\"},\"FeeAmount\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"FeeAmount\"},\"IsoCurrencyCode\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"IsoCurrencyCode\"},\"TransactionFeeNote\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"TransactionFeeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransactionFee\",\"path\":\"TransactionFee.cdm.json/TransactionFee\"},\"description\":\"The fee(s) applied to a corresponding transaction.\",\"primaryKey\":[\"TransactionId\",\"TransactionFeeTypeId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"TransactionFeeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Fee.\",\"isNullable\":false,\"name\":\"TransactionFeeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the associated fee.\",\"isNullable\":false,\"name\":\"Timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"FeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The fee amount applied.\",\"isNullable\":true,\"scale\":2,\"name\":\"FeeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransactionFee.cdm.json/TransactionFee\",\"name\":\"TransactionFeeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the transaction fee.\",\"isNullable\":true,\"name\":\"TransactionFeeNote\"}]}}}",
+			"Description": "The fee(s) applied to a corresponding transaction.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "TransactionId,TransactionFeeTypeId,Timestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pskfshshck",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-pskfshshck",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "CarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"CarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

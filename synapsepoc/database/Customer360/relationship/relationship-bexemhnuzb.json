@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bexemhnuzb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-bexemhnuzb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HousingUnitType",
+		"ToTableName": "HouseholdLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HousingUnitTypeId",
+				"ToColumnName": "HousingUnitTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HousingUnitType.cdm.json/HousingUnitType\",\"toEntity\":\"HouseholdLocation.cdm.json/HouseholdLocation\",\"joinPairs\":[{\"fromAttribute\":\"HousingUnitTypeId\",\"toAttribute\":\"HousingUnitTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nvbueuglbn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-nvbueuglbn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentCard",
+		"ToTableName": "CustomerAccountAutomaticPayment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentCardId",
+				"ToColumnName": "PaymentCardId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentCard.cdm.json/PaymentCard\",\"toEntity\":\"CustomerAccountAutomaticPayment.cdm.json/CustomerAccountAutomaticPayment\",\"joinPairs\":[{\"fromAttribute\":\"PaymentCardId\",\"toAttribute\":\"PaymentCardId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

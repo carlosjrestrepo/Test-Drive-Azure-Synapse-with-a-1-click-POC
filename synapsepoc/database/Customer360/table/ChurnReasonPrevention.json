@@ -1,0 +1,122 @@
+{
+	"name": "ChurnReasonPrevention",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "ChurnReasonPrevention",
+		"Description": "The action(s) that are appropriate for preventing a churn of a customer account due to the Churn Reason.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChurnReasonId",
+					"Description": "The unique identifier of a Churn Reason.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnReasonPrevention.cdm.json/ChurnReasonPrevention",
+						"Name": "ChurnReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChurnPreventionId",
+					"Description": "The unique identifier of a Churn Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnReasonPrevention.cdm.json/ChurnReasonPrevention",
+						"Name": "ChurnPreventionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ChurnReasonPreventionAnticipatedSuccessRate",
+					"Description": "The historical success of preventing a customer account churn due to the churn reason by using the churn prevention action.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnReasonPrevention.cdm.json/ChurnReasonPrevention",
+						"Name": "ChurnReasonPreventionAnticipatedSuccessRate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChurnReasonPreventionNote",
+					"Description": "A note or statement regarding the Churn Reason Prevention.",
+					"BaseAttributeReference": {
+						"Entity": "ChurnReasonPrevention.cdm.json/ChurnReasonPrevention",
+						"Name": "ChurnReasonPreventionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ChurnReasonPrevention",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ChurnReasonPrevention",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChurnReasonId\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnReasonId\"},\"ChurnPreventionId\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnPreventionId\"},\"ChurnReasonPreventionAnticipatedSuccessRate\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnReasonPreventionAnticipatedSuccessRate\"},\"ChurnReasonPreventionNote\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnReasonPreventionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ChurnReasonPrevention\",\"path\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\"},\"description\":\"The action(s) that are appropriate for preventing a churn of a customer account due to the Churn Reason.\",\"primaryKey\":[\"ChurnReasonId\",\"ChurnPreventionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnReasonId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Churn Reason.\",\"isNullable\":false,\"name\":\"ChurnReasonId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnPreventionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Churn Prevention.\",\"isNullable\":false,\"name\":\"ChurnPreventionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnReasonPreventionAnticipatedSuccessRate\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The historical success of preventing a customer account churn due to the churn reason by using the churn prevention action.\",\"isNullable\":true,\"scale\":8,\"name\":\"ChurnReasonPreventionAnticipatedSuccessRate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ChurnReasonPrevention.cdm.json/ChurnReasonPrevention\",\"name\":\"ChurnReasonPreventionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note or statement regarding the Churn Reason Prevention.\",\"isNullable\":true,\"name\":\"ChurnReasonPreventionNote\"}]}}}",
+			"Description": "The action(s) that are appropriate for preventing a churn of a customer account due to the Churn Reason.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "ChurnReasonId,ChurnPreventionId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

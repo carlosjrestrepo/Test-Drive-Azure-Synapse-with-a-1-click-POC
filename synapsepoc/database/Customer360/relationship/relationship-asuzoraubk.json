@@ -1,0 +1,26 @@
+{
+	"name": "relationship-asuzoraubk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-asuzoraubk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerStatusType",
+		"ToTableName": "CustomerStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerStatusTypeId",
+				"ToColumnName": "CustomerStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerStatusType.cdm.json/CustomerStatusType\",\"toEntity\":\"CustomerStatus.cdm.json/CustomerStatus\",\"joinPairs\":[{\"fromAttribute\":\"CustomerStatusTypeId\",\"toAttribute\":\"CustomerStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

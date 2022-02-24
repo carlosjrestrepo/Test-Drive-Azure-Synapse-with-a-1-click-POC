@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jrcblcazta",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-jrcblcazta",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerAccountCreditRequest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "RequestingPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerAccountCreditRequest.cdm.json/CustomerAccountCreditRequest\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"RequestingPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

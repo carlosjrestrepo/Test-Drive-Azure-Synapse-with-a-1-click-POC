@@ -1,0 +1,318 @@
+{
+	"name": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+		"Description": "The materials input associated with the scope 3 category 1 hybrid method for calculating emissions.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MaterialTypeId",
+					"Description": "The unique identifier of a material type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GoodTypeId",
+					"Description": "The unique identifier of a good/service type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "GoodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MaterialPurchasedUnits",
+					"Description": "The quantity of material purchased.\n\nsum across purchased goods or services:\n(quantities of good purchased (e.g., kg) x supplier-specific product emission factor of purchased good or service (e.g., kg CO2 e/kg))",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialPurchasedUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaterialPurchasedUomId",
+					"Description": "The material purchased UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialPurchasedUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialsPurchasedTotalDistanceOfTransferUnits",
+					"Description": "The total distance of transfer associated with the material.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialsPurchasedTotalDistanceOfTransferUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialsPurchasedTotalDistanceOfTransferUom",
+					"Description": "The materials purchased total distance of transfer UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialsPurchasedTotalDistanceOfTransferUom"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialsPurchasedMassUnits",
+					"Description": "The materials purchased mass units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialsPurchasedMassUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialsPurchasedMassUomId",
+					"Description": "The materials purchased mass UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "MaterialsPurchasedMassUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedMaterialSpentAmountSpent",
+					"Description": "The amount spent on purchased material.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "PurchasedMaterialSpentAmountSpent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PurchasedMaterialSpentAmountSpentCurrencyCode",
+					"Description": "The currency associated with the purchased material spent amount.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "PurchasedMaterialSpentAmountSpentCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The material emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"ReportingLegalEntityId\"},\"VendorId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"VendorId\"},\"MaterialTypeId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialTypeId\"},\"GoodTypeId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"GoodTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PeriodEndTimestamp\"},\"MaterialPurchasedUnits\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialPurchasedUnits\"},\"MaterialPurchasedUomId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialPurchasedUomId\"},\"MaterialsPurchasedTotalDistanceOfTransferUnits\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedTotalDistanceOfTransferUnits\"},\"MaterialsPurchasedTotalDistanceOfTransferUom\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedTotalDistanceOfTransferUom\"},\"MaterialsPurchasedMassUnits\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedMassUnits\"},\"MaterialsPurchasedMassUomId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedMassUomId\"},\"PurchasedMaterialSpentAmountSpent\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PurchasedMaterialSpentAmountSpent\"},\"PurchasedMaterialSpentAmountSpentCurrencyCode\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PurchasedMaterialSpentAmountSpentCurrencyCode\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"path\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\"},\"description\":\"The materials input associated with the scope 3 category 1 hybrid method for calculating emissions.\",\"primaryKey\":[\"ReportingLegalEntityId\",\"VendorId\",\"MaterialTypeId\",\"GoodTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":false,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material type.\",\"isNullable\":false,\"name\":\"MaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"GoodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a good/service type.\",\"isNullable\":false,\"name\":\"GoodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialPurchasedUnits\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity of material purchased.\\n\\nsum across purchased goods or services:\\n(quantities of good purchased (e.g., kg) x supplier-specific product emission factor of purchased good or service (e.g., kg CO2 e/kg))\",\"isNullable\":true,\"scale\":2,\"name\":\"MaterialPurchasedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialPurchasedUomId\"},\"dataType\":\"integer\",\"description\":\"The material purchased UOM.\",\"isNullable\":true,\"name\":\"MaterialPurchasedUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedTotalDistanceOfTransferUnits\"},\"dataType\":\"integer\",\"description\":\"The total distance of transfer associated with the material.\",\"isNullable\":true,\"name\":\"MaterialsPurchasedTotalDistanceOfTransferUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedTotalDistanceOfTransferUom\"},\"dataType\":\"integer\",\"description\":\"The materials purchased total distance of transfer UOM.\",\"isNullable\":true,\"name\":\"MaterialsPurchasedTotalDistanceOfTransferUom\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedMassUnits\"},\"dataType\":\"integer\",\"description\":\"The materials purchased mass units.\",\"isNullable\":true,\"name\":\"MaterialsPurchasedMassUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"MaterialsPurchasedMassUomId\"},\"dataType\":\"integer\",\"description\":\"The materials purchased mass UOM.\",\"isNullable\":true,\"name\":\"MaterialsPurchasedMassUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PurchasedMaterialSpentAmountSpent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount spent on purchased material.\",\"isNullable\":true,\"scale\":2,\"name\":\"PurchasedMaterialSpentAmountSpent\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"PurchasedMaterialSpentAmountSpentCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The currency associated with the purchased material spent amount.\",\"isNullable\":true,\"name\":\"PurchasedMaterialSpentAmountSpentCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput.cdm.json/Scope3Category1PurchasedGoodAndServicesHybridMethodMaterialsInput\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The material emission factor UOM.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "The materials input associated with the scope 3 category 1 hybrid method for calculating emissions.",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,VendorId,MaterialTypeId,GoodTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

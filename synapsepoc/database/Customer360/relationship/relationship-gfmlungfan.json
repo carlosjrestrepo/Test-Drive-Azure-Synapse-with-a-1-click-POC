@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gfmlungfan",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-gfmlungfan",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SurveyType",
+		"ToTableName": "Survey",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SurveyTypeId",
+				"ToColumnName": "SurveyTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SurveyType.cdm.json/SurveyType\",\"toEntity\":\"Survey.cdm.json/Survey\",\"joinPairs\":[{\"fromAttribute\":\"SurveyTypeId\",\"toAttribute\":\"SurveyTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,154 @@
+{
+	"name": "CustomerAccountReview",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountReview",
+		"Description": "The reviews associated with a Customer Account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReview.cdm.json/CustomerAccountReview",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountReviewTypeId",
+					"Description": "The unique identifier of a Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReview.cdm.json/CustomerAccountReview",
+						"Name": "CustomerAccountReviewTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReviewRequiredByTimestamp",
+					"Description": "The timestamp that the associated Customer Account Review must be completed by.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReview.cdm.json/CustomerAccountReview",
+						"Name": "ReviewRequiredByTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReviewCompletedTimestamp",
+					"Description": "The timestamp that the associated Customer Account Review was completed.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReview.cdm.json/CustomerAccountReview",
+						"Name": "ReviewCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReviewedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReview.cdm.json/CustomerAccountReview",
+						"Name": "ReviewedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountReviewNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Review.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountReview.cdm.json/CustomerAccountReview",
+						"Name": "CustomerAccountReviewNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountReview",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountReview",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"CustomerAccountId\"},\"CustomerAccountReviewTypeId\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"CustomerAccountReviewTypeId\"},\"ReviewRequiredByTimestamp\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"ReviewRequiredByTimestamp\"},\"ReviewCompletedTimestamp\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"ReviewCompletedTimestamp\"},\"ReviewedByPartyId\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"ReviewedByPartyId\"},\"CustomerAccountReviewNote\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"CustomerAccountReviewNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountReview\",\"path\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\"},\"description\":\"The reviews associated with a Customer Account.\",\"primaryKey\":[\"CustomerAccountId\",\"CustomerAccountReviewTypeId\",\"ReviewRequiredByTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"CustomerAccountReviewTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Balance Type.\",\"isNullable\":false,\"name\":\"CustomerAccountReviewTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"ReviewRequiredByTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated Customer Account Review must be completed by.\",\"isNullable\":false,\"name\":\"ReviewRequiredByTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"ReviewCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated Customer Account Review was completed.\",\"isNullable\":false,\"name\":\"ReviewCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"ReviewedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ReviewedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"name\":\"CustomerAccountReviewNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Review.\",\"isNullable\":true,\"name\":\"CustomerAccountReviewNote\"}]}}}",
+			"Description": "The reviews associated with a Customer Account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CustomerAccountReviewTypeId,ReviewRequiredByTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

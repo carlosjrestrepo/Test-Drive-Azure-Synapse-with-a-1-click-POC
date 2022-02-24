@@ -1,0 +1,30 @@
+{
+	"name": "relationship-jbdwmyovjq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-jbdwmyovjq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ConsumerLoan",
+		"ToTableName": "ConsumerLoanPayment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CreditGrantorId",
+				"ToColumnName": "CreditGrantorId"
+			},
+			{
+				"FromColumnName": "LoanAccountNumber",
+				"ToColumnName": "LoanAccountNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ConsumerLoan.cdm.json/ConsumerLoan\",\"toEntity\":\"ConsumerLoanPayment.cdm.json/ConsumerLoanPayment\",\"joinPairs\":[{\"fromAttribute\":\"CreditGrantorId\",\"toAttribute\":\"CreditGrantorId\"},{\"fromAttribute\":\"LoanAccountNumber\",\"toAttribute\":\"LoanAccountNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

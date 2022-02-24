@@ -1,0 +1,186 @@
+{
+	"name": "RelatedCustomerAccountEvent",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "RelatedCustomerAccountEvent",
+		"Description": "The nature of the relationship between Customer Account Events.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventTypeId",
+					"Description": "The unique identifier of a Customer Account Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "CustomerAccountEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventTimestamp",
+					"Description": "The timestamp that the associated Customer Account Event Type occurred or was recorded for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "CustomerAccountEventTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "RelatedCustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCustomerAccountEventTypeId",
+					"Description": "The unique identifier of a Customer Account Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "RelatedCustomerAccountEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedCustomerAccountEventTimestamp",
+					"Description": "The timestamp of the related customer account event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "RelatedCustomerAccountEventTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Account Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "CustomerAccountEventRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountRelatedEventNote",
+					"Description": "A note, comment or additional information regarding the related customer account event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent",
+						"Name": "CustomerAccountRelatedEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/RelatedCustomerAccountEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/RelatedCustomerAccountEvent",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountId\"},\"CustomerAccountEventTypeId\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountEventTypeId\"},\"CustomerAccountEventTimestamp\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountEventTimestamp\"},\"RelatedCustomerAccountId\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"RelatedCustomerAccountId\"},\"RelatedCustomerAccountEventTypeId\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"RelatedCustomerAccountEventTypeId\"},\"RelatedCustomerAccountEventTimestamp\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"RelatedCustomerAccountEventTimestamp\"},\"CustomerAccountEventRelationshipTypeId\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountEventRelationshipTypeId\"},\"CustomerAccountRelatedEventNote\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountRelatedEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedCustomerAccountEvent\",\"path\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\"},\"description\":\"The nature of the relationship between Customer Account Events.\",\"primaryKey\":[\"CustomerAccountId\",\"CustomerAccountEventTypeId\",\"CustomerAccountEventTimestamp\",\"RelatedCustomerAccountId\",\"RelatedCustomerAccountEventTypeId\",\"RelatedCustomerAccountEventTimestamp\",\"CustomerAccountEventRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Event Type.\",\"isNullable\":false,\"name\":\"CustomerAccountEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountEventTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated Customer Account Event Type occurred or was recorded for the Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountEventTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"RelatedCustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"RelatedCustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"RelatedCustomerAccountEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Event Type.\",\"isNullable\":false,\"name\":\"RelatedCustomerAccountEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"RelatedCustomerAccountEventTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the related customer account event.\",\"isNullable\":false,\"name\":\"RelatedCustomerAccountEventTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountEventRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Event Relationship Type.\",\"isNullable\":false,\"name\":\"CustomerAccountEventRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedCustomerAccountEvent.cdm.json/RelatedCustomerAccountEvent\",\"name\":\"CustomerAccountRelatedEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the related customer account event.\",\"isNullable\":true,\"name\":\"CustomerAccountRelatedEventNote\"}]}}}",
+			"Description": "The nature of the relationship between Customer Account Events.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CustomerAccountEventTypeId,CustomerAccountEventTimestamp,RelatedCustomerAccountId,RelatedCustomerAccountEventTypeId,RelatedCustomerAccountEventTimestamp,CustomerAccountEventRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

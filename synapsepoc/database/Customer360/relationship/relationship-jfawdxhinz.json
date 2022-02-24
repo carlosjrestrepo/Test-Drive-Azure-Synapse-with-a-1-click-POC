@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jfawdxhinz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-jfawdxhinz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AuthorizationType",
+		"ToTableName": "CustomerPartyAuthorization",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AuthorizationTypeId",
+				"ToColumnName": "AuthorizationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AuthorizationType.cdm.json/AuthorizationType\",\"toEntity\":\"CustomerPartyAuthorization.cdm.json/CustomerPartyAuthorization\",\"joinPairs\":[{\"fromAttribute\":\"AuthorizationTypeId\",\"toAttribute\":\"AuthorizationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,140 @@
+{
+	"name": "CustomerAccountManagedPaymentPlan",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountManagedPaymentPlan",
+		"Description": "The Customer Account Managed Payment Plan and amount for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated payment plan payment is set for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated payment plan payment is set for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ManagedPaymentPlanAmount",
+					"Description": "The amount of the customer account managed payment plan for the specified period.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan",
+						"Name": "ManagedPaymentPlanAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountManagedPaymentPlanNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Managed Payment Plan.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan",
+						"Name": "CustomerAccountManagedPaymentPlanNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountManagedPaymentPlan",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountManagedPaymentPlan",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"CustomerAccountId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"PeriodEndDate\"},\"ManagedPaymentPlanAmount\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"ManagedPaymentPlanAmount\"},\"CustomerAccountManagedPaymentPlanNote\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"CustomerAccountManagedPaymentPlanNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountManagedPaymentPlan\",\"path\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\"},\"description\":\"The Customer Account Managed Payment Plan and amount for the associated period.\",\"primaryKey\":[\"CustomerAccountId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated payment plan payment is set for the Customer Account.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated payment plan payment is set for the Customer Account.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"ManagedPaymentPlanAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the customer account managed payment plan for the specified period.\",\"isNullable\":true,\"scale\":2,\"name\":\"ManagedPaymentPlanAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountManagedPaymentPlan.cdm.json/CustomerAccountManagedPaymentPlan\",\"name\":\"CustomerAccountManagedPaymentPlanNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Managed Payment Plan.\",\"isNullable\":true,\"name\":\"CustomerAccountManagedPaymentPlanNote\"}]}}}",
+			"Description": "The Customer Account Managed Payment Plan and amount for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "CustomerAccountEventType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountEventType",
+		"Description": "A categorization of Customer Account related Event Types.\n\nEx:\n- Customer Account Application Received\n- Customer Account Application Approved\n- Customer Account Established\n- Customer Account Closed\n- Customer Account Fraud\n- Customer Account Frozen\n- Customer Account Deposit Required\n- Customer Account Deposit Returned\n- Customer Account Credit Limit Increased\n- Customer Account Credit Limit Decreased\n- Customer Account Service Language Changed\n- Customer Account Review\n- Customer Account Audit\n- Customer Account Contact Information Changed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountEventTypeId",
+					"Description": "The unique identifier of a Customer Account Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventType.cdm.json/CustomerAccountEventType",
+						"Name": "CustomerAccountEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventTypeName",
+					"Description": "The name of a Customer Account Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventType.cdm.json/CustomerAccountEventType",
+						"Name": "CustomerAccountEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountEventTypeDescription",
+					"Description": "The description of a Customer Account Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountEventType.cdm.json/CustomerAccountEventType",
+						"Name": "CustomerAccountEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountEventType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountEventType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountEventTypeId\":{\"entity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"name\":\"CustomerAccountEventTypeId\"},\"CustomerAccountEventTypeName\":{\"entity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"name\":\"CustomerAccountEventTypeName\"},\"CustomerAccountEventTypeDescription\":{\"entity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"name\":\"CustomerAccountEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountEventType\",\"path\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\"},\"description\":\"A categorization of Customer Account related Event Types.\\n\\nEx:\\n- Customer Account Application Received\\n- Customer Account Application Approved\\n- Customer Account Established\\n- Customer Account Closed\\n- Customer Account Fraud\\n- Customer Account Frozen\\n- Customer Account Deposit Required\\n- Customer Account Deposit Returned\\n- Customer Account Credit Limit Increased\\n- Customer Account Credit Limit Decreased\\n- Customer Account Service Language Changed\\n- Customer Account Review\\n- Customer Account Audit\\n- Customer Account Contact Information Changed\",\"primaryKey\":[\"CustomerAccountEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"name\":\"CustomerAccountEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Account Event Type.\",\"isNullable\":false,\"name\":\"CustomerAccountEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"name\":\"CustomerAccountEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Account Event Type.\",\"isNullable\":true,\"name\":\"CustomerAccountEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountEventType.cdm.json/CustomerAccountEventType\",\"name\":\"CustomerAccountEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Account Event Type.\",\"isNullable\":true,\"name\":\"CustomerAccountEventTypeDescription\"}]}}}",
+			"Description": "A categorization of Customer Account related Event Types.\n\nEx:\n- Customer Account Application Received\n- Customer Account Application Approved\n- Customer Account Established\n- Customer Account Closed\n- Customer Account Fraud\n- Customer Account Frozen\n- Customer Account Deposit Required\n- Customer Account Deposit Returned\n- Customer Account Credit Limit Increased\n- Customer Account Credit Limit Decreased\n- Customer Account Service Language Changed\n- Customer Account Review\n- Customer Account Audit\n- Customer Account Contact Information Changed",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountEventTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

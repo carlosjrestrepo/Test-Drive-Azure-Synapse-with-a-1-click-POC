@@ -1,0 +1,105 @@
+{
+	"name": "NameUsage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "NameUsage",
+		"Description": "A usage or classification of names based on their function or application.\n\nEx:\n- US legal name\n- Westernized name\n- Correspondence-To Name\n- Military Name\n- Professional Name\n- Chinese Family Name",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NameUsageId",
+					"Description": "The unique identifier of a name usage.",
+					"BaseAttributeReference": {
+						"Entity": "NameUsage.cdm.json/NameUsage",
+						"Name": "NameUsageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NameUsageName",
+					"Description": "The name of a name usage.",
+					"BaseAttributeReference": {
+						"Entity": "NameUsage.cdm.json/NameUsage",
+						"Name": "NameUsageName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NameUsageDescription",
+					"Description": "The description of a name usage.",
+					"BaseAttributeReference": {
+						"Entity": "NameUsage.cdm.json/NameUsage",
+						"Name": "NameUsageDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/NameUsage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/NameUsage",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NameUsageId\":{\"entity\":\"NameUsage.cdm.json/NameUsage\",\"name\":\"NameUsageId\"},\"NameUsageName\":{\"entity\":\"NameUsage.cdm.json/NameUsage\",\"name\":\"NameUsageName\"},\"NameUsageDescription\":{\"entity\":\"NameUsage.cdm.json/NameUsage\",\"name\":\"NameUsageDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NameUsage\",\"path\":\"NameUsage.cdm.json/NameUsage\"},\"description\":\"A usage or classification of names based on their function or application.\\n\\nEx:\\n- US legal name\\n- Westernized name\\n- Correspondence-To Name\\n- Military Name\\n- Professional Name\\n- Chinese Family Name\",\"primaryKey\":[\"NameUsageId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NameUsage.cdm.json/NameUsage\",\"name\":\"NameUsageId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a name usage.\",\"isNullable\":false,\"name\":\"NameUsageId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NameUsage.cdm.json/NameUsage\",\"name\":\"NameUsageName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a name usage.\",\"isNullable\":true,\"name\":\"NameUsageName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NameUsage.cdm.json/NameUsage\",\"name\":\"NameUsageDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a name usage.\",\"isNullable\":true,\"name\":\"NameUsageDescription\"}]}}}",
+			"Description": "A usage or classification of names based on their function or application.\n\nEx:\n- US legal name\n- Westernized name\n- Correspondence-To Name\n- Military Name\n- Professional Name\n- Chinese Family Name",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "NameUsageId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

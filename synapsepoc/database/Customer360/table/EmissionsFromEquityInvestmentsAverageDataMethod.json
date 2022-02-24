@@ -1,0 +1,256 @@
+{
+	"name": "EmissionsFromEquityInvestmentsAverageDataMethod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "EmissionsFromEquityInvestmentsAverageDataMethod",
+		"Description": "Average-data method, which involves using revenue data combined with EEIO data to estimate the scope 1 and scope 2 emissions from the investee company and allocating emissions based upon share of investment.\n \nEquation:\nEmissions from equity investments: sum across equity investments:  ((investee company total revenue ($) x emission factor for investee's sector (kg CO2\ne/$ revenue)) x share of equity (%))\n\nEmission factors needed\nThe reporting company should collect:\n\n- EEIO emission factors for the sectors of the economy that the investments are related to (kg CO2e/$ revenue).\n\nSource:  Category Investments Page 144",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InvestmentSectorId",
+					"Description": "The identifier of an investment sector.\n\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "InvestmentSectorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShareOfEquityPercentage",
+					"Description": "The share of equity percentage.\n\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "ShareOfEquityPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RevenueOfInvesteeCompanyAmount",
+					"Description": "The amount of investee company revenue.\n\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "RevenueOfInvesteeCompanyAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RevenueOfInvesteeCompanyCurrencyCode",
+					"Description": "\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "RevenueOfInvesteeCompanyCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InvesteeCompanyRevenueInSectorPercent",
+					"Description": "The percentage of revenue of the investee company in the revenue sector.\n\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "InvesteeCompanyRevenueInSectorPercent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EmissionsFromEquityInvestmentsUnits",
+					"Description": "The emission units from equity investments.\n\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "EmissionsFromEquityInvestmentsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmissionsFromEquityInvestmentsUomId",
+					"Description": "The emissions from equity investments UOM.\n\nSource:  Category Investments Page 145",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "EmissionsFromEquityInvestmentsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The total CO2e emission UOM ID.",
+					"BaseAttributeReference": {
+						"Entity": "EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/EmissionsFromEquityInvestmentsAverageDataMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/EmissionsFromEquityInvestmentsAverageDataMethod",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"InvestmentSectorId\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"InvestmentSectorId\"},\"PeriodStartTimestamp\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"ShareOfEquityPercentage\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"ShareOfEquityPercentage\"},\"RevenueOfInvesteeCompanyAmount\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"RevenueOfInvesteeCompanyAmount\"},\"RevenueOfInvesteeCompanyCurrencyCode\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"RevenueOfInvesteeCompanyCurrencyCode\"},\"InvesteeCompanyRevenueInSectorPercent\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"InvesteeCompanyRevenueInSectorPercent\"},\"EmissionsFromEquityInvestmentsUnits\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"EmissionsFromEquityInvestmentsUnits\"},\"EmissionsFromEquityInvestmentsUomId\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"EmissionsFromEquityInvestmentsUomId\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmissionsFromEquityInvestmentsAverageDataMethod\",\"path\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\"},\"description\":\"Average-data method, which involves using revenue data combined with EEIO data to estimate the scope 1 and scope 2 emissions from the investee company and allocating emissions based upon share of investment.\\n \\nEquation:\\nEmissions from equity investments: sum across equity investments:  ((investee company total revenue ($) x emission factor for investee's sector (kg CO2\\ne/$ revenue)) x share of equity (%))\\n\\nEmission factors needed\\nThe reporting company should collect:\\n\\n- EEIO emission factors for the sectors of the economy that the investments are related to (kg CO2e/$ revenue).\\n\\nSource:  Category Investments Page 144\",\"primaryKey\":[\"ReportingLegalEntityId\",\"InvestmentSectorId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"InvestmentSectorId\"},\"dataType\":\"integer\",\"description\":\"The identifier of an investment sector.\\n\\nSource:  Category Investments Page 145\",\"isNullable\":false,\"name\":\"InvestmentSectorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"ShareOfEquityPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The share of equity percentage.\\n\\nSource:  Category Investments Page 145\",\"isNullable\":true,\"scale\":8,\"name\":\"ShareOfEquityPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"RevenueOfInvesteeCompanyAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of investee company revenue.\\n\\nSource:  Category Investments Page 145\",\"isNullable\":true,\"scale\":2,\"name\":\"RevenueOfInvesteeCompanyAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"RevenueOfInvesteeCompanyCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"\\nSource:  Category Investments Page 145\",\"isNullable\":true,\"name\":\"RevenueOfInvesteeCompanyCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"InvesteeCompanyRevenueInSectorPercent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage of revenue of the investee company in the revenue sector.\\n\\nSource:  Category Investments Page 145\",\"isNullable\":true,\"scale\":8,\"name\":\"InvesteeCompanyRevenueInSectorPercent\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"EmissionsFromEquityInvestmentsUnits\"},\"dataType\":\"integer\",\"description\":\"The emission units from equity investments.\\n\\nSource:  Category Investments Page 145\",\"isNullable\":true,\"name\":\"EmissionsFromEquityInvestmentsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"EmissionsFromEquityInvestmentsUomId\"},\"dataType\":\"integer\",\"description\":\"The emissions from equity investments UOM.\\n\\nSource:  Category Investments Page 145\",\"isNullable\":true,\"name\":\"EmissionsFromEquityInvestmentsUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission UOM ID.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "Average-data method, which involves using revenue data combined with EEIO data to estimate the scope 1 and scope 2 emissions from the investee company and allocating emissions based upon share of investment.\n \nEquation:\nEmissions from equity investments: sum across equity investments:  ((investee company total revenue ($) x emission factor for investee's sector (kg CO2\ne/$ revenue)) x share of equity (%))\n\nEmission factors needed\nThe reporting company should collect:\n\n- EEIO emission factors for the sectors of the economy that the investments are related to (kg CO2e/$ revenue).\n\nSource:  Category Investments Page 144",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,InvestmentSectorId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

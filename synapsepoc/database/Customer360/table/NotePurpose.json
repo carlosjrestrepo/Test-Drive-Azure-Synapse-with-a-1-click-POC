@@ -1,0 +1,105 @@
+{
+	"name": "NotePurpose",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "NotePurpose",
+		"Description": "The purpose of the Note.\n\nEx.:\n- Property Directions\n- Account Delinquency\n- General",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NotePurposeId",
+					"Description": "The unique identifier of a Note Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "NotePurpose.cdm.json/NotePurpose",
+						"Name": "NotePurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NotePurposeName",
+					"Description": "The name of a Note Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "NotePurpose.cdm.json/NotePurpose",
+						"Name": "NotePurposeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NotePurposeDescription",
+					"Description": "The description of a Note Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "NotePurpose.cdm.json/NotePurpose",
+						"Name": "NotePurposeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/NotePurpose",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/NotePurpose",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NotePurposeId\":{\"entity\":\"NotePurpose.cdm.json/NotePurpose\",\"name\":\"NotePurposeId\"},\"NotePurposeName\":{\"entity\":\"NotePurpose.cdm.json/NotePurpose\",\"name\":\"NotePurposeName\"},\"NotePurposeDescription\":{\"entity\":\"NotePurpose.cdm.json/NotePurpose\",\"name\":\"NotePurposeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NotePurpose\",\"path\":\"NotePurpose.cdm.json/NotePurpose\"},\"description\":\"The purpose of the Note.\\n\\nEx.:\\n- Property Directions\\n- Account Delinquency\\n- General\",\"primaryKey\":[\"NotePurposeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NotePurpose.cdm.json/NotePurpose\",\"name\":\"NotePurposeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Note Purpose.\",\"isNullable\":false,\"name\":\"NotePurposeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NotePurpose.cdm.json/NotePurpose\",\"name\":\"NotePurposeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Note Purpose.\",\"isNullable\":true,\"name\":\"NotePurposeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NotePurpose.cdm.json/NotePurpose\",\"name\":\"NotePurposeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Note Purpose.\",\"isNullable\":true,\"name\":\"NotePurposeDescription\"}]}}}",
+			"Description": "The purpose of the Note.\n\nEx.:\n- Property Directions\n- Account Delinquency\n- General",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "NotePurposeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

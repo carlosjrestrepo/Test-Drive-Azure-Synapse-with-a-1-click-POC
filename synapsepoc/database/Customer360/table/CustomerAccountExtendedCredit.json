@@ -1,0 +1,106 @@
+{
+	"name": "CustomerAccountExtendedCredit",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountExtendedCredit",
+		"Description": "The total credit amount extended to the Customer Account as of the associated date.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp for which the associated credit extension information is presented.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TotalExtendedCreditAmount",
+					"Description": "The total amount of credit extended to the Customer as of the associated date.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit",
+						"Name": "TotalExtendedCreditAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountExtendedCredit",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountExtendedCredit",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\",\"name\":\"CustomerAccountId\"},\"Timestamp\":{\"entity\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\",\"name\":\"Timestamp\"},\"TotalExtendedCreditAmount\":{\"entity\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\",\"name\":\"TotalExtendedCreditAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountExtendedCredit\",\"path\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\"},\"description\":\"The total credit amount extended to the Customer Account as of the associated date.\",\"primaryKey\":[\"CustomerAccountId\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp for which the associated credit extension information is presented.\",\"isNullable\":false,\"name\":\"Timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountExtendedCredit.cdm.json/CustomerAccountExtendedCredit\",\"name\":\"TotalExtendedCreditAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of credit extended to the Customer as of the associated date.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalExtendedCreditAmount\"}]}}}",
+			"Description": "The total credit amount extended to the Customer Account as of the associated date.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,Timestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "ServiceClass",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "ServiceClass",
+		"Description": "A group of customers with similar characteristics, identified for the purpose of setting an applicable rate for electric service. Common classifications include: residential, commercial, agricultural, industrial, and light and power.\n\nFor example: Non-residential customers that provide public health, safety or security services may be exempt from rotating outages. See criteria and application.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceClassId",
+					"Description": "The unique identifier of a Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceClass.cdm.json/ServiceClass",
+						"Name": "ServiceClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceClassName",
+					"Description": "The name of a Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceClass.cdm.json/ServiceClass",
+						"Name": "ServiceClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceClassDescription",
+					"Description": "The description of a Service Class.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceClass.cdm.json/ServiceClass",
+						"Name": "ServiceClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ServiceClass",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/ServiceClass",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceClassId\":{\"entity\":\"ServiceClass.cdm.json/ServiceClass\",\"name\":\"ServiceClassId\"},\"ServiceClassName\":{\"entity\":\"ServiceClass.cdm.json/ServiceClass\",\"name\":\"ServiceClassName\"},\"ServiceClassDescription\":{\"entity\":\"ServiceClass.cdm.json/ServiceClass\",\"name\":\"ServiceClassDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceClass\",\"path\":\"ServiceClass.cdm.json/ServiceClass\"},\"description\":\"A group of customers with similar characteristics, identified for the purpose of setting an applicable rate for electric service. Common classifications include: residential, commercial, agricultural, industrial, and light and power.\\n\\nFor example: Non-residential customers that provide public health, safety or security services may be exempt from rotating outages. See criteria and application.\",\"primaryKey\":[\"ServiceClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceClass.cdm.json/ServiceClass\",\"name\":\"ServiceClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Class.\",\"isNullable\":false,\"name\":\"ServiceClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceClass.cdm.json/ServiceClass\",\"name\":\"ServiceClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Service Class.\",\"isNullable\":true,\"name\":\"ServiceClassName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceClass.cdm.json/ServiceClass\",\"name\":\"ServiceClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Service Class.\",\"isNullable\":true,\"name\":\"ServiceClassDescription\"}]}}}",
+			"Description": "A group of customers with similar characteristics, identified for the purpose of setting an applicable rate for electric service. Common classifications include: residential, commercial, agricultural, industrial, and light and power.\n\nFor example: Non-residential customers that provide public health, safety or security services may be exempt from rotating outages. See criteria and application.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "ServiceClassId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

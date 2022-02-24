@@ -1,0 +1,105 @@
+{
+	"name": "BreachBehaviorFollowupActionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "BreachBehaviorFollowupActionType",
+		"Description": "A categorization of follow-up actions associated with a breach behavior.\n\nEx:\n- Internal contact\n- Referral for legal action\n- Referral to law authorities\n- Account freeze",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BreachBehaviorFollowupActionTypeId",
+					"Description": "The unique identifier of a Breach Behavior Followup Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType",
+						"Name": "BreachBehaviorFollowupActionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorFollowupActionTypeName",
+					"Description": "The name of a Breach Behavior Followup Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType",
+						"Name": "BreachBehaviorFollowupActionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BreachBehaviorFollowupActionTypeDescription",
+					"Description": "The description of a Breach Behavior Followup Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType",
+						"Name": "BreachBehaviorFollowupActionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/BreachBehaviorFollowupActionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/BreachBehaviorFollowupActionType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BreachBehaviorFollowupActionTypeId\":{\"entity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"name\":\"BreachBehaviorFollowupActionTypeId\"},\"BreachBehaviorFollowupActionTypeName\":{\"entity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"name\":\"BreachBehaviorFollowupActionTypeName\"},\"BreachBehaviorFollowupActionTypeDescription\":{\"entity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"name\":\"BreachBehaviorFollowupActionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BreachBehaviorFollowupActionType\",\"path\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\"},\"description\":\"A categorization of follow-up actions associated with a breach behavior.\\n\\nEx:\\n- Internal contact\\n- Referral for legal action\\n- Referral to law authorities\\n- Account freeze\",\"primaryKey\":[\"BreachBehaviorFollowupActionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"name\":\"BreachBehaviorFollowupActionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Breach Behavior Followup Action Type.\",\"isNullable\":false,\"name\":\"BreachBehaviorFollowupActionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"name\":\"BreachBehaviorFollowupActionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Breach Behavior Followup Action Type.\",\"isNullable\":true,\"name\":\"BreachBehaviorFollowupActionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BreachBehaviorFollowupActionType.cdm.json/BreachBehaviorFollowupActionType\",\"name\":\"BreachBehaviorFollowupActionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Breach Behavior Followup Action Type.\",\"isNullable\":true,\"name\":\"BreachBehaviorFollowupActionTypeDescription\"}]}}}",
+			"Description": "A categorization of follow-up actions associated with a breach behavior.\n\nEx:\n- Internal contact\n- Referral for legal action\n- Referral to law authorities\n- Account freeze",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "BreachBehaviorFollowupActionTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

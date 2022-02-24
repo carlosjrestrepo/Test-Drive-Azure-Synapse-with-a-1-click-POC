@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ffofpixqxs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ffofpixqxs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "EmissionsFromEquityInvestmentsAverageDataMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "RevenueOfInvesteeCompanyCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"EmissionsFromEquityInvestmentsAverageDataMethod.cdm.json/EmissionsFromEquityInvestmentsAverageDataMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"RevenueOfInvesteeCompanyCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

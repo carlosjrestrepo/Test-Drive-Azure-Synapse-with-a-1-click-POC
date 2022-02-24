@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ifbhipangs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-ifbhipangs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Document",
+		"ToTableName": "CustomerAccountConsent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "ProofOfConsentDocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Document.cdm.json/Document\",\"toEntity\":\"CustomerAccountConsent.cdm.json/CustomerAccountConsent\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"ProofOfConsentDocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

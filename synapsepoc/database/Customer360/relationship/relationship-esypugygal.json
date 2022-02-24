@@ -1,0 +1,26 @@
+{
+	"name": "relationship-esypugygal",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-esypugygal",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnzsicSubdivision",
+		"ToTableName": "AnzsicGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnzsicSubdivisionCode",
+				"ToColumnName": "AnzsicSubdivisionCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnzsicSubdivision.cdm.json/AnzsicSubdivision\",\"toEntity\":\"AnzsicGroup.cdm.json/AnzsicGroup\",\"joinPairs\":[{\"fromAttribute\":\"AnzsicSubdivisionCode\",\"toAttribute\":\"AnzsicSubdivisionCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

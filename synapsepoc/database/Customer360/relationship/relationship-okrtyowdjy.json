@@ -1,0 +1,26 @@
+{
+	"name": "relationship-okrtyowdjy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-okrtyowdjy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Scope3Category4UpstreamTransportationAndDistributionFuelBasedMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "TransportationServicesSpentCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Scope3Category4UpstreamTransportationAndDistributionFuelBasedMethod.cdm.json/Scope3Category4UpstreamTransportationAndDistributionFuelBasedMethod\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"TransportationServicesSpentCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

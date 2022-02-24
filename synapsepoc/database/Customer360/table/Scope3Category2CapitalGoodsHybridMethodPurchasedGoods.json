@@ -1,0 +1,252 @@
+{
+	"name": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+		"Description": "The purchased goods associated with the scope 3 category 2 hybrid method for calculating capital goods emissions.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReportingLegalEntityId",
+					"Description": "The unique identifier of a Legal Entity.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "ReportingLegalEntityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CapitalGoodsTypeId",
+					"Description": "The unique identifier of a Capital Goods Type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "CapitalGoodsTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GoodTypeId",
+					"Description": "The unique identifier of a good/service type.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "GoodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "GoodsServicesPurchasedUnits",
+					"Description": "The quantity of goods/services purchased.\n\nsum across purchased goods or services:\n (quantities of good purchased (e.g., kg) x supplier-specific product emission factor of purchased good or service (e.g., kg CO2 e/kg))",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "GoodsServicesPurchasedUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GoodsServicesPurchasedUomId",
+					"Description": "The goods/services UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "GoodsServicesPurchasedUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GoodsServicesPurchasedMassUomId",
+					"Description": "The mass of the goods/services purchased.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "GoodsServicesPurchasedMassUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GoodServicesPurchasedAmount",
+					"Description": "The amount of the goods/services purchased.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "GoodServicesPurchasedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GoodServicesPurchaseCurrencyUomId",
+					"Description": "The currency ID.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "GoodServicesPurchaseCurrencyUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUnits",
+					"Description": "The total CO2e emission units.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "TotalCo2EEmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalCo2EEmissionsUomId",
+					"Description": "The emission factor UOM.",
+					"BaseAttributeReference": {
+						"Entity": "Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+						"Name": "TotalCo2EEmissionsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReportingLegalEntityId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"ReportingLegalEntityId\"},\"CapitalGoodsTypeId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"CapitalGoodsTypeId\"},\"GoodTypeId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"PeriodEndTimestamp\"},\"GoodsServicesPurchasedUnits\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodsServicesPurchasedUnits\"},\"GoodsServicesPurchasedUomId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodsServicesPurchasedUomId\"},\"GoodsServicesPurchasedMassUomId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodsServicesPurchasedMassUomId\"},\"GoodServicesPurchasedAmount\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodServicesPurchasedAmount\"},\"GoodServicesPurchaseCurrencyUomId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodServicesPurchaseCurrencyUomId\"},\"TotalCo2EEmissionsUnits\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"TotalCo2EEmissionsUnits\"},\"TotalCo2EEmissionsUomId\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"TotalCo2EEmissionsUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"path\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\"},\"description\":\"The purchased goods associated with the scope 3 category 2 hybrid method for calculating capital goods emissions.\",\"primaryKey\":[\"ReportingLegalEntityId\",\"CapitalGoodsTypeId\",\"GoodTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"ReportingLegalEntityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Entity.\",\"isNullable\":false,\"name\":\"ReportingLegalEntityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"CapitalGoodsTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Capital Goods Type.\",\"isNullable\":false,\"name\":\"CapitalGoodsTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a good/service type.\",\"isNullable\":false,\"name\":\"GoodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodsServicesPurchasedUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of goods/services purchased.\\n\\nsum across purchased goods or services:\\n (quantities of good purchased (e.g., kg) x supplier-specific product emission factor of purchased good or service (e.g., kg CO2 e/kg))\",\"isNullable\":true,\"name\":\"GoodsServicesPurchasedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodsServicesPurchasedUomId\"},\"dataType\":\"integer\",\"description\":\"The goods/services UOM.\",\"isNullable\":true,\"name\":\"GoodsServicesPurchasedUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodsServicesPurchasedMassUomId\"},\"dataType\":\"integer\",\"description\":\"The mass of the goods/services purchased.\",\"isNullable\":true,\"name\":\"GoodsServicesPurchasedMassUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodServicesPurchasedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the goods/services purchased.\",\"isNullable\":true,\"scale\":2,\"name\":\"GoodServicesPurchasedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"GoodServicesPurchaseCurrencyUomId\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The currency ID.\",\"isNullable\":true,\"name\":\"GoodServicesPurchaseCurrencyUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"TotalCo2EEmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The total CO2e emission units.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Scope3Category2CapitalGoodsHybridMethodPurchasedGoods.cdm.json/Scope3Category2CapitalGoodsHybridMethodPurchasedGoods\",\"name\":\"TotalCo2EEmissionsUomId\"},\"dataType\":\"integer\",\"description\":\"The emission factor UOM.\",\"isNullable\":true,\"name\":\"TotalCo2EEmissionsUomId\"}]}}}",
+			"Description": "The purchased goods associated with the scope 3 category 2 hybrid method for calculating capital goods emissions.",
+			"DisplayFolderInfo": "{\"name\":\"Emissions\",\"colorCode\":\"#0064C1\"}",
+			"PrimaryKeys": "ReportingLegalEntityId,CapitalGoodsTypeId,GoodTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

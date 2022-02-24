@@ -1,0 +1,105 @@
+{
+	"name": "CitizenshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CitizenshipType",
+		"Description": "The type of citizenship associated with the country citizenship.\n\nEx:\n- Naturalized Citizen\n- Citizen By Extension Of Rights\n- Born Abroad Of Citizen Parents\n- By Birth",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CitizenshipTypeId",
+					"Description": "The unique identifier of a citizenship type.",
+					"BaseAttributeReference": {
+						"Entity": "CitizenshipType.cdm.json/CitizenshipType",
+						"Name": "CitizenshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CitizenshipTypeName",
+					"Description": "The name of a citizenship type.",
+					"BaseAttributeReference": {
+						"Entity": "CitizenshipType.cdm.json/CitizenshipType",
+						"Name": "CitizenshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CitizenshipTypeDescription",
+					"Description": "The description of a citizenship type.",
+					"BaseAttributeReference": {
+						"Entity": "CitizenshipType.cdm.json/CitizenshipType",
+						"Name": "CitizenshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CitizenshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CitizenshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CitizenshipTypeId\":{\"entity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"name\":\"CitizenshipTypeId\"},\"CitizenshipTypeName\":{\"entity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"name\":\"CitizenshipTypeName\"},\"CitizenshipTypeDescription\":{\"entity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"name\":\"CitizenshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CitizenshipType\",\"path\":\"CitizenshipType.cdm.json/CitizenshipType\"},\"description\":\"The type of citizenship associated with the country citizenship.\\n\\nEx:\\n- Naturalized Citizen\\n- Citizen By Extension Of Rights\\n- Born Abroad Of Citizen Parents\\n- By Birth\",\"primaryKey\":[\"CitizenshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"name\":\"CitizenshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a citizenship type.\",\"isNullable\":false,\"name\":\"CitizenshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"name\":\"CitizenshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a citizenship type.\",\"isNullable\":true,\"name\":\"CitizenshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"name\":\"CitizenshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a citizenship type.\",\"isNullable\":true,\"name\":\"CitizenshipTypeDescription\"}]}}}",
+			"Description": "The type of citizenship associated with the country citizenship.\n\nEx:\n- Naturalized Citizen\n- Citizen By Extension Of Rights\n- Born Abroad Of Citizen Parents\n- By Birth",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "CitizenshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

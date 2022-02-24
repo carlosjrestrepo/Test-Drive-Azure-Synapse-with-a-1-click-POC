@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vxirgtasyy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-vxirgtasyy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerAccountReviewType",
+		"ToTableName": "CustomerAccountReview",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerAccountReviewTypeId",
+				"ToColumnName": "CustomerAccountReviewTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerAccountReviewType.cdm.json/CustomerAccountReviewType\",\"toEntity\":\"CustomerAccountReview.cdm.json/CustomerAccountReview\",\"joinPairs\":[{\"fromAttribute\":\"CustomerAccountReviewTypeId\",\"toAttribute\":\"CustomerAccountReviewTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

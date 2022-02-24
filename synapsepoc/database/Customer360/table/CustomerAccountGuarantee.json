@@ -1,0 +1,170 @@
+{
+	"name": "CustomerAccountGuarantee",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "CustomerAccountGuarantee",
+		"Description": "The guarantees that were provided for the customer account. The details of these guarantees can be found in the associated contract or document related to the customer or customer account.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountGuaranteeTypeId",
+					"Description": "The unique identifier of a Balance Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "CustomerAccountGuaranteeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated guarantee is applicable for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated guarantee is applicable for the Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountGuaranteeNote",
+					"Description": "A note, comment or additional information regarding the Customer Account Guarantee.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "CustomerAccountGuaranteeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ContractId",
+					"Description": "The unique identifier of a Contract.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee",
+						"Name": "ContractId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountGuarantee",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/synapse/CustomerAccountGuarantee",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerAccountId\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"CustomerAccountId\"},\"CustomerAccountGuaranteeTypeId\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"CustomerAccountGuaranteeTypeId\"},\"PeriodStartDate\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"PeriodEndDate\"},\"CustomerAccountGuaranteeNote\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"CustomerAccountGuaranteeNote\"},\"DocumentId\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"DocumentId\"},\"ContractId\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"ContractId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAccountGuarantee\",\"path\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\"},\"description\":\"The guarantees that were provided for the customer account. The details of these guarantees can be found in the associated contract or document related to the customer or customer account.\",\"primaryKey\":[\"CustomerAccountId\",\"CustomerAccountGuaranteeTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":false,\"name\":\"CustomerAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"CustomerAccountGuaranteeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Balance Type.\",\"isNullable\":false,\"name\":\"CustomerAccountGuaranteeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated guarantee is applicable for the Customer Account.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated guarantee is applicable for the Customer Account.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"CustomerAccountGuaranteeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Account Guarantee.\",\"isNullable\":true,\"name\":\"CustomerAccountGuaranteeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":true,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAccountGuarantee.cdm.json/CustomerAccountGuarantee\",\"name\":\"ContractId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Contract.\",\"isNullable\":true,\"name\":\"ContractId\"}]}}}",
+			"Description": "The guarantees that were provided for the customer account. The details of these guarantees can be found in the associated contract or document related to the customer or customer account.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Account\",\"colorCode\":\"#E3008C\"}",
+			"PrimaryKeys": "CustomerAccountId,CustomerAccountGuaranteeTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

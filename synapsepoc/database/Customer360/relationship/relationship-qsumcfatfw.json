@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qsumcfatfw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Customer360"
+		},
+		"Name": "relationship-qsumcfatfw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NotePurpose",
+		"ToTableName": "CustomerAccountNote",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NotePurposeId",
+				"ToColumnName": "NotePurposeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NotePurpose.cdm.json/NotePurpose\",\"toEntity\":\"CustomerAccountNote.cdm.json/CustomerAccountNote\",\"joinPairs\":[{\"fromAttribute\":\"NotePurposeId\",\"toAttribute\":\"NotePurposeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}
