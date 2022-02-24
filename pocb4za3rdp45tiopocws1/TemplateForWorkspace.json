@@ -33,6 +33,15 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('workspaceName'), '/ws1sparkpool1')]",
+			"type": "Microsoft.Synapse/workspaces/bigDataPools",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/TripFaresDataPipeline')]",
 			"type": "Microsoft.Synapse/workspaces/pipelines",
 			"apiVersion": "2019-06-01-preview",
@@ -511,7 +520,7 @@
 					},
 					"SynapseWorkspaceName": {
 						"type": "string",
-						"defaultValue": "pocb4za3rdp45tiopocws1.database.windows.net"
+						"defaultValue": "pocb4za3rdp45tiopocws1.sql.azuresynapse.net"
 					},
 					"SQLDedicatedPoolName": {
 						"type": "string",
@@ -1633,6 +1642,41 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/Database 1')]",
+			"type": "Microsoft.Synapse/workspaces/databases",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"Ddls": [
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"Properties": {
+								"IsSyMSCDMDatabase": true
+							},
+							"Name": "Database 1",
+							"EntityType": "DATABASE",
+							"Source": {
+								"Provider": "ADLS",
+								"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database 1",
+								"Properties": {
+									"FormatType": "csv",
+									"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage"
+								}
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/pocb4za3rdp45tiopocws1p1')]",
 			"type": "Microsoft.Synapse/workspaces/sqlPools",
 			"apiVersion": "2019-06-01-preview",
@@ -1649,15 +1693,6 @@
 			"type": "Microsoft.Synapse/workspaces/managedVirtualNetworks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/ws1sparkpool1')]",
-			"type": "Microsoft.Synapse/workspaces/bigDataPools",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": []
-			},
 			"dependsOn": []
 		}
 	]
