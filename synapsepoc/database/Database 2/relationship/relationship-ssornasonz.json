@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ssornasonz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-ssornasonz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DoNotContactRegistry",
+		"ToTableName": "DoNotEmailRegistryEmail",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DoNotContactRegistryId",
+				"ToColumnName": "DoNotContactRegistryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DoNotContactRegistry.cdm.json/DoNotContactRegistry\",\"toEntity\":\"DoNotEmailRegistryEmail.cdm.json/DoNotEmailRegistryEmail\",\"joinPairs\":[{\"fromAttribute\":\"DoNotContactRegistryId\",\"toAttribute\":\"DoNotContactRegistryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

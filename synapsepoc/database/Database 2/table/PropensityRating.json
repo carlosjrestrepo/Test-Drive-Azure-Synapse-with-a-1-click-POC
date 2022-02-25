@@ -1,0 +1,86 @@
+{
+	"name": "PropensityRating",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "PropensityRating",
+		"Description": "A rating or ranking that is associated with a propensity or likelihood to do something.\n\nEx:\n-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\n-  Low, Medium, High\n-  A Percentage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PropensityRatingId",
+					"Description": "The unique identifier of a Question Response Rating.",
+					"BaseAttributeReference": {
+						"Entity": "PropensityRating.cdm.json/PropensityRating",
+						"Name": "PropensityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PropensityRatingName",
+					"Description": "The name of the Question Response Rating.",
+					"BaseAttributeReference": {
+						"Entity": "PropensityRating.cdm.json/PropensityRating",
+						"Name": "PropensityRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PropensityRatingDescription",
+					"Description": "The description of a Question Response Rating.",
+					"BaseAttributeReference": {
+						"Entity": "PropensityRating.cdm.json/PropensityRating",
+						"Name": "PropensityRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PropensityRatingId\":{\"entity\":\"PropensityRating.cdm.json/PropensityRating\",\"name\":\"PropensityRatingId\"},\"PropensityRatingName\":{\"entity\":\"PropensityRating.cdm.json/PropensityRating\",\"name\":\"PropensityRatingName\"},\"PropensityRatingDescription\":{\"entity\":\"PropensityRating.cdm.json/PropensityRating\",\"name\":\"PropensityRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PropensityRating\",\"path\":\"PropensityRating.cdm.json/PropensityRating\"},\"description\":\"A rating or ranking that is associated with a propensity or likelihood to do something.\\n\\nEx:\\n-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\n-  Low, Medium, High\\n-  A Percentage\",\"primaryKey\":[\"PropensityRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PropensityRating.cdm.json/PropensityRating\",\"name\":\"PropensityRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Question Response Rating.\",\"isNullable\":false,\"name\":\"PropensityRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PropensityRating.cdm.json/PropensityRating\",\"name\":\"PropensityRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Question Response Rating.\",\"isNullable\":true,\"name\":\"PropensityRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PropensityRating.cdm.json/PropensityRating\",\"name\":\"PropensityRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Question Response Rating.\",\"isNullable\":true,\"name\":\"PropensityRatingDescription\"}]}}}",
+			"Description": "A rating or ranking that is associated with a propensity or likelihood to do something.\n\nEx:\n-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\n-  Low, Medium, High\n-  A Percentage",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "PropensityRatingId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

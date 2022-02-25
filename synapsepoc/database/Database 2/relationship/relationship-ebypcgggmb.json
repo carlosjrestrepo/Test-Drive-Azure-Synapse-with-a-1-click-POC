@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ebypcgggmb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-ebypcgggmb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnzsicClass",
+		"ToTableName": "LegalEntityCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnzsicClassCode",
+				"ToColumnName": "AnzsicClassCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnzsicClass.cdm.json/AnzsicClass\",\"toEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"joinPairs\":[{\"fromAttribute\":\"AnzsicClassCode\",\"toAttribute\":\"AnzsicClassCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

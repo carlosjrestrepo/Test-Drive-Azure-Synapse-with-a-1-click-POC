@@ -1,0 +1,86 @@
+{
+	"name": "CustomerGroupRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "CustomerGroupRelationshipType",
+		"Description": "The nature of the relationship between Customer Groups.\n\nEx:\n- Customer Type/Customer Subtype\n- Top Sales",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerGroupRelationshipTypeId",
+					"Description": "The unique identifier of a Customer Group Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType",
+						"Name": "CustomerGroupRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerGroupRelationshipTypeName",
+					"Description": "The name of a Customer Group Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType",
+						"Name": "CustomerGroupRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CustomerGroupRelationshipTypeDescription",
+					"Description": "The description of a Customer Group Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType",
+						"Name": "CustomerGroupRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerGroupRelationshipTypeId\":{\"entity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"name\":\"CustomerGroupRelationshipTypeId\"},\"CustomerGroupRelationshipTypeName\":{\"entity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"name\":\"CustomerGroupRelationshipTypeName\"},\"CustomerGroupRelationshipTypeDescription\":{\"entity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"name\":\"CustomerGroupRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerGroupRelationshipType\",\"path\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\"},\"description\":\"The nature of the relationship between Customer Groups.\\n\\nEx:\\n- Customer Type/Customer Subtype\\n- Top Sales\",\"primaryKey\":[\"CustomerGroupRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"name\":\"CustomerGroupRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Customer Group Relationship Type.\",\"isNullable\":false,\"name\":\"CustomerGroupRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"name\":\"CustomerGroupRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Customer Group Relationship Type.\",\"isNullable\":true,\"name\":\"CustomerGroupRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"name\":\"CustomerGroupRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Customer Group Relationship Type.\",\"isNullable\":true,\"name\":\"CustomerGroupRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between Customer Groups.\n\nEx:\n- Customer Type/Customer Subtype\n- Top Sales",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CustomerGroupRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

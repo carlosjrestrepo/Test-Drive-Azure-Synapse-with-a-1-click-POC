@@ -1,0 +1,26 @@
+{
+	"name": "relationship-idycazrnfk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-idycazrnfk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Currency",
+		"ToTableName": "Contract",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IsoCurrencyCode",
+				"ToColumnName": "IsoCurrencyCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Currency.cdm.json/Currency\",\"toEntity\":\"Contract.cdm.json/Contract\",\"joinPairs\":[{\"fromAttribute\":\"IsoCurrencyCode\",\"toAttribute\":\"IsoCurrencyCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

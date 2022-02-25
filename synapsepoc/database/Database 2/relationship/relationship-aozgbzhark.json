@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aozgbzhark",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-aozgbzhark",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CreditStatusType",
+		"ToTableName": "CustomerCreditStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CreditStatusTypeId",
+				"ToColumnName": "CreditStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CreditStatusType.cdm.json/CreditStatusType\",\"toEntity\":\"CustomerCreditStatus.cdm.json/CustomerCreditStatus\",\"joinPairs\":[{\"fromAttribute\":\"CreditStatusTypeId\",\"toAttribute\":\"CreditStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-okhlgmfaka",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-okhlgmfaka",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Consent",
+		"ToTableName": "CustomerConsent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConsentId",
+				"ToColumnName": "ConsentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Consent.cdm.json/Consent\",\"toEntity\":\"CustomerConsent.cdm.json/CustomerConsent\",\"joinPairs\":[{\"fromAttribute\":\"ConsentId\",\"toAttribute\":\"ConsentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

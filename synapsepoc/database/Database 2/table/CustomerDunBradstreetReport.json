@@ -1,0 +1,104 @@
+{
+	"name": "CustomerDunBradstreetReport",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "CustomerDunBradstreetReport",
+		"Description": "A Dun Bradstreet Report that is associated with a customer.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DunsNumber",
+					"Description": "Dun & Bradstreet (D&B) provides a D-U-N-S Number, a unique nine digit identification number, for each physical location of your business.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport",
+						"Name": "DunsNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 9,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ReportPurchaseDate",
+					"Description": "The purchase date of the report.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport",
+						"Name": "ReportPurchaseDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerDunBradstreetReportNote",
+					"Description": "Notes, comments or additional information regarding the Customer Dun Bradstreet Report.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport",
+						"Name": "CustomerDunBradstreetReportNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"CustomerId\"},\"DunsNumber\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"DunsNumber\"},\"ReportPurchaseDate\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"ReportPurchaseDate\"},\"CustomerDunBradstreetReportNote\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"CustomerDunBradstreetReportNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerDunBradstreetReport\",\"path\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\"},\"description\":\"A Dun Bradstreet Report that is associated with a customer.\",\"primaryKey\":[\"CustomerId\",\"DunsNumber\",\"ReportPurchaseDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"DunsNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":9,\"description\":\"Dun & Bradstreet (D&B) provides a D-U-N-S Number, a unique nine digit identification number, for each physical location of your business.\",\"isNullable\":false,\"scale\":0,\"name\":\"DunsNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"ReportPurchaseDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The purchase date of the report.\",\"isNullable\":false,\"name\":\"ReportPurchaseDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerDunBradstreetReport.cdm.json/CustomerDunBradstreetReport\",\"name\":\"CustomerDunBradstreetReportNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Customer Dun Bradstreet Report.\",\"isNullable\":true,\"name\":\"CustomerDunBradstreetReportNote\"}]}}}",
+			"Description": "A Dun Bradstreet Report that is associated with a customer.",
+			"DisplayFolderInfo": "{\"name\":\"Customer Credit & Collections\",\"colorCode\":\"#001475\"}",
+			"PrimaryKeys": "CustomerId,DunsNumber,ReportPurchaseDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

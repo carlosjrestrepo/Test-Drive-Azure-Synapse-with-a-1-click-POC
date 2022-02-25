@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qvmwotwyld",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-qvmwotwyld",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Employer",
+		"ToTableName": "CustomerEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmployerId",
+				"ToColumnName": "EmployerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Employer.cdm.json/Employer\",\"toEntity\":\"CustomerEmployment.cdm.json/CustomerEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmployerId\",\"toAttribute\":\"EmployerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

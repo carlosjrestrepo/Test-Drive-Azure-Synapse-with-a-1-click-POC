@@ -1,0 +1,23 @@
+{
+	"name": "Database 2",
+	"properties": {
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Utilities\",\"Version\":\"0.1.0\"}}}"
+		},
+		"Name": "Database 2",
+		"EntityType": "DATABASE",
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database 2",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

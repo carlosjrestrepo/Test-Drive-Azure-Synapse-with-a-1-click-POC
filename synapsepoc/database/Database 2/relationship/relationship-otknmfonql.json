@@ -1,0 +1,26 @@
+{
+	"name": "relationship-otknmfonql",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-otknmfonql",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerRelationshipType",
+		"ToTableName": "RelatedCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerRelationshipTypeId",
+				"ToColumnName": "CustomerRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerRelationshipType.cdm.json/CustomerRelationshipType\",\"toEntity\":\"RelatedCustomer.cdm.json/RelatedCustomer\",\"joinPairs\":[{\"fromAttribute\":\"CustomerRelationshipTypeId\",\"toAttribute\":\"CustomerRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

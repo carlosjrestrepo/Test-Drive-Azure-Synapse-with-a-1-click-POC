@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bhdpltedfh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-bhdpltedfh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PsychographicCriteria",
+		"ToTableName": "CustomerPsychographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PsychographicCriteriaId",
+				"ToColumnName": "PsychographicCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PsychographicCriteria.cdm.json/PsychographicCriteria\",\"toEntity\":\"CustomerPsychographicCriteria.cdm.json/CustomerPsychographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"PsychographicCriteriaId\",\"toAttribute\":\"PsychographicCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

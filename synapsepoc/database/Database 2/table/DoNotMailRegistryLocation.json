@@ -1,0 +1,85 @@
+{
+	"name": "DoNotMailRegistryLocation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "DoNotMailRegistryLocation",
+		"Description": "A location that is restricted by the Do Not Call Registry.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DoNotContactRegistryId",
+					"Description": "The unique identifier of an Do Not Contact Registry.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation",
+						"Name": "DoNotContactRegistryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DoNotMailRegistryLocationNote",
+					"Description": "A note, comment or additional information regarding the Do Not Contact Registry Location.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation",
+						"Name": "DoNotMailRegistryLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DoNotContactRegistryId\":{\"entity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"name\":\"DoNotContactRegistryId\"},\"LocationId\":{\"entity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"name\":\"LocationId\"},\"DoNotMailRegistryLocationNote\":{\"entity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"name\":\"DoNotMailRegistryLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DoNotMailRegistryLocation\",\"path\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\"},\"description\":\"A location that is restricted by the Do Not Call Registry.\",\"primaryKey\":[\"DoNotContactRegistryId\",\"LocationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"name\":\"DoNotContactRegistryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Do Not Contact Registry.\",\"isNullable\":false,\"name\":\"DoNotContactRegistryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":false,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"name\":\"DoNotMailRegistryLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Do Not Contact Registry Location.\",\"isNullable\":true,\"name\":\"DoNotMailRegistryLocationNote\"}]}}}",
+			"Description": "A location that is restricted by the Do Not Call Registry.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "DoNotContactRegistryId,LocationId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

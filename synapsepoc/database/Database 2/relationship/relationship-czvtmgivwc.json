@@ -1,0 +1,26 @@
+{
+	"name": "relationship-czvtmgivwc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-czvtmgivwc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AioLevel",
+		"ToTableName": "CustomerOpinion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AioLevelId",
+				"ToColumnName": "AioLevelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AioLevel.cdm.json/AioLevel\",\"toEntity\":\"CustomerOpinion.cdm.json/CustomerOpinion\",\"joinPairs\":[{\"fromAttribute\":\"AioLevelId\",\"toAttribute\":\"AioLevelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

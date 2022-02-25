@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uiiwruihtl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-uiiwruihtl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssociationType",
+		"ToTableName": "Association",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssociationTypeId",
+				"ToColumnName": "AssociationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssociationType.cdm.json/AssociationType\",\"toEntity\":\"Association.cdm.json/Association\",\"joinPairs\":[{\"fromAttribute\":\"AssociationTypeId\",\"toAttribute\":\"AssociationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

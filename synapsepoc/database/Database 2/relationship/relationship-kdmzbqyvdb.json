@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kdmzbqyvdb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-kdmzbqyvdb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SalesTerm",
+		"ToTableName": "CustomerSalesTerm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SalesTermId",
+				"ToColumnName": "SalesTermId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SalesTerm.cdm.json/SalesTerm\",\"toEntity\":\"CustomerSalesTerm.cdm.json/CustomerSalesTerm\",\"joinPairs\":[{\"fromAttribute\":\"SalesTermId\",\"toAttribute\":\"SalesTermId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zxhexhrdpt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-zxhexhrdpt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LanguageUsage",
+		"ToTableName": "CustomerLanguageUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LanguageUsageId",
+				"ToColumnName": "LanguageUsageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LanguageUsage.cdm.json/LanguageUsage\",\"toEntity\":\"CustomerLanguageUsage.cdm.json/CustomerLanguageUsage\",\"joinPairs\":[{\"fromAttribute\":\"LanguageUsageId\",\"toAttribute\":\"LanguageUsageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

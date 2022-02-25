@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nprymjmbtm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-nprymjmbtm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EthnicCategory",
+		"ToTableName": "CustomerEthnicCategory",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EthnicCategoryId",
+				"ToColumnName": "EthnicCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EthnicCategory.cdm.json/EthnicCategory\",\"toEntity\":\"CustomerEthnicCategory.cdm.json/CustomerEthnicCategory\",\"joinPairs\":[{\"fromAttribute\":\"EthnicCategoryId\",\"toAttribute\":\"EthnicCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

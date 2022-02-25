@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wiomamkkoh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-wiomamkkoh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FocusGroup",
+		"ToTableName": "FocusGroupProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FocusGroupId",
+				"ToColumnName": "FocusGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FocusGroup.cdm.json/FocusGroup\",\"toEntity\":\"FocusGroupProduct.cdm.json/FocusGroupProduct\",\"joinPairs\":[{\"fromAttribute\":\"FocusGroupId\",\"toAttribute\":\"FocusGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

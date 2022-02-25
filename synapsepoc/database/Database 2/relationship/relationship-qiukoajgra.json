@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qiukoajgra",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-qiukoajgra",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentStatus",
+		"ToTableName": "CustomerSpouseEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentStatusId",
+				"ToColumnName": "EmploymentStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentStatus.cdm.json/EmploymentStatus\",\"toEntity\":\"CustomerSpouseEmployment.cdm.json/CustomerSpouseEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentStatusId\",\"toAttribute\":\"EmploymentStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

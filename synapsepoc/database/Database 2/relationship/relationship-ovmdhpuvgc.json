@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ovmdhpuvgc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-ovmdhpuvgc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Country",
+		"ToTableName": "CustomerCountryOfResidence",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CountryId",
+				"ToColumnName": "CountryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Country.cdm.json/Country\",\"toEntity\":\"CustomerCountryOfResidence.cdm.json/CustomerCountryOfResidence\",\"joinPairs\":[{\"fromAttribute\":\"CountryId\",\"toAttribute\":\"CountryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

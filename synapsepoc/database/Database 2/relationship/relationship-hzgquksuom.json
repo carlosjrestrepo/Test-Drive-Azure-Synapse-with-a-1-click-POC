@@ -1,0 +1,30 @@
+{
+	"name": "relationship-hzgquksuom",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-hzgquksuom",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerName",
+		"ToTableName": "CustomerNamePrefix",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "CustomerNameId",
+				"ToColumnName": "CustomerNameId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerName.cdm.json/CustomerName\",\"toEntity\":\"CustomerNamePrefix.cdm.json/CustomerNamePrefix\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"CustomerNameId\",\"toAttribute\":\"CustomerNameId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

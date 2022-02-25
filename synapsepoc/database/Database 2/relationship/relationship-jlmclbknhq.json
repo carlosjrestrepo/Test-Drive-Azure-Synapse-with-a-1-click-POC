@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jlmclbknhq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-jlmclbknhq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerChannelRelationshipType",
+		"ToTableName": "CustomerRelatedChannel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerChannelRelationshipTypeId",
+				"ToColumnName": "CustomerChannelRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerChannelRelationshipType.cdm.json/CustomerChannelRelationshipType\",\"toEntity\":\"CustomerRelatedChannel.cdm.json/CustomerRelatedChannel\",\"joinPairs\":[{\"fromAttribute\":\"CustomerChannelRelationshipTypeId\",\"toAttribute\":\"CustomerChannelRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

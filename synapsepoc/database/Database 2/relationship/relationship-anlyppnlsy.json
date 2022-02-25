@@ -1,0 +1,30 @@
+{
+	"name": "relationship-anlyppnlsy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-anlyppnlsy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PartyOrganization",
+		"ToTableName": "PartyOrganizationRelationship",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationId",
+				"ToColumnName": "RelatedOrganizationId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "RelatedPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PartyOrganization.cdm.json/PartyOrganization\",\"toEntity\":\"PartyOrganizationRelationship.cdm.json/PartyOrganizationRelationship\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationId\",\"toAttribute\":\"RelatedOrganizationId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"RelatedPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

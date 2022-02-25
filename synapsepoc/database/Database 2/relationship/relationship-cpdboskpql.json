@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cpdboskpql",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-cpdboskpql",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentClassification",
+		"ToTableName": "CustomerEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentClassificationId",
+				"ToColumnName": "EmploymentClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"toEntity\":\"CustomerEmployment.cdm.json/CustomerEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentClassificationId\",\"toAttribute\":\"EmploymentClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

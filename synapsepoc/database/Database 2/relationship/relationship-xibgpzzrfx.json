@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xibgpzzrfx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-xibgpzzrfx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerGroupRelationshipType",
+		"ToTableName": "RelatedCustomerGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerGroupRelationshipTypeId",
+				"ToColumnName": "CustomerGroupRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"toEntity\":\"RelatedCustomerGroup.cdm.json/RelatedCustomerGroup\",\"joinPairs\":[{\"fromAttribute\":\"CustomerGroupRelationshipTypeId\",\"toAttribute\":\"CustomerGroupRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gipxzthjni",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-gipxzthjni",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CurrencyUsage",
+		"ToTableName": "CustomerCurrencyUsage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CurrencyUsageId",
+				"ToColumnName": "CurrencyUsageId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CurrencyUsage.cdm.json/CurrencyUsage\",\"toEntity\":\"CustomerCurrencyUsage.cdm.json/CustomerCurrencyUsage\",\"joinPairs\":[{\"fromAttribute\":\"CurrencyUsageId\",\"toAttribute\":\"CurrencyUsageId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

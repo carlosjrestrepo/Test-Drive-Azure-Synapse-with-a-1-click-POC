@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hjrwfojywp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-hjrwfojywp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "DoNotMailRegistryLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "LocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"DoNotMailRegistryLocation.cdm.json/DoNotMailRegistryLocation\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"LocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

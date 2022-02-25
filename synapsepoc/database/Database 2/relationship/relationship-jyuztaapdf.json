@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jyuztaapdf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-jyuztaapdf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "CustomerLocationGeographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "LocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"CustomerLocationGeographicCriteria.cdm.json/CustomerLocationGeographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"LocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

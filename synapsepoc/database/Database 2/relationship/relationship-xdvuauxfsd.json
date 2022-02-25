@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xdvuauxfsd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-xdvuauxfsd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerLead",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "LeadPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerLead.cdm.json/CustomerLead\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"LeadPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

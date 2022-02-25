@@ -1,0 +1,87 @@
+{
+	"name": "DoNotCallRegistryTelephone",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "DoNotCallRegistryTelephone",
+		"Description": "A telephone number that is restricted by the Do Not Call Registry.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DoNotContactRegistryId",
+					"Description": "The unique identifier of an Do Not Contact Registry.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone",
+						"Name": "DoNotContactRegistryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TelephoneNumber",
+					"Description": "A telephone number associated with a Party.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone",
+						"Name": "TelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DoNotCallRegistryTelephoneNote",
+					"Description": "A note, comment or additional information regarding the Do Not Contact Registry Location.",
+					"BaseAttributeReference": {
+						"Entity": "DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone",
+						"Name": "DoNotCallRegistryTelephoneNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DoNotContactRegistryId\":{\"entity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"name\":\"DoNotContactRegistryId\"},\"TelephoneNumber\":{\"entity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"name\":\"TelephoneNumber\"},\"DoNotCallRegistryTelephoneNote\":{\"entity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"name\":\"DoNotCallRegistryTelephoneNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DoNotCallRegistryTelephone\",\"path\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\"},\"description\":\"A telephone number that is restricted by the Do Not Call Registry.\",\"primaryKey\":[\"DoNotContactRegistryId\",\"TelephoneNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"name\":\"DoNotContactRegistryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Do Not Contact Registry.\",\"isNullable\":false,\"name\":\"DoNotContactRegistryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"name\":\"TelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"description\":\"A telephone number associated with a Party.\",\"isNullable\":false,\"scale\":0,\"name\":\"TelephoneNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DoNotCallRegistryTelephone.cdm.json/DoNotCallRegistryTelephone\",\"name\":\"DoNotCallRegistryTelephoneNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Do Not Contact Registry Location.\",\"isNullable\":true,\"name\":\"DoNotCallRegistryTelephoneNote\"}]}}}",
+			"Description": "A telephone number that is restricted by the Do Not Call Registry.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "DoNotContactRegistryId,TelephoneNumber"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

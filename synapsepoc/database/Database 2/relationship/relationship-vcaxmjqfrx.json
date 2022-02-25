@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vcaxmjqfrx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-vcaxmjqfrx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MarketingEvent",
+		"ToTableName": "MarketingEventCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MarketingEventId",
+				"ToColumnName": "MarketingEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MarketingEvent.cdm.json/MarketingEvent\",\"toEntity\":\"MarketingEventCustomer.cdm.json/MarketingEventCustomer\",\"joinPairs\":[{\"fromAttribute\":\"MarketingEventId\",\"toAttribute\":\"MarketingEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

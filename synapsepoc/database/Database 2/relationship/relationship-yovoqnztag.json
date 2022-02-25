@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yovoqnztag",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-yovoqnztag",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrganizationCriteria",
+		"ToTableName": "CustomerOrganizationCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrganizationCriteriaId",
+				"ToColumnName": "OrganizationCriteriaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrganizationCriteria.cdm.json/OrganizationCriteria\",\"toEntity\":\"CustomerOrganizationCriteria.cdm.json/CustomerOrganizationCriteria\",\"joinPairs\":[{\"fromAttribute\":\"OrganizationCriteriaId\",\"toAttribute\":\"OrganizationCriteriaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

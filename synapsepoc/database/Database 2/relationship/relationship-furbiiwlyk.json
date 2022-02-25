@@ -1,0 +1,26 @@
+{
+	"name": "relationship-furbiiwlyk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-furbiiwlyk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalActionStatus",
+		"ToTableName": "LegalAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalActionStatusId",
+				"ToColumnName": "LegalActionStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalActionStatus.cdm.json/LegalActionStatus\",\"toEntity\":\"LegalAction.cdm.json/LegalAction\",\"joinPairs\":[{\"fromAttribute\":\"LegalActionStatusId\",\"toAttribute\":\"LegalActionStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vrccbcinqk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-vrccbcinqk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AuthenticationMethod",
+		"ToTableName": "CustomerRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AuthenticationMethodId",
+				"ToColumnName": "AuthenticationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AuthenticationMethod.cdm.json/AuthenticationMethod\",\"toEntity\":\"CustomerRelatedPartyAuthenticationMethod.cdm.json/CustomerRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"AuthenticationMethodId\",\"toAttribute\":\"AuthenticationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

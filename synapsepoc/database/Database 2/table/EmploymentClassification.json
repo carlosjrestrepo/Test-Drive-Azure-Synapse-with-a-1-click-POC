@@ -1,0 +1,86 @@
+{
+	"name": "EmploymentClassification",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "EmploymentClassification",
+		"Description": "A US Census Bureau employment classification.\n\nEx:\nFull-Time Employment \nRegular Part-Time w/Benefits \nRegular Part-Time No PTO/EST \nOn Call / Per Diem \nTemporary Employees \nProbationary Employment \nArmed Forces\nNot In Labor Force",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EmploymentClassificationId",
+					"Description": "The unique identifier of an Employment Classification.",
+					"BaseAttributeReference": {
+						"Entity": "EmploymentClassification.cdm.json/EmploymentClassification",
+						"Name": "EmploymentClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmploymentClassificationName",
+					"Description": "The name of an Employment Classification.",
+					"BaseAttributeReference": {
+						"Entity": "EmploymentClassification.cdm.json/EmploymentClassification",
+						"Name": "EmploymentClassificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EmploymentClassificationDescription",
+					"Description": "The description of an Employment Classification.",
+					"BaseAttributeReference": {
+						"Entity": "EmploymentClassification.cdm.json/EmploymentClassification",
+						"Name": "EmploymentClassificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EmploymentClassificationId\":{\"entity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"name\":\"EmploymentClassificationId\"},\"EmploymentClassificationName\":{\"entity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"name\":\"EmploymentClassificationName\"},\"EmploymentClassificationDescription\":{\"entity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"name\":\"EmploymentClassificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmploymentClassification\",\"path\":\"EmploymentClassification.cdm.json/EmploymentClassification\"},\"description\":\"A US Census Bureau employment classification.\\n\\nEx:\\nFull-Time Employment \\nRegular Part-Time w/Benefits \\nRegular Part-Time No PTO/EST \\nOn Call / Per Diem \\nTemporary Employees \\nProbationary Employment \\nArmed Forces\\nNot In Labor Force\",\"primaryKey\":[\"EmploymentClassificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"name\":\"EmploymentClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employment Classification.\",\"isNullable\":false,\"name\":\"EmploymentClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"name\":\"EmploymentClassificationName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Employment Classification.\",\"isNullable\":true,\"name\":\"EmploymentClassificationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmploymentClassification.cdm.json/EmploymentClassification\",\"name\":\"EmploymentClassificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Employment Classification.\",\"isNullable\":true,\"name\":\"EmploymentClassificationDescription\"}]}}}",
+			"Description": "A US Census Bureau employment classification.\n\nEx:\nFull-Time Employment \nRegular Part-Time w/Benefits \nRegular Part-Time No PTO/EST \nOn Call / Per Diem \nTemporary Employees \nProbationary Employment \nArmed Forces\nNot In Labor Force",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "EmploymentClassificationId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

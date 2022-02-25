@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mjexmiafkx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-mjexmiafkx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalAction",
+		"ToTableName": "CustomerLegalAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalActionId",
+				"ToColumnName": "LegalActionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalAction.cdm.json/LegalAction\",\"toEntity\":\"CustomerLegalAction.cdm.json/CustomerLegalAction\",\"joinPairs\":[{\"fromAttribute\":\"LegalActionId\",\"toAttribute\":\"LegalActionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,167 @@
+{
+	"name": "CustomerEducation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "CustomerEducation",
+		"Description": "The education attainment characteristics of the Individual Customer consisting of:\n\n(1)  The Educational Institution attended\n(2)  The Education Attainment Level at that institution\n(3)  The Attendance Status\n(4)  Defined for a period (Period Start Date/Period End Date)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "EducationalInstitutionId",
+					"Description": "The unique identifier of the Educational Institution.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "EducationalInstitutionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FieldOfStudyId",
+					"Description": "The unique identifier of a Field of Study.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "FieldOfStudyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The Period Start Date for which the associated Individual Customer education attainment and characteristics are defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The Period End Date for which the associated Individual Customer education attainment and characteristics are defined.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EducationAttainmentLevelId",
+					"Description": "The unique identifier of an Education Attainment Level.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "EducationAttainmentLevelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StudentStatusId",
+					"Description": "The unique identifier of an Attendance Status.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "StudentStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerEducationNote",
+					"Description": "Notes regarding the associated Individual Customer education attainment and characteristics.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerEducation.cdm.json/CustomerEducation",
+						"Name": "CustomerEducationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"CustomerId\"},\"EducationalInstitutionId\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"EducationalInstitutionId\"},\"FieldOfStudyId\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"FieldOfStudyId\"},\"PeriodStartDate\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"PeriodEndDate\"},\"EducationAttainmentLevelId\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"EducationAttainmentLevelId\"},\"StudentStatusId\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"StudentStatusId\"},\"CustomerEducationNote\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"CustomerEducationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerEducation\",\"path\":\"CustomerEducation.cdm.json/CustomerEducation\"},\"description\":\"The education attainment characteristics of the Individual Customer consisting of:\\n\\n(1)  The Educational Institution attended\\n(2)  The Education Attainment Level at that institution\\n(3)  The Attendance Status\\n(4)  Defined for a period (Period Start Date/Period End Date)\",\"primaryKey\":[\"CustomerId\",\"EducationalInstitutionId\",\"FieldOfStudyId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"EducationalInstitutionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Educational Institution.\",\"isNullable\":false,\"name\":\"EducationalInstitutionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"FieldOfStudyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Field of Study.\",\"isNullable\":false,\"name\":\"FieldOfStudyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The Period Start Date for which the associated Individual Customer education attainment and characteristics are defined.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The Period End Date for which the associated Individual Customer education attainment and characteristics are defined.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"EducationAttainmentLevelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Education Attainment Level.\",\"isNullable\":false,\"name\":\"EducationAttainmentLevelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"StudentStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Attendance Status.\",\"isNullable\":true,\"name\":\"StudentStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"name\":\"CustomerEducationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes regarding the associated Individual Customer education attainment and characteristics.\",\"isNullable\":true,\"name\":\"CustomerEducationNote\"}]}}}",
+			"Description": "The education attainment characteristics of the Individual Customer consisting of:\n\n(1)  The Educational Institution attended\n(2)  The Education Attainment Level at that institution\n(3)  The Attendance Status\n(4)  Defined for a period (Period Start Date/Period End Date)",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CustomerId,EducationalInstitutionId,FieldOfStudyId,PeriodStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

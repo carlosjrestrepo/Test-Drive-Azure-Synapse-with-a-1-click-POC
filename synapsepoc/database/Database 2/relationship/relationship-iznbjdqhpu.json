@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iznbjdqhpu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-iznbjdqhpu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EducationAttainmentLevel",
+		"ToTableName": "CustomerEducation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EducationAttainmentLevelId",
+				"ToColumnName": "EducationAttainmentLevelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EducationAttainmentLevel.cdm.json/EducationAttainmentLevel\",\"toEntity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"joinPairs\":[{\"fromAttribute\":\"EducationAttainmentLevelId\",\"toAttribute\":\"EducationAttainmentLevelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

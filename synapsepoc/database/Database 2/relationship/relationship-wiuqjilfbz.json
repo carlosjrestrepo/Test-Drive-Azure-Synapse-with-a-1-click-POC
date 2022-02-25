@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wiuqjilfbz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-wiuqjilfbz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NameComponentType",
+		"ToTableName": "CustomerNameComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NameComponentTypeId",
+				"ToColumnName": "NameComponentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NameComponentType.cdm.json/NameComponentType\",\"toEntity\":\"CustomerNameComponent.cdm.json/CustomerNameComponent\",\"joinPairs\":[{\"fromAttribute\":\"NameComponentTypeId\",\"toAttribute\":\"NameComponentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

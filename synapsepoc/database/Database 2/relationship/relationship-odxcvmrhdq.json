@@ -1,0 +1,26 @@
+{
+	"name": "relationship-odxcvmrhdq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-odxcvmrhdq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EducationalInstitution",
+		"ToTableName": "CustomerEducation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EducationalInstitutionId",
+				"ToColumnName": "EducationalInstitutionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EducationalInstitution.cdm.json/EducationalInstitution\",\"toEntity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"joinPairs\":[{\"fromAttribute\":\"EducationalInstitutionId\",\"toAttribute\":\"EducationalInstitutionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

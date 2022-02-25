@@ -1,0 +1,26 @@
+{
+	"name": "relationship-curcxsypfx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-curcxsypfx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ChannelCategory",
+		"ToTableName": "Channel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChannelCategoryId",
+				"ToColumnName": "ChannelCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ChannelCategory.cdm.json/ChannelCategory\",\"toEntity\":\"Channel.cdm.json/Channel\",\"joinPairs\":[{\"fromAttribute\":\"ChannelCategoryId\",\"toAttribute\":\"ChannelCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

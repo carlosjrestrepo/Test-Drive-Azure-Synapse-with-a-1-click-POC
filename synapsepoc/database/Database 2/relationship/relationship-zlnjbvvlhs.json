@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zlnjbvvlhs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-zlnjbvvlhs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaicsIndustryGroup",
+		"ToTableName": "NaicsIndustry",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaicsIndustryGroupCode",
+				"ToColumnName": "NaicsIndustryGroupCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaicsIndustryGroup.cdm.json/NaicsIndustryGroup\",\"toEntity\":\"NaicsIndustry.cdm.json/NaicsIndustry\",\"joinPairs\":[{\"fromAttribute\":\"NaicsIndustryGroupCode\",\"toAttribute\":\"NaicsIndustryGroupCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

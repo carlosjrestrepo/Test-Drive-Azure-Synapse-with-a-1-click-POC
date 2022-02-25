@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dxisdbcqcj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-dxisdbcqcj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "HouseholdMember",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "HouseholdMemberPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"HouseholdMember.cdm.json/HouseholdMember\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"HouseholdMemberPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

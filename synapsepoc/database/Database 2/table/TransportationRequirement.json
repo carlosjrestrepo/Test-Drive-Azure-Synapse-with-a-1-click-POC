@@ -1,0 +1,86 @@
+{
+	"name": "TransportationRequirement",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "TransportationRequirement",
+		"Description": "The requirement that mandates the use of the associated transportation.\n\nEx:\n- Commute to work\n- Personal Transportation\n- Transportation to work",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransportationRequirementId",
+					"Description": "The unique identifier of a Transportation Requirement.",
+					"BaseAttributeReference": {
+						"Entity": "TransportationRequirement.cdm.json/TransportationRequirement",
+						"Name": "TransportationRequirementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransportationRequirementName",
+					"Description": "The name of a Transportation Requirement.",
+					"BaseAttributeReference": {
+						"Entity": "TransportationRequirement.cdm.json/TransportationRequirement",
+						"Name": "TransportationRequirementName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TransportationRequirementDescription",
+					"Description": "The description of a Transportation Requirement.",
+					"BaseAttributeReference": {
+						"Entity": "TransportationRequirement.cdm.json/TransportationRequirement",
+						"Name": "TransportationRequirementDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransportationRequirementId\":{\"entity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"name\":\"TransportationRequirementId\"},\"TransportationRequirementName\":{\"entity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"name\":\"TransportationRequirementName\"},\"TransportationRequirementDescription\":{\"entity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"name\":\"TransportationRequirementDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TransportationRequirement\",\"path\":\"TransportationRequirement.cdm.json/TransportationRequirement\"},\"description\":\"The requirement that mandates the use of the associated transportation.\\n\\nEx:\\n- Commute to work\\n- Personal Transportation\\n- Transportation to work\",\"primaryKey\":[\"TransportationRequirementId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"name\":\"TransportationRequirementId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transportation Requirement.\",\"isNullable\":false,\"name\":\"TransportationRequirementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"name\":\"TransportationRequirementName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Transportation Requirement.\",\"isNullable\":true,\"name\":\"TransportationRequirementName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TransportationRequirement.cdm.json/TransportationRequirement\",\"name\":\"TransportationRequirementDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Transportation Requirement.\",\"isNullable\":true,\"name\":\"TransportationRequirementDescription\"}]}}}",
+			"Description": "The requirement that mandates the use of the associated transportation.\n\nEx:\n- Commute to work\n- Personal Transportation\n- Transportation to work",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "TransportationRequirementId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,86 @@
+{
+	"name": "PropensityType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "PropensityType",
+		"Description": "The type of the propensity or the likelihood to do something. \n\nEx:\n- Purchase A Specific Product Type\n- Pay\n- Default\n- Commit Fraud\n- Comment\n- Purchase\n- Participate in Program\n- Acquire New Technology",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PropensityTypeId",
+					"Description": "The unique identifier of a Propensity Type.",
+					"BaseAttributeReference": {
+						"Entity": "PropensityType.cdm.json/PropensityType",
+						"Name": "PropensityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PropensityTypeName",
+					"Description": "The name of a Propensity Type.",
+					"BaseAttributeReference": {
+						"Entity": "PropensityType.cdm.json/PropensityType",
+						"Name": "PropensityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PropensityTypeDescription",
+					"Description": "The description of a Propensity Type.",
+					"BaseAttributeReference": {
+						"Entity": "PropensityType.cdm.json/PropensityType",
+						"Name": "PropensityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PropensityTypeId\":{\"entity\":\"PropensityType.cdm.json/PropensityType\",\"name\":\"PropensityTypeId\"},\"PropensityTypeName\":{\"entity\":\"PropensityType.cdm.json/PropensityType\",\"name\":\"PropensityTypeName\"},\"PropensityTypeDescription\":{\"entity\":\"PropensityType.cdm.json/PropensityType\",\"name\":\"PropensityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PropensityType\",\"path\":\"PropensityType.cdm.json/PropensityType\"},\"description\":\"The type of the propensity or the likelihood to do something. \\n\\nEx:\\n- Purchase A Specific Product Type\\n- Pay\\n- Default\\n- Commit Fraud\\n- Comment\\n- Purchase\\n- Participate in Program\\n- Acquire New Technology\",\"primaryKey\":[\"PropensityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PropensityType.cdm.json/PropensityType\",\"name\":\"PropensityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Propensity Type.\",\"isNullable\":false,\"name\":\"PropensityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PropensityType.cdm.json/PropensityType\",\"name\":\"PropensityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Propensity Type.\",\"isNullable\":true,\"name\":\"PropensityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PropensityType.cdm.json/PropensityType\",\"name\":\"PropensityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Propensity Type.\",\"isNullable\":true,\"name\":\"PropensityTypeDescription\"}]}}}",
+			"Description": "The type of the propensity or the likelihood to do something. \n\nEx:\n- Purchase A Specific Product Type\n- Pay\n- Default\n- Commit Fraud\n- Comment\n- Purchase\n- Participate in Program\n- Acquire New Technology",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "PropensityTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jrqzdmjilu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-jrqzdmjilu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Survey",
+		"ToTableName": "SurveyQuestion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SurveyId",
+				"ToColumnName": "SurveyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Survey.cdm.json/Survey\",\"toEntity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"joinPairs\":[{\"fromAttribute\":\"SurveyId\",\"toAttribute\":\"SurveyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

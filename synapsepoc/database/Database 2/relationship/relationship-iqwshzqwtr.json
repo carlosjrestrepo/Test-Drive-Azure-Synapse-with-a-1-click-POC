@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iqwshzqwtr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-iqwshzqwtr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "PartyOrganizationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "RelatedPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"PartyOrganizationRelatedParty.cdm.json/PartyOrganizationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"RelatedPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

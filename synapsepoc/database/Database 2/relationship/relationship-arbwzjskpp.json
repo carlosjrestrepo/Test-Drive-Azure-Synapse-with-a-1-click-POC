@@ -1,0 +1,26 @@
+{
+	"name": "relationship-arbwzjskpp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-arbwzjskpp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Contract",
+		"ToTableName": "CustomerContract",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContractId",
+				"ToColumnName": "ContractId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Contract.cdm.json/Contract\",\"toEntity\":\"CustomerContract.cdm.json/CustomerContract\",\"joinPairs\":[{\"fromAttribute\":\"ContractId\",\"toAttribute\":\"ContractId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

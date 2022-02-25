@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lcwcjxevdx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-lcwcjxevdx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CitizenshipType",
+		"ToTableName": "CustomerCountryOfCitizenship",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CitizenshipTypeId",
+				"ToColumnName": "CitizenshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CitizenshipType.cdm.json/CitizenshipType\",\"toEntity\":\"CustomerCountryOfCitizenship.cdm.json/CustomerCountryOfCitizenship\",\"joinPairs\":[{\"fromAttribute\":\"CitizenshipTypeId\",\"toAttribute\":\"CitizenshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

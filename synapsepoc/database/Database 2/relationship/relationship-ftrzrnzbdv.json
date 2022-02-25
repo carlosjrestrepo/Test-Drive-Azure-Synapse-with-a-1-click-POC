@@ -1,0 +1,38 @@
+{
+	"name": "relationship-ftrzrnzbdv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-ftrzrnzbdv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerRelatedParty",
+		"ToTableName": "CustomerRelatedPartyAuthenticationMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "CustomerPartyRelationshipTypeId",
+				"ToColumnName": "CustomerPartyRelationshipTypeId"
+			},
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			},
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerRelatedParty.cdm.json/CustomerRelatedParty\",\"toEntity\":\"CustomerRelatedPartyAuthenticationMethod.cdm.json/CustomerRelatedPartyAuthenticationMethod\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"CustomerPartyRelationshipTypeId\",\"toAttribute\":\"CustomerPartyRelationshipTypeId\"},{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"},{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

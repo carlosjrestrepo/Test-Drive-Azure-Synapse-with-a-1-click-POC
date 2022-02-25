@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wnnsniovmd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-wnnsniovmd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NameSuffix",
+		"ToTableName": "CustomerNameSuffix",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NameSuffixId",
+				"ToColumnName": "NameSuffixId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NameSuffix.cdm.json/NameSuffix\",\"toEntity\":\"CustomerNameSuffix.cdm.json/CustomerNameSuffix\",\"joinPairs\":[{\"fromAttribute\":\"NameSuffixId\",\"toAttribute\":\"NameSuffixId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

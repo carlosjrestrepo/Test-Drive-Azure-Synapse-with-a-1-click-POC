@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sgztpndytj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-sgztpndytj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReferenceGroup",
+		"ToTableName": "CustomerReferenceGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceGroupId",
+				"ToColumnName": "ReferenceGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReferenceGroup.cdm.json/ReferenceGroup\",\"toEntity\":\"CustomerReferenceGroup.cdm.json/CustomerReferenceGroup\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceGroupId\",\"toAttribute\":\"ReferenceGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

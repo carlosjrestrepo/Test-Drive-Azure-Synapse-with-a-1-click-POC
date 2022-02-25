@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pvdwvynkkz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-pvdwvynkkz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeographicCriteriaType",
+		"ToTableName": "GeographicCriteria",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeographicCriteriaTypeId",
+				"ToColumnName": "GeographicCriteriaTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeographicCriteriaType.cdm.json/GeographicCriteriaType\",\"toEntity\":\"GeographicCriteria.cdm.json/GeographicCriteria\",\"joinPairs\":[{\"fromAttribute\":\"GeographicCriteriaTypeId\",\"toAttribute\":\"GeographicCriteriaTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

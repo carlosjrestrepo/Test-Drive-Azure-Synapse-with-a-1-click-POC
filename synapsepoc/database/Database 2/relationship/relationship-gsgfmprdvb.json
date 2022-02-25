@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gsgfmprdvb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-gsgfmprdvb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentPositionType",
+		"ToTableName": "CustomerEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentPositionTypeId",
+				"ToColumnName": "EmploymentPositionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentPositionType.cdm.json/EmploymentPositionType\",\"toEntity\":\"CustomerEmployment.cdm.json/CustomerEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentPositionTypeId\",\"toAttribute\":\"EmploymentPositionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

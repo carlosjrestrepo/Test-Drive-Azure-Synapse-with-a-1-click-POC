@@ -1,0 +1,86 @@
+{
+	"name": "PartyOrganizationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "PartyOrganizationType",
+		"Description": "A categorization of Organizations based on organization responsibility, reporting structure, function etc.\n\nEx:\n- Corporate\n- Business Unit\n- Department\n- Group",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PartyOrganizationTypeId",
+					"Description": "The unique identifier of a Party Organization Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyOrganizationType.cdm.json/PartyOrganizationType",
+						"Name": "PartyOrganizationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyOrganizationTypeName",
+					"Description": "The unique identifier of a Party Organization Name.",
+					"BaseAttributeReference": {
+						"Entity": "PartyOrganizationType.cdm.json/PartyOrganizationType",
+						"Name": "PartyOrganizationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyOrganizationTypeDescription",
+					"Description": "The unique identifier of a Party Organization Description.",
+					"BaseAttributeReference": {
+						"Entity": "PartyOrganizationType.cdm.json/PartyOrganizationType",
+						"Name": "PartyOrganizationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PartyOrganizationTypeId\":{\"entity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"name\":\"PartyOrganizationTypeId\"},\"PartyOrganizationTypeName\":{\"entity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"name\":\"PartyOrganizationTypeName\"},\"PartyOrganizationTypeDescription\":{\"entity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"name\":\"PartyOrganizationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PartyOrganizationType\",\"path\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\"},\"description\":\"A categorization of Organizations based on organization responsibility, reporting structure, function etc.\\n\\nEx:\\n- Corporate\\n- Business Unit\\n- Department\\n- Group\",\"primaryKey\":[\"PartyOrganizationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"name\":\"PartyOrganizationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Party Organization Type.\",\"isNullable\":false,\"name\":\"PartyOrganizationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"name\":\"PartyOrganizationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The unique identifier of a Party Organization Name.\",\"isNullable\":true,\"name\":\"PartyOrganizationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyOrganizationType.cdm.json/PartyOrganizationType\",\"name\":\"PartyOrganizationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The unique identifier of a Party Organization Description.\",\"isNullable\":true,\"name\":\"PartyOrganizationTypeDescription\"}]}}}",
+			"Description": "A categorization of Organizations based on organization responsibility, reporting structure, function etc.\n\nEx:\n- Corporate\n- Business Unit\n- Department\n- Group",
+			"DisplayFolderInfo": "{\"name\":\"Legal Entity\",\"colorCode\":\"#0E3D73\"}",
+			"PrimaryKeys": "PartyOrganizationTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

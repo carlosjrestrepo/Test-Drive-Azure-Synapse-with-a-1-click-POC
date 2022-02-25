@@ -1,0 +1,30 @@
+{
+	"name": "relationship-amxqsceqmp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-amxqsceqmp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SocialMediaPlatformUser",
+		"ToTableName": "CustomerSocialMediaPlatformUser",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SocialMediaPlatformId",
+				"ToColumnName": "SocialMediaPlatformId"
+			},
+			{
+				"FromColumnName": "SocialMediaPlatformUserId",
+				"ToColumnName": "SocialMediaPlatformUserId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SocialMediaPlatformUser.cdm.json/SocialMediaPlatformUser\",\"toEntity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"joinPairs\":[{\"fromAttribute\":\"SocialMediaPlatformId\",\"toAttribute\":\"SocialMediaPlatformId\"},{\"fromAttribute\":\"SocialMediaPlatformUserId\",\"toAttribute\":\"SocialMediaPlatformUserId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

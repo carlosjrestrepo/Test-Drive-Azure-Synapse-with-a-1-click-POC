@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zbcxcqycgh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-zbcxcqycgh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NamePrefix",
+		"ToTableName": "CustomerNamePrefix",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NamePrefixId",
+				"ToColumnName": "NamePrefixId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NamePrefix.cdm.json/NamePrefix\",\"toEntity\":\"CustomerNamePrefix.cdm.json/CustomerNamePrefix\",\"joinPairs\":[{\"fromAttribute\":\"NamePrefixId\",\"toAttribute\":\"NamePrefixId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

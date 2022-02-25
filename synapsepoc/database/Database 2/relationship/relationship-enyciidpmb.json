@@ -1,0 +1,26 @@
+{
+	"name": "relationship-enyciidpmb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-enyciidpmb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LearningEventType",
+		"ToTableName": "LearningEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LearningEventTypeId",
+				"ToColumnName": "LearningEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LearningEventType.cdm.json/LearningEventType\",\"toEntity\":\"LearningEvent.cdm.json/LearningEvent\",\"joinPairs\":[{\"fromAttribute\":\"LearningEventTypeId\",\"toAttribute\":\"LearningEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

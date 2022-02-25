@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jqocxtenie",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-jqocxtenie",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmploymentPositionType",
+		"ToTableName": "CustomerSpouseEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmploymentPositionTypeId",
+				"ToColumnName": "EmploymentPositionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmploymentPositionType.cdm.json/EmploymentPositionType\",\"toEntity\":\"CustomerSpouseEmployment.cdm.json/CustomerSpouseEmployment\",\"joinPairs\":[{\"fromAttribute\":\"EmploymentPositionTypeId\",\"toAttribute\":\"EmploymentPositionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

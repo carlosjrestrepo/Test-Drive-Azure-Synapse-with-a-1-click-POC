@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xonocqnpuv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-xonocqnpuv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaicsNationalIndustry",
+		"ToTableName": "LegalEntityCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaicsNationalIndustryCode",
+				"ToColumnName": "NaicsNationalIndustryCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaicsNationalIndustry.cdm.json/NaicsNationalIndustry\",\"toEntity\":\"LegalEntityCustomer.cdm.json/LegalEntityCustomer\",\"joinPairs\":[{\"fromAttribute\":\"NaicsNationalIndustryCode\",\"toAttribute\":\"NaicsNationalIndustryCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bsdlofixoe",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-bsdlofixoe",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PropensityRating",
+		"ToTableName": "CustomerPropensity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PropensityRatingId",
+				"ToColumnName": "PropensityRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PropensityRating.cdm.json/PropensityRating\",\"toEntity\":\"CustomerPropensity.cdm.json/CustomerPropensity\",\"joinPairs\":[{\"fromAttribute\":\"PropensityRatingId\",\"toAttribute\":\"PropensityRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

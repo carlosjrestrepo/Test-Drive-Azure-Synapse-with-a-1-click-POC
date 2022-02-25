@@ -1,0 +1,86 @@
+{
+	"name": "PartyOrganizationPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "PartyOrganizationPartyRelationshipType",
+		"Description": "The nature of the relationship between the organization and party.\n\nEx:\n- Managing Director\n- Union Representative\n- HR Manager\n- Vendor/Supplier",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PartyOrganizationPartyRelationshipTypeId",
+					"Description": "The identifier of the Party Organization Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType",
+						"Name": "PartyOrganizationPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyOrganizationPartyRelationshipTypeName",
+					"Description": "The name of the Party Organization Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType",
+						"Name": "PartyOrganizationPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyOrganizationPartyRelationshipTypeDescription",
+					"Description": "The description of the Party Organization Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType",
+						"Name": "PartyOrganizationPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PartyOrganizationPartyRelationshipTypeId\":{\"entity\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\",\"name\":\"PartyOrganizationPartyRelationshipTypeId\"},\"PartyOrganizationPartyRelationshipTypeName\":{\"entity\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\",\"name\":\"PartyOrganizationPartyRelationshipTypeName\"},\"PartyOrganizationPartyRelationshipTypeDescription\":{\"entity\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\",\"name\":\"PartyOrganizationPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PartyOrganizationPartyRelationshipType\",\"path\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\"},\"description\":\"The nature of the relationship between the organization and party.\\n\\nEx:\\n- Managing Director\\n- Union Representative\\n- HR Manager\\n- Vendor/Supplier\",\"primaryKey\":[\"PartyOrganizationPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\",\"name\":\"PartyOrganizationPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The identifier of the Party Organization Party Relationship Type.\",\"isNullable\":false,\"name\":\"PartyOrganizationPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\",\"name\":\"PartyOrganizationPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Party Organization Party Relationship Type.\",\"isNullable\":true,\"name\":\"PartyOrganizationPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyOrganizationPartyRelationshipType.cdm.json/PartyOrganizationPartyRelationshipType\",\"name\":\"PartyOrganizationPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Party Organization Party Relationship Type.\",\"isNullable\":true,\"name\":\"PartyOrganizationPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the organization and party.\n\nEx:\n- Managing Director\n- Union Representative\n- HR Manager\n- Vendor/Supplier",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "PartyOrganizationPartyRelationshipTypeId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

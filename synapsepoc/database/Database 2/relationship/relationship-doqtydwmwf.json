@@ -1,0 +1,26 @@
+{
+	"name": "relationship-doqtydwmwf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-doqtydwmwf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LegalActionPartyRelationshipType",
+		"ToTableName": "LegalActionRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LegalActionPartyRelationshipTypeId",
+				"ToColumnName": "LegalActionPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LegalActionPartyRelationshipType.cdm.json/LegalActionPartyRelationshipType\",\"toEntity\":\"LegalActionRelatedParty.cdm.json/LegalActionRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"LegalActionPartyRelationshipTypeId\",\"toAttribute\":\"LegalActionPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

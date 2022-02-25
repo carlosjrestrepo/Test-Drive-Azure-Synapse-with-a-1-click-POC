@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gpqgyahcsm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "relationship-gpqgyahcsm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AnzsicGroup",
+		"ToTableName": "AnzsicClass",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AnzsicGroupCode",
+				"ToColumnName": "AnzsicGroupCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AnzsicGroup.cdm.json/AnzsicGroup\",\"toEntity\":\"AnzsicClass.cdm.json/AnzsicClass\",\"joinPairs\":[{\"fromAttribute\":\"AnzsicGroupCode\",\"toAttribute\":\"AnzsicGroupCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,118 @@
+{
+	"name": "CustomerAuthorizedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "CustomerAuthorizedParty",
+		"Description": "The name(s) and titles of related parties such as officers or authorized party(s) associated with the Customer.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PositionStartDate",
+					"Description": "The starting date that the person held the associated officer title.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty",
+						"Name": "PositionStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PositionEndDate",
+					"Description": "The ending date that the person held the associated officer title.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty",
+						"Name": "PositionEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "JobTitleId",
+					"Description": "The unique identifier of a Job Title.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty",
+						"Name": "JobTitleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"CustomerId\"},\"PartyId\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"PartyId\"},\"PositionStartDate\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"PositionStartDate\"},\"PositionEndDate\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"PositionEndDate\"},\"JobTitleId\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"JobTitleId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerAuthorizedParty\",\"path\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\"},\"description\":\"The name(s) and titles of related parties such as officers or authorized party(s) associated with the Customer.\",\"primaryKey\":[\"CustomerId\",\"PartyId\",\"PositionStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"PositionStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The starting date that the person held the associated officer title.\",\"isNullable\":false,\"name\":\"PositionStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"PositionEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The ending date that the person held the associated officer title.\",\"isNullable\":false,\"name\":\"PositionEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerAuthorizedParty.cdm.json/CustomerAuthorizedParty\",\"name\":\"JobTitleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Job Title.\",\"isNullable\":true,\"name\":\"JobTitleId\"}]}}}",
+			"Description": "The name(s) and titles of related parties such as officers or authorized party(s) associated with the Customer.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CustomerId,PartyId,PositionStartDate"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

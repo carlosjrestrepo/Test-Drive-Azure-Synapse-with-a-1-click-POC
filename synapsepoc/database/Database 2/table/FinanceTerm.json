@@ -1,0 +1,86 @@
+{
+	"name": "FinanceTerm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "FinanceTerm",
+		"Description": "A finance term or condition that may be applied to a transaction.\n\nEx:\n-  COD\n-  60 Days Net\n-  30 Days Net\n-  Cash and Carry\n- 4% Annual Percentage Rate Financing\n - No Down Payment to qualified customers\n - No interest on financed balance \n-  No interest on financed balance for 3 months\n-  Monthly payments required\n-  10% down payment at date of sale\n-  Balance payable without penalty or additional interest payment",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FinanceTermId",
+					"Description": "The unique identifier of a Finance Term.",
+					"BaseAttributeReference": {
+						"Entity": "FinanceTerm.cdm.json/FinanceTerm",
+						"Name": "FinanceTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FinanceTermName",
+					"Description": "The name of the Finance Term.",
+					"BaseAttributeReference": {
+						"Entity": "FinanceTerm.cdm.json/FinanceTerm",
+						"Name": "FinanceTermName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FinanceTermDescription",
+					"Description": "The description of the Finance Term.",
+					"BaseAttributeReference": {
+						"Entity": "FinanceTerm.cdm.json/FinanceTerm",
+						"Name": "FinanceTermDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FinanceTermId\":{\"entity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"name\":\"FinanceTermId\"},\"FinanceTermName\":{\"entity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"name\":\"FinanceTermName\"},\"FinanceTermDescription\":{\"entity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"name\":\"FinanceTermDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FinanceTerm\",\"path\":\"FinanceTerm.cdm.json/FinanceTerm\"},\"description\":\"A finance term or condition that may be applied to a transaction.\\n\\nEx:\\n-  COD\\n-  60 Days Net\\n-  30 Days Net\\n-  Cash and Carry\\n- 4% Annual Percentage Rate Financing\\n - No Down Payment to qualified customers\\n - No interest on financed balance \\n-  No interest on financed balance for 3 months\\n-  Monthly payments required\\n-  10% down payment at date of sale\\n-  Balance payable without penalty or additional interest payment\",\"primaryKey\":[\"FinanceTermId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"name\":\"FinanceTermId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Finance Term.\",\"isNullable\":false,\"name\":\"FinanceTermId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"name\":\"FinanceTermName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Finance Term.\",\"isNullable\":true,\"name\":\"FinanceTermName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FinanceTerm.cdm.json/FinanceTerm\",\"name\":\"FinanceTermDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Finance Term.\",\"isNullable\":true,\"name\":\"FinanceTermDescription\"}]}}}",
+			"Description": "A finance term or condition that may be applied to a transaction.\n\nEx:\n-  COD\n-  60 Days Net\n-  30 Days Net\n-  Cash and Carry\n- 4% Annual Percentage Rate Financing\n - No Down Payment to qualified customers\n - No interest on financed balance \n-  No interest on financed balance for 3 months\n-  Monthly payments required\n-  10% down payment at date of sale\n-  Balance payable without penalty or additional interest payment",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "FinanceTermId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

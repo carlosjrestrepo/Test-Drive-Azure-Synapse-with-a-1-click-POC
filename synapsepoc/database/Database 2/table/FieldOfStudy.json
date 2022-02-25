@@ -1,0 +1,86 @@
+{
+	"name": "FieldOfStudy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 2"
+		},
+		"Name": "FieldOfStudy",
+		"Description": "The field of study in which the individual is involved.\n\nEx:\n- Mathematics\n- Business\n- Computer Science\n- Philosophy\n- Nursing",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FieldOfStudyId",
+					"Description": "The unique identifier of a Field of Study.",
+					"BaseAttributeReference": {
+						"Entity": "FieldOfStudy.cdm.json/FieldOfStudy",
+						"Name": "FieldOfStudyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FieldOfStudyName",
+					"Description": "The name of a Field of Study.",
+					"BaseAttributeReference": {
+						"Entity": "FieldOfStudy.cdm.json/FieldOfStudy",
+						"Name": "FieldOfStudyName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FieldOfStudyDescription",
+					"Description": "The description of a Field of Study.",
+					"BaseAttributeReference": {
+						"Entity": "FieldOfStudy.cdm.json/FieldOfStudy",
+						"Name": "FieldOfStudyDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FieldOfStudyId\":{\"entity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"name\":\"FieldOfStudyId\"},\"FieldOfStudyName\":{\"entity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"name\":\"FieldOfStudyName\"},\"FieldOfStudyDescription\":{\"entity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"name\":\"FieldOfStudyDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FieldOfStudy\",\"path\":\"FieldOfStudy.cdm.json/FieldOfStudy\"},\"description\":\"The field of study in which the individual is involved.\\n\\nEx:\\n- Mathematics\\n- Business\\n- Computer Science\\n- Philosophy\\n- Nursing\",\"primaryKey\":[\"FieldOfStudyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"name\":\"FieldOfStudyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Field of Study.\",\"isNullable\":false,\"name\":\"FieldOfStudyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"name\":\"FieldOfStudyName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Field of Study.\",\"isNullable\":true,\"name\":\"FieldOfStudyName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"name\":\"FieldOfStudyDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Field of Study.\",\"isNullable\":true,\"name\":\"FieldOfStudyDescription\"}]}}}",
+			"Description": "The field of study in which the individual is involved.\n\nEx:\n- Mathematics\n- Business\n- Computer Science\n- Philosophy\n- Nursing",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "FieldOfStudyId"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
