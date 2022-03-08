@@ -1,0 +1,7 @@
+{
+	"name": "AzureMLService62",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/3ebdb5b2-420d-4275-bfa2-cbf340257977/resourceGroups/synapseoneclick/providers/Microsoft.MachineLearningServices/workspaces/oneclickaml",
+		"groupId": "amlworkspace"
+	}
+}
