@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fhjucpqxsr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-fhjucpqxsr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimAdjustmentType",
+		"ToTableName": "ClaimAdjustment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimAdjustmentTypeId",
+				"ToColumnName": "ClaimAdjustmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimAdjustmentType.cdm.json/ClaimAdjustmentType\",\"toEntity\":\"ClaimAdjustment.cdm.json/ClaimAdjustment\",\"joinPairs\":[{\"fromAttribute\":\"ClaimAdjustmentTypeId\",\"toAttribute\":\"ClaimAdjustmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

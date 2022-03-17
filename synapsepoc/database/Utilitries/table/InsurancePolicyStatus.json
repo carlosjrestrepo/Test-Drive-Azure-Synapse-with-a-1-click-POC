@@ -1,0 +1,138 @@
+{
+	"name": "InsurancePolicyStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsurancePolicyStatus",
+		"Description": "The status of the insurance policy for the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatus.cdm.json/InsurancePolicyStatus",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated insurance policy status is effective.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatus.cdm.json/InsurancePolicyStatus",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated insurance policy status is effective.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatus.cdm.json/InsurancePolicyStatus",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyStatusTypeId",
+					"Description": "The unique identifier of an Insurance Policy Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatus.cdm.json/InsurancePolicyStatus",
+						"Name": "InsurancePolicyStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyStatusNote",
+					"Description": "A note, comment or additional information regarding the insurance policy status.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatus.cdm.json/InsurancePolicyStatus",
+						"Name": "InsurancePolicyStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicyStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicyStatus",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"InsurancePolicyId\"},\"PeriodStartDate\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"PeriodEndDate\"},\"InsurancePolicyStatusTypeId\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"InsurancePolicyStatusTypeId\"},\"InsurancePolicyStatusNote\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"InsurancePolicyStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyStatus\",\"path\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\"},\"description\":\"The status of the insurance policy for the associated period.\",\"primaryKey\":[\"InsurancePolicyId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy.\",\"isNullable\":false,\"name\":\"InsurancePolicyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated insurance policy status is effective.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated insurance policy status is effective.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"InsurancePolicyStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy Status Type.\",\"isNullable\":false,\"name\":\"InsurancePolicyStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"name\":\"InsurancePolicyStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the insurance policy status.\",\"isNullable\":true,\"name\":\"InsurancePolicyStatusNote\"}]}}}",
+			"Description": "The status of the insurance policy for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "InsurancePolicyId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

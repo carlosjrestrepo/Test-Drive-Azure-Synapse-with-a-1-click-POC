@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nkrttivhhu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-nkrttivhhu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "PaymentRecovery",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "SubrogationPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"SubrogationPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

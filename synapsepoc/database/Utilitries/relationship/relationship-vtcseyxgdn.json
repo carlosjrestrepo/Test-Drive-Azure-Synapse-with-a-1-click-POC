@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vtcseyxgdn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-vtcseyxgdn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentCauseType",
+		"ToTableName": "IncidentCause",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentCauseTypeId",
+				"ToColumnName": "IncidentCauseTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"toEntity\":\"IncidentCause.cdm.json/IncidentCause\",\"joinPairs\":[{\"fromAttribute\":\"IncidentCauseTypeId\",\"toAttribute\":\"IncidentCauseTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

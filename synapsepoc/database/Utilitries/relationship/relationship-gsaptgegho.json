@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gsaptgegho",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gsaptgegho",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterService",
+		"ToTableName": "EncounterServiceCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterServiceId",
+				"ToColumnName": "EncounterServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterService.cdm.json/EncounterService\",\"toEntity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"joinPairs\":[{\"fromAttribute\":\"EncounterServiceId\",\"toAttribute\":\"EncounterServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

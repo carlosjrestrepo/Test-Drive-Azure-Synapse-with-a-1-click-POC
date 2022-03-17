@@ -1,0 +1,34 @@
+{
+	"name": "relationship-dhuhrwbudx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dhuhrwbudx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentPartyInjury",
+		"ToTableName": "IncidentInjuryRelatedTreatment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentId",
+				"ToColumnName": "IncidentId"
+			},
+			{
+				"FromColumnName": "InjuredPartyId",
+				"ToColumnName": "InjuredPartyId"
+			},
+			{
+				"FromColumnName": "InjuryTypeId",
+				"ToColumnName": "InjuryTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"toEntity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"joinPairs\":[{\"fromAttribute\":\"IncidentId\",\"toAttribute\":\"IncidentId\"},{\"fromAttribute\":\"InjuredPartyId\",\"toAttribute\":\"InjuredPartyId\"},{\"fromAttribute\":\"InjuryTypeId\",\"toAttribute\":\"InjuryTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

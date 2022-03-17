@@ -1,0 +1,105 @@
+{
+	"name": "BodyPart",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "BodyPart",
+		"Description": "Body Parts that may be involved in an incident.\n\nEx:\n- Toe\n- Foot\n- Ankle\n- Leg\n- Knee\n- Hip\n- Torso\n- Arm\n- Elbow\n- Finger\n- Hand\n- Head\n- Eye",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BodyPartId",
+					"Description": "The unique identifier of a body part.",
+					"BaseAttributeReference": {
+						"Entity": "BodyPart.cdm.json/BodyPart",
+						"Name": "BodyPartId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BodyPartName",
+					"Description": "The name of a body part.",
+					"BaseAttributeReference": {
+						"Entity": "BodyPart.cdm.json/BodyPart",
+						"Name": "BodyPartName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BodyPartDescription",
+					"Description": "The description of a body part.",
+					"BaseAttributeReference": {
+						"Entity": "BodyPart.cdm.json/BodyPart",
+						"Name": "BodyPartDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/BodyPart",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/BodyPart",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BodyPartId\":{\"entity\":\"BodyPart.cdm.json/BodyPart\",\"name\":\"BodyPartId\"},\"BodyPartName\":{\"entity\":\"BodyPart.cdm.json/BodyPart\",\"name\":\"BodyPartName\"},\"BodyPartDescription\":{\"entity\":\"BodyPart.cdm.json/BodyPart\",\"name\":\"BodyPartDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BodyPart\",\"path\":\"BodyPart.cdm.json/BodyPart\"},\"description\":\"Body Parts that may be involved in an incident.\\n\\nEx:\\n- Toe\\n- Foot\\n- Ankle\\n- Leg\\n- Knee\\n- Hip\\n- Torso\\n- Arm\\n- Elbow\\n- Finger\\n- Hand\\n- Head\\n- Eye\",\"primaryKey\":[\"BodyPartId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BodyPart.cdm.json/BodyPart\",\"name\":\"BodyPartId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a body part.\",\"isNullable\":false,\"name\":\"BodyPartId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BodyPart.cdm.json/BodyPart\",\"name\":\"BodyPartName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a body part.\",\"isNullable\":true,\"name\":\"BodyPartName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BodyPart.cdm.json/BodyPart\",\"name\":\"BodyPartDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a body part.\",\"isNullable\":true,\"name\":\"BodyPartDescription\"}]}}}",
+			"Description": "Body Parts that may be involved in an incident.\n\nEx:\n- Toe\n- Foot\n- Ankle\n- Leg\n- Knee\n- Hip\n- Torso\n- Arm\n- Elbow\n- Finger\n- Hand\n- Head\n- Eye",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "BodyPartId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

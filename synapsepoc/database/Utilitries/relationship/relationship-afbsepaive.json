@@ -1,0 +1,26 @@
+{
+	"name": "relationship-afbsepaive",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-afbsepaive",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureRepairPartyRelationshipType",
+		"ToTableName": "StructureRepairRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureRepairPartyRelationshipTypeId",
+				"ToColumnName": "StructureRepairPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"toEntity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"StructureRepairPartyRelationshipTypeId\",\"toAttribute\":\"StructureRepairPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

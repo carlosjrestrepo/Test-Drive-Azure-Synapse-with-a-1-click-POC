@@ -1,0 +1,121 @@
+{
+	"name": "IcdDiseaseCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IcdDiseaseCategory",
+		"Description": "The following is a List of ICD-10 codes. The version for 2010 is available online at http://www.who.int/classifications/apps/icd/icd10online.\n\nChapter I - Certain infectious and parasitic diseases (A00-B99)\nChapter II - Neoplasms (C00-D48)\nChapter III - Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism (D50-D89)\nChapter IV - Endocrine, nutritional and metabolic diseases (E00-E90)\nChapter V - Mental and behavioral disorders (F00-F99)\nChapter VI - Diseases of the nervous system (G00-G99)\nChapter VII - Diseases of the eye and adnexa (H00-H59)\nChapter VIII - Diseases of the ear and mastoid process (H60-H95)\nChapter IX - Diseases of the circulatory system (I00-I99)\nChapter X - Diseases of the respiratory system (J00-J99)\nChapter XI - Diseases of the digestive system (K00-K93)\nChapter XII - Diseases of the skin and subcutaneous tissue (L00-L99)\nChapter XIII - Diseases of the musculoskeletal system and connective tissue (M00-M99)\nChapter XIV - Diseases of the genitourinary system (N00-N99)\nChapter XV - Pregnancy, childbirth and the puerperium (O00-O99)\nChapter XVI - Certain conditions originating in the perinatal period (P00-P96)\nChapter XVII - Congenital malformations, deformations and chromosomal abnormalities (Q00-Q99)\nChapter XVIII - Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified (R00-R99)\nChapter XIX - Injury, poisoning and certain other consequences of external causes (S00-T98)\nChapter XX - External causes of morbidity and mortality (V01-Y98)\nChapter XXI - Factors influencing health status and contact with health services (Z00-Z99)\nChapter XXII - Codes for special purposes (U00-U89)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IcdVersionNumber",
+					"Description": "The version number of the ICD Code.",
+					"BaseAttributeReference": {
+						"Entity": "IcdDiseaseCategory.cdm.json/IcdDiseaseCategory",
+						"Name": "IcdVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IcdDiseaseCategoryId",
+					"Description": "The unique identifier of an ICD Disease Category.",
+					"BaseAttributeReference": {
+						"Entity": "IcdDiseaseCategory.cdm.json/IcdDiseaseCategory",
+						"Name": "IcdDiseaseCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IcdDiseaseCategoryName",
+					"Description": "The name of an ICD Disease Category.",
+					"BaseAttributeReference": {
+						"Entity": "IcdDiseaseCategory.cdm.json/IcdDiseaseCategory",
+						"Name": "IcdDiseaseCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IcdDiseaseCategoryIdDescription",
+					"Description": "The description of an ICD Disease Category.",
+					"BaseAttributeReference": {
+						"Entity": "IcdDiseaseCategory.cdm.json/IcdDiseaseCategory",
+						"Name": "IcdDiseaseCategoryIdDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IcdDiseaseCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IcdDiseaseCategory",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IcdVersionNumber\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdVersionNumber\"},\"IcdDiseaseCategoryId\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdDiseaseCategoryId\"},\"IcdDiseaseCategoryName\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdDiseaseCategoryName\"},\"IcdDiseaseCategoryIdDescription\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdDiseaseCategoryIdDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IcdDiseaseCategory\",\"path\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\"},\"description\":\"The following is a List of ICD-10 codes. The version for 2010 is available online at http://www.who.int/classifications/apps/icd/icd10online.\\n\\nChapter I - Certain infectious and parasitic diseases (A00-B99)\\nChapter II - Neoplasms (C00-D48)\\nChapter III - Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism (D50-D89)\\nChapter IV - Endocrine, nutritional and metabolic diseases (E00-E90)\\nChapter V - Mental and behavioral disorders (F00-F99)\\nChapter VI - Diseases of the nervous system (G00-G99)\\nChapter VII - Diseases of the eye and adnexa (H00-H59)\\nChapter VIII - Diseases of the ear and mastoid process (H60-H95)\\nChapter IX - Diseases of the circulatory system (I00-I99)\\nChapter X - Diseases of the respiratory system (J00-J99)\\nChapter XI - Diseases of the digestive system (K00-K93)\\nChapter XII - Diseases of the skin and subcutaneous tissue (L00-L99)\\nChapter XIII - Diseases of the musculoskeletal system and connective tissue (M00-M99)\\nChapter XIV - Diseases of the genitourinary system (N00-N99)\\nChapter XV - Pregnancy, childbirth and the puerperium (O00-O99)\\nChapter XVI - Certain conditions originating in the perinatal period (P00-P96)\\nChapter XVII - Congenital malformations, deformations and chromosomal abnormalities (Q00-Q99)\\nChapter XVIII - Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified (R00-R99)\\nChapter XIX - Injury, poisoning and certain other consequences of external causes (S00-T98)\\nChapter XX - External causes of morbidity and mortality (V01-Y98)\\nChapter XXI - Factors influencing health status and contact with health services (Z00-Z99)\\nChapter XXII - Codes for special purposes (U00-U89)\",\"primaryKey\":[\"IcdVersionNumber\",\"IcdDiseaseCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version number of the ICD Code.\",\"isNullable\":false,\"name\":\"IcdVersionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdDiseaseCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an ICD Disease Category.\",\"isNullable\":false,\"name\":\"IcdDiseaseCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdDiseaseCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an ICD Disease Category.\",\"isNullable\":true,\"name\":\"IcdDiseaseCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"name\":\"IcdDiseaseCategoryIdDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an ICD Disease Category.\",\"isNullable\":true,\"name\":\"IcdDiseaseCategoryIdDescription\"}]}}}",
+			"Description": "The following is a List of ICD-10 codes. The version for 2010 is available online at http://www.who.int/classifications/apps/icd/icd10online.\n\nChapter I - Certain infectious and parasitic diseases (A00-B99)\nChapter II - Neoplasms (C00-D48)\nChapter III - Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism (D50-D89)\nChapter IV - Endocrine, nutritional and metabolic diseases (E00-E90)\nChapter V - Mental and behavioral disorders (F00-F99)\nChapter VI - Diseases of the nervous system (G00-G99)\nChapter VII - Diseases of the eye and adnexa (H00-H59)\nChapter VIII - Diseases of the ear and mastoid process (H60-H95)\nChapter IX - Diseases of the circulatory system (I00-I99)\nChapter X - Diseases of the respiratory system (J00-J99)\nChapter XI - Diseases of the digestive system (K00-K93)\nChapter XII - Diseases of the skin and subcutaneous tissue (L00-L99)\nChapter XIII - Diseases of the musculoskeletal system and connective tissue (M00-M99)\nChapter XIV - Diseases of the genitourinary system (N00-N99)\nChapter XV - Pregnancy, childbirth and the puerperium (O00-O99)\nChapter XVI - Certain conditions originating in the perinatal period (P00-P96)\nChapter XVII - Congenital malformations, deformations and chromosomal abnormalities (Q00-Q99)\nChapter XVIII - Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified (R00-R99)\nChapter XIX - Injury, poisoning and certain other consequences of external causes (S00-T98)\nChapter XX - External causes of morbidity and mortality (V01-Y98)\nChapter XXI - Factors influencing health status and contact with health services (Z00-Z99)\nChapter XXII - Codes for special purposes (U00-U89)",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "IcdVersionNumber,IcdDiseaseCategoryId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

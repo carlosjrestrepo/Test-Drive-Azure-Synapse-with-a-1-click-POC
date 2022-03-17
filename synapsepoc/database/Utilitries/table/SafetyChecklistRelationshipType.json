@@ -1,0 +1,105 @@
+{
+	"name": "SafetyChecklistRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SafetyChecklistRelationshipType",
+		"Description": "Describes the relationship between two or more safety checklists.\n\nEx:\n- is included in\n- excludes\n- optionally includes\n- is template for",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyChecklistRelationshipTypeId",
+					"Description": "The unique identifier of a Safety Checklist Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType",
+						"Name": "SafetyChecklistRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistRelationshipTypeName",
+					"Description": "The name of a Safety Checklist Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType",
+						"Name": "SafetyChecklistRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistRelationshipTypeDescription",
+					"Description": "The description of a Safety Checklist Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType",
+						"Name": "SafetyChecklistRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyChecklistRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyChecklistRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyChecklistRelationshipTypeId\":{\"entity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"name\":\"SafetyChecklistRelationshipTypeId\"},\"SafetyChecklistRelationshipTypeName\":{\"entity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"name\":\"SafetyChecklistRelationshipTypeName\"},\"SafetyChecklistRelationshipTypeDescription\":{\"entity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"name\":\"SafetyChecklistRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SafetyChecklistRelationshipType\",\"path\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\"},\"description\":\"Describes the relationship between two or more safety checklists.\\n\\nEx:\\n- is included in\\n- excludes\\n- optionally includes\\n- is template for\",\"primaryKey\":[\"SafetyChecklistRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"name\":\"SafetyChecklistRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist Relationship Type.\",\"isNullable\":false,\"name\":\"SafetyChecklistRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"name\":\"SafetyChecklistRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Safety Checklist Relationship Type.\",\"isNullable\":true,\"name\":\"SafetyChecklistRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"name\":\"SafetyChecklistRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Safety Checklist Relationship Type.\",\"isNullable\":true,\"name\":\"SafetyChecklistRelationshipTypeDescription\"}]}}}",
+			"Description": "Describes the relationship between two or more safety checklists.\n\nEx:\n- is included in\n- excludes\n- optionally includes\n- is template for",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyChecklistRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

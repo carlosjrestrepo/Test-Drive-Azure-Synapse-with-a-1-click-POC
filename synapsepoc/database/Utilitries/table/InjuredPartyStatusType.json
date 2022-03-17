@@ -1,0 +1,105 @@
+{
+	"name": "InjuredPartyStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InjuredPartyStatusType",
+		"Description": "A status type applicable to injured parties that describes their current status.\n\nEx:\n- Unable to work\n- At work\n- Recovered\n- 100% disabled\n- 50% disabled\n- Paraplegic\n- Quadriplegic\n- Deceased",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InjuredPartyStatusTypeId",
+					"Description": "The unique identifier of an injured party status type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatusType.cdm.json/InjuredPartyStatusType",
+						"Name": "InjuredPartyStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyStatusTypeName",
+					"Description": "The name of an injured party status type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatusType.cdm.json/InjuredPartyStatusType",
+						"Name": "InjuredPartyStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyStatusTypeDescription",
+					"Description": "The description of an injured party status type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatusType.cdm.json/InjuredPartyStatusType",
+						"Name": "InjuredPartyStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyStatusType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InjuredPartyStatusTypeId\":{\"entity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"name\":\"InjuredPartyStatusTypeId\"},\"InjuredPartyStatusTypeName\":{\"entity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"name\":\"InjuredPartyStatusTypeName\"},\"InjuredPartyStatusTypeDescription\":{\"entity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"name\":\"InjuredPartyStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InjuredPartyStatusType\",\"path\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\"},\"description\":\"A status type applicable to injured parties that describes their current status.\\n\\nEx:\\n- Unable to work\\n- At work\\n- Recovered\\n- 100% disabled\\n- 50% disabled\\n- Paraplegic\\n- Quadriplegic\\n- Deceased\",\"primaryKey\":[\"InjuredPartyStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"name\":\"InjuredPartyStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injured party status type.\",\"isNullable\":false,\"name\":\"InjuredPartyStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"name\":\"InjuredPartyStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an injured party status type.\",\"isNullable\":true,\"name\":\"InjuredPartyStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"name\":\"InjuredPartyStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an injured party status type.\",\"isNullable\":true,\"name\":\"InjuredPartyStatusTypeDescription\"}]}}}",
+			"Description": "A status type applicable to injured parties that describes their current status.\n\nEx:\n- Unable to work\n- At work\n- Recovered\n- 100% disabled\n- 50% disabled\n- Paraplegic\n- Quadriplegic\n- Deceased",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "InjuredPartyStatusTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

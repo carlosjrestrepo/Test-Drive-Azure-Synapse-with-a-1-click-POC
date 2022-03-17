@@ -1,0 +1,26 @@
+{
+	"name": "relationship-krllhjlgpm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-krllhjlgpm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimRelationshipType",
+		"ToTableName": "RelatedClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimRelationshipTypeId",
+				"ToColumnName": "ClaimRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"toEntity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"joinPairs\":[{\"fromAttribute\":\"ClaimRelationshipTypeId\",\"toAttribute\":\"ClaimRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

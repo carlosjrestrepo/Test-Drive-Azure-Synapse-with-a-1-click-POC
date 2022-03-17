@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hsqzfrxrql",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-hsqzfrxrql",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Claim",
+		"ToTableName": "ClaimEstimate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Claim.cdm.json/Claim\",\"toEntity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

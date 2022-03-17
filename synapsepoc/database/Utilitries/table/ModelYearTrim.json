@@ -1,0 +1,153 @@
+{
+	"name": "ModelYearTrim",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ModelYearTrim",
+		"Description": "The model year trim of the vehicle.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ModelId",
+					"Description": "The unique identifier of a model.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYearTrim.cdm.json/ModelYearTrim",
+						"Name": "ModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearId",
+					"Description": "The unique identifier of a model year.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYearTrim.cdm.json/ModelYearTrim",
+						"Name": "ModelYearId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearTrimId",
+					"Description": "The unique identifier of a model year trim.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYearTrim.cdm.json/ModelYearTrim",
+						"Name": "ModelYearTrimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearTrimName",
+					"Description": "The name of a model year trim.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYearTrim.cdm.json/ModelYearTrim",
+						"Name": "ModelYearTrimName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearTrimDescription",
+					"Description": "The description of a model year trim.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYearTrim.cdm.json/ModelYearTrim",
+						"Name": "ModelYearTrimDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleTypeId",
+					"Description": "The unique identifier of a vehicle type.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYearTrim.cdm.json/ModelYearTrim",
+						"Name": "VehicleTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ModelYearTrim",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ModelYearTrim",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ModelId\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelId\"},\"ModelYearId\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearId\"},\"ModelYearTrimId\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearTrimId\"},\"ModelYearTrimName\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearTrimName\"},\"ModelYearTrimDescription\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearTrimDescription\"},\"VehicleTypeId\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"VehicleTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ModelYearTrim\",\"path\":\"ModelYearTrim.cdm.json/ModelYearTrim\"},\"description\":\"The model year trim of the vehicle.\",\"primaryKey\":[\"ModelId\",\"ModelYearId\",\"ModelYearTrimId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a model.\",\"isNullable\":false,\"name\":\"ModelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a model year.\",\"isNullable\":false,\"name\":\"ModelYearId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearTrimId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a model year trim.\",\"isNullable\":false,\"name\":\"ModelYearTrimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearTrimName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a model year trim.\",\"isNullable\":true,\"name\":\"ModelYearTrimName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"ModelYearTrimDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a model year trim.\",\"isNullable\":true,\"name\":\"ModelYearTrimDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"name\":\"VehicleTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a vehicle type.\",\"isNullable\":true,\"name\":\"VehicleTypeId\"}]}}}",
+			"Description": "The model year trim of the vehicle.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#000F5C\"}",
+			"PrimaryKeys": "ModelId,ModelYearId,ModelYearTrimId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

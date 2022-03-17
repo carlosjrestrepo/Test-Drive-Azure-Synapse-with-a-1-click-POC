@@ -1,0 +1,107 @@
+{
+	"name": "CurrentProceduralTerminologyCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "CurrentProceduralTerminologyCode",
+		"Description": "CPT (Current Procedural Terminology) codes are numbers assigned to every task and service a medical practitioner may provide to a patient including medical, surgical and diagnostic services. They are then used by insurers to determine the amount of reimbursement that a practitioner will receive by an insurer. Since everyone uses the same codes to mean the same thing, they ensure uniformity.\n\nEx:\n99214 may be used for a physical\n90658 indicates a flu shot\n90716 may be used for chicken pox vaccine (varicella)\n12002 may be used to stitch up a one-inch cut on a patient's arm",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CptCode",
+					"Description": "The unique identifier of a CPT Code.",
+					"BaseAttributeReference": {
+						"Entity": "CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode",
+						"Name": "CptCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CptCodeDescription",
+					"Description": "The CPT Code description.",
+					"BaseAttributeReference": {
+						"Entity": "CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode",
+						"Name": "CptCodeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReimbursementAmount",
+					"Description": "The amount that is reimbursable for the associated CPT procedure.",
+					"BaseAttributeReference": {
+						"Entity": "CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode",
+						"Name": "ReimbursementAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/CurrentProceduralTerminologyCode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/CurrentProceduralTerminologyCode",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CptCode\":{\"entity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"name\":\"CptCode\"},\"CptCodeDescription\":{\"entity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"name\":\"CptCodeDescription\"},\"ReimbursementAmount\":{\"entity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"name\":\"ReimbursementAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CurrentProceduralTerminologyCode\",\"path\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\"},\"description\":\"CPT (Current Procedural Terminology) codes are numbers assigned to every task and service a medical practitioner may provide to a patient including medical, surgical and diagnostic services. They are then used by insurers to determine the amount of reimbursement that a practitioner will receive by an insurer. Since everyone uses the same codes to mean the same thing, they ensure uniformity.\\n\\nEx:\\n99214 may be used for a physical\\n90658 indicates a flu shot\\n90716 may be used for chicken pox vaccine (varicella)\\n12002 may be used to stitch up a one-inch cut on a patient's arm\",\"primaryKey\":[\"CptCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"name\":\"CptCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a CPT Code.\",\"isNullable\":false,\"name\":\"CptCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"name\":\"CptCodeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The CPT Code description.\",\"isNullable\":true,\"name\":\"CptCodeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"name\":\"ReimbursementAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount that is reimbursable for the associated CPT procedure.\",\"isNullable\":true,\"scale\":2,\"name\":\"ReimbursementAmount\"}]}}}",
+			"Description": "CPT (Current Procedural Terminology) codes are numbers assigned to every task and service a medical practitioner may provide to a patient including medical, surgical and diagnostic services. They are then used by insurers to determine the amount of reimbursement that a practitioner will receive by an insurer. Since everyone uses the same codes to mean the same thing, they ensure uniformity.\n\nEx:\n99214 may be used for a physical\n90658 indicates a flu shot\n90716 may be used for chicken pox vaccine (varicella)\n12002 may be used to stitch up a one-inch cut on a patient's arm",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "CptCode",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

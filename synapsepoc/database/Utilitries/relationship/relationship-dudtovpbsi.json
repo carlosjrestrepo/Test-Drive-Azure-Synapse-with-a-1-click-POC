@@ -1,0 +1,30 @@
+{
+	"name": "relationship-dudtovpbsi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dudtovpbsi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimInjuredParty",
+		"ToTableName": "ClaimInjuredPartyEncounter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			},
+			{
+				"FromColumnName": "InjuredPartyId",
+				"ToColumnName": "InjuredPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"toEntity\":\"ClaimInjuredPartyEncounter.cdm.json/ClaimInjuredPartyEncounter\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"},{\"fromAttribute\":\"InjuredPartyId\",\"toAttribute\":\"InjuredPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

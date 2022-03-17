@@ -1,0 +1,34 @@
+{
+	"name": "relationship-xspimajltp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-xspimajltp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentEvent",
+		"ToTableName": "IncidentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentEventStartTimestamp",
+				"ToColumnName": "IncidentEventStartTimestamp"
+			},
+			{
+				"FromColumnName": "IncidentEventTypeId",
+				"ToColumnName": "IncidentEventTypeId"
+			},
+			{
+				"FromColumnName": "IncidentId",
+				"ToColumnName": "IncidentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"toEntity\":\"IncidentEventRelatedParty.cdm.json/IncidentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"IncidentEventStartTimestamp\",\"toAttribute\":\"IncidentEventStartTimestamp\"},{\"fromAttribute\":\"IncidentEventTypeId\",\"toAttribute\":\"IncidentEventTypeId\"},{\"fromAttribute\":\"IncidentId\",\"toAttribute\":\"IncidentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

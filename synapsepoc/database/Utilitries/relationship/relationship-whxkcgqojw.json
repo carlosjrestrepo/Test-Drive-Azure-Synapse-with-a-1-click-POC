@@ -1,0 +1,26 @@
+{
+	"name": "relationship-whxkcgqojw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-whxkcgqojw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Ancestry",
+		"ToTableName": "CustomerAncestry",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AncestryId",
+				"ToColumnName": "AncestryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Ancestry.cdm.json/Ancestry\",\"toEntity\":\"CustomerAncestry.cdm.json/CustomerAncestry\",\"joinPairs\":[{\"fromAttribute\":\"AncestryId\",\"toAttribute\":\"AncestryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

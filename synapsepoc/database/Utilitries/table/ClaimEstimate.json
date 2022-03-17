@@ -1,0 +1,188 @@
+{
+	"name": "ClaimEstimate",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimEstimate",
+		"Description": "An assessment of the cost to repair your damaged property.\n\nCompetitive Estimate: A term used when an insurance company requests that you submit multiple repair estimates for consideration.\n\nSupplement/Supplemental Estimate: Used to cover damage not included in the original estimate. Most claims settlements do their best to estimate costs, if they are wrong you are entitled to any additional money to settle your claim. This is paid with a supplement.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EstimateId",
+					"Description": "The unique identifier of an estimate.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EstimateDate",
+					"Description": "The date of the estimate.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EstimateAmount",
+					"Description": "The amount of the estimate.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EstimateStatement",
+					"Description": "The reporting statement regarding the estimate.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EstimateNote",
+					"Description": "A note, comment or additional information regarding the estimate.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EstimateByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "EstimateTypeId",
+					"Description": "The unique identifier of an Estimate Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "EstimateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEstimate.cdm.json/ClaimEstimate",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimEstimate",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimEstimate",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EstimateId\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateId\"},\"EstimateDate\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateDate\"},\"EstimateAmount\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateAmount\"},\"EstimateStatement\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateStatement\"},\"EstimateNote\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateNote\"},\"EstimateByPartyId\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateByPartyId\"},\"EstimateTypeId\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateTypeId\"},\"ClaimId\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"ClaimId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimEstimate\",\"path\":\"ClaimEstimate.cdm.json/ClaimEstimate\"},\"description\":\"An assessment of the cost to repair your damaged property.\\n\\nCompetitive Estimate: A term used when an insurance company requests that you submit multiple repair estimates for consideration.\\n\\nSupplement/Supplemental Estimate: Used to cover damage not included in the original estimate. Most claims settlements do their best to estimate costs, if they are wrong you are entitled to any additional money to settle your claim. This is paid with a supplement.\",\"primaryKey\":[\"EstimateId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an estimate.\",\"isNullable\":false,\"name\":\"EstimateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the estimate.\",\"isNullable\":true,\"name\":\"EstimateDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the estimate.\",\"isNullable\":true,\"scale\":2,\"name\":\"EstimateAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The reporting statement regarding the estimate.\",\"isNullable\":true,\"name\":\"EstimateStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the estimate.\",\"isNullable\":true,\"name\":\"EstimateNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"EstimateByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"EstimateTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Estimate Type.\",\"isNullable\":true,\"name\":\"EstimateTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"ClaimId\"}]}}}",
+			"Description": "An assessment of the cost to repair your damaged property.\n\nCompetitive Estimate: A term used when an insurance company requests that you submit multiple repair estimates for consideration.\n\nSupplement/Supplemental Estimate: Used to cover damage not included in the original estimate. Most claims settlements do their best to estimate costs, if they are wrong you are entitled to any additional money to settle your claim. This is paid with a supplement.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "EstimateId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

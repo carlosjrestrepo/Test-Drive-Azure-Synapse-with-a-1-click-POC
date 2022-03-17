@@ -1,0 +1,26 @@
+{
+	"name": "relationship-msztygqhob",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-msztygqhob",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Claim",
+		"ToTableName": "Appeal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Claim.cdm.json/Claim\",\"toEntity\":\"Appeal.cdm.json/Appeal\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

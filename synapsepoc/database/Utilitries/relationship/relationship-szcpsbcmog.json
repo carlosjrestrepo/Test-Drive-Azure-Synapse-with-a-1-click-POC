@@ -1,0 +1,26 @@
+{
+	"name": "relationship-szcpsbcmog",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-szcpsbcmog",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkOrder",
+		"ToTableName": "IncidentWorkOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkOrderId",
+				"ToColumnName": "WorkOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkOrder.cdm.json/WorkOrder\",\"toEntity\":\"IncidentWorkOrder.cdm.json/IncidentWorkOrder\",\"joinPairs\":[{\"fromAttribute\":\"WorkOrderId\",\"toAttribute\":\"WorkOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

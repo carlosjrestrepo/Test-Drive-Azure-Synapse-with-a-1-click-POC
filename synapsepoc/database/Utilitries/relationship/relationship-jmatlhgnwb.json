@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jmatlhgnwb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-jmatlhgnwb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BodyPart",
+		"ToTableName": "IncidentPartyInjury",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BodyPartId",
+				"ToColumnName": "BodyPartId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BodyPart.cdm.json/BodyPart\",\"toEntity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"joinPairs\":[{\"fromAttribute\":\"BodyPartId\",\"toAttribute\":\"BodyPartId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

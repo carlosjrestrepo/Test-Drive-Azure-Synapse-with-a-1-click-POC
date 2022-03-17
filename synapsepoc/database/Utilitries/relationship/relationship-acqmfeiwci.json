@@ -1,0 +1,26 @@
+{
+	"name": "relationship-acqmfeiwci",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-acqmfeiwci",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalBillRelationshipType",
+		"ToTableName": "RelatedMedicalBill",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalBillRelationshipTypeId",
+				"ToColumnName": "MedicalBillRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"toEntity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"joinPairs\":[{\"fromAttribute\":\"MedicalBillRelationshipTypeId\",\"toAttribute\":\"MedicalBillRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

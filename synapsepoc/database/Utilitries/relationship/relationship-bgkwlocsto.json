@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bgkwlocsto",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-bgkwlocsto",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleItemType",
+		"ToTableName": "VehicleRepairItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleItemTypeId",
+				"ToColumnName": "VehicleItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"toEntity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"joinPairs\":[{\"fromAttribute\":\"VehicleItemTypeId\",\"toAttribute\":\"VehicleItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

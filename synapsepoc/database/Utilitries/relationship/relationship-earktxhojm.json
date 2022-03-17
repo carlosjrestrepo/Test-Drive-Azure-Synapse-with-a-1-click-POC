@@ -1,0 +1,26 @@
+{
+	"name": "relationship-earktxhojm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-earktxhojm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ClaimEstimate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "EstimateByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"EstimateByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

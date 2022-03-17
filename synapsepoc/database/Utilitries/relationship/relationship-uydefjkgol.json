@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uydefjkgol",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-uydefjkgol",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimRejectionReasonType",
+		"ToTableName": "ClaimRejectionReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimRejectionReasonTypeId",
+				"ToColumnName": "ClaimRejectionReasonTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"toEntity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"joinPairs\":[{\"fromAttribute\":\"ClaimRejectionReasonTypeId\",\"toAttribute\":\"ClaimRejectionReasonTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

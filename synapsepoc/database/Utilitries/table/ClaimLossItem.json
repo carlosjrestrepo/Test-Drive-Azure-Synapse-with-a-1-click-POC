@@ -1,0 +1,192 @@
+{
+	"name": "ClaimLossItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimLossItem",
+		"Description": "The item(s) that aggregate to the total Claim Loss.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimLossId",
+					"Description": "The unique identifier of a Claim Loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "ClaimLossId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LossItemId",
+					"Description": "The unique identifier of a Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "LossItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EstimatedLossItemAmount",
+					"Description": "The estimated amount of loss associated with the Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "EstimatedLossItemAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LimitAmount",
+					"Description": "Limits associated with the insurance policy regarding the loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "LimitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeductibleAmount",
+					"Description": "The deductible amount of loss associated with the Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "DeductibleAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AdjustedLossItemAmount",
+					"Description": "The adjusted amount of loss associated with the Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "AdjustedLossItemAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LossItemStatement",
+					"Description": "A statement regarding the loss item loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItem.cdm.json/ClaimLossItem",
+						"Name": "LossItemStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLossItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLossItem",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"ClaimId\"},\"ClaimLossId\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"ClaimLossId\"},\"LossItemId\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"LossItemId\"},\"EstimatedLossItemAmount\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"EstimatedLossItemAmount\"},\"LimitAmount\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"LimitAmount\"},\"DeductibleAmount\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"DeductibleAmount\"},\"AdjustedLossItemAmount\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"AdjustedLossItemAmount\"},\"LossItemStatement\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"LossItemStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimLossItem\",\"path\":\"ClaimLossItem.cdm.json/ClaimLossItem\"},\"description\":\"The item(s) that aggregate to the total Claim Loss.\",\"primaryKey\":[\"ClaimId\",\"ClaimLossId\",\"LossItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"ClaimLossId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Loss.\",\"isNullable\":false,\"name\":\"ClaimLossId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"LossItemId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Item.\",\"isNullable\":false,\"name\":\"LossItemId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"EstimatedLossItemAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated amount of loss associated with the Loss Item.\",\"isNullable\":true,\"scale\":2,\"name\":\"EstimatedLossItemAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"LimitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Limits associated with the insurance policy regarding the loss.\",\"isNullable\":true,\"scale\":2,\"name\":\"LimitAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"DeductibleAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The deductible amount of loss associated with the Loss Item.\",\"isNullable\":true,\"scale\":2,\"name\":\"DeductibleAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"AdjustedLossItemAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The adjusted amount of loss associated with the Loss Item.\",\"isNullable\":true,\"scale\":2,\"name\":\"AdjustedLossItemAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"name\":\"LossItemStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the loss item loss.\",\"isNullable\":true,\"name\":\"LossItemStatement\"}]}}}",
+			"Description": "The item(s) that aggregate to the total Claim Loss.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimLossId,LossItemId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

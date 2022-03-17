@@ -1,0 +1,138 @@
+{
+	"name": "ClaimDelayReason",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimDelayReason",
+		"Description": "The one or more reasons for a claim being delayed.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReason.cdm.json/ClaimDelayReason",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimDelayReasonTypeId",
+					"Description": "The unique identifier of the reason that a claim is being delayed.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReason.cdm.json/ClaimDelayReason",
+						"Name": "ClaimDelayReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DelayReportedTimestamp",
+					"Description": "The timestamp that the claim delay is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReason.cdm.json/ClaimDelayReason",
+						"Name": "DelayReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DelayResolvedTimestamp",
+					"Description": "The timestamp that the associated delay/reason was resolved.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReason.cdm.json/ClaimDelayReason",
+						"Name": "DelayResolvedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ClaimDelayReasonNote",
+					"Description": "A note, comment or additional information regarding the claim delay.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReason.cdm.json/ClaimDelayReason",
+						"Name": "ClaimDelayReasonNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimDelayReason",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimDelayReason",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"ClaimId\"},\"ClaimDelayReasonTypeId\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"ClaimDelayReasonTypeId\"},\"DelayReportedTimestamp\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"DelayReportedTimestamp\"},\"DelayResolvedTimestamp\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"DelayResolvedTimestamp\"},\"ClaimDelayReasonNote\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"ClaimDelayReasonNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimDelayReason\",\"path\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\"},\"description\":\"The one or more reasons for a claim being delayed.\",\"primaryKey\":[\"ClaimId\",\"ClaimDelayReasonTypeId\",\"DelayReportedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"ClaimDelayReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the reason that a claim is being delayed.\",\"isNullable\":false,\"name\":\"ClaimDelayReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"DelayReportedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the claim delay is reported.\",\"isNullable\":false,\"name\":\"DelayReportedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"DelayResolvedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated delay/reason was resolved.\",\"isNullable\":true,\"name\":\"DelayResolvedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"name\":\"ClaimDelayReasonNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim delay.\",\"isNullable\":true,\"name\":\"ClaimDelayReasonNote\"}]}}}",
+			"Description": "The one or more reasons for a claim being delayed.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimDelayReasonTypeId,DelayReportedTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

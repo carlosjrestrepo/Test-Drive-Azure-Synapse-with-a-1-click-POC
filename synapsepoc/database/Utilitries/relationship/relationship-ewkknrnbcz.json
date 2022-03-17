@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ewkknrnbcz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ewkknrnbcz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimResolutionType",
+		"ToTableName": "ClaimStructure",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimResolutionTypeId",
+				"ToColumnName": "ClaimResolutionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"toEntity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"joinPairs\":[{\"fromAttribute\":\"ClaimResolutionTypeId\",\"toAttribute\":\"ClaimResolutionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

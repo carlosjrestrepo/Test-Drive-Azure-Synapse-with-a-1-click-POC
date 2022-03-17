@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mhleapzyqk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mhleapzyqk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimCostPartyRelationshipType",
+		"ToTableName": "ClaimCostRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimCostPartyRelationshipTypeId",
+				"ToColumnName": "ClaimCostPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"toEntity\":\"ClaimCostRelatedParty.cdm.json/ClaimCostRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ClaimCostPartyRelationshipTypeId\",\"toAttribute\":\"ClaimCostPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

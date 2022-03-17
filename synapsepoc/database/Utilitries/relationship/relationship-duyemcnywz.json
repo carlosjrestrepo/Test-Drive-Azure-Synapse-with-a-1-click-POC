@@ -1,0 +1,26 @@
+{
+	"name": "relationship-duyemcnywz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-duyemcnywz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureItemType",
+		"ToTableName": "ClaimStructureLossSalvage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureItemTypeId",
+				"ToColumnName": "StructureItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureItemType.cdm.json/StructureItemType\",\"toEntity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"joinPairs\":[{\"fromAttribute\":\"StructureItemTypeId\",\"toAttribute\":\"StructureItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

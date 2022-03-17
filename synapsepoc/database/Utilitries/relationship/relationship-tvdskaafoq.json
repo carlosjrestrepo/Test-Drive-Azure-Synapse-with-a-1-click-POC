@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tvdskaafoq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-tvdskaafoq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AppealPartyRelationshipType",
+		"ToTableName": "AppealRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AppealPartyRelationshipTypeId",
+				"ToColumnName": "AppealPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AppealPartyRelationshipType.cdm.json/AppealPartyRelationshipType\",\"toEntity\":\"AppealRelatedParty.cdm.json/AppealRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"AppealPartyRelationshipTypeId\",\"toAttribute\":\"AppealPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

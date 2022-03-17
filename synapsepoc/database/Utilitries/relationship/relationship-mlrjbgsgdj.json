@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mlrjbgsgdj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mlrjbgsgdj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ArbitrationPartyRelationshipType",
+		"ToTableName": "ArbitrationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ArbitrationPartyRelationshipTypeId",
+				"ToColumnName": "ArbitrationPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ArbitrationPartyRelationshipType.cdm.json/ArbitrationPartyRelationshipType\",\"toEntity\":\"ArbitrationRelatedParty.cdm.json/ArbitrationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ArbitrationPartyRelationshipTypeId\",\"toAttribute\":\"ArbitrationPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

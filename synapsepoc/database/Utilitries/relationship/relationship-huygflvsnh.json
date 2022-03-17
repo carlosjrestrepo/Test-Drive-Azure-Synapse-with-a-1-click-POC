@@ -1,0 +1,26 @@
+{
+	"name": "relationship-huygflvsnh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-huygflvsnh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceClaim",
+		"ToTableName": "ClaimRelatedInsuranceClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "InsuranceClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"toEntity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"InsuranceClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

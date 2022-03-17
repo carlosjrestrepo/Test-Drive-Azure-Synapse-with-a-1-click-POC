@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hyyznctxed",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-hyyznctxed",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureRepair",
+		"ToTableName": "StructureRepairItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RepairId",
+				"ToColumnName": "RepairId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureRepair.cdm.json/StructureRepair\",\"toEntity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"joinPairs\":[{\"fromAttribute\":\"RepairId\",\"toAttribute\":\"RepairId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,104 @@
+{
+	"name": "IncidentVehicle",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IncidentVehicle",
+		"Description": "The vehicle(s) involved in the incident.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentVehicle.cdm.json/IncidentVehicle",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentVehicle.cdm.json/IncidentVehicle",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IncidentVehicleNote",
+					"Description": "A note, comment or additional information regarding an incident vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentVehicle.cdm.json/IncidentVehicle",
+						"Name": "IncidentVehicleNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentVehicle",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentVehicle",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentVehicle.cdm.json/IncidentVehicle\",\"name\":\"IncidentId\"},\"VehicleId\":{\"entity\":\"IncidentVehicle.cdm.json/IncidentVehicle\",\"name\":\"VehicleId\"},\"IncidentVehicleNote\":{\"entity\":\"IncidentVehicle.cdm.json/IncidentVehicle\",\"name\":\"IncidentVehicleNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentVehicle\",\"path\":\"IncidentVehicle.cdm.json/IncidentVehicle\"},\"description\":\"The vehicle(s) involved in the incident.\",\"primaryKey\":[\"IncidentId\",\"VehicleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentVehicle.cdm.json/IncidentVehicle\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentVehicle.cdm.json/IncidentVehicle\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":false,\"name\":\"VehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentVehicle.cdm.json/IncidentVehicle\",\"name\":\"IncidentVehicleNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding an incident vehicle.\",\"isNullable\":true,\"name\":\"IncidentVehicleNote\"}]}}}",
+			"Description": "The vehicle(s) involved in the incident.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "IncidentId,VehicleId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

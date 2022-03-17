@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qbteiprnqx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-qbteiprnqx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RepairStatus",
+		"ToTableName": "VehicleRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RepairStatusId",
+				"ToColumnName": "RepairStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RepairStatus.cdm.json/RepairStatus\",\"toEntity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"joinPairs\":[{\"fromAttribute\":\"RepairStatusId\",\"toAttribute\":\"RepairStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

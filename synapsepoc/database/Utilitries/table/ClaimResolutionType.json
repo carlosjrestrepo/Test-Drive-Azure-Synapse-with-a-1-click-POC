@@ -1,0 +1,105 @@
+{
+	"name": "ClaimResolutionType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimResolutionType",
+		"Description": "The manner in which the claim/loss is resolved.\n\nEx:\n- Replaced\n- Repaired\n- Settlement payout\n- On-going payment",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimResolutionTypeId",
+					"Description": "The unique identifier of a Claim Resolution Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimResolutionType.cdm.json/ClaimResolutionType",
+						"Name": "ClaimResolutionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimResolutionTypeName",
+					"Description": "The name of a Claim Resolution Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimResolutionType.cdm.json/ClaimResolutionType",
+						"Name": "ClaimResolutionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimResolutionTypeDescription",
+					"Description": "The description of a Claim Resolution Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimResolutionType.cdm.json/ClaimResolutionType",
+						"Name": "ClaimResolutionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimResolutionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimResolutionType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimResolutionTypeId\":{\"entity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"name\":\"ClaimResolutionTypeId\"},\"ClaimResolutionTypeName\":{\"entity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"name\":\"ClaimResolutionTypeName\"},\"ClaimResolutionTypeDescription\":{\"entity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"name\":\"ClaimResolutionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimResolutionType\",\"path\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\"},\"description\":\"The manner in which the claim/loss is resolved.\\n\\nEx:\\n- Replaced\\n- Repaired\\n- Settlement payout\\n- On-going payment\",\"primaryKey\":[\"ClaimResolutionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"name\":\"ClaimResolutionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Resolution Type.\",\"isNullable\":false,\"name\":\"ClaimResolutionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"name\":\"ClaimResolutionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Resolution Type.\",\"isNullable\":true,\"name\":\"ClaimResolutionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"name\":\"ClaimResolutionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Resolution Type.\",\"isNullable\":true,\"name\":\"ClaimResolutionTypeDescription\"}]}}}",
+			"Description": "The manner in which the claim/loss is resolved.\n\nEx:\n- Replaced\n- Repaired\n- Settlement payout\n- On-going payment",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimResolutionTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

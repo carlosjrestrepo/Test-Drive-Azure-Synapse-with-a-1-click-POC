@@ -1,0 +1,26 @@
+{
+	"name": "relationship-clgxssvefv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-clgxssvefv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Claim",
+		"ToTableName": "ClaimLegalAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Claim.cdm.json/Claim\",\"toEntity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "ClaimCostType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimCostType",
+		"Description": "A cost that may be associated with a claim.\n\nEx:\n- Estimated cost\n- Repairs non-deductible cost\n- Claim payments\n- Arbitration cost\n- Legal cost",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimCostTypeId",
+					"Description": "The unique identifier of a Claim Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCostType.cdm.json/ClaimCostType",
+						"Name": "ClaimCostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostTypeName",
+					"Description": "The name of a Claim Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCostType.cdm.json/ClaimCostType",
+						"Name": "ClaimCostTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostTypeDescription",
+					"Description": "The description of a Claim Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCostType.cdm.json/ClaimCostType",
+						"Name": "ClaimCostTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimCostType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimCostType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimCostTypeId\":{\"entity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"name\":\"ClaimCostTypeId\"},\"ClaimCostTypeName\":{\"entity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"name\":\"ClaimCostTypeName\"},\"ClaimCostTypeDescription\":{\"entity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"name\":\"ClaimCostTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimCostType\",\"path\":\"ClaimCostType.cdm.json/ClaimCostType\"},\"description\":\"A cost that may be associated with a claim.\\n\\nEx:\\n- Estimated cost\\n- Repairs non-deductible cost\\n- Claim payments\\n- Arbitration cost\\n- Legal cost\",\"primaryKey\":[\"ClaimCostTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"name\":\"ClaimCostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Cost Type.\",\"isNullable\":false,\"name\":\"ClaimCostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"name\":\"ClaimCostTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Cost Type.\",\"isNullable\":true,\"name\":\"ClaimCostTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"name\":\"ClaimCostTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Cost Type.\",\"isNullable\":true,\"name\":\"ClaimCostTypeDescription\"}]}}}",
+			"Description": "A cost that may be associated with a claim.\n\nEx:\n- Estimated cost\n- Repairs non-deductible cost\n- Claim payments\n- Arbitration cost\n- Legal cost",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimCostTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

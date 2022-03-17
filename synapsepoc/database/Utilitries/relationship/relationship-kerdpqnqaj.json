@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kerdpqnqaj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-kerdpqnqaj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyChecklist",
+		"ToTableName": "IncidentCause",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyChecklistId",
+				"ToColumnName": "SafetyChecklistId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"toEntity\":\"IncidentCause.cdm.json/IncidentCause\",\"joinPairs\":[{\"fromAttribute\":\"SafetyChecklistId\",\"toAttribute\":\"SafetyChecklistId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

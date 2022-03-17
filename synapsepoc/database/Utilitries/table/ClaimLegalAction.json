@@ -1,0 +1,138 @@
+{
+	"name": "ClaimLegalAction",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimLegalAction",
+		"Description": "The legal action(s) in which the customer is involved during the associated period.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLegalAction.cdm.json/ClaimLegalAction",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LegalActionId",
+					"Description": "The unique identifier of a Legal Action.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLegalAction.cdm.json/ClaimLegalAction",
+						"Name": "LegalActionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date associated with the customer legal action.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLegalAction.cdm.json/ClaimLegalAction",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date associated with the customer legal action.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLegalAction.cdm.json/ClaimLegalAction",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerLegalActionNote",
+					"Description": "A note, comment or additional information regarding the customer legal action.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLegalAction.cdm.json/ClaimLegalAction",
+						"Name": "CustomerLegalActionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLegalAction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLegalAction",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"ClaimId\"},\"LegalActionId\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"LegalActionId\"},\"PeriodStartDate\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"PeriodEndDate\"},\"CustomerLegalActionNote\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"CustomerLegalActionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimLegalAction\",\"path\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\"},\"description\":\"The legal action(s) in which the customer is involved during the associated period.\",\"primaryKey\":[\"ClaimId\",\"LegalActionId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"LegalActionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Legal Action.\",\"isNullable\":false,\"name\":\"LegalActionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date associated with the customer legal action.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date associated with the customer legal action.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLegalAction.cdm.json/ClaimLegalAction\",\"name\":\"CustomerLegalActionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the customer legal action.\",\"isNullable\":true,\"name\":\"CustomerLegalActionNote\"}]}}}",
+			"Description": "The legal action(s) in which the customer is involved during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,LegalActionId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

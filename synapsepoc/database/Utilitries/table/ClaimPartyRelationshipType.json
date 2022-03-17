@@ -1,0 +1,105 @@
+{
+	"name": "ClaimPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimPartyRelationshipType",
+		"Description": "The nature of the relationship between the claim and party during the indicated period.\n\nEx:\n-  Agent \n-  At-Fault Party\n-  Auto Damage Adjuster \n-  Auto Damage Division \n-  Claim Adjuster \n-  Claimant Party\n-  Field Adjuster \n-  Independent Adjuster \n-  Insured Party\n-  Insurer Party\n-  Liability Adjuster \n-  Medical Adjuster \n-  Select Repair Shop \n-  Special Investigation Units \n-  Staff Adjuster\n-  Arbitration Expert\n-  Arbitration Arbiter\n-  Underinsured Motorist\n\nwhere:\n\nAgent: An individual who acts as a representative for the company and sells insurance, usually on a commission basis. This individual could be an 'exclusive' or 'non-exclusive' agent.\n\nAt-Fault: The party that is legally liable for the damages in an accident.\n\nAuto Damage Adjuster: The auto damage adjuster is responsible for writing the repair estimate for your vehicle. This adjuster will also answer your questions about the repair process, your rental vehicle, or your total loss settlement.\n\nAuto Damage Division: Division of a claims department that handles auto claims.\n\nClaim Adjuster: A person responsible for investigating and settling a claim.  Adjusters plan and schedule the work required to process a claim. They might, for example, handle the claim filed after an automobile accident or after a storm damages a customer's home. Adjusters investigate claims by interviewing the claimant and witnesses, consulting police and hospital records, and inspecting property damage to determine the extent of the company's liability. Adjusters may consult with other professionals, such as accountants, architects, construction workers, engineers, lawyers, and physicians, who can offer a more expert evaluation of a claim. The information gathered-including photographs and statements, either written, audio, or on video tape-is set down in a report that is then used to evaluate the associated claim. When the policyholder's claim is legitimate, the claims adjuster negotiates with the claimant and settles the claim. When claims are contested, adjusters will work with attorneys and expert witnesses to defend the insurer's position.\n\nClaimant: Individual or entity presenting a claim.\n\nField Adjuster: An insurance adjuster who works primarily outside of an office and often meets personally with the public. Field adjusters can conduct face-to-face meetings, negotiations with claimants, scene investigations, and damage inspections.\n\nIndependent Adjuster: An individual who estimates losses on behalf of an insurance company, but is not an employee of that company.\n\nInsured: A person or organization covered by an insurance policy.\n\nInsurer: An organization that provides insurance.\n\nLiability Adjuster: The liability adjuster handles the investigation of the accident. These adjusters' responsibilities can include collision payments, property damage payments, and bodily injury settlements. In some states, these adjusters may also handle the medical portion of your claim.\nLoss Payee: A person or entity with a legally secured insurable interest in another's property, usually a financial institution that loaned money to buy a car. The car is the loan collateral. If the auto is damaged in an accident, loss payments will be made to you and to the loss payee on your policy.\n\nMedical Adjuster : The medical adjuster is responsible for reviewing all medical bills, replacement/essential services, and lost wages submitted to the company for injuries sustained by you and/or the passengers in your vehicle (depending upon the state in which you live and the coverage on your policy).\n\nSelect Repair Shop: Body shops chosen by your insurance carrier that are authorized to handle the repair of insured vehicles without the need for an inspection by an assigned adjuster. Vehicle owners should always have the right to choose the body shop of their choice.\n\nSpecial Investigation Units: Your insurance carrier helps fight fraud through its special investigation unit, staffed with experts in fraud detection and investigation. Sounds official.\n\nStaff Adjuster: A non-contract or per-job adjuster that is typically employed by your insurance carrier to handle claims.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Claim Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType",
+						"Name": "ClaimPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimPartyRelationshipTypeName",
+					"Description": "The name of a Claim Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType",
+						"Name": "ClaimPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimPartyRelationshipTypeDescription",
+					"Description": "The description of a Claim Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType",
+						"Name": "ClaimPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimPartyRelationshipTypeId\":{\"entity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"name\":\"ClaimPartyRelationshipTypeId\"},\"ClaimPartyRelationshipTypeName\":{\"entity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"name\":\"ClaimPartyRelationshipTypeName\"},\"ClaimPartyRelationshipTypeDescription\":{\"entity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"name\":\"ClaimPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimPartyRelationshipType\",\"path\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\"},\"description\":\"The nature of the relationship between the claim and party during the indicated period.\\n\\nEx:\\n-  Agent \\n-  At-Fault Party\\n-  Auto Damage Adjuster \\n-  Auto Damage Division \\n-  Claim Adjuster \\n-  Claimant Party\\n-  Field Adjuster \\n-  Independent Adjuster \\n-  Insured Party\\n-  Insurer Party\\n-  Liability Adjuster \\n-  Medical Adjuster \\n-  Select Repair Shop \\n-  Special Investigation Units \\n-  Staff Adjuster\\n-  Arbitration Expert\\n-  Arbitration Arbiter\\n-  Underinsured Motorist\\n\\nwhere:\\n\\nAgent: An individual who acts as a representative for the company and sells insurance, usually on a commission basis. This individual could be an 'exclusive' or 'non-exclusive' agent.\\n\\nAt-Fault: The party that is legally liable for the damages in an accident.\\n\\nAuto Damage Adjuster: The auto damage adjuster is responsible for writing the repair estimate for your vehicle. This adjuster will also answer your questions about the repair process, your rental vehicle, or your total loss settlement.\\n\\nAuto Damage Division: Division of a claims department that handles auto claims.\\n\\nClaim Adjuster: A person responsible for investigating and settling a claim.  Adjusters plan and schedule the work required to process a claim. They might, for example, handle the claim filed after an automobile accident or after a storm damages a customer's home. Adjusters investigate claims by interviewing the claimant and witnesses, consulting police and hospital records, and inspecting property damage to determine the extent of the company's liability. Adjusters may consult with other professionals, such as accountants, architects, construction workers, engineers, lawyers, and physicians, who can offer a more expert evaluation of a claim. The information gathered-including photographs and statements, either written, audio, or on video tape-is set down in a report that is then used to evaluate the associated claim. When the policyholder's claim is legitimate, the claims adjuster negotiates with the claimant and settles the claim. When claims are contested, adjusters will work with attorneys and expert witnesses to defend the insurer's position.\\n\\nClaimant: Individual or entity presenting a claim.\\n\\nField Adjuster: An insurance adjuster who works primarily outside of an office and often meets personally with the public. Field adjusters can conduct face-to-face meetings, negotiations with claimants, scene investigations, and damage inspections.\\n\\nIndependent Adjuster: An individual who estimates losses on behalf of an insurance company, but is not an employee of that company.\\n\\nInsured: A person or organization covered by an insurance policy.\\n\\nInsurer: An organization that provides insurance.\\n\\nLiability Adjuster: The liability adjuster handles the investigation of the accident. These adjusters' responsibilities can include collision payments, property damage payments, and bodily injury settlements. In some states, these adjusters may also handle the medical portion of your claim.\\nLoss Payee: A person or entity with a legally secured insurable interest in another's property, usually a financial institution that loaned money to buy a car. The car is the loan collateral. If the auto is damaged in an accident, loss payments will be made to you and to the loss payee on your policy.\\n\\nMedical Adjuster : The medical adjuster is responsible for reviewing all medical bills, replacement/essential services, and lost wages submitted to the company for injuries sustained by you and/or the passengers in your vehicle (depending upon the state in which you live and the coverage on your policy).\\n\\nSelect Repair Shop: Body shops chosen by your insurance carrier that are authorized to handle the repair of insured vehicles without the need for an inspection by an assigned adjuster. Vehicle owners should always have the right to choose the body shop of their choice.\\n\\nSpecial Investigation Units: Your insurance carrier helps fight fraud through its special investigation unit, staffed with experts in fraud detection and investigation. Sounds official.\\n\\nStaff Adjuster: A non-contract or per-job adjuster that is typically employed by your insurance carrier to handle claims.\",\"primaryKey\":[\"ClaimPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"name\":\"ClaimPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Party Relationship Type.\",\"isNullable\":false,\"name\":\"ClaimPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"name\":\"ClaimPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Party Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"name\":\"ClaimPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Party Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the claim and party during the indicated period.\n\nEx:\n-  Agent \n-  At-Fault Party\n-  Auto Damage Adjuster \n-  Auto Damage Division \n-  Claim Adjuster \n-  Claimant Party\n-  Field Adjuster \n-  Independent Adjuster \n-  Insured Party\n-  Insurer Party\n-  Liability Adjuster \n-  Medical Adjuster \n-  Select Repair Shop \n-  Special Investigation Units \n-  Staff Adjuster\n-  Arbitration Expert\n-  Arbitration Arbiter\n-  Underinsured Motorist\n\nwhere:\n\nAgent: An individual who acts as a representative for the company and sells insurance, usually on a commission basis. This individual could be an 'exclusive' or 'non-exclusive' agent.\n\nAt-Fault: The party that is legally liable for the damages in an accident.\n\nAuto Damage Adjuster: The auto damage adjuster is responsible for writing the repair estimate for your vehicle. This adjuster will also answer your questions about the repair process, your rental vehicle, or your total loss settlement.\n\nAuto Damage Division: Division of a claims department that handles auto claims.\n\nClaim Adjuster: A person responsible for investigating and settling a claim.  Adjusters plan and schedule the work required to process a claim. They might, for example, handle the claim filed after an automobile accident or after a storm damages a customer's home. Adjusters investigate claims by interviewing the claimant and witnesses, consulting police and hospital records, and inspecting property damage to determine the extent of the company's liability. Adjusters may consult with other professionals, such as accountants, architects, construction workers, engineers, lawyers, and physicians, who can offer a more expert evaluation of a claim. The information gathered-including photographs and statements, either written, audio, or on video tape-is set down in a report that is then used to evaluate the associated claim. When the policyholder's claim is legitimate, the claims adjuster negotiates with the claimant and settles the claim. When claims are contested, adjusters will work with attorneys and expert witnesses to defend the insurer's position.\n\nClaimant: Individual or entity presenting a claim.\n\nField Adjuster: An insurance adjuster who works primarily outside of an office and often meets personally with the public. Field adjusters can conduct face-to-face meetings, negotiations with claimants, scene investigations, and damage inspections.\n\nIndependent Adjuster: An individual who estimates losses on behalf of an insurance company, but is not an employee of that company.\n\nInsured: A person or organization covered by an insurance policy.\n\nInsurer: An organization that provides insurance.\n\nLiability Adjuster: The liability adjuster handles the investigation of the accident. These adjusters' responsibilities can include collision payments, property damage payments, and bodily injury settlements. In some states, these adjusters may also handle the medical portion of your claim.\nLoss Payee: A person or entity with a legally secured insurable interest in another's property, usually a financial institution that loaned money to buy a car. The car is the loan collateral. If the auto is damaged in an accident, loss payments will be made to you and to the loss payee on your policy.\n\nMedical Adjuster : The medical adjuster is responsible for reviewing all medical bills, replacement/essential services, and lost wages submitted to the company for injuries sustained by you and/or the passengers in your vehicle (depending upon the state in which you live and the coverage on your policy).\n\nSelect Repair Shop: Body shops chosen by your insurance carrier that are authorized to handle the repair of insured vehicles without the need for an inspection by an assigned adjuster. Vehicle owners should always have the right to choose the body shop of their choice.\n\nSpecial Investigation Units: Your insurance carrier helps fight fraud through its special investigation unit, staffed with experts in fraud detection and investigation. Sounds official.\n\nStaff Adjuster: A non-contract or per-job adjuster that is typically employed by your insurance carrier to handle claims.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

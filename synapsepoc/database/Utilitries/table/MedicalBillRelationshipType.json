@@ -1,0 +1,105 @@
+{
+	"name": "MedicalBillRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "MedicalBillRelationshipType",
+		"Description": "Describes the relationship between two or more medical bills.\n\nEx:\n- Corrected medical bill\n- Resubmitted medical bill",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalBillRelationshipTypeId",
+					"Description": "The unique identifier of a Medical Bill Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType",
+						"Name": "MedicalBillRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillRelationshipTypeName",
+					"Description": "The name of a Medical Bill Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType",
+						"Name": "MedicalBillRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillRelationshipTypeDescription",
+					"Description": "The description of a Medical Bill Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType",
+						"Name": "MedicalBillRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MedicalBillRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MedicalBillRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalBillRelationshipTypeId\":{\"entity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"name\":\"MedicalBillRelationshipTypeId\"},\"MedicalBillRelationshipTypeName\":{\"entity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"name\":\"MedicalBillRelationshipTypeName\"},\"MedicalBillRelationshipTypeDescription\":{\"entity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"name\":\"MedicalBillRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalBillRelationshipType\",\"path\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\"},\"description\":\"Describes the relationship between two or more medical bills.\\n\\nEx:\\n- Corrected medical bill\\n- Resubmitted medical bill\",\"primaryKey\":[\"MedicalBillRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"name\":\"MedicalBillRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Bill Relationship Type.\",\"isNullable\":false,\"name\":\"MedicalBillRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"name\":\"MedicalBillRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Medical Bill Relationship Type.\",\"isNullable\":true,\"name\":\"MedicalBillRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillRelationshipType.cdm.json/MedicalBillRelationshipType\",\"name\":\"MedicalBillRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Medical Bill Relationship Type.\",\"isNullable\":true,\"name\":\"MedicalBillRelationshipTypeDescription\"}]}}}",
+			"Description": "Describes the relationship between two or more medical bills.\n\nEx:\n- Corrected medical bill\n- Resubmitted medical bill",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "MedicalBillRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

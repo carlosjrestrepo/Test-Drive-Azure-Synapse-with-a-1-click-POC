@@ -1,0 +1,186 @@
+{
+	"name": "EmployeePositionIncident",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EmployeePositionIncident",
+		"Description": "An incident occurring in conjunction with the employee position.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "EmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PositionId",
+					"Description": "The unique identifier of a Position.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "PositionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "IncidentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmployeePositionIncidentStartTimestamp",
+					"Description": "The start timestamp when the employee was fulfilling a position and involved in the incident that occurred.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "EmployeePositionIncidentStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EmployeePositionIncidentEndTimestamp",
+					"Description": "The end timestamp when the employee was fulfilling a position and involved in the incident that occurred.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "EmployeePositionIncidentEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartOfPositionDutyIndicator",
+					"Description": "Indicates that the incident occurred as part of the positions normal responsibilities.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "IncidentPartOfPositionDutyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EmployeePositionIncidentNote",
+					"Description": "Notes, comments or additional information regarding the Employee Position Incident.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeePositionIncident.cdm.json/EmployeePositionIncident",
+						"Name": "EmployeePositionIncidentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EmployeePositionIncident",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EmployeePositionIncident",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EmployeeId\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeeId\"},\"PositionId\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"PositionId\"},\"IncidentId\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"IncidentId\"},\"IncidentPartyRelationshipTypeId\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"EmployeePositionIncidentStartTimestamp\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeePositionIncidentStartTimestamp\"},\"EmployeePositionIncidentEndTimestamp\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeePositionIncidentEndTimestamp\"},\"IncidentPartOfPositionDutyIndicator\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"IncidentPartOfPositionDutyIndicator\"},\"EmployeePositionIncidentNote\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeePositionIncidentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmployeePositionIncident\",\"path\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\"},\"description\":\"An incident occurring in conjunction with the employee position.\",\"primaryKey\":[\"EmployeeId\",\"PositionId\",\"IncidentId\",\"IncidentPartyRelationshipTypeId\",\"EmployeePositionIncidentStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":false,\"name\":\"EmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"PositionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Position.\",\"isNullable\":false,\"name\":\"PositionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Party relationship type.\",\"isNullable\":false,\"name\":\"IncidentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeePositionIncidentStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp when the employee was fulfilling a position and involved in the incident that occurred.\",\"isNullable\":false,\"name\":\"EmployeePositionIncidentStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeePositionIncidentEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp when the employee was fulfilling a position and involved in the incident that occurred.\",\"isNullable\":true,\"name\":\"EmployeePositionIncidentEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"IncidentPartOfPositionDutyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the incident occurred as part of the positions normal responsibilities.\",\"isNullable\":true,\"name\":\"IncidentPartOfPositionDutyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"name\":\"EmployeePositionIncidentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Employee Position Incident.\",\"isNullable\":true,\"name\":\"EmployeePositionIncidentNote\"}]}}}",
+			"Description": "An incident occurring in conjunction with the employee position.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "EmployeeId,PositionId,IncidentId,IncidentPartyRelationshipTypeId,EmployeePositionIncidentStartTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

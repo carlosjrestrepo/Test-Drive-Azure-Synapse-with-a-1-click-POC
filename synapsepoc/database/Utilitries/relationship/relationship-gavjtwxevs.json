@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gavjtwxevs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gavjtwxevs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemType",
+		"ToTableName": "Item",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemTypeId",
+				"ToColumnName": "ItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemType.cdm.json/ItemType\",\"toEntity\":\"Item.cdm.json/Item\",\"joinPairs\":[{\"fromAttribute\":\"ItemTypeId\",\"toAttribute\":\"ItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

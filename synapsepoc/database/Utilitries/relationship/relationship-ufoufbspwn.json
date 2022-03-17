@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ufoufbspwn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ufoufbspwn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyChecklistRelationshipType",
+		"ToTableName": "RelatedSafetyChecklist",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyChecklistRelationshipTypeId",
+				"ToColumnName": "SafetyChecklistRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyChecklistRelationshipType.cdm.json/SafetyChecklistRelationshipType\",\"toEntity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"joinPairs\":[{\"fromAttribute\":\"SafetyChecklistRelationshipTypeId\",\"toAttribute\":\"SafetyChecklistRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,186 @@
+{
+	"name": "InjuredPartyInjury",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InjuredPartyInjury",
+		"Description": "The injury(s) incurred by or associated with the injured party.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuryTypeId",
+					"Description": "The unique identifier of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuryOccurrenceTimestamp",
+					"Description": "The timestamp that the injury occurred.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuryOccurrenceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InjuryReportedTimestamp",
+					"Description": "The date that the injury was reported.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuryReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InjuryStatement",
+					"Description": "A statement regarding the injury.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuryStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InjuryStatusId",
+					"Description": "The unique identifier of an injury status.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuryStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuryIncurredLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyInjury.cdm.json/InjuredPartyInjury",
+						"Name": "InjuryIncurredLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyInjury",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyInjury",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"ClaimId\"},\"InjuredPartyId\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuredPartyId\"},\"InjuryTypeId\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryTypeId\"},\"InjuryOccurrenceTimestamp\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryOccurrenceTimestamp\"},\"InjuryReportedTimestamp\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryReportedTimestamp\"},\"InjuryStatement\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryStatement\"},\"InjuryStatusId\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryStatusId\"},\"InjuryIncurredLocationId\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryIncurredLocationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InjuredPartyInjury\",\"path\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\"},\"description\":\"The injury(s) incurred by or associated with the injured party.\",\"primaryKey\":[\"ClaimId\",\"InjuredPartyId\",\"InjuryTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury type.\",\"isNullable\":false,\"name\":\"InjuryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryOccurrenceTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the injury occurred.\",\"isNullable\":true,\"name\":\"InjuryOccurrenceTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryReportedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The date that the injury was reported.\",\"isNullable\":true,\"name\":\"InjuryReportedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the injury.\",\"isNullable\":true,\"name\":\"InjuryStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury status.\",\"isNullable\":true,\"name\":\"InjuryStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"name\":\"InjuryIncurredLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"InjuryIncurredLocationId\"}]}}}",
+			"Description": "The injury(s) incurred by or associated with the injured party.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ClaimId,InjuredPartyId,InjuryTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

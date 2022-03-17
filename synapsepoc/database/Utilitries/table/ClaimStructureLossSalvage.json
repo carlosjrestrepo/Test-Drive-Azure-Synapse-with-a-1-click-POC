@@ -1,0 +1,170 @@
+{
+	"name": "ClaimStructureLossSalvage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimStructureLossSalvage",
+		"Description": "Items that are salvaged in regard to the associated claim structure loss.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimStructureLossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "ClaimStructureLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureItemTypeId",
+					"Description": "The unique identifier of an item type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "StructureItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SalvageValueAmount",
+					"Description": "The value or amount of the salvage associated with the item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "SalvageValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SalvageNote",
+					"Description": "A note, comment or additional information regarding the claim structure loss salvage.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "SalvageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureSalvageTypeId",
+					"Description": "The unique identifier of a Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage",
+						"Name": "StructureSalvageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructureLossSalvage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructureLossSalvage",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"ClaimId\"},\"StructureId\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"StructureId\"},\"ClaimStructureLossTypeId\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"ClaimStructureLossTypeId\"},\"StructureItemTypeId\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"StructureItemTypeId\"},\"SalvageValueAmount\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"SalvageValueAmount\"},\"SalvageNote\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"SalvageNote\"},\"StructureSalvageTypeId\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"StructureSalvageTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimStructureLossSalvage\",\"path\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\"},\"description\":\"Items that are salvaged in regard to the associated claim structure loss.\",\"primaryKey\":[\"ClaimId\",\"StructureId\",\"ClaimStructureLossTypeId\",\"StructureItemTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":false,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"ClaimStructureLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":false,\"name\":\"ClaimStructureLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"StructureItemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an item type.\",\"isNullable\":false,\"name\":\"StructureItemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"SalvageValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value or amount of the salvage associated with the item.\",\"isNullable\":true,\"scale\":2,\"name\":\"SalvageValueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"SalvageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim structure loss salvage.\",\"isNullable\":true,\"name\":\"SalvageNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"name\":\"StructureSalvageTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Salvage Type.\",\"isNullable\":true,\"name\":\"StructureSalvageTypeId\"}]}}}",
+			"Description": "Items that are salvaged in regard to the associated claim structure loss.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,StructureId,ClaimStructureLossTypeId,StructureItemTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

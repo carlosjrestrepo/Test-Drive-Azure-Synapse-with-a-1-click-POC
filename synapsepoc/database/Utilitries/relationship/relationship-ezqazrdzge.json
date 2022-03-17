@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ezqazrdzge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ezqazrdzge",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentPartyRelationshipType",
+		"ToTableName": "EmployeePositionIncident",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentPartyRelationshipTypeId",
+				"ToColumnName": "IncidentPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"toEntity\":\"EmployeePositionIncident.cdm.json/EmployeePositionIncident\",\"joinPairs\":[{\"fromAttribute\":\"IncidentPartyRelationshipTypeId\",\"toAttribute\":\"IncidentPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

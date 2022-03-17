@@ -1,0 +1,105 @@
+{
+	"name": "VehicleRepairPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleRepairPartyRelationshipType",
+		"Description": "The nature of the relationship between the repair and party.\n\nEx:\n- Repair-by Party\n- Authorized-by Party\n- Return-to Party\n- Invoice-to Party\n- Payment-by Party\n- Estimate-from Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleRepairPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Vehicle Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType",
+						"Name": "VehicleRepairPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRepairPartyRelationshipTypeName",
+					"Description": "The name of a Vehicle Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType",
+						"Name": "VehicleRepairPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRepairPartyRelationshipTypeDescription",
+					"Description": "The description of a Vehicle Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType",
+						"Name": "VehicleRepairPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleRepairPartyRelationshipTypeId\":{\"entity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"name\":\"VehicleRepairPartyRelationshipTypeId\"},\"VehicleRepairPartyRelationshipTypeName\":{\"entity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"name\":\"VehicleRepairPartyRelationshipTypeName\"},\"VehicleRepairPartyRelationshipTypeDescription\":{\"entity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"name\":\"VehicleRepairPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleRepairPartyRelationshipType\",\"path\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\"},\"description\":\"The nature of the relationship between the repair and party.\\n\\nEx:\\n- Repair-by Party\\n- Authorized-by Party\\n- Return-to Party\\n- Invoice-to Party\\n- Payment-by Party\\n- Estimate-from Party\",\"primaryKey\":[\"VehicleRepairPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"name\":\"VehicleRepairPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Vehicle Repair Party Relationship Type.\",\"isNullable\":false,\"name\":\"VehicleRepairPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"name\":\"VehicleRepairPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Vehicle Repair Party Relationship Type.\",\"isNullable\":true,\"name\":\"VehicleRepairPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"name\":\"VehicleRepairPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Vehicle Repair Party Relationship Type.\",\"isNullable\":true,\"name\":\"VehicleRepairPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the repair and party.\n\nEx:\n- Repair-by Party\n- Authorized-by Party\n- Return-to Party\n- Invoice-to Party\n- Payment-by Party\n- Estimate-from Party",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "VehicleRepairPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

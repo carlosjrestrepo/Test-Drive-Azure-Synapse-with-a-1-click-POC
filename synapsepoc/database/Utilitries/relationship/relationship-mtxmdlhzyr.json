@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mtxmdlhzyr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mtxmdlhzyr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicy",
+		"ToTableName": "RelatedInsurancePolicy",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "RelatedInsurancePolicyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"toEntity\":\"RelatedInsurancePolicy.cdm.json/RelatedInsurancePolicy\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"RelatedInsurancePolicyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

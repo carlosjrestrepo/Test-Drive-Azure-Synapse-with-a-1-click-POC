@@ -1,0 +1,105 @@
+{
+	"name": "EstimateType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EstimateType",
+		"Description": "The type of estimate.\n\nEx:\nCompetitive Estimate: A term used when an insurance company requests that you submit multiple repair estimates for consideration.\n\nSupplement/Supplemental Estimate: Used to cover damage not included in the original estimate. Most claims settlements do their best to estimate costs, if they are wrong you are entitled to any additional money to settle your claim. This is paid with a supplement.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EstimateTypeId",
+					"Description": "The unique identifier of an Estimate Type.",
+					"BaseAttributeReference": {
+						"Entity": "EstimateType.cdm.json/EstimateType",
+						"Name": "EstimateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EstimateTypeName",
+					"Description": "The name of an Estimate Type.",
+					"BaseAttributeReference": {
+						"Entity": "EstimateType.cdm.json/EstimateType",
+						"Name": "EstimateTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EstimateTypeDescription",
+					"Description": "The description of an Estimate Type.",
+					"BaseAttributeReference": {
+						"Entity": "EstimateType.cdm.json/EstimateType",
+						"Name": "EstimateTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EstimateType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EstimateType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EstimateTypeId\":{\"entity\":\"EstimateType.cdm.json/EstimateType\",\"name\":\"EstimateTypeId\"},\"EstimateTypeName\":{\"entity\":\"EstimateType.cdm.json/EstimateType\",\"name\":\"EstimateTypeName\"},\"EstimateTypeDescription\":{\"entity\":\"EstimateType.cdm.json/EstimateType\",\"name\":\"EstimateTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EstimateType\",\"path\":\"EstimateType.cdm.json/EstimateType\"},\"description\":\"The type of estimate.\\n\\nEx:\\nCompetitive Estimate: A term used when an insurance company requests that you submit multiple repair estimates for consideration.\\n\\nSupplement/Supplemental Estimate: Used to cover damage not included in the original estimate. Most claims settlements do their best to estimate costs, if they are wrong you are entitled to any additional money to settle your claim. This is paid with a supplement.\",\"primaryKey\":[\"EstimateTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EstimateType.cdm.json/EstimateType\",\"name\":\"EstimateTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Estimate Type.\",\"isNullable\":false,\"name\":\"EstimateTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EstimateType.cdm.json/EstimateType\",\"name\":\"EstimateTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Estimate Type.\",\"isNullable\":true,\"name\":\"EstimateTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EstimateType.cdm.json/EstimateType\",\"name\":\"EstimateTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Estimate Type.\",\"isNullable\":true,\"name\":\"EstimateTypeDescription\"}]}}}",
+			"Description": "The type of estimate.\n\nEx:\nCompetitive Estimate: A term used when an insurance company requests that you submit multiple repair estimates for consideration.\n\nSupplement/Supplemental Estimate: Used to cover damage not included in the original estimate. Most claims settlements do their best to estimate costs, if they are wrong you are entitled to any additional money to settle your claim. This is paid with a supplement.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EstimateTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

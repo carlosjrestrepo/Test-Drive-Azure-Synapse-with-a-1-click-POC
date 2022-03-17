@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aurygyyucx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-aurygyyucx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TaxStatus",
+		"ToTableName": "CustomerCountryTaxStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TaxStatusId",
+				"ToColumnName": "TaxStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TaxStatus.cdm.json/TaxStatus\",\"toEntity\":\"CustomerCountryTaxStatus.cdm.json/CustomerCountryTaxStatus\",\"joinPairs\":[{\"fromAttribute\":\"TaxStatusId\",\"toAttribute\":\"TaxStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

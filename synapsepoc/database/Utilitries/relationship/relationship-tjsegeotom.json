@@ -1,0 +1,30 @@
+{
+	"name": "relationship-tjsegeotom",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-tjsegeotom",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyChecklistItem",
+		"ToTableName": "EmployeeLearningEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyChecklistId",
+				"ToColumnName": "SafetyChecklistId"
+			},
+			{
+				"FromColumnName": "SafetyChecklistItemId",
+				"ToColumnName": "SafetyChecklistItemId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyChecklistItem.cdm.json/SafetyChecklistItem\",\"toEntity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"joinPairs\":[{\"fromAttribute\":\"SafetyChecklistId\",\"toAttribute\":\"SafetyChecklistId\"},{\"fromAttribute\":\"SafetyChecklistItemId\",\"toAttribute\":\"SafetyChecklistItemId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

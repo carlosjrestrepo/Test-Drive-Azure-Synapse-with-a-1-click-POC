@@ -1,0 +1,26 @@
+{
+	"name": "relationship-czvpcylpyi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-czvpcylpyi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicy",
+		"ToTableName": "InsuranceClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "InsurancePolicyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"toEntity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"InsurancePolicyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tukgewizco",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-tukgewizco",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterType",
+		"ToTableName": "Encounter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterTypeId",
+				"ToColumnName": "EncounterTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterType.cdm.json/EncounterType\",\"toEntity\":\"Encounter.cdm.json/Encounter\",\"joinPairs\":[{\"fromAttribute\":\"EncounterTypeId\",\"toAttribute\":\"EncounterTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

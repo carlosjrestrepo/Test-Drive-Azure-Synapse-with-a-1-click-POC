@@ -1,0 +1,120 @@
+{
+	"name": "RelatedClaim",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "RelatedClaim",
+		"Description": "The relationship of two or more claims.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedClaim.cdm.json/RelatedClaim",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RelatedClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedClaim.cdm.json/RelatedClaim",
+						"Name": "RelatedClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRelationshipTypeId",
+					"Description": "The unique identifier of a claim relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedClaim.cdm.json/RelatedClaim",
+						"Name": "ClaimRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRelatedNote",
+					"Description": "Notes, comments or additional information regarding related claims.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedClaim.cdm.json/RelatedClaim",
+						"Name": "ClaimRelatedNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RelatedClaim",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RelatedClaim",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"ClaimId\"},\"RelatedClaimId\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"RelatedClaimId\"},\"ClaimRelationshipTypeId\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"ClaimRelationshipTypeId\"},\"ClaimRelatedNote\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"ClaimRelatedNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedClaim\",\"path\":\"RelatedClaim.cdm.json/RelatedClaim\"},\"description\":\"The relationship of two or more claims.\",\"primaryKey\":[\"ClaimId\",\"RelatedClaimId\",\"ClaimRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"RelatedClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"RelatedClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"ClaimRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a claim relationship.\",\"isNullable\":false,\"name\":\"ClaimRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedClaim.cdm.json/RelatedClaim\",\"name\":\"ClaimRelatedNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding related claims.\",\"isNullable\":true,\"name\":\"ClaimRelatedNote\"}]}}}",
+			"Description": "The relationship of two or more claims.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,RelatedClaimId,ClaimRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

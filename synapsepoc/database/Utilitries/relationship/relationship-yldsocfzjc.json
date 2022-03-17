@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yldsocfzjc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-yldsocfzjc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureItemType",
+		"ToTableName": "StructureRepairItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureItemTypeId",
+				"ToColumnName": "StructureItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureItemType.cdm.json/StructureItemType\",\"toEntity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"joinPairs\":[{\"fromAttribute\":\"StructureItemTypeId\",\"toAttribute\":\"StructureItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

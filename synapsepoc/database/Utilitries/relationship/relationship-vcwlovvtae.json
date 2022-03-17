@@ -1,0 +1,34 @@
+{
+	"name": "relationship-vcwlovvtae",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-vcwlovvtae",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimVehicleLoss",
+		"ToTableName": "VehicleRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			},
+			{
+				"FromColumnName": "ClaimVehicleLossTypeId",
+				"ToColumnName": "ClaimVehicleLossTypeId"
+			},
+			{
+				"FromColumnName": "VehicleId",
+				"ToColumnName": "VehicleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"toEntity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"},{\"fromAttribute\":\"ClaimVehicleLossTypeId\",\"toAttribute\":\"ClaimVehicleLossTypeId\"},{\"fromAttribute\":\"VehicleId\",\"toAttribute\":\"VehicleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

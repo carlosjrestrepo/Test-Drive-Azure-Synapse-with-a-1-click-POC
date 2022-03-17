@@ -1,0 +1,172 @@
+{
+	"name": "MedicalBillService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "MedicalBillService",
+		"Description": "Encounter service charges billed upon the associated Medical Bill.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalBillId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "MedicalBillId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillServiceId",
+					"Description": "The unique identifier of a Medical Bill Service.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "MedicalBillServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BilledAmount",
+					"Description": "The billed amount.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "BilledAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ApprovedBillAmount",
+					"Description": "The approved bill amount.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "ApprovedBillAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillServiceChargeNote",
+					"Description": "A note, comment or additional information regarding the medical bill service charge.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "MedicalBillServiceChargeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EncounterChargeTypeId",
+					"Description": "The unique identifier of an Encounter Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "EncounterChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EncounterServiceId",
+					"Description": "The unique identifier of an Encounter Service.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBillService.cdm.json/MedicalBillService",
+						"Name": "EncounterServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MedicalBillService",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MedicalBillService",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalBillId\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"MedicalBillId\"},\"MedicalBillServiceId\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"MedicalBillServiceId\"},\"BilledAmount\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"BilledAmount\"},\"ApprovedBillAmount\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"ApprovedBillAmount\"},\"MedicalBillServiceChargeNote\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"MedicalBillServiceChargeNote\"},\"EncounterChargeTypeId\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"EncounterChargeTypeId\"},\"EncounterServiceId\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"EncounterServiceId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalBillService\",\"path\":\"MedicalBillService.cdm.json/MedicalBillService\"},\"description\":\"Encounter service charges billed upon the associated Medical Bill.\",\"primaryKey\":[\"MedicalBillId\",\"MedicalBillServiceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"MedicalBillId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"MedicalBillId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"MedicalBillServiceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Bill Service.\",\"isNullable\":false,\"name\":\"MedicalBillServiceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"BilledAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The billed amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"BilledAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"ApprovedBillAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The approved bill amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"ApprovedBillAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"MedicalBillServiceChargeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the medical bill service charge.\",\"isNullable\":true,\"name\":\"MedicalBillServiceChargeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"EncounterChargeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Charge Type.\",\"isNullable\":false,\"name\":\"EncounterChargeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"name\":\"EncounterServiceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Service.\",\"isNullable\":false,\"name\":\"EncounterServiceId\"}]}}}",
+			"Description": "Encounter service charges billed upon the associated Medical Bill.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "MedicalBillId,MedicalBillServiceId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

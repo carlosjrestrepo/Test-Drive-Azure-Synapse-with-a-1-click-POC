@@ -1,0 +1,105 @@
+{
+	"name": "IncidentInjuryPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IncidentInjuryPartyRelationshipType",
+		"Description": "The nature of the relationship between the party and the incident injury during the associated period.\n\nEx:\n- Injured Party \n- Medical Care Party\n- Insurance Party\n- Government-oversight Party\n- Investigating Party\n- Report-to Party\n- Paid-by Party\n- Paid-to Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentInjuryPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Injury Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType",
+						"Name": "IncidentInjuryPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentInjuryPartyRelationshipTypeName",
+					"Description": "The name of an Incident Injury Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType",
+						"Name": "IncidentInjuryPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentInjuryPartyRelationshipTypeDescription",
+					"Description": "The description of an Incident Injury Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType",
+						"Name": "IncidentInjuryPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentInjuryPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentInjuryPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentInjuryPartyRelationshipTypeId\":{\"entity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"name\":\"IncidentInjuryPartyRelationshipTypeId\"},\"IncidentInjuryPartyRelationshipTypeName\":{\"entity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"name\":\"IncidentInjuryPartyRelationshipTypeName\"},\"IncidentInjuryPartyRelationshipTypeDescription\":{\"entity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"name\":\"IncidentInjuryPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentInjuryPartyRelationshipType\",\"path\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\"},\"description\":\"The nature of the relationship between the party and the incident injury during the associated period.\\n\\nEx:\\n- Injured Party \\n- Medical Care Party\\n- Insurance Party\\n- Government-oversight Party\\n- Investigating Party\\n- Report-to Party\\n- Paid-by Party\\n- Paid-to Party\",\"primaryKey\":[\"IncidentInjuryPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"name\":\"IncidentInjuryPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Injury Party relationship type.\",\"isNullable\":false,\"name\":\"IncidentInjuryPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"name\":\"IncidentInjuryPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Injury Party relationship type.\",\"isNullable\":true,\"name\":\"IncidentInjuryPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"name\":\"IncidentInjuryPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Injury Party relationship type.\",\"isNullable\":true,\"name\":\"IncidentInjuryPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the party and the incident injury during the associated period.\n\nEx:\n- Injured Party \n- Medical Care Party\n- Insurance Party\n- Government-oversight Party\n- Investigating Party\n- Report-to Party\n- Paid-by Party\n- Paid-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "IncidentInjuryPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,120 @@
+{
+	"name": "StructureRepairRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureRepairRelatedParty",
+		"Description": "The nature of the relationship between the repair and related party.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StructureRepairPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty",
+						"Name": "StructureRepairPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairId",
+					"Description": "The unique identifier of a repair.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty",
+						"Name": "RepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the repair-party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty",
+						"Name": "RepairRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepairRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepairRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PartyId\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"PartyId\"},\"StructureRepairPartyRelationshipTypeId\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"StructureRepairPartyRelationshipTypeId\"},\"RepairId\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"RepairId\"},\"RepairRelatedPartyNote\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"RepairRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureRepairRelatedParty\",\"path\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\"},\"description\":\"The nature of the relationship between the repair and related party.\",\"primaryKey\":[\"PartyId\",\"StructureRepairPartyRelationshipTypeId\",\"RepairId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"StructureRepairPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Repair Party Relationship Type.\",\"isNullable\":false,\"name\":\"StructureRepairPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"RepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair.\",\"isNullable\":false,\"name\":\"RepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairRelatedParty.cdm.json/StructureRepairRelatedParty\",\"name\":\"RepairRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the repair-party relationship.\",\"isNullable\":true,\"name\":\"RepairRelatedPartyNote\"}]}}}",
+			"Description": "The nature of the relationship between the repair and related party.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "PartyId,StructureRepairPartyRelationshipTypeId,RepairId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

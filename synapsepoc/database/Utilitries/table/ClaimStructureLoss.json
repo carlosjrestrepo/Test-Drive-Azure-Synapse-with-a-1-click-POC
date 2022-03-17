@@ -1,0 +1,174 @@
+{
+	"name": "ClaimStructureLoss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimStructureLoss",
+		"Description": "The loss incurred in regard to the associated structure.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimStructureLossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "ClaimStructureLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LimitAmount",
+					"Description": "The maximum limit amount associated with insurance policy coverage of the associated loss type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "LimitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeductibleAppliedAmount",
+					"Description": "The deductible amount applicable to the loss type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "DeductibleAppliedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimGrantedAmount",
+					"Description": "The amount granted or agreed to be paid.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "ClaimGrantedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LossDamageStatement",
+					"Description": "The statement of loss regarding the loss type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLoss.cdm.json/ClaimStructureLoss",
+						"Name": "LossDamageStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructureLoss",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructureLoss",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"ClaimId\"},\"StructureId\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"StructureId\"},\"ClaimStructureLossTypeId\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"ClaimStructureLossTypeId\"},\"LimitAmount\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"LimitAmount\"},\"DeductibleAppliedAmount\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"DeductibleAppliedAmount\"},\"ClaimGrantedAmount\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"ClaimGrantedAmount\"},\"LossDamageStatement\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"LossDamageStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimStructureLoss\",\"path\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\"},\"description\":\"The loss incurred in regard to the associated structure.\",\"primaryKey\":[\"ClaimId\",\"StructureId\",\"ClaimStructureLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":false,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"ClaimStructureLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":false,\"name\":\"ClaimStructureLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"LimitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum limit amount associated with insurance policy coverage of the associated loss type.\",\"isNullable\":true,\"scale\":2,\"name\":\"LimitAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"DeductibleAppliedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The deductible amount applicable to the loss type.\",\"isNullable\":true,\"scale\":2,\"name\":\"DeductibleAppliedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"ClaimGrantedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount granted or agreed to be paid.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimGrantedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"name\":\"LossDamageStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement of loss regarding the loss type.\",\"isNullable\":true,\"name\":\"LossDamageStatement\"}]}}}",
+			"Description": "The loss incurred in regard to the associated structure.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,StructureId,ClaimStructureLossTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

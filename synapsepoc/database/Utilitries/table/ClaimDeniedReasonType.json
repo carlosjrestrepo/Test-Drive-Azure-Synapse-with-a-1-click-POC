@@ -1,0 +1,105 @@
+{
+	"name": "ClaimDeniedReasonType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimDeniedReasonType",
+		"Description": "The reasons for denying a claim or claim item.\n\nEx:\n- Member membership invalid\n- Abuse\n- Fraud\n- Claim submitted too late\n- Claim does not match coverage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimDeniedReasonTypeId",
+					"Description": "The unique identifier of a Claim Denied Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType",
+						"Name": "ClaimDeniedReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimDeniedReasonTypeName",
+					"Description": "The name of a Claim Denied Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType",
+						"Name": "ClaimDeniedReasonTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimDeniedReasonTypeDescription",
+					"Description": "The description of a Claim Denied Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType",
+						"Name": "ClaimDeniedReasonTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimDeniedReasonType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimDeniedReasonType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimDeniedReasonTypeId\":{\"entity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"name\":\"ClaimDeniedReasonTypeId\"},\"ClaimDeniedReasonTypeName\":{\"entity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"name\":\"ClaimDeniedReasonTypeName\"},\"ClaimDeniedReasonTypeDescription\":{\"entity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"name\":\"ClaimDeniedReasonTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimDeniedReasonType\",\"path\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\"},\"description\":\"The reasons for denying a claim or claim item.\\n\\nEx:\\n- Member membership invalid\\n- Abuse\\n- Fraud\\n- Claim submitted too late\\n- Claim does not match coverage\",\"primaryKey\":[\"ClaimDeniedReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"name\":\"ClaimDeniedReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Denied Reason Type.\",\"isNullable\":false,\"name\":\"ClaimDeniedReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"name\":\"ClaimDeniedReasonTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Denied Reason Type.\",\"isNullable\":true,\"name\":\"ClaimDeniedReasonTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"name\":\"ClaimDeniedReasonTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Denied Reason Type.\",\"isNullable\":true,\"name\":\"ClaimDeniedReasonTypeDescription\"}]}}}",
+			"Description": "The reasons for denying a claim or claim item.\n\nEx:\n- Member membership invalid\n- Abuse\n- Fraud\n- Claim submitted too late\n- Claim does not match coverage",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimDeniedReasonTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

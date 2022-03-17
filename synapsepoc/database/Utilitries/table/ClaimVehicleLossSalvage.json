@@ -1,0 +1,171 @@
+{
+	"name": "ClaimVehicleLossSalvage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimVehicleLossSalvage",
+		"Description": "Items that are salvaged in regard to the associated claim vehicle loss.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimVehicleLossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "ClaimVehicleLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleSalvageTypeId",
+					"Description": "The unique identifier of a Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "VehicleSalvageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SalvageValueAmount",
+					"Description": "The value or amount of the salvage associated with the item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "SalvageValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SalvageNote",
+					"Description": "A note, comment or additional information regarding the claim vehicle loss salvage.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage",
+						"Name": "SalvageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicleLossSalvage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicleLossSalvage",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"ClaimId\"},\"VehicleId\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"VehicleId\"},\"ClaimVehicleLossTypeId\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"ClaimVehicleLossTypeId\"},\"ItemSku\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"ItemSku\"},\"VehicleSalvageTypeId\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"VehicleSalvageTypeId\"},\"SalvageValueAmount\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"SalvageValueAmount\"},\"SalvageNote\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"SalvageNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimVehicleLossSalvage\",\"path\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\"},\"description\":\"Items that are salvaged in regard to the associated claim vehicle loss.\",\"primaryKey\":[\"ClaimId\",\"VehicleId\",\"ClaimVehicleLossTypeId\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":false,\"name\":\"VehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"ClaimVehicleLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":false,\"name\":\"ClaimVehicleLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"VehicleSalvageTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Salvage Type.\",\"isNullable\":true,\"name\":\"VehicleSalvageTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"SalvageValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value or amount of the salvage associated with the item.\",\"isNullable\":true,\"scale\":2,\"name\":\"SalvageValueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"name\":\"SalvageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim vehicle loss salvage.\",\"isNullable\":true,\"name\":\"SalvageNote\"}]}}}",
+			"Description": "Items that are salvaged in regard to the associated claim vehicle loss.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,VehicleId,ClaimVehicleLossTypeId,ItemSku",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xlueoyxrby",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-xlueoyxrby",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentStatusType",
+		"ToTableName": "Payment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentStatusTypeId",
+				"ToColumnName": "PaymentStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentStatusType.cdm.json/PaymentStatusType\",\"toEntity\":\"Payment.cdm.json/Payment\",\"joinPairs\":[{\"fromAttribute\":\"PaymentStatusTypeId\",\"toAttribute\":\"PaymentStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

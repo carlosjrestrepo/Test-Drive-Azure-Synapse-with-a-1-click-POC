@@ -1,0 +1,105 @@
+{
+	"name": "IncidentCauseType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IncidentCauseType",
+		"Description": "The type of incident cause.\n\nEx:\n- \n- Equipment Failure\n- Power Failure\n- Human Error\n- Procedural Inadequacy\n- Procedures Not Followed\n- Insufficient Training\n- Training Inadequate\n- Insufficient Supervision\n- Insufficient Equipment Design\n- Insufficient Safety Checklist",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentCauseTypeId",
+					"Description": "The unique identifier of an Incident Cause Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCauseType.cdm.json/IncidentCauseType",
+						"Name": "IncidentCauseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCauseTypeName",
+					"Description": "The name of an Incident Cause Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCauseType.cdm.json/IncidentCauseType",
+						"Name": "IncidentCauseTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCauseTypeDescription",
+					"Description": "The description of an Incident Cause Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCauseType.cdm.json/IncidentCauseType",
+						"Name": "IncidentCauseTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentCauseType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentCauseType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentCauseTypeId\":{\"entity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"name\":\"IncidentCauseTypeId\"},\"IncidentCauseTypeName\":{\"entity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"name\":\"IncidentCauseTypeName\"},\"IncidentCauseTypeDescription\":{\"entity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"name\":\"IncidentCauseTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentCauseType\",\"path\":\"IncidentCauseType.cdm.json/IncidentCauseType\"},\"description\":\"The type of incident cause.\\n\\nEx:\\n- \\n- Equipment Failure\\n- Power Failure\\n- Human Error\\n- Procedural Inadequacy\\n- Procedures Not Followed\\n- Insufficient Training\\n- Training Inadequate\\n- Insufficient Supervision\\n- Insufficient Equipment Design\\n- Insufficient Safety Checklist\",\"primaryKey\":[\"IncidentCauseTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"name\":\"IncidentCauseTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Cause Type.\",\"isNullable\":false,\"name\":\"IncidentCauseTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"name\":\"IncidentCauseTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Cause Type.\",\"isNullable\":true,\"name\":\"IncidentCauseTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCauseType.cdm.json/IncidentCauseType\",\"name\":\"IncidentCauseTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Cause Type.\",\"isNullable\":true,\"name\":\"IncidentCauseTypeDescription\"}]}}}",
+			"Description": "The type of incident cause.\n\nEx:\n- \n- Equipment Failure\n- Power Failure\n- Human Error\n- Procedural Inadequacy\n- Procedures Not Followed\n- Insufficient Training\n- Training Inadequate\n- Insufficient Supervision\n- Insufficient Equipment Design\n- Insufficient Safety Checklist",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "IncidentCauseTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yjcpuxbnjs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-yjcpuxbnjs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Claim",
+		"ToTableName": "ClaimDelayReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Claim.cdm.json/Claim\",\"toEntity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

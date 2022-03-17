@@ -1,0 +1,136 @@
+{
+	"name": "InsuredPartyVehicleRelationship",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsuredPartyVehicleRelationship",
+		"Description": "The relationship between an injured party and a vehicle.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyVehicleRelationshipTypeId",
+					"Description": "The unique identifier of a Injured Party Vehicle Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship",
+						"Name": "InjuredPartyVehicleRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsuredPartyVehicleRelationshipNote",
+					"Description": "A note, comment or additional information regarding the insured party vehicle relationship.",
+					"BaseAttributeReference": {
+						"Entity": "InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship",
+						"Name": "InsuredPartyVehicleRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsuredPartyVehicleRelationship",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsuredPartyVehicleRelationship",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"ClaimId\"},\"InjuredPartyId\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"InjuredPartyId\"},\"InjuredPartyVehicleRelationshipTypeId\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"InjuredPartyVehicleRelationshipTypeId\"},\"VehicleId\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"VehicleId\"},\"InsuredPartyVehicleRelationshipNote\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"InsuredPartyVehicleRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsuredPartyVehicleRelationship\",\"path\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\"},\"description\":\"The relationship between an injured party and a vehicle.\",\"primaryKey\":[\"ClaimId\",\"InjuredPartyId\",\"InjuredPartyVehicleRelationshipTypeId\",\"VehicleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"InjuredPartyVehicleRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Injured Party Vehicle Relationship Type.\",\"isNullable\":false,\"name\":\"InjuredPartyVehicleRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":false,\"name\":\"VehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"name\":\"InsuredPartyVehicleRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the insured party vehicle relationship.\",\"isNullable\":true,\"name\":\"InsuredPartyVehicleRelationshipNote\"}]}}}",
+			"Description": "The relationship between an injured party and a vehicle.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,InjuredPartyId,InjuredPartyVehicleRelationshipTypeId,VehicleId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

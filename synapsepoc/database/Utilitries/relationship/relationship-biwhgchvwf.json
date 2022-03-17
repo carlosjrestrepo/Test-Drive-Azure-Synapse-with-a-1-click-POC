@@ -1,0 +1,26 @@
+{
+	"name": "relationship-biwhgchvwf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-biwhgchvwf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicyStatusType",
+		"ToTableName": "InsurancePolicyStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyStatusTypeId",
+				"ToColumnName": "InsurancePolicyStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"toEntity\":\"InsurancePolicyStatus.cdm.json/InsurancePolicyStatus\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyStatusTypeId\",\"toAttribute\":\"InsurancePolicyStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ksrhintrkx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ksrhintrkx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimEventPartyRelationshipType",
+		"ToTableName": "ClaimEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimEventPartyRelationshipTypeId",
+				"ToColumnName": "ClaimEventPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"toEntity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ClaimEventPartyRelationshipTypeId\",\"toAttribute\":\"ClaimEventPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

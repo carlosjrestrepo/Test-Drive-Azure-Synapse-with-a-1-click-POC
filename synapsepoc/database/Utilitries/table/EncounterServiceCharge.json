@@ -1,0 +1,174 @@
+{
+	"name": "EncounterServiceCharge",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EncounterServiceCharge",
+		"Description": "The service charges for an encounter.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterServiceId",
+					"Description": "The unique identifier of an Encounter Service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "EncounterServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EncounterChargeTypeId",
+					"Description": "The unique identifier of an Encounter Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "EncounterChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CopayCollectedAmount",
+					"Description": "The amount of the copay collected.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "CopayCollectedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeAmount",
+					"Description": "The amount charged.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "ChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeQuantity",
+					"Description": "The number of units being charged for.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "ChargeQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ChargeNote",
+					"Description": "A note, comment or additional information regarding the charge.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "ChargeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChargeStatusId",
+					"Description": "The unique identifier of an Charge Status.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterServiceCharge.cdm.json/EncounterServiceCharge",
+						"Name": "ChargeStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterServiceCharge",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterServiceCharge",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterServiceId\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"EncounterServiceId\"},\"EncounterChargeTypeId\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"EncounterChargeTypeId\"},\"CopayCollectedAmount\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"CopayCollectedAmount\"},\"ChargeAmount\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeAmount\"},\"ChargeQuantity\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeQuantity\"},\"ChargeNote\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeNote\"},\"ChargeStatusId\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeStatusId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterServiceCharge\",\"path\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\"},\"description\":\"The service charges for an encounter.\",\"primaryKey\":[\"EncounterServiceId\",\"EncounterChargeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"EncounterServiceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Service.\",\"isNullable\":false,\"name\":\"EncounterServiceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"EncounterChargeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Charge Type.\",\"isNullable\":false,\"name\":\"EncounterChargeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"CopayCollectedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the copay collected.\",\"isNullable\":true,\"scale\":2,\"name\":\"CopayCollectedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount charged.\",\"isNullable\":true,\"scale\":2,\"name\":\"ChargeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The number of units being charged for.\",\"isNullable\":true,\"scale\":2,\"name\":\"ChargeQuantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the charge.\",\"isNullable\":true,\"name\":\"ChargeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"name\":\"ChargeStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Charge Status.\",\"isNullable\":true,\"name\":\"ChargeStatusId\"}]}}}",
+			"Description": "The service charges for an encounter.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "EncounterServiceId,EncounterChargeTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

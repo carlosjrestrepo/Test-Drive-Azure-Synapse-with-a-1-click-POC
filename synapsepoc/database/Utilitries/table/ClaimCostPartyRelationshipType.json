@@ -1,0 +1,105 @@
+{
+	"name": "ClaimCostPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimCostPartyRelationshipType",
+		"Description": "The nature of the relationship between the claim cost and party during the indicated period.\n\nEx:\n- Billed-by Party\n- Pay-to Party\n- Authorized-by Party\n- Received-by Party\n- Send-to Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimCostPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Claim Cost Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType",
+						"Name": "ClaimCostPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostPartyRelationshipTypeName",
+					"Description": "The name of a Claim Cost Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType",
+						"Name": "ClaimCostPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostPartyRelationshipTypeDescription",
+					"Description": "The description of a Claim Cost Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType",
+						"Name": "ClaimCostPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimCostPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimCostPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimCostPartyRelationshipTypeId\":{\"entity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"name\":\"ClaimCostPartyRelationshipTypeId\"},\"ClaimCostPartyRelationshipTypeName\":{\"entity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"name\":\"ClaimCostPartyRelationshipTypeName\"},\"ClaimCostPartyRelationshipTypeDescription\":{\"entity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"name\":\"ClaimCostPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimCostPartyRelationshipType\",\"path\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\"},\"description\":\"The nature of the relationship between the claim cost and party during the indicated period.\\n\\nEx:\\n- Billed-by Party\\n- Pay-to Party\\n- Authorized-by Party\\n- Received-by Party\\n- Send-to Party\",\"primaryKey\":[\"ClaimCostPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"name\":\"ClaimCostPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Cost Party Relationship Type.\",\"isNullable\":false,\"name\":\"ClaimCostPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"name\":\"ClaimCostPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Cost Party Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimCostPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCostPartyRelationshipType.cdm.json/ClaimCostPartyRelationshipType\",\"name\":\"ClaimCostPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Cost Party Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimCostPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the claim cost and party during the indicated period.\n\nEx:\n- Billed-by Party\n- Pay-to Party\n- Authorized-by Party\n- Received-by Party\n- Send-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimCostPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

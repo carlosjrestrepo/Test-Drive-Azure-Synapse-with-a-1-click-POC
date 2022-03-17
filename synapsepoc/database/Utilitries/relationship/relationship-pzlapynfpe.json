@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pzlapynfpe",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-pzlapynfpe",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "CustomerLead",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "LeadPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"CustomerLead.cdm.json/CustomerLead\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"LeadPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

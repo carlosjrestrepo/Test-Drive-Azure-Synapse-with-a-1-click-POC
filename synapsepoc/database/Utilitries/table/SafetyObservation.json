@@ -1,0 +1,267 @@
+{
+	"name": "SafetyObservation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SafetyObservation",
+		"Description": "An observation made by an employee or other party that has a safety implication.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyObservationId",
+					"Description": "The unique identifier of a Safety Observation.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "SafetyObservationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationTypeId",
+					"Description": "The unique identifier of a Safety Observation Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "SafetyObservationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ObservationTimestamp",
+					"Description": "The timestamp for which the associated observation took place.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "ObservationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ObservationReportedTimestamp",
+					"Description": "The timestamp for which the associated observation was reported.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "ObservationReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ObservedPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "ObservedPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ObservedEmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "ObservedEmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ObservedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "ObservedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ObservedByEmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "ObservedByEmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationDescription",
+					"Description": "A description of the location of the associated observation. This may be in addition to or supplemental to the specific location provided by the Location ID.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "LocationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationPhoto",
+					"Description": "A photograph associated with the safety observation.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "SafetyObservationPhoto"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationNote",
+					"Description": "A note, comment or additional information regarding a safety observation.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservation.cdm.json/SafetyObservation",
+						"Name": "SafetyObservationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyObservation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyObservation",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyObservationId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationId\"},\"SafetyObservationTypeId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationTypeId\"},\"ObservationTimestamp\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservationTimestamp\"},\"ObservationReportedTimestamp\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservationReportedTimestamp\"},\"ObservedPartyId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedPartyId\"},\"ObservedEmployeeId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedEmployeeId\"},\"ObservedByPartyId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedByPartyId\"},\"ObservedByEmployeeId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedByEmployeeId\"},\"LocationId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"LocationId\"},\"LocationDescription\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"LocationDescription\"},\"IncidentId\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"IncidentId\"},\"SafetyObservationPhoto\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationPhoto\"},\"SafetyObservationNote\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SafetyObservation\",\"path\":\"SafetyObservation.cdm.json/SafetyObservation\"},\"description\":\"An observation made by an employee or other party that has a safety implication.\",\"primaryKey\":[\"SafetyObservationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Observation.\",\"isNullable\":false,\"name\":\"SafetyObservationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Observation Type.\",\"isNullable\":true,\"name\":\"SafetyObservationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp for which the associated observation took place.\",\"isNullable\":false,\"name\":\"ObservationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservationReportedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp for which the associated observation was reported.\",\"isNullable\":true,\"name\":\"ObservationReportedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ObservedPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedEmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":true,\"name\":\"ObservedEmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ObservedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"ObservedByEmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":true,\"name\":\"ObservedByEmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"LocationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the location of the associated observation. This may be in addition to or supplemental to the specific location provided by the Location ID.\",\"isNullable\":true,\"name\":\"LocationDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":true,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationPhoto\"},\"dataType\":\"binary\",\"description\":\"A photograph associated with the safety observation.\",\"isNullable\":true,\"name\":\"SafetyObservationPhoto\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"name\":\"SafetyObservationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a safety observation.\",\"isNullable\":true,\"name\":\"SafetyObservationNote\"}]}}}",
+			"Description": "An observation made by an employee or other party that has a safety implication.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyObservationId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,155 @@
+{
+	"name": "Arbitration",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "Arbitration",
+		"Description": "Arbitration is a technique for the resolution of disputes outside the courts.  Parties to a dispute refer it to one or more persons (the \"arbitrators\", \"arbiters\"), by whose decision (the \"award\") they agree to be bound. \n\nThis is a settlement technique in which the third party reviews the case and imposes a decision that is legally binding upon both sides.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ArbitrationCaseId",
+					"Description": "The unique identifier of an arbitration case.",
+					"BaseAttributeReference": {
+						"Entity": "Arbitration.cdm.json/Arbitration",
+						"Name": "ArbitrationCaseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArbitrationDate",
+					"Description": "The date of the arbitration.",
+					"BaseAttributeReference": {
+						"Entity": "Arbitration.cdm.json/Arbitration",
+						"Name": "ArbitrationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ArbitrationStatement",
+					"Description": "The statement of the outcome of the arbitration.",
+					"BaseAttributeReference": {
+						"Entity": "Arbitration.cdm.json/Arbitration",
+						"Name": "ArbitrationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ArbitrationAwardAmount",
+					"Description": "The amount of the award as a result of the arbitration.",
+					"BaseAttributeReference": {
+						"Entity": "Arbitration.cdm.json/Arbitration",
+						"Name": "ArbitrationAwardAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ArbitrationTypeId",
+					"Description": "The unique identifier of an Arbitration Type.",
+					"BaseAttributeReference": {
+						"Entity": "Arbitration.cdm.json/Arbitration",
+						"Name": "ArbitrationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "Arbitration.cdm.json/Arbitration",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Arbitration",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Arbitration",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ArbitrationCaseId\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationCaseId\"},\"ArbitrationDate\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationDate\"},\"ArbitrationStatement\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationStatement\"},\"ArbitrationAwardAmount\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationAwardAmount\"},\"ArbitrationTypeId\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationTypeId\"},\"ClaimId\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ClaimId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Arbitration\",\"path\":\"Arbitration.cdm.json/Arbitration\"},\"description\":\"Arbitration is a technique for the resolution of disputes outside the courts.  Parties to a dispute refer it to one or more persons (the \\\"arbitrators\\\", \\\"arbiters\\\"), by whose decision (the \\\"award\\\") they agree to be bound. \\n\\nThis is a settlement technique in which the third party reviews the case and imposes a decision that is legally binding upon both sides.\",\"primaryKey\":[\"ArbitrationCaseId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationCaseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an arbitration case.\",\"isNullable\":false,\"name\":\"ArbitrationCaseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the arbitration.\",\"isNullable\":true,\"name\":\"ArbitrationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement of the outcome of the arbitration.\",\"isNullable\":true,\"name\":\"ArbitrationStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationAwardAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the award as a result of the arbitration.\",\"isNullable\":true,\"scale\":2,\"name\":\"ArbitrationAwardAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ArbitrationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Arbitration Type.\",\"isNullable\":true,\"name\":\"ArbitrationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Arbitration.cdm.json/Arbitration\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"ClaimId\"}]}}}",
+			"Description": "Arbitration is a technique for the resolution of disputes outside the courts.  Parties to a dispute refer it to one or more persons (the \"arbitrators\", \"arbiters\"), by whose decision (the \"award\") they agree to be bound. \n\nThis is a settlement technique in which the third party reviews the case and imposes a decision that is legally binding upon both sides.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ArbitrationCaseId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

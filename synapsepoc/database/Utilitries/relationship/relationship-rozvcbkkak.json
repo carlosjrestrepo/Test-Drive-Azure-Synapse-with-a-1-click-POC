@@ -1,0 +1,30 @@
+{
+	"name": "relationship-rozvcbkkak",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-rozvcbkkak",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterServiceCharge",
+		"ToTableName": "MedicalBillService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterChargeTypeId",
+				"ToColumnName": "EncounterChargeTypeId"
+			},
+			{
+				"FromColumnName": "EncounterServiceId",
+				"ToColumnName": "EncounterServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"toEntity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"joinPairs\":[{\"fromAttribute\":\"EncounterChargeTypeId\",\"toAttribute\":\"EncounterChargeTypeId\"},{\"fromAttribute\":\"EncounterServiceId\",\"toAttribute\":\"EncounterServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

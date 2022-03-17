@@ -1,0 +1,319 @@
+{
+	"name": "EncounterService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EncounterService",
+		"Description": "The Service(s) associated with the Encounter.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterServiceId",
+					"Description": "The unique identifier of an Encounter Service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ServiceId",
+					"Description": "The unique identifier of a Service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "ServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "EncounterServiceRequestedTimestamp",
+					"Description": "The timestamp that the associated Encounter Service was requested.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterServiceRequestedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EncounterServiceScheduledForTimestamp",
+					"Description": "The scheduled timestamp of the Encounter Service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterServiceScheduledForTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EncounterServiceStartTimestamp",
+					"Description": "The start timestamp of the Encounter Service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterServiceStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EncounterServiceCompletedTimestamp",
+					"Description": "The end or completion timestamp of the Encounter Service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterServiceCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NeverEventIndicator",
+					"Description": "A Never Event is a serious, largely preventable, patient safety incident that should not occur. This field indicates whether the service is required as a result of such an event.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "NeverEventIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EncounterServiceNote",
+					"Description": "A note, comment or additional information regarding the encounter service.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "EncounterServiceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RequirementTypeId",
+					"Description": "The unique identifier of a Requirement Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "RequirementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceStatusId",
+					"Description": "The unique identifier of a Service Status.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "ServiceStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MedicalCareOrderId",
+					"Description": "The unique identifier of a Medical Care Order.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "MedicalCareOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FacilityFloorplanLocationId",
+					"Description": "The unique identifier of a Facility Floorplan Location.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "FacilityFloorplanLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MemberPreauthorizationCode",
+					"Description": "The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "MemberPreauthorizationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FacilityScheduledEventId",
+					"Description": "The unique identifier of a Facility Scheduled Event.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterService.cdm.json/EncounterService",
+						"Name": "FacilityScheduledEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterService",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterService",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterServiceId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceId\"},\"EncounterId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterId\"},\"ServiceId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"ServiceId\"},\"EncounterServiceRequestedTimestamp\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceRequestedTimestamp\"},\"EncounterServiceScheduledForTimestamp\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceScheduledForTimestamp\"},\"EncounterServiceStartTimestamp\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceStartTimestamp\"},\"EncounterServiceCompletedTimestamp\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceCompletedTimestamp\"},\"Quantity\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"Quantity\"},\"NeverEventIndicator\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"NeverEventIndicator\"},\"EncounterServiceNote\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceNote\"},\"RequirementTypeId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"RequirementTypeId\"},\"ServiceStatusId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"ServiceStatusId\"},\"MedicalCareOrderId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"MedicalCareOrderId\"},\"FacilityFloorplanLocationId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"FacilityFloorplanLocationId\"},\"MemberPreauthorizationCode\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"MemberPreauthorizationCode\"},\"FacilityScheduledEventId\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"FacilityScheduledEventId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterService\",\"path\":\"EncounterService.cdm.json/EncounterService\"},\"description\":\"The Service(s) associated with the Encounter.\",\"primaryKey\":[\"EncounterServiceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Service.\",\"isNullable\":false,\"name\":\"EncounterServiceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"ServiceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Service.\",\"isNullable\":false,\"name\":\"ServiceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceRequestedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated Encounter Service was requested.\",\"isNullable\":true,\"name\":\"EncounterServiceRequestedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceScheduledForTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The scheduled timestamp of the Encounter Service.\",\"isNullable\":true,\"name\":\"EncounterServiceScheduledForTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the Encounter Service.\",\"isNullable\":true,\"name\":\"EncounterServiceStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end or completion timestamp of the Encounter Service.\",\"isNullable\":true,\"name\":\"EncounterServiceCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity of service.\",\"isNullable\":true,\"scale\":2,\"name\":\"Quantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"NeverEventIndicator\"},\"dataType\":\"boolean\",\"description\":\"A Never Event is a serious, largely preventable, patient safety incident that should not occur. This field indicates whether the service is required as a result of such an event.\",\"isNullable\":true,\"name\":\"NeverEventIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"EncounterServiceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the encounter service.\",\"isNullable\":true,\"name\":\"EncounterServiceNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"RequirementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Requirement Type.\",\"isNullable\":true,\"name\":\"RequirementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"ServiceStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Status.\",\"isNullable\":true,\"name\":\"ServiceStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"MedicalCareOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Care Order.\",\"isNullable\":true,\"name\":\"MedicalCareOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"FacilityFloorplanLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility Floorplan Location.\",\"isNullable\":true,\"name\":\"FacilityFloorplanLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"MemberPreauthorizationCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.\",\"isNullable\":true,\"name\":\"MemberPreauthorizationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterService.cdm.json/EncounterService\",\"name\":\"FacilityScheduledEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility Scheduled Event.\",\"isNullable\":true,\"name\":\"FacilityScheduledEventId\"}]}}}",
+			"Description": "The Service(s) associated with the Encounter.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "EncounterServiceId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

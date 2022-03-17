@@ -1,0 +1,105 @@
+{
+	"name": "InsurancePolicyType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsurancePolicyType",
+		"Description": "The type of insurance policy.\n\nEx:\n-  New Business\n-  Renewal\n-  Home\n-  Motorcycle\n-  RV\n-  Personal Auto Policy\n-  Family Automobile Policy\n-  Basic Auto Policy\n-  Named Non-Owner Policy",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyTypeId",
+					"Description": "The unique identifier of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyType.cdm.json/InsurancePolicyType",
+						"Name": "InsurancePolicyTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyTypeName",
+					"Description": "The name of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyType.cdm.json/InsurancePolicyType",
+						"Name": "InsurancePolicyTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyTypeDescription",
+					"Description": "The description of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyType.cdm.json/InsurancePolicyType",
+						"Name": "InsurancePolicyTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicyType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicyType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyTypeId\":{\"entity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"name\":\"InsurancePolicyTypeId\"},\"InsurancePolicyTypeName\":{\"entity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"name\":\"InsurancePolicyTypeName\"},\"InsurancePolicyTypeDescription\":{\"entity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"name\":\"InsurancePolicyTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyType\",\"path\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\"},\"description\":\"The type of insurance policy.\\n\\nEx:\\n-  New Business\\n-  Renewal\\n-  Home\\n-  Motorcycle\\n-  RV\\n-  Personal Auto Policy\\n-  Family Automobile Policy\\n-  Basic Auto Policy\\n-  Named Non-Owner Policy\",\"primaryKey\":[\"InsurancePolicyTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"name\":\"InsurancePolicyTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy Type.\",\"isNullable\":false,\"name\":\"InsurancePolicyTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"name\":\"InsurancePolicyTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Insurance Policy Type.\",\"isNullable\":true,\"name\":\"InsurancePolicyTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"name\":\"InsurancePolicyTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Insurance Policy Type.\",\"isNullable\":true,\"name\":\"InsurancePolicyTypeDescription\"}]}}}",
+			"Description": "The type of insurance policy.\n\nEx:\n-  New Business\n-  Renewal\n-  Home\n-  Motorcycle\n-  RV\n-  Personal Auto Policy\n-  Family Automobile Policy\n-  Basic Auto Policy\n-  Named Non-Owner Policy",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "InsurancePolicyTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "LossType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "LossType",
+		"Description": "The type of loss associated with the Claim.\n\nEx:\n- Personal items\n- Auto damage\n- House structure damage\n- Theft of personal goods\n- Structure flood damage\n- Personal liability",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "LossType.cdm.json/LossType",
+						"Name": "LossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LossTypeName",
+					"Description": "The name of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "LossType.cdm.json/LossType",
+						"Name": "LossTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LossTypeDescription",
+					"Description": "The description of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "LossType.cdm.json/LossType",
+						"Name": "LossTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/LossType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/LossType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LossTypeId\":{\"entity\":\"LossType.cdm.json/LossType\",\"name\":\"LossTypeId\"},\"LossTypeName\":{\"entity\":\"LossType.cdm.json/LossType\",\"name\":\"LossTypeName\"},\"LossTypeDescription\":{\"entity\":\"LossType.cdm.json/LossType\",\"name\":\"LossTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LossType\",\"path\":\"LossType.cdm.json/LossType\"},\"description\":\"The type of loss associated with the Claim.\\n\\nEx:\\n- Personal items\\n- Auto damage\\n- House structure damage\\n- Theft of personal goods\\n- Structure flood damage\\n- Personal liability\",\"primaryKey\":[\"LossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossType.cdm.json/LossType\",\"name\":\"LossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":false,\"name\":\"LossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossType.cdm.json/LossType\",\"name\":\"LossTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Loss Type.\",\"isNullable\":true,\"name\":\"LossTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossType.cdm.json/LossType\",\"name\":\"LossTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Loss Type.\",\"isNullable\":true,\"name\":\"LossTypeDescription\"}]}}}",
+			"Description": "The type of loss associated with the Claim.\n\nEx:\n- Personal items\n- Auto damage\n- House structure damage\n- Theft of personal goods\n- Structure flood damage\n- Personal liability",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "LossTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

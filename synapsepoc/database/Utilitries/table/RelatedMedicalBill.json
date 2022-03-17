@@ -1,0 +1,120 @@
+{
+	"name": "RelatedMedicalBill",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "RelatedMedicalBill",
+		"Description": "The relationship of two or more medical bills.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalBillId",
+					"Description": "The unique identifier of a Medical Bill.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMedicalBill.cdm.json/RelatedMedicalBill",
+						"Name": "MedicalBillId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedMedicalBillId",
+					"Description": "The unique identifier of a Medical Bill.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMedicalBill.cdm.json/RelatedMedicalBill",
+						"Name": "RelatedMedicalBillId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillRelationshipTypeId",
+					"Description": "The unique identifier of a medical bill relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMedicalBill.cdm.json/RelatedMedicalBill",
+						"Name": "MedicalBillRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillRelatedNote",
+					"Description": "Notes, comments or additional information regarding related medical bills.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMedicalBill.cdm.json/RelatedMedicalBill",
+						"Name": "MedicalBillRelatedNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RelatedMedicalBill",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RelatedMedicalBill",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalBillId\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"MedicalBillId\"},\"RelatedMedicalBillId\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"RelatedMedicalBillId\"},\"MedicalBillRelationshipTypeId\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"MedicalBillRelationshipTypeId\"},\"MedicalBillRelatedNote\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"MedicalBillRelatedNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedMedicalBill\",\"path\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\"},\"description\":\"The relationship of two or more medical bills.\",\"primaryKey\":[\"MedicalBillId\",\"RelatedMedicalBillId\",\"MedicalBillRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"MedicalBillId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Bill.\",\"isNullable\":false,\"name\":\"MedicalBillId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"RelatedMedicalBillId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Bill.\",\"isNullable\":false,\"name\":\"RelatedMedicalBillId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"MedicalBillRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a medical bill relationship.\",\"isNullable\":false,\"name\":\"MedicalBillRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"name\":\"MedicalBillRelatedNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding related medical bills.\",\"isNullable\":true,\"name\":\"MedicalBillRelatedNote\"}]}}}",
+			"Description": "The relationship of two or more medical bills.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "MedicalBillId,RelatedMedicalBillId,MedicalBillRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

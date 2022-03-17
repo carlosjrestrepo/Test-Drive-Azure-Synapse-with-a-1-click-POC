@@ -1,0 +1,233 @@
+{
+	"name": "InsuranceClaim",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsuranceClaim",
+		"Description": "A request to the insurance company by the policyholder for payment of a loss in accordance with the policy contract.\n\nA request to an insurance company to pay for a loss. After a claim is requested or filed an evaluation process will begin to determine if the loss is the responsibility of the requested company.\n\nAn insurance claim is the actual application or distribution of benefits provided by an insurance company. \n\nPolicy holders must first file an insurance claim before any money can be disbursed to the hospital or repair shop or other contracted service. The insurance company may or may not approve the claim, based on their own assessment of the circumstances.\n\nIndividuals who take out home, life, health, or automobile insurance policies must maintain regular payments called premiums to the insurers. Most of the time these premiums are used to settle another person's insurance claim or to build up the available assets of the insurance company. But occasionally an accident will happen which causes real financial damage, such as a automobile wreck or a tornado or a work-related accident. At this point the injured policy holder has the right to file an insurance claim in order to receive money from the insurance company.\n\nIn general, the insurance claim is filed with a local representative of the insurance company. This agent becomes responsible for investigating the specific details of the insurance claim and negotiating the payment from the main insurers. \n\nAfter an insurance claim is filed, the insurance company may send out an investigator called an adjustor or appraiser. The insurance adjustor's job is to objectively evaluate the insurance claim and determine if the repair estimates are reasonable. This is to prevent possible fraud by contractors who may inflate their bills for additional compensation. Insurance companies tend to accept the adjustor or appraiser's evaluation as the final word on the insurance claim.\n\nSome insurance claims may not be recognized by the insurance company for any number of reasons. If a claimant's premiums have not been paid in full, the policy itself may not be active. Another insurance company may have already agreed to pay for the damages listed in the claim. This happens quite often in automobile accidents where one party is held responsible. Another reason an insurance claim may be rejected is a failure to fall under covered conditions. Most insurance policies spell out specific areas which qualify for benefits\n\nAn insurance claim is the only way to officially apply for benefits under an insurance policy, but until the insurance company has assessed the situation it will remain only a claim, not a pay-out.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceClaimDescription",
+					"Description": "The description of an insurance claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "InsuranceClaimDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceClaimStatement",
+					"Description": "A statement regarding the insurance claim.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "InsuranceClaimStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CertificateOfSatisfactionNumber",
+					"Description": "A form signed by the insured when he or she takes delivery of the car from the repairer. It certifies that he or she is satisfied with the vehicle operations, appearance, and visible quality of the repairs.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "CertificateOfSatisfactionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ElectronicClaimIndicator",
+					"Description": "A digital representation of a medical bill generated by a provider or by the provider's billing agent for submission using telecommunications to a health insurance payer. Most claims are electronically submitted.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "ElectronicClaimIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TotalLossIndicator",
+					"Description": "Total Loss: The condition of an automobile or other property when damage is so extensive that repair costs would exceed the value of the vehicle or property.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "TotalLossIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ClaimTypeId",
+					"Description": "The unique identifier of a Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "ClaimTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OccurrenceId",
+					"Description": "The unique identifier of the Occurrence.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "OccurrenceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCategoryId",
+					"Description": "The unique identifier of a claim category.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "ClaimCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CatastropheId",
+					"Description": "The unique identifier of a Catastrophe.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceClaim.cdm.json/InsuranceClaim",
+						"Name": "CatastropheId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsuranceClaim",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsuranceClaim",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ClaimId\"},\"InsuranceClaimDescription\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"InsuranceClaimDescription\"},\"InsuranceClaimStatement\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"InsuranceClaimStatement\"},\"CertificateOfSatisfactionNumber\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"CertificateOfSatisfactionNumber\"},\"ElectronicClaimIndicator\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ElectronicClaimIndicator\"},\"TotalLossIndicator\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"TotalLossIndicator\"},\"ClaimTypeId\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ClaimTypeId\"},\"OccurrenceId\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"OccurrenceId\"},\"ClaimCategoryId\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ClaimCategoryId\"},\"InsurancePolicyId\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"InsurancePolicyId\"},\"CatastropheId\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"CatastropheId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsuranceClaim\",\"path\":\"InsuranceClaim.cdm.json/InsuranceClaim\"},\"description\":\"A request to the insurance company by the policyholder for payment of a loss in accordance with the policy contract.\\n\\nA request to an insurance company to pay for a loss. After a claim is requested or filed an evaluation process will begin to determine if the loss is the responsibility of the requested company.\\n\\nAn insurance claim is the actual application or distribution of benefits provided by an insurance company. \\n\\nPolicy holders must first file an insurance claim before any money can be disbursed to the hospital or repair shop or other contracted service. The insurance company may or may not approve the claim, based on their own assessment of the circumstances.\\n\\nIndividuals who take out home, life, health, or automobile insurance policies must maintain regular payments called premiums to the insurers. Most of the time these premiums are used to settle another person's insurance claim or to build up the available assets of the insurance company. But occasionally an accident will happen which causes real financial damage, such as a automobile wreck or a tornado or a work-related accident. At this point the injured policy holder has the right to file an insurance claim in order to receive money from the insurance company.\\n\\nIn general, the insurance claim is filed with a local representative of the insurance company. This agent becomes responsible for investigating the specific details of the insurance claim and negotiating the payment from the main insurers. \\n\\nAfter an insurance claim is filed, the insurance company may send out an investigator called an adjustor or appraiser. The insurance adjustor's job is to objectively evaluate the insurance claim and determine if the repair estimates are reasonable. This is to prevent possible fraud by contractors who may inflate their bills for additional compensation. Insurance companies tend to accept the adjustor or appraiser's evaluation as the final word on the insurance claim.\\n\\nSome insurance claims may not be recognized by the insurance company for any number of reasons. If a claimant's premiums have not been paid in full, the policy itself may not be active. Another insurance company may have already agreed to pay for the damages listed in the claim. This happens quite often in automobile accidents where one party is held responsible. Another reason an insurance claim may be rejected is a failure to fall under covered conditions. Most insurance policies spell out specific areas which qualify for benefits\\n\\nAn insurance claim is the only way to officially apply for benefits under an insurance policy, but until the insurance company has assessed the situation it will remain only a claim, not a pay-out.\",\"primaryKey\":[\"ClaimId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"InsuranceClaimDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an insurance claim.\",\"isNullable\":true,\"name\":\"InsuranceClaimDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"InsuranceClaimStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the insurance claim.\",\"isNullable\":true,\"name\":\"InsuranceClaimStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"CertificateOfSatisfactionNumber\"},\"dataType\":\"integer\",\"description\":\"A form signed by the insured when he or she takes delivery of the car from the repairer. It certifies that he or she is satisfied with the vehicle operations, appearance, and visible quality of the repairs.\",\"isNullable\":true,\"name\":\"CertificateOfSatisfactionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ElectronicClaimIndicator\"},\"dataType\":\"boolean\",\"description\":\"A digital representation of a medical bill generated by a provider or by the provider's billing agent for submission using telecommunications to a health insurance payer. Most claims are electronically submitted.\",\"isNullable\":true,\"name\":\"ElectronicClaimIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"TotalLossIndicator\"},\"dataType\":\"boolean\",\"description\":\"Total Loss: The condition of an automobile or other property when damage is so extensive that repair costs would exceed the value of the vehicle or property.\",\"isNullable\":true,\"name\":\"TotalLossIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ClaimTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Type.\",\"isNullable\":true,\"name\":\"ClaimTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"OccurrenceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Occurrence.\",\"isNullable\":true,\"name\":\"OccurrenceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"ClaimCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a claim category.\",\"isNullable\":true,\"name\":\"ClaimCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy.\",\"isNullable\":true,\"name\":\"InsurancePolicyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"name\":\"CatastropheId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Catastrophe.\",\"isNullable\":true,\"name\":\"CatastropheId\"}]}}}",
+			"Description": "A request to the insurance company by the policyholder for payment of a loss in accordance with the policy contract.\n\nA request to an insurance company to pay for a loss. After a claim is requested or filed an evaluation process will begin to determine if the loss is the responsibility of the requested company.\n\nAn insurance claim is the actual application or distribution of benefits provided by an insurance company. \n\nPolicy holders must first file an insurance claim before any money can be disbursed to the hospital or repair shop or other contracted service. The insurance company may or may not approve the claim, based on their own assessment of the circumstances.\n\nIndividuals who take out home, life, health, or automobile insurance policies must maintain regular payments called premiums to the insurers. Most of the time these premiums are used to settle another person's insurance claim or to build up the available assets of the insurance company. But occasionally an accident will happen which causes real financial damage, such as a automobile wreck or a tornado or a work-related accident. At this point the injured policy holder has the right to file an insurance claim in order to receive money from the insurance company.\n\nIn general, the insurance claim is filed with a local representative of the insurance company. This agent becomes responsible for investigating the specific details of the insurance claim and negotiating the payment from the main insurers. \n\nAfter an insurance claim is filed, the insurance company may send out an investigator called an adjustor or appraiser. The insurance adjustor's job is to objectively evaluate the insurance claim and determine if the repair estimates are reasonable. This is to prevent possible fraud by contractors who may inflate their bills for additional compensation. Insurance companies tend to accept the adjustor or appraiser's evaluation as the final word on the insurance claim.\n\nSome insurance claims may not be recognized by the insurance company for any number of reasons. If a claimant's premiums have not been paid in full, the policy itself may not be active. Another insurance company may have already agreed to pay for the damages listed in the claim. This happens quite often in automobile accidents where one party is held responsible. Another reason an insurance claim may be rejected is a failure to fall under covered conditions. Most insurance policies spell out specific areas which qualify for benefits\n\nAn insurance claim is the only way to officially apply for benefits under an insurance policy, but until the insurance company has assessed the situation it will remain only a claim, not a pay-out.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

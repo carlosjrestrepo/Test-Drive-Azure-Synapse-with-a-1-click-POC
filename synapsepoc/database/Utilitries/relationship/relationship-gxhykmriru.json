@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gxhykmriru",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gxhykmriru",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InjuredPartyStatusType",
+		"ToTableName": "InjuredPartyStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InjuredPartyStatusTypeId",
+				"ToColumnName": "InjuredPartyStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InjuredPartyStatusType.cdm.json/InjuredPartyStatusType\",\"toEntity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"joinPairs\":[{\"fromAttribute\":\"InjuredPartyStatusTypeId\",\"toAttribute\":\"InjuredPartyStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pbgllccdye",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-pbgllccdye",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentInjuryPartyRelationshipType",
+		"ToTableName": "IncidentInjuryRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentInjuryPartyRelationshipTypeId",
+				"ToColumnName": "IncidentInjuryPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentInjuryPartyRelationshipType.cdm.json/IncidentInjuryPartyRelationshipType\",\"toEntity\":\"IncidentInjuryRelatedParty.cdm.json/IncidentInjuryRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"IncidentInjuryPartyRelationshipTypeId\",\"toAttribute\":\"IncidentInjuryPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

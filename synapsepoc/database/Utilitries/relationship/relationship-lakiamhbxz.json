@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lakiamhbxz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-lakiamhbxz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimCategory",
+		"ToTableName": "InsuranceClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimCategoryId",
+				"ToColumnName": "ClaimCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimCategory.cdm.json/ClaimCategory\",\"toEntity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"joinPairs\":[{\"fromAttribute\":\"ClaimCategoryId\",\"toAttribute\":\"ClaimCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

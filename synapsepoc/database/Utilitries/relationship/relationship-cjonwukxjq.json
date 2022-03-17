@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cjonwukxjq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-cjonwukxjq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RequirementType",
+		"ToTableName": "EncounterService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RequirementTypeId",
+				"ToColumnName": "RequirementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RequirementType.cdm.json/RequirementType\",\"toEntity\":\"EncounterService.cdm.json/EncounterService\",\"joinPairs\":[{\"fromAttribute\":\"RequirementTypeId\",\"toAttribute\":\"RequirementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

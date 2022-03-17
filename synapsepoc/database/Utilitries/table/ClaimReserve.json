@@ -1,0 +1,139 @@
+{
+	"name": "ClaimReserve",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimReserve",
+		"Description": "The reserve allocated to a claim for the reserve type.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReserve.cdm.json/ClaimReserve",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReserveTypeId",
+					"Description": "The unique identifier of a Reserve Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReserve.cdm.json/ClaimReserve",
+						"Name": "ReserveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReserveDate",
+					"Description": "The date that the associated reserve was effective.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReserve.cdm.json/ClaimReserve",
+						"Name": "ClaimReserveDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReserveNote",
+					"Description": "A note, comment or additional information regarding the claim reserve.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReserve.cdm.json/ClaimReserve",
+						"Name": "ClaimReserveNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReserveAmount",
+					"Description": "The amount of the claim reserve.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReserve.cdm.json/ClaimReserve",
+						"Name": "ClaimReserveAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimReserve",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimReserve",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimId\"},\"ReserveTypeId\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ReserveTypeId\"},\"ClaimReserveDate\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimReserveDate\"},\"ClaimReserveNote\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimReserveNote\"},\"ClaimReserveAmount\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimReserveAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimReserve\",\"path\":\"ClaimReserve.cdm.json/ClaimReserve\"},\"description\":\"The reserve allocated to a claim for the reserve type.\",\"primaryKey\":[\"ClaimId\",\"ReserveTypeId\",\"ClaimReserveDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ReserveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reserve Type.\",\"isNullable\":false,\"name\":\"ReserveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimReserveDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the associated reserve was effective.\",\"isNullable\":false,\"name\":\"ClaimReserveDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimReserveNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim reserve.\",\"isNullable\":true,\"name\":\"ClaimReserveNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"name\":\"ClaimReserveAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the claim reserve.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimReserveAmount\"}]}}}",
+			"Description": "The reserve allocated to a claim for the reserve type.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ReserveTypeId,ClaimReserveDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

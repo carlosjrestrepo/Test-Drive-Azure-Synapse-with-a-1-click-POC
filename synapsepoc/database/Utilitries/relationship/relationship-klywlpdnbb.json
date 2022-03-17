@@ -1,0 +1,26 @@
+{
+	"name": "relationship-klywlpdnbb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-klywlpdnbb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimType",
+		"ToTableName": "InsuranceClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimTypeId",
+				"ToColumnName": "ClaimTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimType.cdm.json/ClaimType\",\"toEntity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"joinPairs\":[{\"fromAttribute\":\"ClaimTypeId\",\"toAttribute\":\"ClaimTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

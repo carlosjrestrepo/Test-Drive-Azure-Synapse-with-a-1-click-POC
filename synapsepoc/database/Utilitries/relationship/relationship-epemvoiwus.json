@@ -1,0 +1,26 @@
+{
+	"name": "relationship-epemvoiwus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-epemvoiwus",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CurrentProceduralTerminologyCode",
+		"ToTableName": "HealthcareService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CptCode",
+				"ToColumnName": "CptCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CurrentProceduralTerminologyCode.cdm.json/CurrentProceduralTerminologyCode\",\"toEntity\":\"HealthcareService.cdm.json/HealthcareService\",\"joinPairs\":[{\"fromAttribute\":\"CptCode\",\"toAttribute\":\"CptCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qwfurlafxl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-qwfurlafxl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FieldOfStudy",
+		"ToTableName": "CustomerEducation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FieldOfStudyId",
+				"ToColumnName": "FieldOfStudyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FieldOfStudy.cdm.json/FieldOfStudy\",\"toEntity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"joinPairs\":[{\"fromAttribute\":\"FieldOfStudyId\",\"toAttribute\":\"FieldOfStudyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "ServiceProviderType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ServiceProviderType",
+		"Description": "The type of Service Provider.\n\nEx:\n- Hospital\n- Physician\n- Physician Group Practice\n- Nurse\n- Accountable Care Organization (ACO)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceProviderTypeId",
+					"Description": "The unique identifier of a Service Provider Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderType.cdm.json/ServiceProviderType",
+						"Name": "ServiceProviderTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderTypeName",
+					"Description": "The name of a Service Provider Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderType.cdm.json/ServiceProviderType",
+						"Name": "ServiceProviderTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderTypeDescription",
+					"Description": "The description of a Service Provider Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderType.cdm.json/ServiceProviderType",
+						"Name": "ServiceProviderTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ServiceProviderType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ServiceProviderType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceProviderTypeId\":{\"entity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"name\":\"ServiceProviderTypeId\"},\"ServiceProviderTypeName\":{\"entity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"name\":\"ServiceProviderTypeName\"},\"ServiceProviderTypeDescription\":{\"entity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"name\":\"ServiceProviderTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceProviderType\",\"path\":\"ServiceProviderType.cdm.json/ServiceProviderType\"},\"description\":\"The type of Service Provider.\\n\\nEx:\\n- Hospital\\n- Physician\\n- Physician Group Practice\\n- Nurse\\n- Accountable Care Organization (ACO)\",\"primaryKey\":[\"ServiceProviderTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"name\":\"ServiceProviderTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Provider Type.\",\"isNullable\":false,\"name\":\"ServiceProviderTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"name\":\"ServiceProviderTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Service Provider Type.\",\"isNullable\":true,\"name\":\"ServiceProviderTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"name\":\"ServiceProviderTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Service Provider Type.\",\"isNullable\":true,\"name\":\"ServiceProviderTypeDescription\"}]}}}",
+			"Description": "The type of Service Provider.\n\nEx:\n- Hospital\n- Physician\n- Physician Group Practice\n- Nurse\n- Accountable Care Organization (ACO)",
+			"DisplayFolderInfo": "{\"name\":\"Service Provider\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ServiceProviderTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

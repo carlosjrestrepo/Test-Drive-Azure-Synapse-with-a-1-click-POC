@@ -1,0 +1,26 @@
+{
+	"name": "relationship-efgfggzlfp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-efgfggzlfp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimDeniedReasonType",
+		"ToTableName": "ClaimChargeDeniedReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimDeniedReasonTypeId",
+				"ToColumnName": "ClaimDeniedReasonTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimDeniedReasonType.cdm.json/ClaimDeniedReasonType\",\"toEntity\":\"ClaimChargeDeniedReason.cdm.json/ClaimChargeDeniedReason\",\"joinPairs\":[{\"fromAttribute\":\"ClaimDeniedReasonTypeId\",\"toAttribute\":\"ClaimDeniedReasonTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

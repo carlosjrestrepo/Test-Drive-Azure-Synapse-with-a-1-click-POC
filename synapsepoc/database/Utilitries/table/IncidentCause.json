@@ -1,0 +1,232 @@
+{
+	"name": "IncidentCause",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IncidentCause",
+		"Description": "A cause that is associated with the incident.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCauseId",
+					"Description": "The unique identifier of an Incident Cause.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "IncidentCauseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCauseTypeId",
+					"Description": "The unique identifier of an Incident Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "IncidentCauseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCausePreventableIndicator",
+					"Description": "Indicates whether the incident cause was preventable.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "IncidentCausePreventableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RootCauseIndicator",
+					"Description": "Indicates whether the incident cause was the root cause of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "RootCauseIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCauseNote",
+					"Description": "A note, comment or additional information regarding an Incident Cause.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "IncidentCauseNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "EmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LearningEventId",
+					"Description": "The unique identifier of a Learning Event.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "LearningEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistId",
+					"Description": "The unique identifier of a Safety Checklist.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCause.cdm.json/IncidentCause",
+						"Name": "SafetyChecklistId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentCause",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentCause",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentId\"},\"IncidentCauseId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCauseId\"},\"IncidentCauseTypeId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCauseTypeId\"},\"IncidentCausePreventableIndicator\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCausePreventableIndicator\"},\"RootCauseIndicator\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"RootCauseIndicator\"},\"IncidentCauseNote\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCauseNote\"},\"AssetId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"AssetId\"},\"EmployeeId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"EmployeeId\"},\"PartyId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"PartyId\"},\"LearningEventId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"LearningEventId\"},\"SafetyChecklistId\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"SafetyChecklistId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentCause\",\"path\":\"IncidentCause.cdm.json/IncidentCause\"},\"description\":\"A cause that is associated with the incident.\",\"primaryKey\":[\"IncidentId\",\"IncidentCauseId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCauseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Cause.\",\"isNullable\":false,\"name\":\"IncidentCauseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCauseTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Type.\",\"isNullable\":true,\"name\":\"IncidentCauseTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCausePreventableIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the incident cause was preventable.\",\"isNullable\":true,\"name\":\"IncidentCausePreventableIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"RootCauseIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the incident cause was the root cause of the incident.\",\"isNullable\":true,\"name\":\"RootCauseIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"IncidentCauseNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding an Incident Cause.\",\"isNullable\":true,\"name\":\"IncidentCauseNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":true,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"EmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":true,\"name\":\"EmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"LearningEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Learning Event.\",\"isNullable\":true,\"name\":\"LearningEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCause.cdm.json/IncidentCause\",\"name\":\"SafetyChecklistId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist.\",\"isNullable\":true,\"name\":\"SafetyChecklistId\"}]}}}",
+			"Description": "A cause that is associated with the incident.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "IncidentId,IncidentCauseId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

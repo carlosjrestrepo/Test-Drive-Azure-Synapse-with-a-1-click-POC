@@ -1,0 +1,200 @@
+{
+	"name": "StructureInsuranceDetail",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureInsuranceDetail",
+		"Description": "Details regarding the structure that are required for insurance purposes.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureInsuranceDetailPreparedTimestamp",
+					"Description": "The timestamp that the structure insurance detail was prepared.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "StructureInsuranceDetailPreparedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfStories",
+					"Description": "The number of stores of the structure.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "NumberOfStories"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "YearBuilt",
+					"Description": "The year that the structure was built.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "YearBuilt"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LastMajorConstructionYear",
+					"Description": "The year of the last major construction associated with the structure.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "LastMajorConstructionYear"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FloodRiskZoneId",
+					"Description": "A geographical area shown on a Flood Hazard Boundary Map or a Flood Insurance Rate Map that reflects the severity or type of flooding in the area.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "FloodRiskZoneId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NfipCommunityNumber",
+					"Description": "The community associated with the NFIP.\n\nThe NFIP is a federal program enabling property owners in participating communities to purchase insurance protection against losses from flooding. This insurance is designed to provide an insurance alternative to disaster assistance to meet the escalating costs of repairing damage to buildings and their contents caused by floods.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "NfipCommunityNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureTypeId",
+					"Description": "The unique identifier of a structure type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "StructureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureConstructionTypeId",
+					"Description": "The unique identifier of a structure construction type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureInsuranceDetail.cdm.json/StructureInsuranceDetail",
+						"Name": "StructureConstructionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureInsuranceDetail",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureInsuranceDetail",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureId\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureId\"},\"StructureInsuranceDetailPreparedTimestamp\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureInsuranceDetailPreparedTimestamp\"},\"NumberOfStories\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"NumberOfStories\"},\"YearBuilt\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"YearBuilt\"},\"LastMajorConstructionYear\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"LastMajorConstructionYear\"},\"FloodRiskZoneId\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"FloodRiskZoneId\"},\"NfipCommunityNumber\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"NfipCommunityNumber\"},\"StructureTypeId\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureTypeId\"},\"StructureConstructionTypeId\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureConstructionTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureInsuranceDetail\",\"path\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\"},\"description\":\"Details regarding the structure that are required for insurance purposes.\",\"primaryKey\":[\"StructureId\",\"StructureInsuranceDetailPreparedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":false,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureInsuranceDetailPreparedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the structure insurance detail was prepared.\",\"isNullable\":false,\"name\":\"StructureInsuranceDetailPreparedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"NumberOfStories\"},\"dataType\":\"integer\",\"description\":\"The number of stores of the structure.\",\"isNullable\":true,\"name\":\"NumberOfStories\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"YearBuilt\"},\"dataType\":\"integer\",\"description\":\"The year that the structure was built.\",\"isNullable\":true,\"name\":\"YearBuilt\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"LastMajorConstructionYear\"},\"dataType\":\"integer\",\"description\":\"The year of the last major construction associated with the structure.\",\"isNullable\":true,\"name\":\"LastMajorConstructionYear\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"FloodRiskZoneId\"},\"dataType\":\"integer\",\"description\":\"A geographical area shown on a Flood Hazard Boundary Map or a Flood Insurance Rate Map that reflects the severity or type of flooding in the area.\",\"isNullable\":true,\"name\":\"FloodRiskZoneId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"NfipCommunityNumber\"},\"dataType\":\"integer\",\"description\":\"The community associated with the NFIP.\\n\\nThe NFIP is a federal program enabling property owners in participating communities to purchase insurance protection against losses from flooding. This insurance is designed to provide an insurance alternative to disaster assistance to meet the escalating costs of repairing damage to buildings and their contents caused by floods.\",\"isNullable\":true,\"name\":\"NfipCommunityNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure type.\",\"isNullable\":true,\"name\":\"StructureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureInsuranceDetail.cdm.json/StructureInsuranceDetail\",\"name\":\"StructureConstructionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure construction type.\",\"isNullable\":true,\"name\":\"StructureConstructionTypeId\"}]}}}",
+			"Description": "Details regarding the structure that are required for insurance purposes.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "StructureId,StructureInsuranceDetailPreparedTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

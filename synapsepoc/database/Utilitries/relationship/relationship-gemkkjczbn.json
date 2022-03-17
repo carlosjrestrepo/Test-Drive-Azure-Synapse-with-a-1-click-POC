@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gemkkjczbn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gemkkjczbn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EquipmentType",
+		"ToTableName": "SafetyChecklistItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EquipmentTypeId",
+				"ToColumnName": "EquipmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EquipmentType.cdm.json/EquipmentType\",\"toEntity\":\"SafetyChecklistItem.cdm.json/SafetyChecklistItem\",\"joinPairs\":[{\"fromAttribute\":\"EquipmentTypeId\",\"toAttribute\":\"EquipmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

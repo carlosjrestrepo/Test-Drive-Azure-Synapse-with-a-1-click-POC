@@ -1,0 +1,105 @@
+{
+	"name": "ClaimStructureLossType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimStructureLossType",
+		"Description": "The individual component involved in determining the loss claim of a structure.\n\n- Storm\n- Fire\n- Accident loss or damage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimStructureLossTypeId",
+					"Description": "The unique identifier of a Claim Structure Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossType.cdm.json/ClaimStructureLossType",
+						"Name": "ClaimStructureLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimStructureLossTypeName",
+					"Description": "The name of a Claim Structure Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossType.cdm.json/ClaimStructureLossType",
+						"Name": "ClaimStructureLossTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimStructureLossTypeDescription",
+					"Description": "The description of a Claim Structure Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructureLossType.cdm.json/ClaimStructureLossType",
+						"Name": "ClaimStructureLossTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructureLossType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructureLossType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimStructureLossTypeId\":{\"entity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"name\":\"ClaimStructureLossTypeId\"},\"ClaimStructureLossTypeName\":{\"entity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"name\":\"ClaimStructureLossTypeName\"},\"ClaimStructureLossTypeDescription\":{\"entity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"name\":\"ClaimStructureLossTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimStructureLossType\",\"path\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\"},\"description\":\"The individual component involved in determining the loss claim of a structure.\\n\\n- Storm\\n- Fire\\n- Accident loss or damage\",\"primaryKey\":[\"ClaimStructureLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"name\":\"ClaimStructureLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Structure Loss Type.\",\"isNullable\":false,\"name\":\"ClaimStructureLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"name\":\"ClaimStructureLossTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Structure Loss Type.\",\"isNullable\":true,\"name\":\"ClaimStructureLossTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"name\":\"ClaimStructureLossTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Structure Loss Type.\",\"isNullable\":true,\"name\":\"ClaimStructureLossTypeDescription\"}]}}}",
+			"Description": "The individual component involved in determining the loss claim of a structure.\n\n- Storm\n- Fire\n- Accident loss or damage",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimStructureLossTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

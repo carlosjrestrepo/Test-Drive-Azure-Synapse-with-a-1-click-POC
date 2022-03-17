@@ -1,0 +1,30 @@
+{
+	"name": "relationship-kcsfctcwxk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-kcsfctcwxk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ModelYear",
+		"ToTableName": "ModelYearTrim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ModelId",
+				"ToColumnName": "ModelId"
+			},
+			{
+				"FromColumnName": "ModelYearId",
+				"ToColumnName": "ModelYearId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ModelYear.cdm.json/ModelYear\",\"toEntity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"joinPairs\":[{\"fromAttribute\":\"ModelId\",\"toAttribute\":\"ModelId\"},{\"fromAttribute\":\"ModelYearId\",\"toAttribute\":\"ModelYearId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

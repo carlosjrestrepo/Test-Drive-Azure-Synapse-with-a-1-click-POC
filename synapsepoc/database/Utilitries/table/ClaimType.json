@@ -1,0 +1,105 @@
+{
+	"name": "ClaimType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimType",
+		"Description": "The type of claim filed.\n\nA claim type may be based on whether they are a claim with your own insurance company (\"First Party Claim\") or a claim with the other driver's insurance company (\"Third Party Claim\").\n\nA claim type may be based on whether the claim is for a full write off / replacement or whether salvage is possible. \n\nA claim type may also be any combination of the above or additional values as determined by the insurance company. \n\nWhen you have filed a claim with your own insurance company for physical damage to your vehicle from a car accident (Collision Claim); from vandalism or another type of event under the comprehensive section of your policy (Comprehensive Claim); or for injuries sustained in a crash (Medical Payments Claim, or Med Pay); and if there are no problems with your coverage, your claim should be approved and paid. For collision or comprehensive damage, most insurers will pay the body or glass shop where you have your car repaired directly after they receive an estimate from the shop.\n\nWhen you are in an accident with another driver and it is at least partially their fault, and you are not in a no-fault state, you may make a claim with the other driver's insurance company. For a Property Damage claim, similar to your own insurer, the other insurer will typically pay the body shop directly for repairs once they receive an estimate from the shop. The other driver's insurance will also pay for your rental car for a reasonable and necessary amount of time during which your car is being repaired.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimTypeId",
+					"Description": "The unique identifier of a Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimType.cdm.json/ClaimType",
+						"Name": "ClaimTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimTypeName",
+					"Description": "The name of a Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimType.cdm.json/ClaimType",
+						"Name": "ClaimTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimTypeDescription",
+					"Description": "The description of a Claim Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimType.cdm.json/ClaimType",
+						"Name": "ClaimTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimTypeId\":{\"entity\":\"ClaimType.cdm.json/ClaimType\",\"name\":\"ClaimTypeId\"},\"ClaimTypeName\":{\"entity\":\"ClaimType.cdm.json/ClaimType\",\"name\":\"ClaimTypeName\"},\"ClaimTypeDescription\":{\"entity\":\"ClaimType.cdm.json/ClaimType\",\"name\":\"ClaimTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimType\",\"path\":\"ClaimType.cdm.json/ClaimType\"},\"description\":\"The type of claim filed.\\n\\nA claim type may be based on whether they are a claim with your own insurance company (\\\"First Party Claim\\\") or a claim with the other driver's insurance company (\\\"Third Party Claim\\\").\\n\\nA claim type may be based on whether the claim is for a full write off / replacement or whether salvage is possible. \\n\\nA claim type may also be any combination of the above or additional values as determined by the insurance company. \\n\\nWhen you have filed a claim with your own insurance company for physical damage to your vehicle from a car accident (Collision Claim); from vandalism or another type of event under the comprehensive section of your policy (Comprehensive Claim); or for injuries sustained in a crash (Medical Payments Claim, or Med Pay); and if there are no problems with your coverage, your claim should be approved and paid. For collision or comprehensive damage, most insurers will pay the body or glass shop where you have your car repaired directly after they receive an estimate from the shop.\\n\\nWhen you are in an accident with another driver and it is at least partially their fault, and you are not in a no-fault state, you may make a claim with the other driver's insurance company. For a Property Damage claim, similar to your own insurer, the other insurer will typically pay the body shop directly for repairs once they receive an estimate from the shop. The other driver's insurance will also pay for your rental car for a reasonable and necessary amount of time during which your car is being repaired.\",\"primaryKey\":[\"ClaimTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimType.cdm.json/ClaimType\",\"name\":\"ClaimTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Type.\",\"isNullable\":false,\"name\":\"ClaimTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimType.cdm.json/ClaimType\",\"name\":\"ClaimTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Type.\",\"isNullable\":true,\"name\":\"ClaimTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimType.cdm.json/ClaimType\",\"name\":\"ClaimTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Type.\",\"isNullable\":true,\"name\":\"ClaimTypeDescription\"}]}}}",
+			"Description": "The type of claim filed.\n\nA claim type may be based on whether they are a claim with your own insurance company (\"First Party Claim\") or a claim with the other driver's insurance company (\"Third Party Claim\").\n\nA claim type may be based on whether the claim is for a full write off / replacement or whether salvage is possible. \n\nA claim type may also be any combination of the above or additional values as determined by the insurance company. \n\nWhen you have filed a claim with your own insurance company for physical damage to your vehicle from a car accident (Collision Claim); from vandalism or another type of event under the comprehensive section of your policy (Comprehensive Claim); or for injuries sustained in a crash (Medical Payments Claim, or Med Pay); and if there are no problems with your coverage, your claim should be approved and paid. For collision or comprehensive damage, most insurers will pay the body or glass shop where you have your car repaired directly after they receive an estimate from the shop.\n\nWhen you are in an accident with another driver and it is at least partially their fault, and you are not in a no-fault state, you may make a claim with the other driver's insurance company. For a Property Damage claim, similar to your own insurer, the other insurer will typically pay the body shop directly for repairs once they receive an estimate from the shop. The other driver's insurance will also pay for your rental car for a reasonable and necessary amount of time during which your car is being repaired.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

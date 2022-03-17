@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eobfwvfwql",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-eobfwvfwql",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleType",
+		"ToTableName": "ModelYearTrim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleTypeId",
+				"ToColumnName": "VehicleTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleType.cdm.json/VehicleType\",\"toEntity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"joinPairs\":[{\"fromAttribute\":\"VehicleTypeId\",\"toAttribute\":\"VehicleTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

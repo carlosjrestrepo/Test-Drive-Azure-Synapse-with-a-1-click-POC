@@ -1,0 +1,71 @@
+{
+	"name": "IcdVersion",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IcdVersion",
+		"Description": "The version of the ICD codes.\n\nEx:\nICD-9\nICD-9CM\nICD-10\nICD-10CM",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IcdVersionNumber",
+					"Description": "The version number of the ICD Code.",
+					"BaseAttributeReference": {
+						"Entity": "IcdVersion.cdm.json/IcdVersion",
+						"Name": "IcdVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IcdVersion",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IcdVersion",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IcdVersionNumber\":{\"entity\":\"IcdVersion.cdm.json/IcdVersion\",\"name\":\"IcdVersionNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IcdVersion\",\"path\":\"IcdVersion.cdm.json/IcdVersion\"},\"description\":\"The version of the ICD codes.\\n\\nEx:\\nICD-9\\nICD-9CM\\nICD-10\\nICD-10CM\",\"primaryKey\":[\"IcdVersionNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IcdVersion.cdm.json/IcdVersion\",\"name\":\"IcdVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version number of the ICD Code.\",\"isNullable\":false,\"name\":\"IcdVersionNumber\"}]}}}",
+			"Description": "The version of the ICD codes.\n\nEx:\nICD-9\nICD-9CM\nICD-10\nICD-10CM",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "IcdVersionNumber",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

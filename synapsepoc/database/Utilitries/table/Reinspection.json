@@ -1,0 +1,139 @@
+{
+	"name": "Reinspection",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "Reinspection",
+		"Description": "A review of an estimate or appraisal done by an adjuster during or after repairs.\n\nThis is done to guarantee the accuracy of staff or independent damage personnel, and to guarantee that the work required in an estimate or appraisal is being completed.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "Date",
+					"Description": "The date that the reinspection occurred.",
+					"BaseAttributeReference": {
+						"Entity": "Reinspection.cdm.json/Reinspection",
+						"Name": "Date"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ReinspectionByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Reinspection.cdm.json/Reinspection",
+						"Name": "ReinspectionByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReinspectionStatement",
+					"Description": "A statement regarding the reinspection.",
+					"BaseAttributeReference": {
+						"Entity": "Reinspection.cdm.json/Reinspection",
+						"Name": "ReinspectionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReinspectionValuationAmount",
+					"Description": "The valuation amount of the reinspection.",
+					"BaseAttributeReference": {
+						"Entity": "Reinspection.cdm.json/Reinspection",
+						"Name": "ReinspectionValuationAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "Reinspection.cdm.json/Reinspection",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Reinspection",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Reinspection",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"Date\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"Date\"},\"ReinspectionByPartyId\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ReinspectionByPartyId\"},\"ReinspectionStatement\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ReinspectionStatement\"},\"ReinspectionValuationAmount\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ReinspectionValuationAmount\"},\"ClaimId\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ClaimId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Reinspection\",\"path\":\"Reinspection.cdm.json/Reinspection\"},\"description\":\"A review of an estimate or appraisal done by an adjuster during or after repairs.\\n\\nThis is done to guarantee the accuracy of staff or independent damage personnel, and to guarantee that the work required in an estimate or appraisal is being completed.\",\"primaryKey\":[\"Date\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"Date\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the reinspection occurred.\",\"isNullable\":false,\"name\":\"Date\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ReinspectionByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ReinspectionByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ReinspectionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the reinspection.\",\"isNullable\":true,\"name\":\"ReinspectionStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ReinspectionValuationAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The valuation amount of the reinspection.\",\"isNullable\":true,\"scale\":2,\"name\":\"ReinspectionValuationAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Reinspection.cdm.json/Reinspection\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"ClaimId\"}]}}}",
+			"Description": "A review of an estimate or appraisal done by an adjuster during or after repairs.\n\nThis is done to guarantee the accuracy of staff or independent damage personnel, and to guarantee that the work required in an estimate or appraisal is being completed.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "Date",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

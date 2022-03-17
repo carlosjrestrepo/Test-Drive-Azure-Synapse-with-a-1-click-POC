@@ -1,0 +1,140 @@
+{
+	"name": "ClaimChargeReducedReason",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimChargeReducedReason",
+		"Description": "The reason(s) for the claim charge reduction.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReducedReasonTypeId",
+					"Description": "The unique identifier of a Claim Reduced Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason",
+						"Name": "ClaimReducedReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReductionAmount",
+					"Description": "The amount of the claim reduction.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason",
+						"Name": "ClaimReductionAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReductionQuantity",
+					"Description": "The quantity of the claim reduction.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason",
+						"Name": "ClaimReductionQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimChargeReductionNote",
+					"Description": "A note, comment or additional information regarding the claim charge reduction.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason",
+						"Name": "ClaimChargeReductionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimChargeReducedReason",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimChargeReducedReason",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimId\"},\"ClaimReducedReasonTypeId\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimReducedReasonTypeId\"},\"ClaimReductionAmount\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimReductionAmount\"},\"ClaimReductionQuantity\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimReductionQuantity\"},\"ClaimChargeReductionNote\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimChargeReductionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimChargeReducedReason\",\"path\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\"},\"description\":\"The reason(s) for the claim charge reduction.\",\"primaryKey\":[\"ClaimId\",\"ClaimReducedReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimReducedReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Reduced Reason Type.\",\"isNullable\":false,\"name\":\"ClaimReducedReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimReductionAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the claim reduction.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimReductionAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimReductionQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity of the claim reduction.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimReductionQuantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"name\":\"ClaimChargeReductionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim charge reduction.\",\"isNullable\":true,\"name\":\"ClaimChargeReductionNote\"}]}}}",
+			"Description": "The reason(s) for the claim charge reduction.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimReducedReasonTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

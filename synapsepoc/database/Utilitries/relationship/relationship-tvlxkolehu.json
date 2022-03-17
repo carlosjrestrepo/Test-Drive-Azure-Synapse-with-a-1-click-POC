@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tvlxkolehu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-tvlxkolehu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleSalvageType",
+		"ToTableName": "ClaimVehicleLossSalvage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleSalvageTypeId",
+				"ToColumnName": "VehicleSalvageTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleSalvageType.cdm.json/VehicleSalvageType\",\"toEntity\":\"ClaimVehicleLossSalvage.cdm.json/ClaimVehicleLossSalvage\",\"joinPairs\":[{\"fromAttribute\":\"VehicleSalvageTypeId\",\"toAttribute\":\"VehicleSalvageTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

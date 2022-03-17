@@ -1,0 +1,105 @@
+{
+	"name": "ArbitrationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ArbitrationType",
+		"Description": "Identifies whether the arbitration is voluntary, involuntary or mandatory.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ArbitrationTypeId",
+					"Description": "The unique identifier of an Arbitration Type.",
+					"BaseAttributeReference": {
+						"Entity": "ArbitrationType.cdm.json/ArbitrationType",
+						"Name": "ArbitrationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ArbitrationTypeName",
+					"Description": "The name of an Arbitration Type.",
+					"BaseAttributeReference": {
+						"Entity": "ArbitrationType.cdm.json/ArbitrationType",
+						"Name": "ArbitrationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ArbitrationTypeDescription",
+					"Description": "The description of an Arbitration Type.",
+					"BaseAttributeReference": {
+						"Entity": "ArbitrationType.cdm.json/ArbitrationType",
+						"Name": "ArbitrationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ArbitrationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ArbitrationType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ArbitrationTypeId\":{\"entity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"name\":\"ArbitrationTypeId\"},\"ArbitrationTypeName\":{\"entity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"name\":\"ArbitrationTypeName\"},\"ArbitrationTypeDescription\":{\"entity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"name\":\"ArbitrationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ArbitrationType\",\"path\":\"ArbitrationType.cdm.json/ArbitrationType\"},\"description\":\"Identifies whether the arbitration is voluntary, involuntary or mandatory.\",\"primaryKey\":[\"ArbitrationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"name\":\"ArbitrationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Arbitration Type.\",\"isNullable\":false,\"name\":\"ArbitrationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"name\":\"ArbitrationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Arbitration Type.\",\"isNullable\":true,\"name\":\"ArbitrationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"name\":\"ArbitrationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Arbitration Type.\",\"isNullable\":true,\"name\":\"ArbitrationTypeDescription\"}]}}}",
+			"Description": "Identifies whether the arbitration is voluntary, involuntary or mandatory.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ArbitrationTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

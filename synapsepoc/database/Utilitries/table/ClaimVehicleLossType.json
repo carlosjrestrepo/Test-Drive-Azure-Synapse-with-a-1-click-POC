@@ -1,0 +1,105 @@
+{
+	"name": "ClaimVehicleLossType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimVehicleLossType",
+		"Description": "The individual component involved in determining the loss claim of a vehicle.\n\n- Body damage/left fender\n- Interior damage/upholstery\n- Glass damage\n- Body damage due to hail\n- Vehicle damage due to hail\n- Theft\n- Electronic equipment/radio\n- Towing/labor\n- Emergency Road Service",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimVehicleLossTypeId",
+					"Description": "The unique identifier of a Claim Vehicle Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossType.cdm.json/ClaimVehicleLossType",
+						"Name": "ClaimVehicleLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimVehicleLossTypeName",
+					"Description": "The name of a Claim Vehicle Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossType.cdm.json/ClaimVehicleLossType",
+						"Name": "ClaimVehicleLossTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimVehicleLossTypeDescription",
+					"Description": "The description of a Claim Vehicle Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLossType.cdm.json/ClaimVehicleLossType",
+						"Name": "ClaimVehicleLossTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicleLossType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicleLossType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimVehicleLossTypeId\":{\"entity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"name\":\"ClaimVehicleLossTypeId\"},\"ClaimVehicleLossTypeName\":{\"entity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"name\":\"ClaimVehicleLossTypeName\"},\"ClaimVehicleLossTypeDescription\":{\"entity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"name\":\"ClaimVehicleLossTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimVehicleLossType\",\"path\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\"},\"description\":\"The individual component involved in determining the loss claim of a vehicle.\\n\\n- Body damage/left fender\\n- Interior damage/upholstery\\n- Glass damage\\n- Body damage due to hail\\n- Vehicle damage due to hail\\n- Theft\\n- Electronic equipment/radio\\n- Towing/labor\\n- Emergency Road Service\",\"primaryKey\":[\"ClaimVehicleLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"name\":\"ClaimVehicleLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Vehicle Loss Type.\",\"isNullable\":false,\"name\":\"ClaimVehicleLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"name\":\"ClaimVehicleLossTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Vehicle Loss Type.\",\"isNullable\":true,\"name\":\"ClaimVehicleLossTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"name\":\"ClaimVehicleLossTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Vehicle Loss Type.\",\"isNullable\":true,\"name\":\"ClaimVehicleLossTypeDescription\"}]}}}",
+			"Description": "The individual component involved in determining the loss claim of a vehicle.\n\n- Body damage/left fender\n- Interior damage/upholstery\n- Glass damage\n- Body damage due to hail\n- Vehicle damage due to hail\n- Theft\n- Electronic equipment/radio\n- Towing/labor\n- Emergency Road Service",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimVehicleLossTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

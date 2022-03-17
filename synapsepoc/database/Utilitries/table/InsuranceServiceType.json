@@ -1,0 +1,105 @@
+{
+	"name": "InsuranceServiceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsuranceServiceType",
+		"Description": "An insurance service that may be associated with a claim.\n\nEx:\n- 24/7 claim service\n- Roadside Assistance\n- Towing",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsuranceServiceTypeId",
+					"Description": "The unique identifier of an insurance service type.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceServiceType.cdm.json/InsuranceServiceType",
+						"Name": "InsuranceServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceServiceTypeName",
+					"Description": "The name of an insurance service type.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceServiceType.cdm.json/InsuranceServiceType",
+						"Name": "InsuranceServiceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceServiceTypeDescription",
+					"Description": "The description of an insurance service type.",
+					"BaseAttributeReference": {
+						"Entity": "InsuranceServiceType.cdm.json/InsuranceServiceType",
+						"Name": "InsuranceServiceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsuranceServiceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsuranceServiceType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsuranceServiceTypeId\":{\"entity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"name\":\"InsuranceServiceTypeId\"},\"InsuranceServiceTypeName\":{\"entity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"name\":\"InsuranceServiceTypeName\"},\"InsuranceServiceTypeDescription\":{\"entity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"name\":\"InsuranceServiceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsuranceServiceType\",\"path\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\"},\"description\":\"An insurance service that may be associated with a claim.\\n\\nEx:\\n- 24/7 claim service\\n- Roadside Assistance\\n- Towing\",\"primaryKey\":[\"InsuranceServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"name\":\"InsuranceServiceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an insurance service type.\",\"isNullable\":false,\"name\":\"InsuranceServiceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"name\":\"InsuranceServiceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an insurance service type.\",\"isNullable\":true,\"name\":\"InsuranceServiceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"name\":\"InsuranceServiceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an insurance service type.\",\"isNullable\":true,\"name\":\"InsuranceServiceTypeDescription\"}]}}}",
+			"Description": "An insurance service that may be associated with a claim.\n\nEx:\n- 24/7 claim service\n- Roadside Assistance\n- Towing",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "InsuranceServiceTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

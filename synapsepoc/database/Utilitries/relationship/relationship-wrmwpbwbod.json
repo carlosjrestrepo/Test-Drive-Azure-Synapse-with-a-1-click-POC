@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wrmwpbwbod",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wrmwpbwbod",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NamePrefix",
+		"ToTableName": "CustomerNamePrefix",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NamePrefixId",
+				"ToColumnName": "NamePrefixId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NamePrefix.cdm.json/NamePrefix\",\"toEntity\":\"CustomerNamePrefix.cdm.json/CustomerNamePrefix\",\"joinPairs\":[{\"fromAttribute\":\"NamePrefixId\",\"toAttribute\":\"NamePrefixId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

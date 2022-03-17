@@ -1,0 +1,122 @@
+{
+	"name": "ClaimInsuranceService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimInsuranceService",
+		"Description": "An insurance service required or utilized by the associated claim.\n\nEx:\n- 24/7 claim service\n- Roadside Assistance\n- Towing",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInsuranceService.cdm.json/ClaimInsuranceService",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceServiceTypeId",
+					"Description": "The unique identifier of an insurance service type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInsuranceService.cdm.json/ClaimInsuranceService",
+						"Name": "InsuranceServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceServiceChargeAmount",
+					"Description": "The amount charged or incurred by the associated insurance service.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInsuranceService.cdm.json/ClaimInsuranceService",
+						"Name": "InsuranceServiceChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceServiceNote",
+					"Description": "A note, comment or additional information regarding the claim insurance service.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInsuranceService.cdm.json/ClaimInsuranceService",
+						"Name": "InsuranceServiceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimInsuranceService",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimInsuranceService",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"ClaimId\"},\"InsuranceServiceTypeId\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"InsuranceServiceTypeId\"},\"InsuranceServiceChargeAmount\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"InsuranceServiceChargeAmount\"},\"InsuranceServiceNote\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"InsuranceServiceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimInsuranceService\",\"path\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\"},\"description\":\"An insurance service required or utilized by the associated claim.\\n\\nEx:\\n- 24/7 claim service\\n- Roadside Assistance\\n- Towing\",\"primaryKey\":[\"ClaimId\",\"InsuranceServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"InsuranceServiceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an insurance service type.\",\"isNullable\":false,\"name\":\"InsuranceServiceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"InsuranceServiceChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount charged or incurred by the associated insurance service.\",\"isNullable\":true,\"scale\":2,\"name\":\"InsuranceServiceChargeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"name\":\"InsuranceServiceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim insurance service.\",\"isNullable\":true,\"name\":\"InsuranceServiceNote\"}]}}}",
+			"Description": "An insurance service required or utilized by the associated claim.\n\nEx:\n- 24/7 claim service\n- Roadside Assistance\n- Towing",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,InsuranceServiceTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

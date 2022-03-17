@@ -1,0 +1,107 @@
+{
+	"name": "HealthcareCommonProcedureCodingSystemCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "HealthcareCommonProcedureCodingSystemCode",
+		"Description": "HCPCS Codes, Healthcare Common Procedure Coding System numbers, are the codes used by Medicare and monitored by CMS, the Centers for Medicare and Medicaid Services. They are based on the CPT Codes (Current Procedural Technology codes) developed by the American Medical Association.\n\nHCPCS Codes are numbers assigned to every task and service a medical practitioner may provide to a Medicare patient including medical, surgical and diagnostic services. Since everyone uses the same codes to mean the same thing, they ensure uniformity. For example, no matter what doctor a Medicare patient visits for an allergy injection (code 95115) that doctor will be paid by Medicare the same amount another doctor in that same geographic region would be.\n\nSome examples of HCPCS / CPT Codes:\n\n99214 may be used for a physical\n90658 indicates a flu shot\n12002 may be used to stitch up a one-inch cut on a patient's arm",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HcpcsCode",
+					"Description": "The unique identifier of a HCPCS Code.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode",
+						"Name": "HcpcsCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HcpcsCodeDescription",
+					"Description": "The description of a HCPCS Code.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode",
+						"Name": "HcpcsCodeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReimbursementAmount",
+					"Description": "The amount reimbursable for the HCPCS procedure.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode",
+						"Name": "ReimbursementAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/HealthcareCommonProcedureCodingSystemCode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/HealthcareCommonProcedureCodingSystemCode",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HcpcsCode\":{\"entity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"name\":\"HcpcsCode\"},\"HcpcsCodeDescription\":{\"entity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"name\":\"HcpcsCodeDescription\"},\"ReimbursementAmount\":{\"entity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"name\":\"ReimbursementAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HealthcareCommonProcedureCodingSystemCode\",\"path\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\"},\"description\":\"HCPCS Codes, Healthcare Common Procedure Coding System numbers, are the codes used by Medicare and monitored by CMS, the Centers for Medicare and Medicaid Services. They are based on the CPT Codes (Current Procedural Technology codes) developed by the American Medical Association.\\n\\nHCPCS Codes are numbers assigned to every task and service a medical practitioner may provide to a Medicare patient including medical, surgical and diagnostic services. Since everyone uses the same codes to mean the same thing, they ensure uniformity. For example, no matter what doctor a Medicare patient visits for an allergy injection (code 95115) that doctor will be paid by Medicare the same amount another doctor in that same geographic region would be.\\n\\nSome examples of HCPCS / CPT Codes:\\n\\n99214 may be used for a physical\\n90658 indicates a flu shot\\n12002 may be used to stitch up a one-inch cut on a patient's arm\",\"primaryKey\":[\"HcpcsCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"name\":\"HcpcsCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a HCPCS Code.\",\"isNullable\":false,\"name\":\"HcpcsCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"name\":\"HcpcsCodeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a HCPCS Code.\",\"isNullable\":true,\"name\":\"HcpcsCodeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"name\":\"ReimbursementAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount reimbursable for the HCPCS procedure.\",\"isNullable\":true,\"scale\":2,\"name\":\"ReimbursementAmount\"}]}}}",
+			"Description": "HCPCS Codes, Healthcare Common Procedure Coding System numbers, are the codes used by Medicare and monitored by CMS, the Centers for Medicare and Medicaid Services. They are based on the CPT Codes (Current Procedural Technology codes) developed by the American Medical Association.\n\nHCPCS Codes are numbers assigned to every task and service a medical practitioner may provide to a Medicare patient including medical, surgical and diagnostic services. Since everyone uses the same codes to mean the same thing, they ensure uniformity. For example, no matter what doctor a Medicare patient visits for an allergy injection (code 95115) that doctor will be paid by Medicare the same amount another doctor in that same geographic region would be.\n\nSome examples of HCPCS / CPT Codes:\n\n99214 may be used for a physical\n90658 indicates a flu shot\n12002 may be used to stitch up a one-inch cut on a patient's arm",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "HcpcsCode",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

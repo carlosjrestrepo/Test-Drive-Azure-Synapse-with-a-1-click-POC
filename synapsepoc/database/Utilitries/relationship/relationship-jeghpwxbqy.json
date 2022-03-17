@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jeghpwxbqy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-jeghpwxbqy",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InjuryType",
+		"ToTableName": "InjuredPartyInjury",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InjuryTypeId",
+				"ToColumnName": "InjuryTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InjuryType.cdm.json/InjuryType\",\"toEntity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"joinPairs\":[{\"fromAttribute\":\"InjuryTypeId\",\"toAttribute\":\"InjuryTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

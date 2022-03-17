@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kbkjixrpml",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-kbkjixrpml",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureSalvageType",
+		"ToTableName": "ClaimStructureLossSalvage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureSalvageTypeId",
+				"ToColumnName": "StructureSalvageTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"toEntity\":\"ClaimStructureLossSalvage.cdm.json/ClaimStructureLossSalvage\",\"joinPairs\":[{\"fromAttribute\":\"StructureSalvageTypeId\",\"toAttribute\":\"StructureSalvageTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

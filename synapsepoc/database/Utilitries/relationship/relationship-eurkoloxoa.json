@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eurkoloxoa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-eurkoloxoa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Model",
+		"ToTableName": "ModelYear",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ModelId",
+				"ToColumnName": "ModelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Model.cdm.json/Model\",\"toEntity\":\"ModelYear.cdm.json/ModelYear\",\"joinPairs\":[{\"fromAttribute\":\"ModelId\",\"toAttribute\":\"ModelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

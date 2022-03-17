@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hkwcggevfq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-hkwcggevfq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "SafetyObservation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ObservedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ObservedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

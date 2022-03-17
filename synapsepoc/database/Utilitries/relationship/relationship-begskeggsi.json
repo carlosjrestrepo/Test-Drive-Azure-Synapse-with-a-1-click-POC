@@ -1,0 +1,26 @@
+{
+	"name": "relationship-begskeggsi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-begskeggsi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimDelayReasonType",
+		"ToTableName": "ClaimDelayReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimDelayReasonTypeId",
+				"ToColumnName": "ClaimDelayReasonTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"toEntity\":\"ClaimDelayReason.cdm.json/ClaimDelayReason\",\"joinPairs\":[{\"fromAttribute\":\"ClaimDelayReasonTypeId\",\"toAttribute\":\"ClaimDelayReasonTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

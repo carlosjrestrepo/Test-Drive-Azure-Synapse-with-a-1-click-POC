@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ligidwnceg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ligidwnceg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AmbulatoryPatientCareCode",
+		"ToTableName": "HealthcareService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ApcCode",
+				"ToColumnName": "ApcCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"toEntity\":\"HealthcareService.cdm.json/HealthcareService\",\"joinPairs\":[{\"fromAttribute\":\"ApcCode\",\"toAttribute\":\"ApcCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

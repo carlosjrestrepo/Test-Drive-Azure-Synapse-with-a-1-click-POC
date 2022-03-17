@@ -1,0 +1,104 @@
+{
+	"name": "ClaimRejectionReason",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimRejectionReason",
+		"Description": "The reason(s) for the claim rejection.\n\nA claim may be rejected for technical reasons and then corrected and resubmitted.\n\nA claim denial is a final statement by the health plan insurer.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRejectionReason.cdm.json/ClaimRejectionReason",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRejectionReasonTypeId",
+					"Description": "The unique identifier of a Claim Rejection Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRejectionReason.cdm.json/ClaimRejectionReason",
+						"Name": "ClaimRejectionReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimChargeRejectionNote",
+					"Description": "A note, comment or additional information regarding a reason for a claim rejection.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRejectionReason.cdm.json/ClaimRejectionReason",
+						"Name": "ClaimChargeRejectionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRejectionReason",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRejectionReason",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"name\":\"ClaimId\"},\"ClaimRejectionReasonTypeId\":{\"entity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"name\":\"ClaimRejectionReasonTypeId\"},\"ClaimChargeRejectionNote\":{\"entity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"name\":\"ClaimChargeRejectionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimRejectionReason\",\"path\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\"},\"description\":\"The reason(s) for the claim rejection.\\n\\nA claim may be rejected for technical reasons and then corrected and resubmitted.\\n\\nA claim denial is a final statement by the health plan insurer.\",\"primaryKey\":[\"ClaimId\",\"ClaimRejectionReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"name\":\"ClaimRejectionReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Rejection Reason Type.\",\"isNullable\":false,\"name\":\"ClaimRejectionReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRejectionReason.cdm.json/ClaimRejectionReason\",\"name\":\"ClaimChargeRejectionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a reason for a claim rejection.\",\"isNullable\":true,\"name\":\"ClaimChargeRejectionNote\"}]}}}",
+			"Description": "The reason(s) for the claim rejection.\n\nA claim may be rejected for technical reasons and then corrected and resubmitted.\n\nA claim denial is a final statement by the health plan insurer.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimRejectionReasonTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

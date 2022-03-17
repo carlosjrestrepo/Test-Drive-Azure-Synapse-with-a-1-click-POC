@@ -1,0 +1,120 @@
+{
+	"name": "ClaimInjuredPartyMedicalBill",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimInjuredPartyMedicalBill",
+		"Description": "The medical bills submitted by the injured party.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillId",
+					"Description": "The unique identifier of a Medical Bill.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill",
+						"Name": "MedicalBillId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimInjuredPartyMedicalBillNote",
+					"Description": "A note pertaining to the Claim Injured Party Medical Bill",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill",
+						"Name": "ClaimInjuredPartyMedicalBillNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimInjuredPartyMedicalBill",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimInjuredPartyMedicalBill",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"ClaimId\"},\"InjuredPartyId\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"InjuredPartyId\"},\"MedicalBillId\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"MedicalBillId\"},\"ClaimInjuredPartyMedicalBillNote\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"ClaimInjuredPartyMedicalBillNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimInjuredPartyMedicalBill\",\"path\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\"},\"description\":\"The medical bills submitted by the injured party.\",\"primaryKey\":[\"ClaimId\",\"InjuredPartyId\",\"MedicalBillId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"MedicalBillId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Bill.\",\"isNullable\":false,\"name\":\"MedicalBillId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"name\":\"ClaimInjuredPartyMedicalBillNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note pertaining to the Claim Injured Party Medical Bill\",\"isNullable\":true,\"name\":\"ClaimInjuredPartyMedicalBillNote\"}]}}}",
+			"Description": "The medical bills submitted by the injured party.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,InjuredPartyId,MedicalBillId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

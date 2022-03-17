@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ciznrjynps",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ciznrjynps",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimStructureLossType",
+		"ToTableName": "ClaimStructureLoss",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimStructureLossTypeId",
+				"ToColumnName": "ClaimStructureLossTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimStructureLossType.cdm.json/ClaimStructureLossType\",\"toEntity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"joinPairs\":[{\"fromAttribute\":\"ClaimStructureLossTypeId\",\"toAttribute\":\"ClaimStructureLossTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

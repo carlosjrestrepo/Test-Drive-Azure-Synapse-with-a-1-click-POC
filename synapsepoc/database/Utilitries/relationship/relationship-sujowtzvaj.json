@@ -1,0 +1,34 @@
+{
+	"name": "relationship-sujowtzvaj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-sujowtzvaj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimStructureLoss",
+		"ToTableName": "StructureRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			},
+			{
+				"FromColumnName": "ClaimStructureLossTypeId",
+				"ToColumnName": "ClaimStructureLossTypeId"
+			},
+			{
+				"FromColumnName": "StructureId",
+				"ToColumnName": "StructureId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimStructureLoss.cdm.json/ClaimStructureLoss\",\"toEntity\":\"StructureRepair.cdm.json/StructureRepair\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"},{\"fromAttribute\":\"ClaimStructureLossTypeId\",\"toAttribute\":\"ClaimStructureLossTypeId\"},{\"fromAttribute\":\"StructureId\",\"toAttribute\":\"StructureId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

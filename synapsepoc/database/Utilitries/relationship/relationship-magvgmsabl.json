@@ -1,0 +1,26 @@
+{
+	"name": "relationship-magvgmsabl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-magvgmsabl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicyType",
+		"ToTableName": "InsurancePolicy",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyTypeId",
+				"ToColumnName": "InsurancePolicyTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicyType.cdm.json/InsurancePolicyType\",\"toEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyTypeId\",\"toAttribute\":\"InsurancePolicyTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bitzubdtdx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-bitzubdtdx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EstimateType",
+		"ToTableName": "ClaimEstimate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EstimateTypeId",
+				"ToColumnName": "EstimateTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EstimateType.cdm.json/EstimateType\",\"toEntity\":\"ClaimEstimate.cdm.json/ClaimEstimate\",\"joinPairs\":[{\"fromAttribute\":\"EstimateTypeId\",\"toAttribute\":\"EstimateTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

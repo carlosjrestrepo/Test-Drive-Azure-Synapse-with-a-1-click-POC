@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ledwfrkjcx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ledwfrkjcx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyObservation",
+		"ToTableName": "EmployeeLearningEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyObservationId",
+				"ToColumnName": "SafetyObservationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"toEntity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"joinPairs\":[{\"fromAttribute\":\"SafetyObservationId\",\"toAttribute\":\"SafetyObservationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

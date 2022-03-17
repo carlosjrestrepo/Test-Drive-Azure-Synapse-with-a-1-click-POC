@@ -1,0 +1,137 @@
+{
+	"name": "ModelYear",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ModelYear",
+		"Description": "The model year of the vehicle.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ModelId",
+					"Description": "The unique identifier of a model.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYear.cdm.json/ModelYear",
+						"Name": "ModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearId",
+					"Description": "The unique identifier of a model year.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYear.cdm.json/ModelYear",
+						"Name": "ModelYearId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYear",
+					"Description": "The year of the vehicle model.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYear.cdm.json/ModelYear",
+						"Name": "ModelYear"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearName",
+					"Description": "The name of a model year.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYear.cdm.json/ModelYear",
+						"Name": "ModelYearName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ModelYearDescription",
+					"Description": "The description of a model year.",
+					"BaseAttributeReference": {
+						"Entity": "ModelYear.cdm.json/ModelYear",
+						"Name": "ModelYearDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ModelYear",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ModelYear",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ModelId\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelId\"},\"ModelYearId\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYearId\"},\"ModelYear\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYear\"},\"ModelYearName\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYearName\"},\"ModelYearDescription\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYearDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ModelYear\",\"path\":\"ModelYear.cdm.json/ModelYear\"},\"description\":\"The model year of the vehicle.\",\"primaryKey\":[\"ModelId\",\"ModelYearId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a model.\",\"isNullable\":false,\"name\":\"ModelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYearId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a model year.\",\"isNullable\":false,\"name\":\"ModelYearId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYear\"},\"dataType\":\"integer\",\"description\":\"The year of the vehicle model.\",\"isNullable\":true,\"name\":\"ModelYear\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYearName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a model year.\",\"isNullable\":true,\"name\":\"ModelYearName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ModelYear.cdm.json/ModelYear\",\"name\":\"ModelYearDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a model year.\",\"isNullable\":true,\"name\":\"ModelYearDescription\"}]}}}",
+			"Description": "The model year of the vehicle.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#000F5C\"}",
+			"PrimaryKeys": "ModelId,ModelYearId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

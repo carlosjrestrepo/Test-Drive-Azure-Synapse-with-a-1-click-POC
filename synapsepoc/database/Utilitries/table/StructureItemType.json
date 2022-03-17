@@ -1,0 +1,105 @@
+{
+	"name": "StructureItemType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureItemType",
+		"Description": "A specific item that may be listed or itemized upon a repair.\n\nEx:\n- Roof repair\n- Door repair\n- Carpet replacement",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureItemTypeId",
+					"Description": "The unique identifier of a structure item type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureItemType.cdm.json/StructureItemType",
+						"Name": "StructureItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureItemTypeName",
+					"Description": "The name of a structure item type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureItemType.cdm.json/StructureItemType",
+						"Name": "StructureItemTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureItemTypeDescription",
+					"Description": "The description of a structure item type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureItemType.cdm.json/StructureItemType",
+						"Name": "StructureItemTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureItemType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureItemType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureItemTypeId\":{\"entity\":\"StructureItemType.cdm.json/StructureItemType\",\"name\":\"StructureItemTypeId\"},\"StructureItemTypeName\":{\"entity\":\"StructureItemType.cdm.json/StructureItemType\",\"name\":\"StructureItemTypeName\"},\"StructureItemTypeDescription\":{\"entity\":\"StructureItemType.cdm.json/StructureItemType\",\"name\":\"StructureItemTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureItemType\",\"path\":\"StructureItemType.cdm.json/StructureItemType\"},\"description\":\"A specific item that may be listed or itemized upon a repair.\\n\\nEx:\\n- Roof repair\\n- Door repair\\n- Carpet replacement\",\"primaryKey\":[\"StructureItemTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureItemType.cdm.json/StructureItemType\",\"name\":\"StructureItemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure item type.\",\"isNullable\":false,\"name\":\"StructureItemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureItemType.cdm.json/StructureItemType\",\"name\":\"StructureItemTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a structure item type.\",\"isNullable\":true,\"name\":\"StructureItemTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureItemType.cdm.json/StructureItemType\",\"name\":\"StructureItemTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a structure item type.\",\"isNullable\":true,\"name\":\"StructureItemTypeDescription\"}]}}}",
+			"Description": "A specific item that may be listed or itemized upon a repair.\n\nEx:\n- Roof repair\n- Door repair\n- Carpet replacement",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "StructureItemTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

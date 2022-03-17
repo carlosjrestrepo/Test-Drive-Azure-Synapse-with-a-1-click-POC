@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cekowtrthx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-cekowtrthx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsurancePolicy",
+		"ToTableName": "RelatedInsurancePolicy",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsurancePolicyId",
+				"ToColumnName": "InsurancePolicyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"toEntity\":\"RelatedInsurancePolicy.cdm.json/RelatedInsurancePolicy\",\"joinPairs\":[{\"fromAttribute\":\"InsurancePolicyId\",\"toAttribute\":\"InsurancePolicyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

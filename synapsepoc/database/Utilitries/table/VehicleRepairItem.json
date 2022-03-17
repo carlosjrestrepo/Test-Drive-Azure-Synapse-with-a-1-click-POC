@@ -1,0 +1,209 @@
+{
+	"name": "VehicleRepairItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleRepairItem",
+		"Description": "A specific item repaired.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepairId",
+					"Description": "The unique identifier of a repair.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "RepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity associated with the repair.\n\nEx: (2) hub caps",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemIdentifier",
+					"Description": "The unique identifier (serial number, part number) of a repair item if it exists.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "ItemIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemEstimatedCostAmount",
+					"Description": "The estimated cost associated with the pair item",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "ItemEstimatedCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemActualCostAmount",
+					"Description": "The actual cost associated with the pair item",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "ItemActualCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LaborCostAmount",
+					"Description": "The labor cost associated with the repair item.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "LaborCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatement",
+					"Description": "The statement or note related to the associated  repair item.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "RepairStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleItemTypeId",
+					"Description": "The unique identifier of a Vehicle item type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairItem.cdm.json/VehicleRepairItem",
+						"Name": "VehicleItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairItem",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepairId\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"RepairId\"},\"ItemSku\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemSku\"},\"Quantity\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"Quantity\"},\"ItemIdentifier\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemIdentifier\"},\"ItemEstimatedCostAmount\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemEstimatedCostAmount\"},\"ItemActualCostAmount\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemActualCostAmount\"},\"LaborCostAmount\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"LaborCostAmount\"},\"RepairStatement\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"RepairStatement\"},\"VehicleItemTypeId\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"VehicleItemTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleRepairItem\",\"path\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\"},\"description\":\"A specific item repaired.\",\"primaryKey\":[\"RepairId\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"RepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair.\",\"isNullable\":false,\"name\":\"RepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity associated with the repair.\\n\\nEx: (2) hub caps\",\"isNullable\":true,\"scale\":2,\"name\":\"Quantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemIdentifier\"},\"dataType\":\"integer\",\"description\":\"The unique identifier (serial number, part number) of a repair item if it exists.\",\"isNullable\":true,\"name\":\"ItemIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemEstimatedCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated cost associated with the pair item\",\"isNullable\":true,\"scale\":2,\"name\":\"ItemEstimatedCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"ItemActualCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The actual cost associated with the pair item\",\"isNullable\":true,\"scale\":2,\"name\":\"ItemActualCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"LaborCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The labor cost associated with the repair item.\",\"isNullable\":true,\"scale\":2,\"name\":\"LaborCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"RepairStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement or note related to the associated  repair item.\",\"isNullable\":true,\"name\":\"RepairStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"name\":\"VehicleItemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Vehicle item type.\",\"isNullable\":true,\"name\":\"VehicleItemTypeId\"}]}}}",
+			"Description": "A specific item repaired.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "RepairId,ItemSku",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

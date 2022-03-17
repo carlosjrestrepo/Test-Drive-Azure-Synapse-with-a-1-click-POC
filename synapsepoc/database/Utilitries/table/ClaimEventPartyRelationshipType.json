@@ -1,0 +1,105 @@
+{
+	"name": "ClaimEventPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimEventPartyRelationshipType",
+		"Description": "The nature of the relationship between the claim event and party during the indicated period.\n\nEx:\n- Opened By Party\n- Authorized By Party\n- Performed By Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Claim Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType",
+						"Name": "ClaimEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventPartyRelationshipTypeName",
+					"Description": "The name of a Claim Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType",
+						"Name": "ClaimEventPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventPartyRelationshipTypeDescription",
+					"Description": "The description of a Claim Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType",
+						"Name": "ClaimEventPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimEventPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimEventPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimEventPartyRelationshipTypeId\":{\"entity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"name\":\"ClaimEventPartyRelationshipTypeId\"},\"ClaimEventPartyRelationshipTypeName\":{\"entity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"name\":\"ClaimEventPartyRelationshipTypeName\"},\"ClaimEventPartyRelationshipTypeDescription\":{\"entity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"name\":\"ClaimEventPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimEventPartyRelationshipType\",\"path\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\"},\"description\":\"The nature of the relationship between the claim event and party during the indicated period.\\n\\nEx:\\n- Opened By Party\\n- Authorized By Party\\n- Performed By Party\",\"primaryKey\":[\"ClaimEventPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"name\":\"ClaimEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Event Party Relationship Type.\",\"isNullable\":false,\"name\":\"ClaimEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"name\":\"ClaimEventPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Event Party Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimEventPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventPartyRelationshipType.cdm.json/ClaimEventPartyRelationshipType\",\"name\":\"ClaimEventPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Event Party Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimEventPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the claim event and party during the indicated period.\n\nEx:\n- Opened By Party\n- Authorized By Party\n- Performed By Party",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimEventPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

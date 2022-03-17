@@ -1,0 +1,105 @@
+{
+	"name": "EncounterChargeType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EncounterChargeType",
+		"Description": "The type of the associated Encounter Charge.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterChargeTypeId",
+					"Description": "The unique identifier of an Encounter Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterChargeType.cdm.json/EncounterChargeType",
+						"Name": "EncounterChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EncounterChargeTypeName",
+					"Description": "The name of an Encounter Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterChargeType.cdm.json/EncounterChargeType",
+						"Name": "EncounterChargeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EncounterChargeTypeDescription",
+					"Description": "The description of an Encounter Charge Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterChargeType.cdm.json/EncounterChargeType",
+						"Name": "EncounterChargeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterChargeType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterChargeType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterChargeTypeId\":{\"entity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"name\":\"EncounterChargeTypeId\"},\"EncounterChargeTypeName\":{\"entity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"name\":\"EncounterChargeTypeName\"},\"EncounterChargeTypeDescription\":{\"entity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"name\":\"EncounterChargeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterChargeType\",\"path\":\"EncounterChargeType.cdm.json/EncounterChargeType\"},\"description\":\"The type of the associated Encounter Charge.\",\"primaryKey\":[\"EncounterChargeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"name\":\"EncounterChargeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Charge Type.\",\"isNullable\":false,\"name\":\"EncounterChargeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"name\":\"EncounterChargeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Encounter Charge Type.\",\"isNullable\":true,\"name\":\"EncounterChargeTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"name\":\"EncounterChargeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Encounter Charge Type.\",\"isNullable\":true,\"name\":\"EncounterChargeTypeDescription\"}]}}}",
+			"Description": "The type of the associated Encounter Charge.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "EncounterChargeTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

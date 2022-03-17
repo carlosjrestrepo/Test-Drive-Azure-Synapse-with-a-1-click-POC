@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dbcpsshbay",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dbcpsshbay",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Catastrophe",
+		"ToTableName": "InsuranceClaim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CatastropheId",
+				"ToColumnName": "CatastropheId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Catastrophe.cdm.json/Catastrophe\",\"toEntity\":\"InsuranceClaim.cdm.json/InsuranceClaim\",\"joinPairs\":[{\"fromAttribute\":\"CatastropheId\",\"toAttribute\":\"CatastropheId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qxyzcoikiu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-qxyzcoikiu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerGroup",
+		"ToTableName": "CustomerGroupCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerGroupId",
+				"ToColumnName": "CustomerGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerGroup.cdm.json/CustomerGroup\",\"toEntity\":\"CustomerGroupCustomer.cdm.json/CustomerGroupCustomer\",\"joinPairs\":[{\"fromAttribute\":\"CustomerGroupId\",\"toAttribute\":\"CustomerGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

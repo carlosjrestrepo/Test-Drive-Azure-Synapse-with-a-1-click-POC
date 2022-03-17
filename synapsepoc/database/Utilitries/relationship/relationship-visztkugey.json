@@ -1,0 +1,26 @@
+{
+	"name": "relationship-visztkugey",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-visztkugey",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LearningEvent",
+		"ToTableName": "EmployeeLearningEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LearningEventId",
+				"ToColumnName": "LearningEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LearningEvent.cdm.json/LearningEvent\",\"toEntity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"joinPairs\":[{\"fromAttribute\":\"LearningEventId\",\"toAttribute\":\"LearningEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,273 @@
+{
+	"name": "MedicalBill",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "MedicalBill",
+		"Description": "An itemized statement of healthcare services and their costs provided by a Service Provider. Medical bills are submitted to the insurer or managed care plan by either the plan member or the provider for payment of the costs incurred.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalBillId",
+					"Description": "The unique identifier of a Medical Bill.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SendersMedicalBillIdentificationNumber",
+					"Description": "Unique number of identification assigned to the medical bill by the sender.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "SendersMedicalBillIdentificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OtherInsuranceIndicatorCode",
+					"Description": "A code which indicates the patient has other insurance which may or may not be reflected on this medical bill. \n\n1 = Yes, patient has other insurance.\n2 = Yes, patient has other insurance not reflected on this bill\n3 = No, patient does not have other insurance.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "OtherInsuranceIndicatorCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillNote",
+					"Description": "Notes, comments or additional information regarding the Medical Bill.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TotalClaimedAmount",
+					"Description": "The total amount sought or claimed by the injured party.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "TotalClaimedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillStartPeriodDate",
+					"Description": "The beginning service date of the period included on the medical bill.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillStartPeriodDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillEndPeriodDate",
+					"Description": "The ending service date of the period included on the medical bill.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillEndPeriodDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillReceiptDate",
+					"Description": "The date on which the medical bill is marked as received and processed.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillReceiptDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillSubmittedDate",
+					"Description": "The date that the medical bill was submitted for payment.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillSubmittedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "MedicalBillPaidDate",
+					"Description": "The date that the Medical Bill was paid.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "MedicalBillPaidDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ReleaseOfInformationStatusCode",
+					"Description": "The unique identifier of a Release of Information Status Code.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "ReleaseOfInformationStatusCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CleanMedicalBillIndicator",
+					"Description": "A medical bill that does not have to be investigated by insurance companies before they process it.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "CleanMedicalBillIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ElectronicBillIndicator",
+					"Description": "A digital representation of a medical bill generated by a provider or by the provider's billing agent for submission using telecommunications to a health insurance payer. Most medical bills are electronically submitted.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalBill.cdm.json/MedicalBill",
+						"Name": "ElectronicBillIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MedicalBill",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MedicalBill",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalBillId\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillId\"},\"SendersMedicalBillIdentificationNumber\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"SendersMedicalBillIdentificationNumber\"},\"OtherInsuranceIndicatorCode\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"OtherInsuranceIndicatorCode\"},\"MedicalBillNote\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillNote\"},\"TotalClaimedAmount\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"TotalClaimedAmount\"},\"MedicalBillStartPeriodDate\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillStartPeriodDate\"},\"MedicalBillEndPeriodDate\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillEndPeriodDate\"},\"MedicalBillReceiptDate\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillReceiptDate\"},\"MedicalBillSubmittedDate\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillSubmittedDate\"},\"MedicalBillPaidDate\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillPaidDate\"},\"ReleaseOfInformationStatusCode\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"ReleaseOfInformationStatusCode\"},\"CleanMedicalBillIndicator\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"CleanMedicalBillIndicator\"},\"ElectronicBillIndicator\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"ElectronicBillIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalBill\",\"path\":\"MedicalBill.cdm.json/MedicalBill\"},\"description\":\"An itemized statement of healthcare services and their costs provided by a Service Provider. Medical bills are submitted to the insurer or managed care plan by either the plan member or the provider for payment of the costs incurred.\",\"primaryKey\":[\"MedicalBillId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Bill.\",\"isNullable\":false,\"name\":\"MedicalBillId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"SendersMedicalBillIdentificationNumber\"},\"dataType\":\"integer\",\"description\":\"Unique number of identification assigned to the medical bill by the sender.\",\"isNullable\":true,\"name\":\"SendersMedicalBillIdentificationNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"OtherInsuranceIndicatorCode\"},\"dataType\":\"string\",\"dataTypeLength\":1,\"description\":\"A code which indicates the patient has other insurance which may or may not be reflected on this medical bill. \\n\\n1 = Yes, patient has other insurance.\\n2 = Yes, patient has other insurance not reflected on this bill\\n3 = No, patient does not have other insurance.\",\"isNullable\":true,\"name\":\"OtherInsuranceIndicatorCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Medical Bill.\",\"isNullable\":true,\"name\":\"MedicalBillNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"TotalClaimedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount sought or claimed by the injured party.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalClaimedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillStartPeriodDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The beginning service date of the period included on the medical bill.\",\"isNullable\":true,\"name\":\"MedicalBillStartPeriodDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillEndPeriodDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The ending service date of the period included on the medical bill.\",\"isNullable\":true,\"name\":\"MedicalBillEndPeriodDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillReceiptDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date on which the medical bill is marked as received and processed.\",\"isNullable\":true,\"name\":\"MedicalBillReceiptDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillSubmittedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the medical bill was submitted for payment.\",\"isNullable\":true,\"name\":\"MedicalBillSubmittedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"MedicalBillPaidDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the Medical Bill was paid.\",\"isNullable\":true,\"name\":\"MedicalBillPaidDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"ReleaseOfInformationStatusCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The unique identifier of a Release of Information Status Code.\",\"isNullable\":true,\"name\":\"ReleaseOfInformationStatusCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"CleanMedicalBillIndicator\"},\"dataType\":\"boolean\",\"description\":\"A medical bill that does not have to be investigated by insurance companies before they process it.\",\"isNullable\":true,\"name\":\"CleanMedicalBillIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalBill.cdm.json/MedicalBill\",\"name\":\"ElectronicBillIndicator\"},\"dataType\":\"boolean\",\"description\":\"A digital representation of a medical bill generated by a provider or by the provider's billing agent for submission using telecommunications to a health insurance payer. Most medical bills are electronically submitted.\",\"isNullable\":true,\"name\":\"ElectronicBillIndicator\"}]}}}",
+			"Description": "An itemized statement of healthcare services and their costs provided by a Service Provider. Medical bills are submitted to the insurer or managed care plan by either the plan member or the provider for payment of the costs incurred.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "MedicalBillId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

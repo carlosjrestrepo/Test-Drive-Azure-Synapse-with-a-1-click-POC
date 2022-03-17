@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ciblpmplby",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ciblpmplby",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Catastrophe",
+		"ToTableName": "Claim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CatastropheId",
+				"ToColumnName": "CatastropheId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Catastrophe.cdm.json/Catastrophe\",\"toEntity\":\"Claim.cdm.json/Claim\",\"joinPairs\":[{\"fromAttribute\":\"CatastropheId\",\"toAttribute\":\"CatastropheId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

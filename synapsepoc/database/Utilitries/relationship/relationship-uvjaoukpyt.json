@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uvjaoukpyt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-uvjaoukpyt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentAssetRelationshipType",
+		"ToTableName": "IncidentAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentAssetRelationshipTypeId",
+				"ToColumnName": "IncidentAssetRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"toEntity\":\"IncidentAsset.cdm.json/IncidentAsset\",\"joinPairs\":[{\"fromAttribute\":\"IncidentAssetRelationshipTypeId\",\"toAttribute\":\"IncidentAssetRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

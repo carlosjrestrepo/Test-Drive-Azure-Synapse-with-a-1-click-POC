@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iiafxyhsxd",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-iiafxyhsxd",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SalvageType",
+		"ToTableName": "ClaimLossItemSalvage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SalvageTypeId",
+				"ToColumnName": "SalvageTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SalvageType.cdm.json/SalvageType\",\"toEntity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"joinPairs\":[{\"fromAttribute\":\"SalvageTypeId\",\"toAttribute\":\"SalvageTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

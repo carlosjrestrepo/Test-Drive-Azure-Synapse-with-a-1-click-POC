@@ -1,0 +1,105 @@
+{
+	"name": "FocusGroup",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "FocusGroup",
+		"Description": "A special interest group that focuses upon a specific Product or Product usage.\n\nFocus Groups are most often manufacturer-sponsored groups designed to provide feedback directly to the manufacturer regarding their products prior to product mass marketing.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FocusGroupId",
+					"Description": "The unique identifier of the Focus Group.",
+					"BaseAttributeReference": {
+						"Entity": "FocusGroup.cdm.json/FocusGroup",
+						"Name": "FocusGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FocusGroupName",
+					"Description": "The name of the Focus Group.",
+					"BaseAttributeReference": {
+						"Entity": "FocusGroup.cdm.json/FocusGroup",
+						"Name": "FocusGroupName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FocusGroupDescription",
+					"Description": "The description of the Focus Group.",
+					"BaseAttributeReference": {
+						"Entity": "FocusGroup.cdm.json/FocusGroup",
+						"Name": "FocusGroupDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/FocusGroup",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/FocusGroup",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FocusGroupId\":{\"entity\":\"FocusGroup.cdm.json/FocusGroup\",\"name\":\"FocusGroupId\"},\"FocusGroupName\":{\"entity\":\"FocusGroup.cdm.json/FocusGroup\",\"name\":\"FocusGroupName\"},\"FocusGroupDescription\":{\"entity\":\"FocusGroup.cdm.json/FocusGroup\",\"name\":\"FocusGroupDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FocusGroup\",\"path\":\"FocusGroup.cdm.json/FocusGroup\"},\"description\":\"A special interest group that focuses upon a specific Product or Product usage.\\n\\nFocus Groups are most often manufacturer-sponsored groups designed to provide feedback directly to the manufacturer regarding their products prior to product mass marketing.\",\"primaryKey\":[\"FocusGroupId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FocusGroup.cdm.json/FocusGroup\",\"name\":\"FocusGroupId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Focus Group.\",\"isNullable\":false,\"name\":\"FocusGroupId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FocusGroup.cdm.json/FocusGroup\",\"name\":\"FocusGroupName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Focus Group.\",\"isNullable\":true,\"name\":\"FocusGroupName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FocusGroup.cdm.json/FocusGroup\",\"name\":\"FocusGroupDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Focus Group.\",\"isNullable\":true,\"name\":\"FocusGroupDescription\"}]}}}",
+			"Description": "A special interest group that focuses upon a specific Product or Product usage.\n\nFocus Groups are most often manufacturer-sponsored groups designed to provide feedback directly to the manufacturer regarding their products prior to product mass marketing.",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "FocusGroupId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nuvrqcwzgc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-nuvrqcwzgc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HealthcareServiceType",
+		"ToTableName": "HealthcareService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HealthcareServiceTypeId",
+				"ToColumnName": "ServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"toEntity\":\"HealthcareService.cdm.json/HealthcareService\",\"joinPairs\":[{\"fromAttribute\":\"HealthcareServiceTypeId\",\"toAttribute\":\"ServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

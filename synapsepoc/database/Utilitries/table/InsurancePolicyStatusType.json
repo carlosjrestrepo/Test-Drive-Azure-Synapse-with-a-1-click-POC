@@ -1,0 +1,105 @@
+{
+	"name": "InsurancePolicyStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsurancePolicyStatusType",
+		"Description": "The current status of the Insurance Policy.\n\nEx:\n- in force / active\n- denied renewal\n- cancelled by customer\n- cancelled by company\n- unpaid / overdue\n- void  = A policy contract that for some reason specified in the policy becomes free of all legal effect. One example under which a policy could be voided is when information a policyholder provided is proven untrue.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyStatusTypeId",
+					"Description": "The unique identifier of an Insurance Policy Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType",
+						"Name": "InsurancePolicyStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyStatusTypeName",
+					"Description": "The name of an Insurance Policy Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType",
+						"Name": "InsurancePolicyStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyStatusTypeDescription",
+					"Description": "The description of an Insurance Policy Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType",
+						"Name": "InsurancePolicyStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicyStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicyStatusType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyStatusTypeId\":{\"entity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"name\":\"InsurancePolicyStatusTypeId\"},\"InsurancePolicyStatusTypeName\":{\"entity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"name\":\"InsurancePolicyStatusTypeName\"},\"InsurancePolicyStatusTypeDescription\":{\"entity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"name\":\"InsurancePolicyStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicyStatusType\",\"path\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\"},\"description\":\"The current status of the Insurance Policy.\\n\\nEx:\\n- in force / active\\n- denied renewal\\n- cancelled by customer\\n- cancelled by company\\n- unpaid / overdue\\n- void  = A policy contract that for some reason specified in the policy becomes free of all legal effect. One example under which a policy could be voided is when information a policyholder provided is proven untrue.\",\"primaryKey\":[\"InsurancePolicyStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"name\":\"InsurancePolicyStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy Status Type.\",\"isNullable\":false,\"name\":\"InsurancePolicyStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"name\":\"InsurancePolicyStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Insurance Policy Status Type.\",\"isNullable\":true,\"name\":\"InsurancePolicyStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicyStatusType.cdm.json/InsurancePolicyStatusType\",\"name\":\"InsurancePolicyStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Insurance Policy Status Type.\",\"isNullable\":true,\"name\":\"InsurancePolicyStatusTypeDescription\"}]}}}",
+			"Description": "The current status of the Insurance Policy.\n\nEx:\n- in force / active\n- denied renewal\n- cancelled by customer\n- cancelled by company\n- unpaid / overdue\n- void  = A policy contract that for some reason specified in the policy becomes free of all legal effect. One example under which a policy could be voided is when information a policyholder provided is proven untrue.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "InsurancePolicyStatusTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

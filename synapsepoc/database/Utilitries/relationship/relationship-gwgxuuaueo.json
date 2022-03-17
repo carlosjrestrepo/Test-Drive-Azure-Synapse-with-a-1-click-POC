@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gwgxuuaueo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gwgxuuaueo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalBill",
+		"ToTableName": "ClaimInjuredPartyMedicalBill",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalBillId",
+				"ToColumnName": "MedicalBillId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalBill.cdm.json/MedicalBill\",\"toEntity\":\"ClaimInjuredPartyMedicalBill.cdm.json/ClaimInjuredPartyMedicalBill\",\"joinPairs\":[{\"fromAttribute\":\"MedicalBillId\",\"toAttribute\":\"MedicalBillId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

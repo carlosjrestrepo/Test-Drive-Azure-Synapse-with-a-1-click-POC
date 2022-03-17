@@ -1,0 +1,154 @@
+{
+	"name": "InjuredPartyStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InjuredPartyStatus",
+		"Description": "The status of the injured party as of the associated period or date.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatus.cdm.json/InjuredPartyStatus",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatus.cdm.json/InjuredPartyStatus",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyStatusTypeId",
+					"Description": "The unique identifier of an injured party status type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatus.cdm.json/InjuredPartyStatus",
+						"Name": "InjuredPartyStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated injured party status is defined.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatus.cdm.json/InjuredPartyStatus",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated injured party status is defined.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatus.cdm.json/InjuredPartyStatus",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyStatusStatement",
+					"Description": "The statement regarding the injured party status.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyStatus.cdm.json/InjuredPartyStatus",
+						"Name": "InjuredPartyStatusStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyStatus",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"ClaimId\"},\"InjuredPartyId\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"InjuredPartyId\"},\"InjuredPartyStatusTypeId\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"InjuredPartyStatusTypeId\"},\"PeriodStartDate\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"PeriodEndDate\"},\"InjuredPartyStatusStatement\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"InjuredPartyStatusStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InjuredPartyStatus\",\"path\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\"},\"description\":\"The status of the injured party as of the associated period or date.\",\"primaryKey\":[\"ClaimId\",\"InjuredPartyId\",\"InjuredPartyStatusTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"InjuredPartyStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injured party status type.\",\"isNullable\":false,\"name\":\"InjuredPartyStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated injured party status is defined.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated injured party status is defined.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyStatus.cdm.json/InjuredPartyStatus\",\"name\":\"InjuredPartyStatusStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement regarding the injured party status.\",\"isNullable\":true,\"name\":\"InjuredPartyStatusStatement\"}]}}}",
+			"Description": "The status of the injured party as of the associated period or date.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ClaimId,InjuredPartyId,InjuredPartyStatusTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

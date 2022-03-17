@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rlpacxlegc",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-rlpacxlegc",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LossType",
+		"ToTableName": "LossItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LossTypeId",
+				"ToColumnName": "LossTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LossType.cdm.json/LossType\",\"toEntity\":\"LossItem.cdm.json/LossItem\",\"joinPairs\":[{\"fromAttribute\":\"LossTypeId\",\"toAttribute\":\"LossTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

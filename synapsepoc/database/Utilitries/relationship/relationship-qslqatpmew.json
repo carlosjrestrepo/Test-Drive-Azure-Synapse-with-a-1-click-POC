@@ -1,0 +1,30 @@
+{
+	"name": "relationship-qslqatpmew",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-qslqatpmew",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerName",
+		"ToTableName": "CustomerNamePreference",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerId",
+				"ToColumnName": "CustomerId"
+			},
+			{
+				"FromColumnName": "CustomerNameId",
+				"ToColumnName": "CustomerNameId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerName.cdm.json/CustomerName\",\"toEntity\":\"CustomerNamePreference.cdm.json/CustomerNamePreference\",\"joinPairs\":[{\"fromAttribute\":\"CustomerId\",\"toAttribute\":\"CustomerId\"},{\"fromAttribute\":\"CustomerNameId\",\"toAttribute\":\"CustomerNameId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

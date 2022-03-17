@@ -1,0 +1,34 @@
+{
+	"name": "relationship-qhgounimuw",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-qhgounimuw",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimEvent",
+		"ToTableName": "ClaimEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimEventTimestamp",
+				"ToColumnName": "ClaimEventTimestamp"
+			},
+			{
+				"FromColumnName": "ClaimEventTypeId",
+				"ToColumnName": "ClaimEventTypeId"
+			},
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimEvent.cdm.json/ClaimEvent\",\"toEntity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ClaimEventTimestamp\",\"toAttribute\":\"ClaimEventTimestamp\"},{\"fromAttribute\":\"ClaimEventTypeId\",\"toAttribute\":\"ClaimEventTypeId\"},{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

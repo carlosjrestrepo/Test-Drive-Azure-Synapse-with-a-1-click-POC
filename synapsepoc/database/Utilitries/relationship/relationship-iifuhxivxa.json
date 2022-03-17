@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iifuhxivxa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-iifuhxivxa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemType",
+		"ToTableName": "SafetyChecklist",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemTypeId",
+				"ToColumnName": "ItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemType.cdm.json/ItemType\",\"toEntity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"joinPairs\":[{\"fromAttribute\":\"ItemTypeId\",\"toAttribute\":\"ItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

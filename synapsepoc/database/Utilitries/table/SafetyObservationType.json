@@ -1,0 +1,121 @@
+{
+	"name": "SafetyObservationType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SafetyObservationType",
+		"Description": "The nature of the observation.\n\nEx:\n- Not wearing seatbelt while driving\n- Not wearing eyewear when required\n- Not wearing proper safety equipment\n- Improper lane change\n- Unsafe debris on work site",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyObservationTypeId",
+					"Description": "The unique identifier of a Safety Observation Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationType.cdm.json/SafetyObservationType",
+						"Name": "SafetyObservationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationTypeName",
+					"Description": "The name of a Safety Observation Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationType.cdm.json/SafetyObservationType",
+						"Name": "SafetyObservationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationTypeDescription",
+					"Description": "The description of a Safety Observation Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationType.cdm.json/SafetyObservationType",
+						"Name": "SafetyObservationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationCategoryId",
+					"Description": "The unique identifier of an Incident Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationType.cdm.json/SafetyObservationType",
+						"Name": "SafetyObservationCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyObservationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyObservationType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyObservationTypeId\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationTypeId\"},\"SafetyObservationTypeName\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationTypeName\"},\"SafetyObservationTypeDescription\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationTypeDescription\"},\"SafetyObservationCategoryId\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SafetyObservationType\",\"path\":\"SafetyObservationType.cdm.json/SafetyObservationType\"},\"description\":\"The nature of the observation.\\n\\nEx:\\n- Not wearing seatbelt while driving\\n- Not wearing eyewear when required\\n- Not wearing proper safety equipment\\n- Improper lane change\\n- Unsafe debris on work site\",\"primaryKey\":[\"SafetyObservationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Observation Type.\",\"isNullable\":false,\"name\":\"SafetyObservationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Safety Observation Type.\",\"isNullable\":true,\"name\":\"SafetyObservationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Safety Observation Type.\",\"isNullable\":true,\"name\":\"SafetyObservationTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"name\":\"SafetyObservationCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Relationship Type.\",\"isNullable\":false,\"name\":\"SafetyObservationCategoryId\"}]}}}",
+			"Description": "The nature of the observation.\n\nEx:\n- Not wearing seatbelt while driving\n- Not wearing eyewear when required\n- Not wearing proper safety equipment\n- Improper lane change\n- Unsafe debris on work site",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyObservationTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

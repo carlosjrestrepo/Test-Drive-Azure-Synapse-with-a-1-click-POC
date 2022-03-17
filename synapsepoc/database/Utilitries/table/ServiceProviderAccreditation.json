@@ -1,0 +1,155 @@
+{
+	"name": "ServiceProviderAccreditation",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ServiceProviderAccreditation",
+		"Description": "The accreditations received by the Service Provider.\n\nAccreditation is an evaluative process in which a healthcare organization undergoes an examination of its policies, procedures and performance by an external organization (\"accrediting body\") to ensure that it is meeting predetermined criteria. It usually involves both on- and off-site surveys.\n\nEx:\n\nThe Accreditation Association for Ambulatory Health Care (AAAHC) specializes in accreditation of ambulatory care facilities.\n\nThe American Association for Accreditation of Ambulatory Surgery Facilities (AAAASF) \n\nThe Joint Commission on Accreditation of Healthcare Organizations (JCAHO)\n \nThe State Licensure for North Carolina Ambulatory Surgical Facilities",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceProviderId",
+					"Description": "The unique identifier of a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation",
+						"Name": "ServiceProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AccreditationTypeId",
+					"Description": "The unique identifier of an Accreditation.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation",
+						"Name": "AccreditationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AccreditationDate",
+					"Description": "The date of accreditation.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation",
+						"Name": "AccreditationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AccreditationRenewalDate",
+					"Description": "The date that accreditation renewal is required.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation",
+						"Name": "AccreditationRenewalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AccreditationStartDate",
+					"Description": "The date that the accreditation starts.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation",
+						"Name": "AccreditationStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AccreditationEndDate",
+					"Description": "The date that the accreditation ends.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation",
+						"Name": "AccreditationEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ServiceProviderAccreditation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ServiceProviderAccreditation",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceProviderId\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"ServiceProviderId\"},\"AccreditationTypeId\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationTypeId\"},\"AccreditationDate\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationDate\"},\"AccreditationRenewalDate\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationRenewalDate\"},\"AccreditationStartDate\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationStartDate\"},\"AccreditationEndDate\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationEndDate\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceProviderAccreditation\",\"path\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\"},\"description\":\"The accreditations received by the Service Provider.\\n\\nAccreditation is an evaluative process in which a healthcare organization undergoes an examination of its policies, procedures and performance by an external organization (\\\"accrediting body\\\") to ensure that it is meeting predetermined criteria. It usually involves both on- and off-site surveys.\\n\\nEx:\\n\\nThe Accreditation Association for Ambulatory Health Care (AAAHC) specializes in accreditation of ambulatory care facilities.\\n\\nThe American Association for Accreditation of Ambulatory Surgery Facilities (AAAASF) \\n\\nThe Joint Commission on Accreditation of Healthcare Organizations (JCAHO)\\n \\nThe State Licensure for North Carolina Ambulatory Surgical Facilities\",\"primaryKey\":[\"ServiceProviderId\",\"AccreditationTypeId\",\"AccreditationDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"ServiceProviderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Provider.\",\"isNullable\":false,\"name\":\"ServiceProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Accreditation.\",\"isNullable\":false,\"name\":\"AccreditationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of accreditation.\",\"isNullable\":false,\"name\":\"AccreditationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationRenewalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that accreditation renewal is required.\",\"isNullable\":true,\"name\":\"AccreditationRenewalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the accreditation starts.\",\"isNullable\":true,\"name\":\"AccreditationStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProviderAccreditation.cdm.json/ServiceProviderAccreditation\",\"name\":\"AccreditationEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the accreditation ends.\",\"isNullable\":true,\"name\":\"AccreditationEndDate\"}]}}}",
+			"Description": "The accreditations received by the Service Provider.\n\nAccreditation is an evaluative process in which a healthcare organization undergoes an examination of its policies, procedures and performance by an external organization (\"accrediting body\") to ensure that it is meeting predetermined criteria. It usually involves both on- and off-site surveys.\n\nEx:\n\nThe Accreditation Association for Ambulatory Health Care (AAAHC) specializes in accreditation of ambulatory care facilities.\n\nThe American Association for Accreditation of Ambulatory Surgery Facilities (AAAASF) \n\nThe Joint Commission on Accreditation of Healthcare Organizations (JCAHO)\n \nThe State Licensure for North Carolina Ambulatory Surgical Facilities",
+			"DisplayFolderInfo": "{\"name\":\"Service Provider\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ServiceProviderId,AccreditationTypeId,AccreditationDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-evgmdulmcg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-evgmdulmcg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EducationalInstitution",
+		"ToTableName": "CustomerEducation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EducationalInstitutionId",
+				"ToColumnName": "EducationalInstitutionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EducationalInstitution.cdm.json/EducationalInstitution\",\"toEntity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"joinPairs\":[{\"fromAttribute\":\"EducationalInstitutionId\",\"toAttribute\":\"EducationalInstitutionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

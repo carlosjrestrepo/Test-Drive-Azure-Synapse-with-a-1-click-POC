@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jjlyckmsvz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-jjlyckmsvz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SicDivision",
+		"ToTableName": "SicMajorGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SicDivisionCode",
+				"ToColumnName": "SicDivisionCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SicDivision.cdm.json/SicDivision\",\"toEntity\":\"SicMajorGroup.cdm.json/SicMajorGroup\",\"joinPairs\":[{\"fromAttribute\":\"SicDivisionCode\",\"toAttribute\":\"SicDivisionCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oitsfimkzt",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-oitsfimkzt",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Vehicle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "OwningPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Vehicle.cdm.json/Vehicle\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"OwningPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

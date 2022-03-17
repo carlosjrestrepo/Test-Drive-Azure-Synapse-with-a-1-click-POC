@@ -1,0 +1,248 @@
+{
+	"name": "ClaimVehicle",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimVehicle",
+		"Description": "The vehicle(s) associated with the claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimInvolvementStatement",
+					"Description": "The statement regarding the vehicle involvement with the claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "ClaimInvolvementStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PoliceAccidentDiagram",
+					"Description": "The police diagram regarding the accident.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "PoliceAccidentDiagram"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "StateMotorVehicleReportNumber",
+					"Description": "The identifier of the state police report associated with the claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "StateMotorVehicleReportNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PoliceReportNumber",
+					"Description": "The identifier of the local police report associated with the claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "PoliceReportNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimResolutionTypeId",
+					"Description": "The unique identifier of a Claim Resolution Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "ClaimResolutionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRecoveredIndicator",
+					"Description": "Indicates that the vehicle was recovered.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "VehicleRecoveredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VehicleStolenIndicator",
+					"Description": "Indicates that the vehicle was stolen.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "VehicleStolenIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VehicleInvolvedInAccidentIndicator",
+					"Description": "Indicates that the vehicle was involved in an accident with another vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "VehicleInvolvedInAccidentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BodyDamageToVehicleIndicator",
+					"Description": "Indicates that there was body damage to the vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "BodyDamageToVehicleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PoliceContactedIndicator",
+					"Description": "Indicates that the police were contacted regarding the vehicle being in an accident.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicle.cdm.json/ClaimVehicle",
+						"Name": "PoliceContactedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicle",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicle",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"ClaimId\"},\"VehicleId\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleId\"},\"ClaimInvolvementStatement\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"ClaimInvolvementStatement\"},\"PoliceAccidentDiagram\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"PoliceAccidentDiagram\"},\"StateMotorVehicleReportNumber\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"StateMotorVehicleReportNumber\"},\"PoliceReportNumber\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"PoliceReportNumber\"},\"ClaimResolutionTypeId\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"ClaimResolutionTypeId\"},\"VehicleRecoveredIndicator\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleRecoveredIndicator\"},\"VehicleStolenIndicator\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleStolenIndicator\"},\"VehicleInvolvedInAccidentIndicator\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleInvolvedInAccidentIndicator\"},\"BodyDamageToVehicleIndicator\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"BodyDamageToVehicleIndicator\"},\"PoliceContactedIndicator\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"PoliceContactedIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimVehicle\",\"path\":\"ClaimVehicle.cdm.json/ClaimVehicle\"},\"description\":\"The vehicle(s) associated with the claim.\",\"primaryKey\":[\"ClaimId\",\"VehicleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":false,\"name\":\"VehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"ClaimInvolvementStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement regarding the vehicle involvement with the claim.\",\"isNullable\":true,\"name\":\"ClaimInvolvementStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"PoliceAccidentDiagram\"},\"dataType\":\"binary\",\"description\":\"The police diagram regarding the accident.\",\"isNullable\":true,\"name\":\"PoliceAccidentDiagram\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"StateMotorVehicleReportNumber\"},\"dataType\":\"integer\",\"description\":\"The identifier of the state police report associated with the claim.\",\"isNullable\":true,\"name\":\"StateMotorVehicleReportNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"PoliceReportNumber\"},\"dataType\":\"integer\",\"description\":\"The identifier of the local police report associated with the claim.\",\"isNullable\":true,\"name\":\"PoliceReportNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"ClaimResolutionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Resolution Type.\",\"isNullable\":true,\"name\":\"ClaimResolutionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleRecoveredIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the vehicle was recovered.\",\"isNullable\":true,\"name\":\"VehicleRecoveredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleStolenIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the vehicle was stolen.\",\"isNullable\":true,\"name\":\"VehicleStolenIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"VehicleInvolvedInAccidentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the vehicle was involved in an accident with another vehicle.\",\"isNullable\":true,\"name\":\"VehicleInvolvedInAccidentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"BodyDamageToVehicleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that there was body damage to the vehicle.\",\"isNullable\":true,\"name\":\"BodyDamageToVehicleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicle.cdm.json/ClaimVehicle\",\"name\":\"PoliceContactedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the police were contacted regarding the vehicle being in an accident.\",\"isNullable\":true,\"name\":\"PoliceContactedIndicator\"}]}}}",
+			"Description": "The vehicle(s) associated with the claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,VehicleId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

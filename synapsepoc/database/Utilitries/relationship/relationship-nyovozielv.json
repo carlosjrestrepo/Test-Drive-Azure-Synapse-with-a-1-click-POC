@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nyovozielv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-nyovozielv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyObservationType",
+		"ToTableName": "SafetyObservation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyObservationTypeId",
+				"ToColumnName": "SafetyObservationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"toEntity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"joinPairs\":[{\"fromAttribute\":\"SafetyObservationTypeId\",\"toAttribute\":\"SafetyObservationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,120 @@
+{
+	"name": "VehicleRepairRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleRepairRelatedParty",
+		"Description": "The nature of the relationship between the repair and related party.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepairId",
+					"Description": "The unique identifier of a repair.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty",
+						"Name": "RepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRepairPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty",
+						"Name": "VehicleRepairPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the repair-party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty",
+						"Name": "RepairRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepairId\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"RepairId\"},\"PartyId\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"PartyId\"},\"VehicleRepairPartyRelationshipTypeId\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"VehicleRepairPartyRelationshipTypeId\"},\"RepairRelatedPartyNote\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"RepairRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleRepairRelatedParty\",\"path\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\"},\"description\":\"The nature of the relationship between the repair and related party.\",\"primaryKey\":[\"RepairId\",\"PartyId\",\"VehicleRepairPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"RepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair.\",\"isNullable\":false,\"name\":\"RepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"VehicleRepairPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Repair Party Relationship Type.\",\"isNullable\":false,\"name\":\"VehicleRepairPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"name\":\"RepairRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the repair-party relationship.\",\"isNullable\":true,\"name\":\"RepairRelatedPartyNote\"}]}}}",
+			"Description": "The nature of the relationship between the repair and related party.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "RepairId,PartyId,VehicleRepairPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

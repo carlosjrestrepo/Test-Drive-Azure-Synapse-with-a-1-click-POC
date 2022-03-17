@@ -1,0 +1,105 @@
+{
+	"name": "ClaimRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimRelationshipType",
+		"Description": "Describes the relationship between two or more claims.\n\nEx:\n- Corrected claim\n- Resubmitted claim",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimRelationshipTypeId",
+					"Description": "The unique identifier of a Claim Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRelationshipType.cdm.json/ClaimRelationshipType",
+						"Name": "ClaimRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRelationshipTypeName",
+					"Description": "The name of a Claim Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRelationshipType.cdm.json/ClaimRelationshipType",
+						"Name": "ClaimRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRelationshipTypeDescription",
+					"Description": "The description of a Claim Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRelationshipType.cdm.json/ClaimRelationshipType",
+						"Name": "ClaimRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimRelationshipTypeId\":{\"entity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"name\":\"ClaimRelationshipTypeId\"},\"ClaimRelationshipTypeName\":{\"entity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"name\":\"ClaimRelationshipTypeName\"},\"ClaimRelationshipTypeDescription\":{\"entity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"name\":\"ClaimRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimRelationshipType\",\"path\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\"},\"description\":\"Describes the relationship between two or more claims.\\n\\nEx:\\n- Corrected claim\\n- Resubmitted claim\",\"primaryKey\":[\"ClaimRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"name\":\"ClaimRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Relationship Type.\",\"isNullable\":false,\"name\":\"ClaimRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"name\":\"ClaimRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRelationshipType.cdm.json/ClaimRelationshipType\",\"name\":\"ClaimRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Relationship Type.\",\"isNullable\":true,\"name\":\"ClaimRelationshipTypeDescription\"}]}}}",
+			"Description": "Describes the relationship between two or more claims.\n\nEx:\n- Corrected claim\n- Resubmitted claim",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "MarketingProgramType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "MarketingProgramType",
+		"Description": "A categorization of Marketing Programs based upon common attributes, characteristics, strategies or functions performed.\n\nEx:\n- Advertising\n- Incentive\n- Education\n- Promotion\n- Sales\n- Support\n- Trade Promotion\n- Cross Promotion\n- Affinity Program",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MarketingProgramTypeId",
+					"Description": "The unique identifier of a Marketing Program Type.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingProgramType.cdm.json/MarketingProgramType",
+						"Name": "MarketingProgramTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketingProgramTypeName",
+					"Description": "The name of the Marketing Program Type.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingProgramType.cdm.json/MarketingProgramType",
+						"Name": "MarketingProgramTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MarketingProgramTypeDescription",
+					"Description": "The description of the Marketing Program Type.",
+					"BaseAttributeReference": {
+						"Entity": "MarketingProgramType.cdm.json/MarketingProgramType",
+						"Name": "MarketingProgramTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MarketingProgramType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/MarketingProgramType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MarketingProgramTypeId\":{\"entity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"name\":\"MarketingProgramTypeId\"},\"MarketingProgramTypeName\":{\"entity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"name\":\"MarketingProgramTypeName\"},\"MarketingProgramTypeDescription\":{\"entity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"name\":\"MarketingProgramTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MarketingProgramType\",\"path\":\"MarketingProgramType.cdm.json/MarketingProgramType\"},\"description\":\"A categorization of Marketing Programs based upon common attributes, characteristics, strategies or functions performed.\\n\\nEx:\\n- Advertising\\n- Incentive\\n- Education\\n- Promotion\\n- Sales\\n- Support\\n- Trade Promotion\\n- Cross Promotion\\n- Affinity Program\",\"primaryKey\":[\"MarketingProgramTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"name\":\"MarketingProgramTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Marketing Program Type.\",\"isNullable\":false,\"name\":\"MarketingProgramTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"name\":\"MarketingProgramTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Marketing Program Type.\",\"isNullable\":true,\"name\":\"MarketingProgramTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MarketingProgramType.cdm.json/MarketingProgramType\",\"name\":\"MarketingProgramTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Marketing Program Type.\",\"isNullable\":true,\"name\":\"MarketingProgramTypeDescription\"}]}}}",
+			"Description": "A categorization of Marketing Programs based upon common attributes, characteristics, strategies or functions performed.\n\nEx:\n- Advertising\n- Incentive\n- Education\n- Promotion\n- Sales\n- Support\n- Trade Promotion\n- Cross Promotion\n- Affinity Program",
+			"DisplayFolderInfo": "{\"name\":\"Marketing & Advertising\",\"colorCode\":\"#0C614C\"}",
+			"PrimaryKeys": "MarketingProgramTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,192 @@
+{
+	"name": "StructureRepairItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureRepairItem",
+		"Description": "A specific item repaired.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepairId",
+					"Description": "The unique identifier of a repair.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "RepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureItemTypeId",
+					"Description": "The unique identifier of an item type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "StructureItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity associated with the repair.\n\nEx: (2) hub caps",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemIdentifier",
+					"Description": "The unique identifier (serial number, part number) of a repair item if it exists.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "ItemIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemEstimatedCostAmount",
+					"Description": "The estimated cost associated with the pair item",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "ItemEstimatedCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ItemActualCostAmount",
+					"Description": "The actual cost associated with the pair item",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "ItemActualCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LaborCostAmount",
+					"Description": "The labor cost associated with the repair item.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "LaborCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatement",
+					"Description": "The statement or note related to the associated  repair item.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairItem.cdm.json/StructureRepairItem",
+						"Name": "RepairStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepairItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepairItem",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepairId\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"RepairId\"},\"StructureItemTypeId\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"StructureItemTypeId\"},\"Quantity\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"Quantity\"},\"ItemIdentifier\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"ItemIdentifier\"},\"ItemEstimatedCostAmount\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"ItemEstimatedCostAmount\"},\"ItemActualCostAmount\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"ItemActualCostAmount\"},\"LaborCostAmount\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"LaborCostAmount\"},\"RepairStatement\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"RepairStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureRepairItem\",\"path\":\"StructureRepairItem.cdm.json/StructureRepairItem\"},\"description\":\"A specific item repaired.\",\"primaryKey\":[\"RepairId\",\"StructureItemTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"RepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair.\",\"isNullable\":false,\"name\":\"RepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"StructureItemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an item type.\",\"isNullable\":false,\"name\":\"StructureItemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity associated with the repair.\\n\\nEx: (2) hub caps\",\"isNullable\":true,\"scale\":2,\"name\":\"Quantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"ItemIdentifier\"},\"dataType\":\"integer\",\"description\":\"The unique identifier (serial number, part number) of a repair item if it exists.\",\"isNullable\":true,\"name\":\"ItemIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"ItemEstimatedCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated cost associated with the pair item\",\"isNullable\":true,\"scale\":2,\"name\":\"ItemEstimatedCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"ItemActualCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The actual cost associated with the pair item\",\"isNullable\":true,\"scale\":2,\"name\":\"ItemActualCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"LaborCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The labor cost associated with the repair item.\",\"isNullable\":true,\"scale\":2,\"name\":\"LaborCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairItem.cdm.json/StructureRepairItem\",\"name\":\"RepairStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement or note related to the associated  repair item.\",\"isNullable\":true,\"name\":\"RepairStatement\"}]}}}",
+			"Description": "A specific item repaired.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "RepairId,StructureItemTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

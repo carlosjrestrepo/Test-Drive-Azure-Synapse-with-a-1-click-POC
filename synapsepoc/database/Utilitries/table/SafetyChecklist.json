@@ -1,0 +1,251 @@
+{
+	"name": "SafetyChecklist",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SafetyChecklist",
+		"Description": "A safety checklist contains a list of items that should be checked / validated. Also known as a job briefing, tailboard or tailgate.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyChecklistId",
+					"Description": "The unique identifier of a Safety Checklist.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "SafetyChecklistId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistDescription",
+					"Description": "The description of a Safety Checklist.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "SafetyChecklistDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "TemplateSafetyChecklistIndicator",
+					"Description": "Indicates whether the safety checklist is a template.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "TemplateSafetyChecklistIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistCompletedTimestamp",
+					"Description": "The timestamp the safety checklist was completed.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "SafetyChecklistCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistPerformedTimestamp",
+					"Description": "The timestamp the safety checklist was performed.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "SafetyChecklistPerformedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistSubmittedByEmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "SafetyChecklistSubmittedByEmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistNote",
+					"Description": "A note, comment or additional information regarding the safety checklist.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "SafetyChecklistNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WorkOrderTypeId",
+					"Description": "The unique identifier of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "WorkOrderTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EquipmentTypeId",
+					"Description": "The unique identifier of an equipment type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "EquipmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemTypeId",
+					"Description": "The unique identifier of an Item Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "ItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklist.cdm.json/SafetyChecklist",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyChecklist",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyChecklist",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyChecklistId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistId\"},\"SafetyChecklistDescription\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistDescription\"},\"TemplateSafetyChecklistIndicator\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"TemplateSafetyChecklistIndicator\"},\"SafetyChecklistCompletedTimestamp\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistCompletedTimestamp\"},\"SafetyChecklistPerformedTimestamp\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistPerformedTimestamp\"},\"SafetyChecklistSubmittedByEmployeeId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistSubmittedByEmployeeId\"},\"SafetyChecklistNote\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistNote\"},\"WorkOrderId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"WorkOrderId\"},\"WorkOrderTypeId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"WorkOrderTypeId\"},\"EquipmentTypeId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"EquipmentTypeId\"},\"ItemTypeId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"ItemTypeId\"},\"LocationId\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"LocationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SafetyChecklist\",\"path\":\"SafetyChecklist.cdm.json/SafetyChecklist\"},\"description\":\"A safety checklist contains a list of items that should be checked / validated. Also known as a job briefing, tailboard or tailgate.\",\"primaryKey\":[\"SafetyChecklistId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist.\",\"isNullable\":false,\"name\":\"SafetyChecklistId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Safety Checklist.\",\"isNullable\":true,\"name\":\"SafetyChecklistDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"TemplateSafetyChecklistIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the safety checklist is a template.\",\"isNullable\":true,\"name\":\"TemplateSafetyChecklistIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp the safety checklist was completed.\",\"isNullable\":true,\"name\":\"SafetyChecklistCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistPerformedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp the safety checklist was performed.\",\"isNullable\":true,\"name\":\"SafetyChecklistPerformedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistSubmittedByEmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":true,\"name\":\"SafetyChecklistSubmittedByEmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"SafetyChecklistNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the safety checklist.\",\"isNullable\":true,\"name\":\"SafetyChecklistNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":true,\"name\":\"WorkOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"WorkOrderTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order Type.\",\"isNullable\":true,\"name\":\"WorkOrderTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"EquipmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an equipment type.\",\"isNullable\":true,\"name\":\"EquipmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"ItemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Item Type.\",\"isNullable\":true,\"name\":\"ItemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"}]}}}",
+			"Description": "A safety checklist contains a list of items that should be checked / validated. Also known as a job briefing, tailboard or tailgate.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyChecklistId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

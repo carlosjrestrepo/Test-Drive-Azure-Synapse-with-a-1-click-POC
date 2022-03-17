@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gzwisryllg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gzwisryllg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "JobTitle",
+		"ToTableName": "CustomerEmployment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "JobTitleId",
+				"ToColumnName": "JobTitleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"JobTitle.cdm.json/JobTitle\",\"toEntity\":\"CustomerEmployment.cdm.json/CustomerEmployment\",\"joinPairs\":[{\"fromAttribute\":\"JobTitleId\",\"toAttribute\":\"JobTitleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

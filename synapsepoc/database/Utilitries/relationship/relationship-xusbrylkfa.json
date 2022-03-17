@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xusbrylkfa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-xusbrylkfa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Encounter",
+		"ToTableName": "EncounterIcdCode",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterId",
+				"ToColumnName": "EncounterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Encounter.cdm.json/Encounter\",\"toEntity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"joinPairs\":[{\"fromAttribute\":\"EncounterId\",\"toAttribute\":\"EncounterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

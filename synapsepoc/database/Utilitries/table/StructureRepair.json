@@ -1,0 +1,222 @@
+{
+	"name": "StructureRepair",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureRepair",
+		"Description": "A repair associated with a claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepairId",
+					"Description": "The unique identifier of a repair.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "RepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairStartedDate",
+					"Description": "The date that the repair was started.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "RepairStartedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RepairCompletedDate",
+					"Description": "The date that the repair was completed.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "RepairCompletedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EstimatedRepairAmount",
+					"Description": "The repair estimated amount.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "EstimatedRepairAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ActualRepairAmount",
+					"Description": "The repair actual amount.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "ActualRepairAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatement",
+					"Description": "A statement regarding the repair.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "RepairStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimStructureLossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "ClaimStructureLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureRepairTypeId",
+					"Description": "The unique identifier of a repair type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepair.cdm.json/StructureRepair",
+						"Name": "StructureRepairTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepair",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepair",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepairId\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairId\"},\"RepairStartedDate\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairStartedDate\"},\"RepairCompletedDate\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairCompletedDate\"},\"EstimatedRepairAmount\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"EstimatedRepairAmount\"},\"ActualRepairAmount\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"ActualRepairAmount\"},\"RepairStatement\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairStatement\"},\"ClaimStructureLossTypeId\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"ClaimStructureLossTypeId\"},\"ClaimId\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"ClaimId\"},\"StructureId\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"StructureId\"},\"StructureRepairTypeId\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"StructureRepairTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureRepair\",\"path\":\"StructureRepair.cdm.json/StructureRepair\"},\"description\":\"A repair associated with a claim.\",\"primaryKey\":[\"RepairId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair.\",\"isNullable\":false,\"name\":\"RepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairStartedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the repair was started.\",\"isNullable\":true,\"name\":\"RepairStartedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairCompletedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the repair was completed.\",\"isNullable\":true,\"name\":\"RepairCompletedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"EstimatedRepairAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The repair estimated amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"EstimatedRepairAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"ActualRepairAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The repair actual amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"ActualRepairAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"RepairStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the repair.\",\"isNullable\":true,\"name\":\"RepairStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"ClaimStructureLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":true,\"name\":\"ClaimStructureLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":true,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepair.cdm.json/StructureRepair\",\"name\":\"StructureRepairTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair type.\",\"isNullable\":true,\"name\":\"StructureRepairTypeId\"}]}}}",
+			"Description": "A repair associated with a claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "RepairId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

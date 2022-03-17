@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rorgsafndp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-rorgsafndp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "InjuredPartyInjury",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "InjuryIncurredLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"InjuryIncurredLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

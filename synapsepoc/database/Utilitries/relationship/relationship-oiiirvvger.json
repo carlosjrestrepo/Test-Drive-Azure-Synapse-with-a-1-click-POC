@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oiiirvvger",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-oiiirvvger",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InjuredPartyVehicleRelationshipType",
+		"ToTableName": "InsuredPartyVehicleRelationship",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InjuredPartyVehicleRelationshipTypeId",
+				"ToColumnName": "InjuredPartyVehicleRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"toEntity\":\"InsuredPartyVehicleRelationship.cdm.json/InsuredPartyVehicleRelationship\",\"joinPairs\":[{\"fromAttribute\":\"InjuredPartyVehicleRelationshipTypeId\",\"toAttribute\":\"InjuredPartyVehicleRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

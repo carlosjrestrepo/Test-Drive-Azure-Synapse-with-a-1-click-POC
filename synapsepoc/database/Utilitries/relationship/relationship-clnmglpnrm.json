@@ -1,0 +1,26 @@
+{
+	"name": "relationship-clnmglpnrm",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-clnmglpnrm",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkOrderType",
+		"ToTableName": "SafetyChecklist",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkOrderTypeId",
+				"ToColumnName": "WorkOrderTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"toEntity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"joinPairs\":[{\"fromAttribute\":\"WorkOrderTypeId\",\"toAttribute\":\"WorkOrderTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "RepairStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "RepairStatus",
+		"Description": "The status of the associated repair.\n\nEx:\n- Completed\n- Under-repair\n- Authorized/not started",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepairStatusId",
+					"Description": "The unique identifier of a repair status.",
+					"BaseAttributeReference": {
+						"Entity": "RepairStatus.cdm.json/RepairStatus",
+						"Name": "RepairStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatusName",
+					"Description": "The name of a repair status.",
+					"BaseAttributeReference": {
+						"Entity": "RepairStatus.cdm.json/RepairStatus",
+						"Name": "RepairStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatusDescription",
+					"Description": "The description of a repair status.",
+					"BaseAttributeReference": {
+						"Entity": "RepairStatus.cdm.json/RepairStatus",
+						"Name": "RepairStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RepairStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RepairStatus",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepairStatusId\":{\"entity\":\"RepairStatus.cdm.json/RepairStatus\",\"name\":\"RepairStatusId\"},\"RepairStatusName\":{\"entity\":\"RepairStatus.cdm.json/RepairStatus\",\"name\":\"RepairStatusName\"},\"RepairStatusDescription\":{\"entity\":\"RepairStatus.cdm.json/RepairStatus\",\"name\":\"RepairStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RepairStatus\",\"path\":\"RepairStatus.cdm.json/RepairStatus\"},\"description\":\"The status of the associated repair.\\n\\nEx:\\n- Completed\\n- Under-repair\\n- Authorized/not started\",\"primaryKey\":[\"RepairStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RepairStatus.cdm.json/RepairStatus\",\"name\":\"RepairStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair status.\",\"isNullable\":false,\"name\":\"RepairStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RepairStatus.cdm.json/RepairStatus\",\"name\":\"RepairStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a repair status.\",\"isNullable\":true,\"name\":\"RepairStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RepairStatus.cdm.json/RepairStatus\",\"name\":\"RepairStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a repair status.\",\"isNullable\":true,\"name\":\"RepairStatusDescription\"}]}}}",
+			"Description": "The status of the associated repair.\n\nEx:\n- Completed\n- Under-repair\n- Authorized/not started",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "RepairStatusId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,153 @@
+{
+	"name": "ClaimEventRelatedParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimEventRelatedParty",
+		"Description": "The nature of the relationship between the claim event and related party.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventTypeId",
+					"Description": "The unique identifier of a Transaction Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty",
+						"Name": "ClaimEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventTimestamp",
+					"Description": "The timestamp that the event was executed in conjunction with the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty",
+						"Name": "ClaimEventTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Claim Cost Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty",
+						"Name": "ClaimEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the claim event-party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty",
+						"Name": "ClaimEventRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimEventRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimEventRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimId\"},\"ClaimEventTypeId\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventTypeId\"},\"ClaimEventTimestamp\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventTimestamp\"},\"PartyId\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"PartyId\"},\"ClaimEventPartyRelationshipTypeId\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventPartyRelationshipTypeId\"},\"ClaimEventRelatedPartyNote\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimEventRelatedParty\",\"path\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\"},\"description\":\"The nature of the relationship between the claim event and related party.\",\"primaryKey\":[\"ClaimId\",\"ClaimEventTypeId\",\"ClaimEventTimestamp\",\"PartyId\",\"ClaimEventPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Event Type.\",\"isNullable\":false,\"name\":\"ClaimEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the event was executed in conjunction with the Transaction.\",\"isNullable\":false,\"name\":\"ClaimEventTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Cost Party Relationship Type.\",\"isNullable\":false,\"name\":\"ClaimEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimEventRelatedParty.cdm.json/ClaimEventRelatedParty\",\"name\":\"ClaimEventRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim event-party relationship.\",\"isNullable\":true,\"name\":\"ClaimEventRelatedPartyNote\"}]}}}",
+			"Description": "The nature of the relationship between the claim event and related party.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimEventTypeId,ClaimEventTimestamp,PartyId,ClaimEventPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

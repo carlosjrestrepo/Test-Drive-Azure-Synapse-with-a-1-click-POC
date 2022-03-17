@@ -1,0 +1,154 @@
+{
+	"name": "VehicleOwnership",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleOwnership",
+		"Description": "The owner of the vehicle.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleOwnership.cdm.json/VehicleOwnership",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated ownership is associated with the vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleOwnership.cdm.json/VehicleOwnership",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated ownership is associated with the vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleOwnership.cdm.json/VehicleOwnership",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "VehicleOwnershipTypeId",
+					"Description": "The unique identifier of a Vehicle Ownership Type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleOwnership.cdm.json/VehicleOwnership",
+						"Name": "VehicleOwnershipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OwnedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleOwnership.cdm.json/VehicleOwnership",
+						"Name": "OwnedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleOwnershipNote",
+					"Description": "A note, comment or additional information regarding the vehicle ownership.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleOwnership.cdm.json/VehicleOwnership",
+						"Name": "VehicleOwnershipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleOwnership",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleOwnership",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleId\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"VehicleId\"},\"PeriodStartDate\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"PeriodEndDate\"},\"VehicleOwnershipTypeId\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"VehicleOwnershipTypeId\"},\"OwnedByPartyId\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"OwnedByPartyId\"},\"VehicleOwnershipNote\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"VehicleOwnershipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleOwnership\",\"path\":\"VehicleOwnership.cdm.json/VehicleOwnership\"},\"description\":\"The owner of the vehicle.\",\"primaryKey\":[\"VehicleId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":false,\"name\":\"VehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated ownership is associated with the vehicle.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated ownership is associated with the vehicle.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"VehicleOwnershipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Vehicle Ownership Type.\",\"isNullable\":true,\"name\":\"VehicleOwnershipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"OwnedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"OwnedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"name\":\"VehicleOwnershipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the vehicle ownership.\",\"isNullable\":true,\"name\":\"VehicleOwnershipNote\"}]}}}",
+			"Description": "The owner of the vehicle.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#000F5C\"}",
+			"PrimaryKeys": "VehicleId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

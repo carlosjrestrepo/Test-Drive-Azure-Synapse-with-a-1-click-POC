@@ -1,0 +1,515 @@
+{
+	"name": "InsurancePolicy",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InsurancePolicy",
+		"Description": "The written documents of a contract for insurance between the insurance company and the insured. Such documents include forms, endorsements, riders and attachments.\n\nA formal written contract of insurance.\n\nA contract whereby one undertakes to indemnify another, pay or allow a specified amount or a determinable benefit upon determinable contingencies.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsurancePolicyId",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "InsurancePolicyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyNumber",
+					"Description": "The unique identifier of an Insurance Policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "InsurancePolicyNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyEffectiveDate",
+					"Description": "The effective date of the insurance policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "InsurancePolicyEffectiveDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PolicyholderName",
+					"Description": "The name of the policyholder.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyholderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PolicyTerm",
+					"Description": "The term of the policy expressed in months.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyTerm"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PolicyCurrentPeriodStartDate",
+					"Description": "The current start date of the insurance policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyCurrentPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PolicyCurrentPeriodEndDate",
+					"Description": "The current end date of the insurance policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyCurrentPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PolicyExpirationDate",
+					"Description": "The expiration date of the insurance policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyExpirationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PropertyInsuredDescription",
+					"Description": "A description of the insured property.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PropertyInsuredDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PolicyPremiumAmount",
+					"Description": "The total premium amount.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyPremiumAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SupplementalInformationStatement",
+					"Description": "A statement regarding coverage that adds to the amount of coverage specified in a basic insurance policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "SupplementalInformationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AmountSubject",
+					"Description": "The maximum amount which underwriters estimate can possibly be lost under the most unfavorable circumstances in any given loss, such as a fire or tornado",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "AmountSubject"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AnnuallyRenewableIndicator",
+					"Description": "Indicates that the policy is annually renewable.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "AnnuallyRenewableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AssignablePolicyIndicator",
+					"Description": "Indicates that the policy was an assigned policy.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "AssignablePolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ReinstatablePolicyIndicator",
+					"Description": "Indicates that the insurance policy was reinstated.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "ReinstatablePolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConditionalContractIndicator",
+					"Description": "Indicates that the policy is a conditional policy, which is a contract hat contains a number of conditions that both parties must comply with. An insurance policy is a conditional contract.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "ConditionalContractIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ConditionallyRenewableContractIndicator",
+					"Description": "Indicates that the policy is conditionally-renewable.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "ConditionallyRenewableContractIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PaidUpPolicyIndicator",
+					"Description": "An insurance policy that requires no further premium payments but continues to provide coverage.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PaidUpPolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RatedPolicyIndicator",
+					"Description": "An insurance policy that is classified as having a greater-than-average likelihood of loss, usually issued with special exclusions, a premium rate that is higher than the rate for a standard policy, a reduced face amount, or any combination of these.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "RatedPolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UmbrellaPolicyIndicator",
+					"Description": "Coverage for losses above the limit of an underlying policy or policies such as homeowners and auto insurance. While it applies to losses over the dollar amount in the underlying policies, terms of coverage are sometimes broader than those of underlying policies.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "UmbrellaPolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DefinedEventInsurancePolicyIndicator",
+					"Description": "Home contents:\nIt can either be \"defined event\" i.e. the policy covers loss or damage from a list of \"defined\" events, e.g. storm or fire; or \"accidental loss or damage\" i.e. all accidental loss with some exclusions.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "DefinedEventInsurancePolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AccidentalLossInsurancePolicyIndicator",
+					"Description": "Home contents:\nIt can either be \"defined event\" i.e. the policy covers loss or damage from a list of \"defined\" events, e.g. storm or fire; or \"accidental loss or damage\" i.e. all accidental loss with some exclusions.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "AccidentalLossInsurancePolicyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceCompanyId",
+					"Description": "The unique identifier of an Insurance Company.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "InsuranceCompanyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyTypeId",
+					"Description": "The unique identifier of an Insurance Policy Type.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "InsurancePolicyTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsurancePolicyStageId",
+					"Description": "The unique identifier of an Insurance Policy Stage.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "InsurancePolicyStageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PolicyFormId",
+					"Description": "The unique identifier of a policy form.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "PolicyFormId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CustomerAccountId",
+					"Description": "The unique identifier of a Customer Account.",
+					"BaseAttributeReference": {
+						"Entity": "InsurancePolicy.cdm.json/InsurancePolicy",
+						"Name": "CustomerAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicy",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InsurancePolicy",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsurancePolicyId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyId\"},\"InsurancePolicyNumber\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyNumber\"},\"InsurancePolicyEffectiveDate\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyEffectiveDate\"},\"PolicyholderName\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyholderName\"},\"PolicyTerm\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyTerm\"},\"PolicyCurrentPeriodStartDate\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyCurrentPeriodStartDate\"},\"PolicyCurrentPeriodEndDate\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyCurrentPeriodEndDate\"},\"PolicyExpirationDate\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyExpirationDate\"},\"PropertyInsuredDescription\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PropertyInsuredDescription\"},\"PolicyPremiumAmount\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyPremiumAmount\"},\"SupplementalInformationStatement\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"SupplementalInformationStatement\"},\"AmountSubject\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AmountSubject\"},\"AnnuallyRenewableIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AnnuallyRenewableIndicator\"},\"AssignablePolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AssignablePolicyIndicator\"},\"ReinstatablePolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ReinstatablePolicyIndicator\"},\"ConditionalContractIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ConditionalContractIndicator\"},\"ConditionallyRenewableContractIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ConditionallyRenewableContractIndicator\"},\"PaidUpPolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PaidUpPolicyIndicator\"},\"RatedPolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"RatedPolicyIndicator\"},\"UmbrellaPolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"UmbrellaPolicyIndicator\"},\"DefinedEventInsurancePolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"DefinedEventInsurancePolicyIndicator\"},\"AccidentalLossInsurancePolicyIndicator\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AccidentalLossInsurancePolicyIndicator\"},\"InsuranceCompanyId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsuranceCompanyId\"},\"ProductId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ProductId\"},\"InsurancePolicyTypeId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyTypeId\"},\"InsurancePolicyStageId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyStageId\"},\"PolicyFormId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyFormId\"},\"CustomerAccountId\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"CustomerAccountId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsurancePolicy\",\"path\":\"InsurancePolicy.cdm.json/InsurancePolicy\"},\"description\":\"The written documents of a contract for insurance between the insurance company and the insured. Such documents include forms, endorsements, riders and attachments.\\n\\nA formal written contract of insurance.\\n\\nA contract whereby one undertakes to indemnify another, pay or allow a specified amount or a determinable benefit upon determinable contingencies.\",\"primaryKey\":[\"InsurancePolicyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy.\",\"isNullable\":false,\"name\":\"InsurancePolicyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The unique identifier of an Insurance Policy.\",\"isNullable\":false,\"name\":\"InsurancePolicyNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyEffectiveDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The effective date of the insurance policy.\",\"isNullable\":true,\"name\":\"InsurancePolicyEffectiveDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyholderName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the policyholder.\",\"isNullable\":true,\"name\":\"PolicyholderName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyTerm\"},\"dataType\":\"integer\",\"description\":\"The term of the policy expressed in months.\",\"isNullable\":true,\"name\":\"PolicyTerm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyCurrentPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The current start date of the insurance policy.\",\"isNullable\":true,\"name\":\"PolicyCurrentPeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyCurrentPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The current end date of the insurance policy.\",\"isNullable\":true,\"name\":\"PolicyCurrentPeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyExpirationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The expiration date of the insurance policy.\",\"isNullable\":true,\"name\":\"PolicyExpirationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PropertyInsuredDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the insured property.\",\"isNullable\":true,\"name\":\"PropertyInsuredDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyPremiumAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total premium amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"PolicyPremiumAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"SupplementalInformationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding coverage that adds to the amount of coverage specified in a basic insurance policy.\",\"isNullable\":true,\"name\":\"SupplementalInformationStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AmountSubject\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum amount which underwriters estimate can possibly be lost under the most unfavorable circumstances in any given loss, such as a fire or tornado\",\"isNullable\":true,\"scale\":2,\"name\":\"AmountSubject\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AnnuallyRenewableIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the policy is annually renewable.\",\"isNullable\":true,\"name\":\"AnnuallyRenewableIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AssignablePolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the policy was an assigned policy.\",\"isNullable\":true,\"name\":\"AssignablePolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ReinstatablePolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the insurance policy was reinstated.\",\"isNullable\":true,\"name\":\"ReinstatablePolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ConditionalContractIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the policy is a conditional policy, which is a contract hat contains a number of conditions that both parties must comply with. An insurance policy is a conditional contract.\",\"isNullable\":true,\"name\":\"ConditionalContractIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ConditionallyRenewableContractIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the policy is conditionally-renewable.\",\"isNullable\":true,\"name\":\"ConditionallyRenewableContractIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PaidUpPolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"An insurance policy that requires no further premium payments but continues to provide coverage.\",\"isNullable\":true,\"name\":\"PaidUpPolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"RatedPolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"An insurance policy that is classified as having a greater-than-average likelihood of loss, usually issued with special exclusions, a premium rate that is higher than the rate for a standard policy, a reduced face amount, or any combination of these.\",\"isNullable\":true,\"name\":\"RatedPolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"UmbrellaPolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Coverage for losses above the limit of an underlying policy or policies such as homeowners and auto insurance. While it applies to losses over the dollar amount in the underlying policies, terms of coverage are sometimes broader than those of underlying policies.\",\"isNullable\":true,\"name\":\"UmbrellaPolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"DefinedEventInsurancePolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Home contents:\\nIt can either be \\\"defined event\\\" i.e. the policy covers loss or damage from a list of \\\"defined\\\" events, e.g. storm or fire; or \\\"accidental loss or damage\\\" i.e. all accidental loss with some exclusions.\",\"isNullable\":true,\"name\":\"DefinedEventInsurancePolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"AccidentalLossInsurancePolicyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Home contents:\\nIt can either be \\\"defined event\\\" i.e. the policy covers loss or damage from a list of \\\"defined\\\" events, e.g. storm or fire; or \\\"accidental loss or damage\\\" i.e. all accidental loss with some exclusions.\",\"isNullable\":true,\"name\":\"AccidentalLossInsurancePolicyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsuranceCompanyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Insurance Company.\",\"isNullable\":true,\"name\":\"InsuranceCompanyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":true,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy Type.\",\"isNullable\":true,\"name\":\"InsurancePolicyTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"InsurancePolicyStageId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Insurance Policy Stage.\",\"isNullable\":true,\"name\":\"InsurancePolicyStageId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"PolicyFormId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a policy form.\",\"isNullable\":true,\"name\":\"PolicyFormId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsurancePolicy.cdm.json/InsurancePolicy\",\"name\":\"CustomerAccountId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer Account.\",\"isNullable\":true,\"name\":\"CustomerAccountId\"}]}}}",
+			"Description": "The written documents of a contract for insurance between the insurance company and the insured. Such documents include forms, endorsements, riders and attachments.\n\nA formal written contract of insurance.\n\nA contract whereby one undertakes to indemnify another, pay or allow a specified amount or a determinable benefit upon determinable contingencies.",
+			"DisplayFolderInfo": "{\"name\":\"Policy\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "InsurancePolicyId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wvuwfhpvzr",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wvuwfhpvzr",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Appeal",
+		"ToTableName": "AppealStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AppealId",
+				"ToColumnName": "AppealId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Appeal.cdm.json/Appeal\",\"toEntity\":\"AppealStatus.cdm.json/AppealStatus\",\"joinPairs\":[{\"fromAttribute\":\"AppealId\",\"toAttribute\":\"AppealId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

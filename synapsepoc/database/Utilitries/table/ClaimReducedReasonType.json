@@ -1,0 +1,105 @@
+{
+	"name": "ClaimReducedReasonType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimReducedReasonType",
+		"Description": "The reasons for reducing a claim.\n\nEx:\n- Member annual deductible not met\n- Claim partially paid by payer\n- Amount not covered\n- Claim greater than negotiated provider reimbursement amount (Reim Savings)\n- Patient liability above allowed (PLAA)\n- Coordination of benefits (COB)\n- Charges exceed benefit maximum\n- Amount paid by Insurer\n- Claim partially paid by member\n- Coinsurance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimReducedReasonTypeId",
+					"Description": "The unique identifier of a Claim Reduced Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReducedReasonType.cdm.json/ClaimReducedReasonType",
+						"Name": "ClaimReducedReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReducedReasonTypeName",
+					"Description": "The name of a Claim Reduced Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReducedReasonType.cdm.json/ClaimReducedReasonType",
+						"Name": "ClaimReducedReasonTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimReducedReasonTypeDescription",
+					"Description": "The description of a Claim Reduced Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimReducedReasonType.cdm.json/ClaimReducedReasonType",
+						"Name": "ClaimReducedReasonTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimReducedReasonType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimReducedReasonType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimReducedReasonTypeId\":{\"entity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"name\":\"ClaimReducedReasonTypeId\"},\"ClaimReducedReasonTypeName\":{\"entity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"name\":\"ClaimReducedReasonTypeName\"},\"ClaimReducedReasonTypeDescription\":{\"entity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"name\":\"ClaimReducedReasonTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimReducedReasonType\",\"path\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\"},\"description\":\"The reasons for reducing a claim.\\n\\nEx:\\n- Member annual deductible not met\\n- Claim partially paid by payer\\n- Amount not covered\\n- Claim greater than negotiated provider reimbursement amount (Reim Savings)\\n- Patient liability above allowed (PLAA)\\n- Coordination of benefits (COB)\\n- Charges exceed benefit maximum\\n- Amount paid by Insurer\\n- Claim partially paid by member\\n- Coinsurance\",\"primaryKey\":[\"ClaimReducedReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"name\":\"ClaimReducedReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Reduced Reason Type.\",\"isNullable\":false,\"name\":\"ClaimReducedReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"name\":\"ClaimReducedReasonTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Reduced Reason Type.\",\"isNullable\":true,\"name\":\"ClaimReducedReasonTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"name\":\"ClaimReducedReasonTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Reduced Reason Type.\",\"isNullable\":true,\"name\":\"ClaimReducedReasonTypeDescription\"}]}}}",
+			"Description": "The reasons for reducing a claim.\n\nEx:\n- Member annual deductible not met\n- Claim partially paid by payer\n- Amount not covered\n- Claim greater than negotiated provider reimbursement amount (Reim Savings)\n- Patient liability above allowed (PLAA)\n- Coordination of benefits (COB)\n- Charges exceed benefit maximum\n- Amount paid by Insurer\n- Claim partially paid by member\n- Coinsurance",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimReducedReasonTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

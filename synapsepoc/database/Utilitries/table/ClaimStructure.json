@@ -1,0 +1,119 @@
+{
+	"name": "ClaimStructure",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimStructure",
+		"Description": "The structure(s) associated with the claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructure.cdm.json/ClaimStructure",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructure.cdm.json/ClaimStructure",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PoliceReportNumber",
+					"Description": "The identifier of the local police report associated with the claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructure.cdm.json/ClaimStructure",
+						"Name": "PoliceReportNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimResolutionTypeId",
+					"Description": "The unique identifier of a Claim Resolution Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimStructure.cdm.json/ClaimStructure",
+						"Name": "ClaimResolutionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructure",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimStructure",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"ClaimId\"},\"StructureId\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"StructureId\"},\"PoliceReportNumber\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"PoliceReportNumber\"},\"ClaimResolutionTypeId\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"ClaimResolutionTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimStructure\",\"path\":\"ClaimStructure.cdm.json/ClaimStructure\"},\"description\":\"The structure(s) associated with the claim.\",\"primaryKey\":[\"ClaimId\",\"StructureId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":false,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"PoliceReportNumber\"},\"dataType\":\"integer\",\"description\":\"The identifier of the local police report associated with the claim.\",\"isNullable\":true,\"name\":\"PoliceReportNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimStructure.cdm.json/ClaimStructure\",\"name\":\"ClaimResolutionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Resolution Type.\",\"isNullable\":true,\"name\":\"ClaimResolutionTypeId\"}]}}}",
+			"Description": "The structure(s) associated with the claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,StructureId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

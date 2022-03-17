@@ -1,0 +1,104 @@
+{
+	"name": "ClaimRelatedInsuranceClaim",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimRelatedInsuranceClaim",
+		"Description": "The insurance claims that are associated with the claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim",
+						"Name": "InsuranceClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRelatedInsuranceClaimNote",
+					"Description": "Notes, comments or additional information regarding claim related insurance claims.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim",
+						"Name": "ClaimRelatedInsuranceClaimNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRelatedInsuranceClaim",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRelatedInsuranceClaim",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"name\":\"ClaimId\"},\"InsuranceClaimId\":{\"entity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"name\":\"InsuranceClaimId\"},\"ClaimRelatedInsuranceClaimNote\":{\"entity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"name\":\"ClaimRelatedInsuranceClaimNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimRelatedInsuranceClaim\",\"path\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\"},\"description\":\"The insurance claims that are associated with the claim.\",\"primaryKey\":[\"ClaimId\",\"InsuranceClaimId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"name\":\"InsuranceClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"InsuranceClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRelatedInsuranceClaim.cdm.json/ClaimRelatedInsuranceClaim\",\"name\":\"ClaimRelatedInsuranceClaimNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding claim related insurance claims.\",\"isNullable\":true,\"name\":\"ClaimRelatedInsuranceClaimNote\"}]}}}",
+			"Description": "The insurance claims that are associated with the claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,InsuranceClaimId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

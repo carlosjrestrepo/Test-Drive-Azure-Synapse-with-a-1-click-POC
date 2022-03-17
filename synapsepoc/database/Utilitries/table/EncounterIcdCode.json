@@ -1,0 +1,218 @@
+{
+	"name": "EncounterIcdCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EncounterIcdCode",
+		"Description": "The one more ICD Codes associated with the diagnosis or care of a related encounter.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "EncounterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IcdVersionNumber",
+					"Description": "The version number of the ICD Code.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "IcdVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IcdDiseaseCode",
+					"Description": "The code identifying an ICD-defined disease.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "IcdDiseaseCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Timestamp",
+					"Description": "The timestamp of when the ICD Code was assigned to the encounter.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "Timestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EncounterIcdCodeNote",
+					"Description": "A note, comment or additional information regarding the Encounter ICD Code.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "EncounterIcdCodeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DiagnosticUncertaintyId",
+					"Description": "The unique identifier of a diagnostic uncertainty rating.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "DiagnosticUncertaintyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DiagnosticOrdinalityId",
+					"Description": "The unique identifier of a diagnostic ordinality rating.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "DiagnosticOrdinalityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NeverEventIndicator",
+					"Description": "A Never Event is a serious, largely preventable, patient safety incident that should not occur. This field indicates whether the ICD code associated with the encounter is the result of such an event.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "NeverEventIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PresentOnAdmissionIndicator",
+					"Description": "Indicates whether the diagnosis of care associated with the ICD Code was present when the individual was admitted.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "PresentOnAdmissionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DiagnosticEventId",
+					"Description": "The unique identifier of a diagnostic event.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterIcdCode.cdm.json/EncounterIcdCode",
+						"Name": "DiagnosticEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterIcdCode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterIcdCode",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterId\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"EncounterId\"},\"IcdVersionNumber\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"IcdVersionNumber\"},\"IcdDiseaseCode\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"IcdDiseaseCode\"},\"Timestamp\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"Timestamp\"},\"EncounterIcdCodeNote\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"EncounterIcdCodeNote\"},\"DiagnosticUncertaintyId\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"DiagnosticUncertaintyId\"},\"DiagnosticOrdinalityId\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"DiagnosticOrdinalityId\"},\"NeverEventIndicator\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"NeverEventIndicator\"},\"PresentOnAdmissionIndicator\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"PresentOnAdmissionIndicator\"},\"DiagnosticEventId\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"DiagnosticEventId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterIcdCode\",\"path\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\"},\"description\":\"The one more ICD Codes associated with the diagnosis or care of a related encounter.\",\"primaryKey\":[\"EncounterId\",\"IcdVersionNumber\",\"IcdDiseaseCode\",\"Timestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"IcdVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version number of the ICD Code.\",\"isNullable\":false,\"name\":\"IcdVersionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"IcdDiseaseCode\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The code identifying an ICD-defined disease.\",\"isNullable\":false,\"name\":\"IcdDiseaseCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"Timestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of when the ICD Code was assigned to the encounter.\",\"isNullable\":false,\"name\":\"Timestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"EncounterIcdCodeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Encounter ICD Code.\",\"isNullable\":true,\"name\":\"EncounterIcdCodeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"DiagnosticUncertaintyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a diagnostic uncertainty rating.\",\"isNullable\":true,\"name\":\"DiagnosticUncertaintyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"DiagnosticOrdinalityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a diagnostic ordinality rating.\",\"isNullable\":true,\"name\":\"DiagnosticOrdinalityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"NeverEventIndicator\"},\"dataType\":\"boolean\",\"description\":\"A Never Event is a serious, largely preventable, patient safety incident that should not occur. This field indicates whether the ICD code associated with the encounter is the result of such an event.\",\"isNullable\":true,\"name\":\"NeverEventIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"PresentOnAdmissionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the diagnosis of care associated with the ICD Code was present when the individual was admitted.\",\"isNullable\":true,\"name\":\"PresentOnAdmissionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"name\":\"DiagnosticEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a diagnostic event.\",\"isNullable\":true,\"name\":\"DiagnosticEventId\"}]}}}",
+			"Description": "The one more ICD Codes associated with the diagnosis or care of a related encounter.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "EncounterId,IcdVersionNumber,IcdDiseaseCode,Timestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

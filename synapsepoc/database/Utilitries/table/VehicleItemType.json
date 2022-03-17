@@ -1,0 +1,105 @@
+{
+	"name": "VehicleItemType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleItemType",
+		"Description": "A specific item that may be listed or itemized upon a repair.\n\nEx:\n- Left front fender panel\n- Left door mirror\n- Hub cap",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleItemTypeId",
+					"Description": "The unique identifier of a Vehicle item type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleItemType.cdm.json/VehicleItemType",
+						"Name": "VehicleItemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleItemTypeName",
+					"Description": "The name of a Vehicle item type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleItemType.cdm.json/VehicleItemType",
+						"Name": "VehicleItemTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleItemTypeDescription",
+					"Description": "The description of a Vehicle item type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleItemType.cdm.json/VehicleItemType",
+						"Name": "VehicleItemTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleItemType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleItemType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleItemTypeId\":{\"entity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"name\":\"VehicleItemTypeId\"},\"VehicleItemTypeName\":{\"entity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"name\":\"VehicleItemTypeName\"},\"VehicleItemTypeDescription\":{\"entity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"name\":\"VehicleItemTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleItemType\",\"path\":\"VehicleItemType.cdm.json/VehicleItemType\"},\"description\":\"A specific item that may be listed or itemized upon a repair.\\n\\nEx:\\n- Left front fender panel\\n- Left door mirror\\n- Hub cap\",\"primaryKey\":[\"VehicleItemTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"name\":\"VehicleItemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Vehicle item type.\",\"isNullable\":false,\"name\":\"VehicleItemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"name\":\"VehicleItemTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Vehicle item type.\",\"isNullable\":true,\"name\":\"VehicleItemTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleItemType.cdm.json/VehicleItemType\",\"name\":\"VehicleItemTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Vehicle item type.\",\"isNullable\":true,\"name\":\"VehicleItemTypeDescription\"}]}}}",
+			"Description": "A specific item that may be listed or itemized upon a repair.\n\nEx:\n- Left front fender panel\n- Left door mirror\n- Hub cap",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "VehicleItemTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

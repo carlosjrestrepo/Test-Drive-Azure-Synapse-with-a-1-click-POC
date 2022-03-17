@@ -1,0 +1,26 @@
+{
+	"name": "relationship-npjkdyqxyk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-npjkdyqxyk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "VehicleOwnership",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "OwnedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"OwnedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

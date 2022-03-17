@@ -1,0 +1,121 @@
+{
+	"name": "WorkOrderType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "WorkOrderType",
+		"Description": "A type of work order based on function, similar objectives etc.\n\nEx:\n- Repair\n- Installation\n- Upgrade\n- Manufacturing\n- Recall\n- Shipping\n- Job Plan\n- Template",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WorkOrderTypeId",
+					"Description": "The unique identifier of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "WorkOrderTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WorkOrderTypeName",
+					"Description": "The name of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "WorkOrderTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "WorkOrderTypeDescription",
+					"Description": "The description of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "WorkOrderTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CapitalizationIndicator",
+					"Description": "Indicates whether the activities, items or assets of the work order should be capitalized.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "CapitalizationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/WorkOrderType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/WorkOrderType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderTypeId\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeId\"},\"WorkOrderTypeName\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeName\"},\"WorkOrderTypeDescription\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeDescription\"},\"CapitalizationIndicator\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"CapitalizationIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WorkOrderType\",\"path\":\"WorkOrderType.cdm.json/WorkOrderType\"},\"description\":\"A type of work order based on function, similar objectives etc.\\n\\nEx:\\n- Repair\\n- Installation\\n- Upgrade\\n- Manufacturing\\n- Recall\\n- Shipping\\n- Job Plan\\n- Template\",\"primaryKey\":[\"WorkOrderTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order Type.\",\"isNullable\":false,\"name\":\"WorkOrderTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Work Order Type.\",\"isNullable\":true,\"name\":\"WorkOrderTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Work Order Type.\",\"isNullable\":true,\"name\":\"WorkOrderTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"CapitalizationIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the activities, items or assets of the work order should be capitalized.\",\"isNullable\":true,\"name\":\"CapitalizationIndicator\"}]}}}",
+			"Description": "A type of work order based on function, similar objectives etc.\n\nEx:\n- Repair\n- Installation\n- Upgrade\n- Manufacturing\n- Recall\n- Shipping\n- Job Plan\n- Template",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "WorkOrderTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

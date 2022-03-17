@@ -1,0 +1,105 @@
+{
+	"name": "AppealStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "AppealStatusType",
+		"Description": "A status type that may be applied to an Appeal.\n\nEx:\n- Filed\n- Under review\n- Allowed\n- Disallowed",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AppealStatusTypeId",
+					"Description": "The unique identifier of an Appeal Status.",
+					"BaseAttributeReference": {
+						"Entity": "AppealStatusType.cdm.json/AppealStatusType",
+						"Name": "AppealStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AppealStatusTypeName",
+					"Description": "The name of an Appeal Status.",
+					"BaseAttributeReference": {
+						"Entity": "AppealStatusType.cdm.json/AppealStatusType",
+						"Name": "AppealStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AppealStatusTypeDescription",
+					"Description": "The description of an Appeal Status.",
+					"BaseAttributeReference": {
+						"Entity": "AppealStatusType.cdm.json/AppealStatusType",
+						"Name": "AppealStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/AppealStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/AppealStatusType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AppealStatusTypeId\":{\"entity\":\"AppealStatusType.cdm.json/AppealStatusType\",\"name\":\"AppealStatusTypeId\"},\"AppealStatusTypeName\":{\"entity\":\"AppealStatusType.cdm.json/AppealStatusType\",\"name\":\"AppealStatusTypeName\"},\"AppealStatusTypeDescription\":{\"entity\":\"AppealStatusType.cdm.json/AppealStatusType\",\"name\":\"AppealStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AppealStatusType\",\"path\":\"AppealStatusType.cdm.json/AppealStatusType\"},\"description\":\"A status type that may be applied to an Appeal.\\n\\nEx:\\n- Filed\\n- Under review\\n- Allowed\\n- Disallowed\",\"primaryKey\":[\"AppealStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AppealStatusType.cdm.json/AppealStatusType\",\"name\":\"AppealStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Appeal Status.\",\"isNullable\":false,\"name\":\"AppealStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AppealStatusType.cdm.json/AppealStatusType\",\"name\":\"AppealStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Appeal Status.\",\"isNullable\":true,\"name\":\"AppealStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AppealStatusType.cdm.json/AppealStatusType\",\"name\":\"AppealStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Appeal Status.\",\"isNullable\":true,\"name\":\"AppealStatusTypeDescription\"}]}}}",
+			"Description": "A status type that may be applied to an Appeal.\n\nEx:\n- Filed\n- Under review\n- Allowed\n- Disallowed",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "AppealStatusTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

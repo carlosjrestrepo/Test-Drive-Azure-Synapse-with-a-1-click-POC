@@ -1,0 +1,105 @@
+{
+	"name": "IncidentInjuryTreatmentPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "IncidentInjuryTreatmentPartyRelationshipType",
+		"Description": "The nature of the relationship between the party and the incident injury treatment party over the indicated period.\n\nEx:\n- Treatment Party\n- Performed-by Medical Party\n- Insurance Party\n- Report-to Party\n- Treatment Paid-by Party\n- Treatment Paid-to Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentInjuryTreatmentPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Injury Treatment Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType",
+						"Name": "IncidentInjuryTreatmentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentInjuryTreatmentPartyRelationshipTypeName",
+					"Description": "The name of an Incident Injury Treatment Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType",
+						"Name": "IncidentInjuryTreatmentPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentInjuryTreatmentPartyRelationshipTypeDescription",
+					"Description": "The description of an Incident Injury Treatment Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType",
+						"Name": "IncidentInjuryTreatmentPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentInjuryTreatmentPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/IncidentInjuryTreatmentPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentInjuryTreatmentPartyRelationshipTypeId\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeId\"},\"IncidentInjuryTreatmentPartyRelationshipTypeName\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeName\"},\"IncidentInjuryTreatmentPartyRelationshipTypeDescription\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentInjuryTreatmentPartyRelationshipType\",\"path\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\"},\"description\":\"The nature of the relationship between the party and the incident injury treatment party over the indicated period.\\n\\nEx:\\n- Treatment Party\\n- Performed-by Medical Party\\n- Insurance Party\\n- Report-to Party\\n- Treatment Paid-by Party\\n- Treatment Paid-to Party\",\"primaryKey\":[\"IncidentInjuryTreatmentPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Injury Treatment Party Relationship Type.\",\"isNullable\":false,\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Injury Treatment Party Relationship Type.\",\"isNullable\":true,\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Injury Treatment Party Relationship Type.\",\"isNullable\":true,\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the party and the incident injury treatment party over the indicated period.\n\nEx:\n- Treatment Party\n- Performed-by Medical Party\n- Insurance Party\n- Report-to Party\n- Treatment Paid-by Party\n- Treatment Paid-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "IncidentInjuryTreatmentPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

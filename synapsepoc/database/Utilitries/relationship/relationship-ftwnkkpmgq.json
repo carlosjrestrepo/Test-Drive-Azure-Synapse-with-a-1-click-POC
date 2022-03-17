@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ftwnkkpmgq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ftwnkkpmgq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "SafetyObservation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ObservedPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"SafetyObservation.cdm.json/SafetyObservation\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ObservedPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

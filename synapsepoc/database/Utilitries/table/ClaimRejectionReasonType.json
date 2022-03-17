@@ -1,0 +1,105 @@
+{
+	"name": "ClaimRejectionReasonType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimRejectionReasonType",
+		"Description": "Reason for a claim being rejected.\n\nEx:\n- Service Provider information incorrect or missing\n- Information incomplete or inaccurate\n- Invalid member information\n- Invalid coding",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimRejectionReasonTypeId",
+					"Description": "The unique identifier of a Claim Rejection Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType",
+						"Name": "ClaimRejectionReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRejectionReasonTypeName",
+					"Description": "The name of a Claim Rejection Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType",
+						"Name": "ClaimRejectionReasonTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimRejectionReasonTypeDescription",
+					"Description": "The description of a Claim Rejection Reason Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType",
+						"Name": "ClaimRejectionReasonTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRejectionReasonType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimRejectionReasonType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimRejectionReasonTypeId\":{\"entity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"name\":\"ClaimRejectionReasonTypeId\"},\"ClaimRejectionReasonTypeName\":{\"entity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"name\":\"ClaimRejectionReasonTypeName\"},\"ClaimRejectionReasonTypeDescription\":{\"entity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"name\":\"ClaimRejectionReasonTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimRejectionReasonType\",\"path\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\"},\"description\":\"Reason for a claim being rejected.\\n\\nEx:\\n- Service Provider information incorrect or missing\\n- Information incomplete or inaccurate\\n- Invalid member information\\n- Invalid coding\",\"primaryKey\":[\"ClaimRejectionReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"name\":\"ClaimRejectionReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Rejection Reason Type.\",\"isNullable\":false,\"name\":\"ClaimRejectionReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"name\":\"ClaimRejectionReasonTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Claim Rejection Reason Type.\",\"isNullable\":true,\"name\":\"ClaimRejectionReasonTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimRejectionReasonType.cdm.json/ClaimRejectionReasonType\",\"name\":\"ClaimRejectionReasonTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Claim Rejection Reason Type.\",\"isNullable\":true,\"name\":\"ClaimRejectionReasonTypeDescription\"}]}}}",
+			"Description": "Reason for a claim being rejected.\n\nEx:\n- Service Provider information incorrect or missing\n- Information incomplete or inaccurate\n- Invalid member information\n- Invalid coding",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimRejectionReasonTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gnqsqqsdmh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gnqsqqsdmh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterChargeType",
+		"ToTableName": "EncounterServiceCharge",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterChargeTypeId",
+				"ToColumnName": "EncounterChargeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterChargeType.cdm.json/EncounterChargeType\",\"toEntity\":\"EncounterServiceCharge.cdm.json/EncounterServiceCharge\",\"joinPairs\":[{\"fromAttribute\":\"EncounterChargeTypeId\",\"toAttribute\":\"EncounterChargeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,30 @@
+{
+	"name": "relationship-hfobkkctkq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-hfobkkctkq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InternationalStatisticalClassificationOfDiseaseCode",
+		"ToTableName": "EncounterIcdCode",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IcdDiseaseCode",
+				"ToColumnName": "IcdDiseaseCode"
+			},
+			{
+				"FromColumnName": "IcdVersionNumber",
+				"ToColumnName": "IcdVersionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"toEntity\":\"EncounterIcdCode.cdm.json/EncounterIcdCode\",\"joinPairs\":[{\"fromAttribute\":\"IcdDiseaseCode\",\"toAttribute\":\"IcdDiseaseCode\"},{\"fromAttribute\":\"IcdVersionNumber\",\"toAttribute\":\"IcdVersionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "CustomerLifetimeValue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "CustomerLifetimeValue",
+		"Description": "The total amount the customer is expected to spend on your products during their lifetime.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerLifetimeValue.cdm.json/CustomerLifetimeValue",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClvTimestamp",
+					"Description": "The timestamp that the CLV was evaluated as of.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerLifetimeValue.cdm.json/CustomerLifetimeValue",
+						"Name": "ClvTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CustomerLifetimeValueNote",
+					"Description": "A note, comment or additional information regarding the Customer Lifetime Value.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerLifetimeValue.cdm.json/CustomerLifetimeValue",
+						"Name": "CustomerLifetimeValueNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/CustomerLifetimeValue",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/CustomerLifetimeValue",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\",\"name\":\"CustomerId\"},\"ClvTimestamp\":{\"entity\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\",\"name\":\"ClvTimestamp\"},\"CustomerLifetimeValueNote\":{\"entity\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\",\"name\":\"CustomerLifetimeValueNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerLifetimeValue\",\"path\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\"},\"description\":\"The total amount the customer is expected to spend on your products during their lifetime.\",\"primaryKey\":[\"CustomerId\",\"ClvTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\",\"name\":\"ClvTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the CLV was evaluated as of.\",\"isNullable\":false,\"name\":\"ClvTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerLifetimeValue.cdm.json/CustomerLifetimeValue\",\"name\":\"CustomerLifetimeValueNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Lifetime Value.\",\"isNullable\":true,\"name\":\"CustomerLifetimeValueNote\"}]}}}",
+			"Description": "The total amount the customer is expected to spend on your products during their lifetime.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CustomerId,ClvTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

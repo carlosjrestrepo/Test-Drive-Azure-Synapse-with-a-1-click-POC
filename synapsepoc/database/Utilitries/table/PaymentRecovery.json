@@ -1,0 +1,139 @@
+{
+	"name": "PaymentRecovery",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "PaymentRecovery",
+		"Description": "If your car is damaged because of another driver's negligence and you ask your insurance carrier to settle the claim for damage to your vehicle, we will seek to recover your deductible and our payments from the other party. \n\nThis process of payment recovery is also called subrogation.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "Date",
+					"Description": "The date of the payment recovery.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentRecovery.cdm.json/PaymentRecovery",
+						"Name": "Date"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RecoveredAmount",
+					"Description": "The amount of the payment recovery.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentRecovery.cdm.json/PaymentRecovery",
+						"Name": "RecoveredAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SubrogationPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentRecovery.cdm.json/PaymentRecovery",
+						"Name": "SubrogationPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SubrogationStatement",
+					"Description": "The statement regarding the payment recovery.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentRecovery.cdm.json/PaymentRecovery",
+						"Name": "SubrogationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "PaymentRecovery.cdm.json/PaymentRecovery",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/PaymentRecovery",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/PaymentRecovery",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"Date\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"Date\"},\"RecoveredAmount\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"RecoveredAmount\"},\"SubrogationPartyId\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"SubrogationPartyId\"},\"SubrogationStatement\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"SubrogationStatement\"},\"ClaimId\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"ClaimId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PaymentRecovery\",\"path\":\"PaymentRecovery.cdm.json/PaymentRecovery\"},\"description\":\"If your car is damaged because of another driver's negligence and you ask your insurance carrier to settle the claim for damage to your vehicle, we will seek to recover your deductible and our payments from the other party. \\n\\nThis process of payment recovery is also called subrogation.\",\"primaryKey\":[\"Date\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"Date\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the payment recovery.\",\"isNullable\":false,\"name\":\"Date\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"RecoveredAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the payment recovery.\",\"isNullable\":true,\"scale\":2,\"name\":\"RecoveredAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"SubrogationPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"SubrogationPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"SubrogationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement regarding the payment recovery.\",\"isNullable\":true,\"name\":\"SubrogationStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PaymentRecovery.cdm.json/PaymentRecovery\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"ClaimId\"}]}}}",
+			"Description": "If your car is damaged because of another driver's negligence and you ask your insurance carrier to settle the claim for damage to your vehicle, we will seek to recover your deductible and our payments from the other party. \n\nThis process of payment recovery is also called subrogation.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "Date",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dawmheifsi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dawmheifsi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleOwnershipType",
+		"ToTableName": "VehicleOwnership",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleOwnershipTypeId",
+				"ToColumnName": "VehicleOwnershipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleOwnershipType.cdm.json/VehicleOwnershipType\",\"toEntity\":\"VehicleOwnership.cdm.json/VehicleOwnership\",\"joinPairs\":[{\"fromAttribute\":\"VehicleOwnershipTypeId\",\"toAttribute\":\"VehicleOwnershipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

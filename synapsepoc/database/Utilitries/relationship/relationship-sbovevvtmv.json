@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sbovevvtmv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-sbovevvtmv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LossItem",
+		"ToTableName": "ClaimLossItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LossItemId",
+				"ToColumnName": "LossItemId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LossItem.cdm.json/LossItem\",\"toEntity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"joinPairs\":[{\"fromAttribute\":\"LossItemId\",\"toAttribute\":\"LossItemId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

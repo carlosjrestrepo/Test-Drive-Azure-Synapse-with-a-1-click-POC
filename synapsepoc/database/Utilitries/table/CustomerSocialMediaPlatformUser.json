@@ -1,0 +1,154 @@
+{
+	"name": "CustomerSocialMediaPlatformUser",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "CustomerSocialMediaPlatformUser",
+		"Description": "A Customer which is represented as a user of a Social Media Platform.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CustomerId",
+					"Description": "The unique identifier of a Customer.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser",
+						"Name": "CustomerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SocialMediaPlatformId",
+					"Description": "The unique identifier of a Social Media Platform.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser",
+						"Name": "SocialMediaPlatformId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SocialMediaPlatformUserId",
+					"Description": "The unique identifier of a Social Media Platform User.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser",
+						"Name": "SocialMediaPlatformUserId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "CustomerSocialMediaPlatformUserNote",
+					"Description": "A note, comment or additional information regarding the Customer Social Media Platform User.",
+					"BaseAttributeReference": {
+						"Entity": "CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser",
+						"Name": "CustomerSocialMediaPlatformUserNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/CustomerSocialMediaPlatformUser",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/CustomerSocialMediaPlatformUser",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CustomerId\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"CustomerId\"},\"SocialMediaPlatformId\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"SocialMediaPlatformId\"},\"SocialMediaPlatformUserId\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"SocialMediaPlatformUserId\"},\"PeriodStartDate\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"PeriodEndDate\"},\"CustomerSocialMediaPlatformUserNote\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"CustomerSocialMediaPlatformUserNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CustomerSocialMediaPlatformUser\",\"path\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\"},\"description\":\"A Customer which is represented as a user of a Social Media Platform.\",\"primaryKey\":[\"CustomerId\",\"SocialMediaPlatformId\",\"SocialMediaPlatformUserId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"CustomerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Customer.\",\"isNullable\":false,\"name\":\"CustomerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"SocialMediaPlatformId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Social Media Platform.\",\"isNullable\":false,\"name\":\"SocialMediaPlatformId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"SocialMediaPlatformUserId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Social Media Platform User.\",\"isNullable\":false,\"name\":\"SocialMediaPlatformUserId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated data is effective or 'as-of'.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated data is effective or 'as-of'.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"name\":\"CustomerSocialMediaPlatformUserNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Customer Social Media Platform User.\",\"isNullable\":true,\"name\":\"CustomerSocialMediaPlatformUserNote\"}]}}}",
+			"Description": "A Customer which is represented as a user of a Social Media Platform.",
+			"DisplayFolderInfo": "{\"name\":\"Customer\",\"colorCode\":\"#502006\"}",
+			"PrimaryKeys": "CustomerId,SocialMediaPlatformId,SocialMediaPlatformUserId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

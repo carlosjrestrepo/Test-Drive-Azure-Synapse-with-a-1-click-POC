@@ -1,0 +1,26 @@
+{
+	"name": "relationship-itsmypmssz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-itsmypmssz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleRepair",
+		"ToTableName": "VehicleRepairItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RepairId",
+				"ToColumnName": "RepairId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"toEntity\":\"VehicleRepairItem.cdm.json/VehicleRepairItem\",\"joinPairs\":[{\"fromAttribute\":\"RepairId\",\"toAttribute\":\"RepairId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-easnkivdzi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-easnkivdzi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HealthcareCommonProcedureCodingSystemCode",
+		"ToTableName": "HealthcareService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HcpcsCode",
+				"ToColumnName": "HcpcsCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HealthcareCommonProcedureCodingSystemCode.cdm.json/HealthcareCommonProcedureCodingSystemCode\",\"toEntity\":\"HealthcareService.cdm.json/HealthcareService\",\"joinPairs\":[{\"fromAttribute\":\"HcpcsCode\",\"toAttribute\":\"HcpcsCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

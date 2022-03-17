@@ -1,0 +1,105 @@
+{
+	"name": "OptInStatusType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "OptInStatusType",
+		"Description": "A type of Opt-in status that may be associated with contact.\n\nEx:\n- Opt-In (default value)\n- Opt-In (user selection)\n- Opt-Out (default value)\n- Opt-Out (user selection)",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OptInStatusTypeId",
+					"Description": "The unique identifier of an Opt-In Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "OptInStatusType.cdm.json/OptInStatusType",
+						"Name": "OptInStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OptInStatusTypeName",
+					"Description": "The name of the Opt-In Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "OptInStatusType.cdm.json/OptInStatusType",
+						"Name": "OptInStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OptInStatusTypeDescription",
+					"Description": "The description of the Opt-In Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "OptInStatusType.cdm.json/OptInStatusType",
+						"Name": "OptInStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/OptInStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/OptInStatusType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OptInStatusTypeId\":{\"entity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"name\":\"OptInStatusTypeId\"},\"OptInStatusTypeName\":{\"entity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"name\":\"OptInStatusTypeName\"},\"OptInStatusTypeDescription\":{\"entity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"name\":\"OptInStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OptInStatusType\",\"path\":\"OptInStatusType.cdm.json/OptInStatusType\"},\"description\":\"A type of Opt-in status that may be associated with contact.\\n\\nEx:\\n- Opt-In (default value)\\n- Opt-In (user selection)\\n- Opt-Out (default value)\\n- Opt-Out (user selection)\",\"primaryKey\":[\"OptInStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"name\":\"OptInStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Opt-In Status Type.\",\"isNullable\":false,\"name\":\"OptInStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"name\":\"OptInStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Opt-In Status Type.\",\"isNullable\":true,\"name\":\"OptInStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OptInStatusType.cdm.json/OptInStatusType\",\"name\":\"OptInStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Opt-In Status Type.\",\"isNullable\":true,\"name\":\"OptInStatusTypeDescription\"}]}}}",
+			"Description": "A type of Opt-in status that may be associated with contact.\n\nEx:\n- Opt-In (default value)\n- Opt-In (user selection)\n- Opt-Out (default value)\n- Opt-Out (user selection)",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "OptInStatusTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

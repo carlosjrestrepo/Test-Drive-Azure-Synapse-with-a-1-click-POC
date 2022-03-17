@@ -1,0 +1,105 @@
+{
+	"name": "HealthcareServiceType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "HealthcareServiceType",
+		"Description": "A categorization of services based on common characteristics, functions, objectives or similar criteria.\n\nEx:\n- Service\n- Medical Procedure\n- Drug\n- Product\n- Consumable Item\n- Test Type",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HealthcareServiceTypeId",
+					"Description": "The unique identifier of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareServiceType.cdm.json/HealthcareServiceType",
+						"Name": "HealthcareServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HealthcareServiceTypeName",
+					"Description": "The name of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareServiceType.cdm.json/HealthcareServiceType",
+						"Name": "HealthcareServiceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HealthcareServiceTypeDescription",
+					"Description": "The description of a Service Type.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareServiceType.cdm.json/HealthcareServiceType",
+						"Name": "HealthcareServiceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/HealthcareServiceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/HealthcareServiceType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HealthcareServiceTypeId\":{\"entity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"name\":\"HealthcareServiceTypeId\"},\"HealthcareServiceTypeName\":{\"entity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"name\":\"HealthcareServiceTypeName\"},\"HealthcareServiceTypeDescription\":{\"entity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"name\":\"HealthcareServiceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HealthcareServiceType\",\"path\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\"},\"description\":\"A categorization of services based on common characteristics, functions, objectives or similar criteria.\\n\\nEx:\\n- Service\\n- Medical Procedure\\n- Drug\\n- Product\\n- Consumable Item\\n- Test Type\",\"primaryKey\":[\"HealthcareServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"name\":\"HealthcareServiceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Type.\",\"isNullable\":false,\"name\":\"HealthcareServiceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"name\":\"HealthcareServiceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Service Type.\",\"isNullable\":true,\"name\":\"HealthcareServiceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareServiceType.cdm.json/HealthcareServiceType\",\"name\":\"HealthcareServiceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Service Type.\",\"isNullable\":true,\"name\":\"HealthcareServiceTypeDescription\"}]}}}",
+			"Description": "A categorization of services based on common characteristics, functions, objectives or similar criteria.\n\nEx:\n- Service\n- Medical Procedure\n- Drug\n- Product\n- Consumable Item\n- Test Type",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "HealthcareServiceTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

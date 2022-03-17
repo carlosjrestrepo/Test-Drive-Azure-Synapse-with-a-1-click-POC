@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rltxaijaby",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-rltxaijaby",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimReducedReasonType",
+		"ToTableName": "ClaimChargeReducedReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimReducedReasonTypeId",
+				"ToColumnName": "ClaimReducedReasonTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimReducedReasonType.cdm.json/ClaimReducedReasonType\",\"toEntity\":\"ClaimChargeReducedReason.cdm.json/ClaimChargeReducedReason\",\"joinPairs\":[{\"fromAttribute\":\"ClaimReducedReasonTypeId\",\"toAttribute\":\"ClaimReducedReasonTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

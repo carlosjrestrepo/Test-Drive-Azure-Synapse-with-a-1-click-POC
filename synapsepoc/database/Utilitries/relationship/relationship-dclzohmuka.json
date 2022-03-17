@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dclzohmuka",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dclzohmuka",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentType",
+		"ToTableName": "Incident",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentTypeId",
+				"ToColumnName": "IncidentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentType.cdm.json/IncidentType\",\"toEntity\":\"Incident.cdm.json/Incident\",\"joinPairs\":[{\"fromAttribute\":\"IncidentTypeId\",\"toAttribute\":\"IncidentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

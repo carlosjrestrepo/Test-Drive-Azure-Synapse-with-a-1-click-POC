@@ -1,0 +1,30 @@
+{
+	"name": "relationship-grpdilcuni",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-grpdilcuni",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SurveyQuestion",
+		"ToTableName": "CustomerSurveyQuestionResponse",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "QuestionId",
+				"ToColumnName": "QuestionId"
+			},
+			{
+				"FromColumnName": "SurveyId",
+				"ToColumnName": "SurveyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SurveyQuestion.cdm.json/SurveyQuestion\",\"toEntity\":\"CustomerSurveyQuestionResponse.cdm.json/CustomerSurveyQuestionResponse\",\"joinPairs\":[{\"fromAttribute\":\"QuestionId\",\"toAttribute\":\"QuestionId\"},{\"fromAttribute\":\"SurveyId\",\"toAttribute\":\"SurveyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

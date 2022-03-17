@@ -1,0 +1,407 @@
+{
+	"name": "HealthcareService",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "HealthcareService",
+		"Description": "A medical service that is available. Medical Services include Medical Procedures, Drugs, Tests, Consumable Items, Products, Ancillary Services and other Services.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceId",
+					"Description": "The unique identifier of a Service.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ServiceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ServiceName",
+					"Description": "The name of the Service.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ServiceName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceDescription",
+					"Description": "The description of the Service.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ServiceDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceTypeId",
+					"Description": "The unique identifier of a Service.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AmbulatoryPaymentClassificationId",
+					"Description": "The unique identifier of an Ambulatory Payment Classification.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "AmbulatoryPaymentClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PhysicianRequiredServiceIndicator",
+					"Description": "Indicates that the service requires attendance or application by a physician.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "PhysicianRequiredServiceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CertificationRequiredIndicator",
+					"Description": "Indicates that the service requires attendance or application by a certified or licensed service provider.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "CertificationRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AmbulatoryCareServiceIndicator",
+					"Description": "All types of health services that do not require an overnight hospital stay.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "AmbulatoryCareServiceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AncillaryServiceIndicator",
+					"Description": "Services you need beyond room and board charges, such as laboratory tests, therapy, surgery and the like.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "AncillaryServiceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MedicareApprovedIndicator",
+					"Description": "Medical services for which Medicare normally pays.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "MedicareApprovedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RequiresPriorAuthorizationIndicator",
+					"Description": "Indicates that the service requires prior authorization.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "RequiresPriorAuthorizationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MedicallyNecessaryServiceIndicator",
+					"Description": "Those covered services or supplies that are:\n\na. provided for the diagnosis, treatment, cure or relief of a health condition, illness, injury or disease;\n\nb. not for experimental, investigational or cosmetic purposes;\n\nc. necessary for and appropriate to the diagnosis, treatment, cure or relief of a health condition, illness, injury, disease or its symptoms;\n\nd. within generally accepted standards of medical care in the community;\n\ne. not solely for the convenience of the insured, the insured's family or the provider.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "MedicallyNecessaryServiceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CptCode",
+					"Description": "The unique identifier of a CPT Code.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "CptCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HcpcsCode",
+					"Description": "The unique identifier of a HCPCS Code.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "HcpcsCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ApcCode",
+					"Description": "The unique identifier of an APC Code.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ApcCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CdtCode",
+					"Description": "The unique identifier of a CDT Code.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "CdtCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StandardWholesalePrice",
+					"Description": "The standard, or default, price charged retailers for the Product.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "StandardWholesalePrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ListPrice",
+					"Description": "The standard retail price of the Product before the application of any discount.\n\nThis is the price that normally appears in catalogs, on purchase orders and invoices.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ListPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TargetReturnPrice",
+					"Description": "A price established as part of a strategy to yield a specific return on investment.\n\nTarget-Return Price = (unit cost) + ((desired return)*(invested capital))/unit sales\n\nThe Target-Return Price ignores competitor's pricing and price elasticity.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "TargetReturnPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "StandardCost",
+					"Description": "The estimated or calculated cost to manufacture or produce the Product.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "StandardCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductMargin",
+					"Description": "The difference between the Standard Retail Price of a product and the cost to produce it.",
+					"BaseAttributeReference": {
+						"Entity": "HealthcareService.cdm.json/HealthcareService",
+						"Name": "ProductMargin"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/HealthcareService",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/HealthcareService",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceId\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceId\"},\"ServiceName\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceName\"},\"ServiceDescription\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceDescription\"},\"ServiceTypeId\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceTypeId\"},\"AmbulatoryPaymentClassificationId\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"AmbulatoryPaymentClassificationId\"},\"PhysicianRequiredServiceIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"PhysicianRequiredServiceIndicator\"},\"CertificationRequiredIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"CertificationRequiredIndicator\"},\"AmbulatoryCareServiceIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"AmbulatoryCareServiceIndicator\"},\"AncillaryServiceIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"AncillaryServiceIndicator\"},\"MedicareApprovedIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"MedicareApprovedIndicator\"},\"RequiresPriorAuthorizationIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"RequiresPriorAuthorizationIndicator\"},\"MedicallyNecessaryServiceIndicator\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"MedicallyNecessaryServiceIndicator\"},\"CptCode\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"CptCode\"},\"HcpcsCode\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"HcpcsCode\"},\"ApcCode\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ApcCode\"},\"CdtCode\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"CdtCode\"},\"StandardWholesalePrice\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"StandardWholesalePrice\"},\"ListPrice\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ListPrice\"},\"TargetReturnPrice\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"TargetReturnPrice\"},\"StandardCost\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"StandardCost\"},\"ProductMargin\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ProductMargin\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HealthcareService\",\"path\":\"HealthcareService.cdm.json/HealthcareService\"},\"description\":\"A medical service that is available. Medical Services include Medical Procedures, Drugs, Tests, Consumable Items, Products, Ancillary Services and other Services.\",\"primaryKey\":[\"ServiceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Service.\",\"isNullable\":false,\"name\":\"ServiceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Service.\",\"isNullable\":true,\"name\":\"ServiceName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Service.\",\"isNullable\":true,\"name\":\"ServiceDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ServiceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service.\",\"isNullable\":false,\"name\":\"ServiceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"AmbulatoryPaymentClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Ambulatory Payment Classification.\",\"isNullable\":true,\"name\":\"AmbulatoryPaymentClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"PhysicianRequiredServiceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the service requires attendance or application by a physician.\",\"isNullable\":true,\"name\":\"PhysicianRequiredServiceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"CertificationRequiredIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the service requires attendance or application by a certified or licensed service provider.\",\"isNullable\":true,\"name\":\"CertificationRequiredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"AmbulatoryCareServiceIndicator\"},\"dataType\":\"boolean\",\"description\":\"All types of health services that do not require an overnight hospital stay.\",\"isNullable\":true,\"name\":\"AmbulatoryCareServiceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"AncillaryServiceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Services you need beyond room and board charges, such as laboratory tests, therapy, surgery and the like.\",\"isNullable\":true,\"name\":\"AncillaryServiceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"MedicareApprovedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Medical services for which Medicare normally pays.\",\"isNullable\":true,\"name\":\"MedicareApprovedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"RequiresPriorAuthorizationIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the service requires prior authorization.\",\"isNullable\":true,\"name\":\"RequiresPriorAuthorizationIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"MedicallyNecessaryServiceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Those covered services or supplies that are:\\n\\na. provided for the diagnosis, treatment, cure or relief of a health condition, illness, injury or disease;\\n\\nb. not for experimental, investigational or cosmetic purposes;\\n\\nc. necessary for and appropriate to the diagnosis, treatment, cure or relief of a health condition, illness, injury, disease or its symptoms;\\n\\nd. within generally accepted standards of medical care in the community;\\n\\ne. not solely for the convenience of the insured, the insured's family or the provider.\",\"isNullable\":true,\"name\":\"MedicallyNecessaryServiceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"CptCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a CPT Code.\",\"isNullable\":true,\"name\":\"CptCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"HcpcsCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a HCPCS Code.\",\"isNullable\":true,\"name\":\"HcpcsCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ApcCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of an APC Code.\",\"isNullable\":true,\"name\":\"ApcCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"CdtCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a CDT Code.\",\"isNullable\":true,\"name\":\"CdtCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"StandardWholesalePrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The standard, or default, price charged retailers for the Product.\",\"isNullable\":true,\"scale\":2,\"name\":\"StandardWholesalePrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ListPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The standard retail price of the Product before the application of any discount.\\n\\nThis is the price that normally appears in catalogs, on purchase orders and invoices.\",\"isNullable\":true,\"scale\":2,\"name\":\"ListPrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"TargetReturnPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"A price established as part of a strategy to yield a specific return on investment.\\n\\nTarget-Return Price = (unit cost) + ((desired return)*(invested capital))/unit sales\\n\\nThe Target-Return Price ignores competitor's pricing and price elasticity.\",\"isNullable\":true,\"scale\":2,\"name\":\"TargetReturnPrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"StandardCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated or calculated cost to manufacture or produce the Product.\",\"isNullable\":true,\"scale\":2,\"name\":\"StandardCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HealthcareService.cdm.json/HealthcareService\",\"name\":\"ProductMargin\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The difference between the Standard Retail Price of a product and the cost to produce it.\",\"isNullable\":true,\"scale\":2,\"name\":\"ProductMargin\"}]}}}",
+			"Description": "A medical service that is available. Medical Services include Medical Procedures, Drugs, Tests, Consumable Items, Products, Ancillary Services and other Services.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ServiceId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

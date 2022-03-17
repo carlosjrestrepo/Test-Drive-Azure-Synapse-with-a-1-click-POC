@@ -1,0 +1,105 @@
+{
+	"name": "ClaimDelayReasonType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimDelayReasonType",
+		"Description": "A type of reason(s) for which a claim has been delayed.\n\nEx:\n- Insufficient documentation\n- Possible Fraud/Abuse",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimDelayReasonTypeId",
+					"Description": "The unique identifier of the claim delay reason type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReasonType.cdm.json/ClaimDelayReasonType",
+						"Name": "ClaimDelayReasonTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimDelayReasonTypeName",
+					"Description": "The name of the claim delay reason type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReasonType.cdm.json/ClaimDelayReasonType",
+						"Name": "ClaimDelayReasonTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimDelayReasonTypeDescription",
+					"Description": "The description of the claim delay reason type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimDelayReasonType.cdm.json/ClaimDelayReasonType",
+						"Name": "ClaimDelayReasonTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimDelayReasonType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimDelayReasonType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimDelayReasonTypeId\":{\"entity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"name\":\"ClaimDelayReasonTypeId\"},\"ClaimDelayReasonTypeName\":{\"entity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"name\":\"ClaimDelayReasonTypeName\"},\"ClaimDelayReasonTypeDescription\":{\"entity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"name\":\"ClaimDelayReasonTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimDelayReasonType\",\"path\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\"},\"description\":\"A type of reason(s) for which a claim has been delayed.\\n\\nEx:\\n- Insufficient documentation\\n- Possible Fraud/Abuse\",\"primaryKey\":[\"ClaimDelayReasonTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"name\":\"ClaimDelayReasonTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the claim delay reason type.\",\"isNullable\":false,\"name\":\"ClaimDelayReasonTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"name\":\"ClaimDelayReasonTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the claim delay reason type.\",\"isNullable\":true,\"name\":\"ClaimDelayReasonTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimDelayReasonType.cdm.json/ClaimDelayReasonType\",\"name\":\"ClaimDelayReasonTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the claim delay reason type.\",\"isNullable\":true,\"name\":\"ClaimDelayReasonTypeDescription\"}]}}}",
+			"Description": "A type of reason(s) for which a claim has been delayed.\n\nEx:\n- Insufficient documentation\n- Possible Fraud/Abuse",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimDelayReasonTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

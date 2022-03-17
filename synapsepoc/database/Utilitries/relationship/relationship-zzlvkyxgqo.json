@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zzlvkyxgqo",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-zzlvkyxgqo",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyChecklist",
+		"ToTableName": "SafetyChecklistItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyChecklistId",
+				"ToColumnName": "SafetyChecklistId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"toEntity\":\"SafetyChecklistItem.cdm.json/SafetyChecklistItem\",\"joinPairs\":[{\"fromAttribute\":\"SafetyChecklistId\",\"toAttribute\":\"SafetyChecklistId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

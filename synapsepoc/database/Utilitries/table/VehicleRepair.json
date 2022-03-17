@@ -1,0 +1,305 @@
+{
+	"name": "VehicleRepair",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleRepair",
+		"Description": "A repair associated with a vehicle claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RepairId",
+					"Description": "The unique identifier of a repair.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "RepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimVehicleLossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "ClaimVehicleLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairStartedDate",
+					"Description": "The date that the repair was started.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "RepairStartedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RepairCompletedDate",
+					"Description": "The date that the repair was completed.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "RepairCompletedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "EstimatedRepairAmount",
+					"Description": "The repair estimated amount.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "EstimatedRepairAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ActualRepairAmount",
+					"Description": "The repair actual amount.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "ActualRepairAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatement",
+					"Description": "A statement regarding the repair.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "RepairStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRepairTypeId",
+					"Description": "The unique identifier of a repair type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "VehicleRepairTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarrantyProvidedIndicator",
+					"Description": "Indicates that a warranty was provided.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "WarrantyProvidedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "WarrantyPeriodStartDate",
+					"Description": "The start date of the associated warranty.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "WarrantyPeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "WarrantyPeriodEndDate",
+					"Description": "The end date of the associated warranty.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "WarrantyPeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "WarrantyStatement",
+					"Description": "The statement of the associated warranty.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "WarrantyStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RepairStatusId",
+					"Description": "The unique identifier of a repair status.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "RepairStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepair.cdm.json/VehicleRepair",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepair",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepair",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RepairId\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairId\"},\"ClaimVehicleLossTypeId\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"ClaimVehicleLossTypeId\"},\"RepairStartedDate\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairStartedDate\"},\"RepairCompletedDate\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairCompletedDate\"},\"EstimatedRepairAmount\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"EstimatedRepairAmount\"},\"ActualRepairAmount\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"ActualRepairAmount\"},\"RepairStatement\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairStatement\"},\"VehicleRepairTypeId\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"VehicleRepairTypeId\"},\"WarrantyProvidedIndicator\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyProvidedIndicator\"},\"WarrantyPeriodStartDate\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyPeriodStartDate\"},\"WarrantyPeriodEndDate\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyPeriodEndDate\"},\"WarrantyStatement\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyStatement\"},\"RepairStatusId\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairStatusId\"},\"ClaimId\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"ClaimId\"},\"VehicleId\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"VehicleId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleRepair\",\"path\":\"VehicleRepair.cdm.json/VehicleRepair\"},\"description\":\"A repair associated with a vehicle claim.\",\"primaryKey\":[\"RepairId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair.\",\"isNullable\":false,\"name\":\"RepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"ClaimVehicleLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":true,\"name\":\"ClaimVehicleLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairStartedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the repair was started.\",\"isNullable\":true,\"name\":\"RepairStartedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairCompletedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the repair was completed.\",\"isNullable\":true,\"name\":\"RepairCompletedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"EstimatedRepairAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The repair estimated amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"EstimatedRepairAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"ActualRepairAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The repair actual amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"ActualRepairAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the repair.\",\"isNullable\":true,\"name\":\"RepairStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"VehicleRepairTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair type.\",\"isNullable\":true,\"name\":\"VehicleRepairTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyProvidedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that a warranty was provided.\",\"isNullable\":true,\"name\":\"WarrantyProvidedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyPeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The start date of the associated warranty.\",\"isNullable\":true,\"name\":\"WarrantyPeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyPeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The end date of the associated warranty.\",\"isNullable\":true,\"name\":\"WarrantyPeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"WarrantyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement of the associated warranty.\",\"isNullable\":true,\"name\":\"WarrantyStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"RepairStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a repair status.\",\"isNullable\":true,\"name\":\"RepairStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":true,\"name\":\"VehicleId\"}]}}}",
+			"Description": "A repair associated with a vehicle claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "RepairId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

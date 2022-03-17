@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yyehkigcwj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-yyehkigcwj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Encounter",
+		"ToTableName": "EncounterService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterId",
+				"ToColumnName": "EncounterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Encounter.cdm.json/Encounter\",\"toEntity\":\"EncounterService.cdm.json/EncounterService\",\"joinPairs\":[{\"fromAttribute\":\"EncounterId\",\"toAttribute\":\"EncounterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

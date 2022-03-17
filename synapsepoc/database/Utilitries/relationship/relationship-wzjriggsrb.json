@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wzjriggsrb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wzjriggsrb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentEventType",
+		"ToTableName": "DocumentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentEventTypeId",
+				"ToColumnName": "DocumentEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"toEntity\":\"DocumentEvent.cdm.json/DocumentEvent\",\"joinPairs\":[{\"fromAttribute\":\"DocumentEventTypeId\",\"toAttribute\":\"DocumentEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

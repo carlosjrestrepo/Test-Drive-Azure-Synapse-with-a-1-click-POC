@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yqnywbnkow",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-yqnywbnkow",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LearningEvent",
+		"ToTableName": "IncidentCause",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LearningEventId",
+				"ToColumnName": "LearningEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LearningEvent.cdm.json/LearningEvent\",\"toEntity\":\"IncidentCause.cdm.json/IncidentCause\",\"joinPairs\":[{\"fromAttribute\":\"LearningEventId\",\"toAttribute\":\"LearningEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

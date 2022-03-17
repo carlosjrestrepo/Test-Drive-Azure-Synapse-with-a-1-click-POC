@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cyazibwdov",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-cyazibwdov",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ClaimAppraisal",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "AppraisalByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ClaimAppraisal.cdm.json/ClaimAppraisal\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"AppraisalByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,431 @@
+{
+	"name": "ServiceProvider",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ServiceProvider",
+		"Description": "A hospital, non-hospital facility, doctor or other provider, accredited, licensed or certified where required in the state of practice, performing within the scope of license or certification.\n\nEx:\n- Dentist\n- Hospice\n- Hospital\n- Laboratory Testing Organization\n- Nurse\n- Nursing Facility Organization\n- Optometrist\n- Physician\n- Emergency Medical Technician\n\nAll services performed must be within the scope of license or certification to be eligible for reimbursement.\n\nThis usually refers to a hospital or doctor who \"provides\" care. A health plan, managed care company or insurance carrier is not a healthcare provider. These entities are called \"Payers\".\n\nThe lines are sometimes blurred when providers create or manage health plans. At that point, a providers is also a payer. A payer can be provider if the payer owns or manages providers as with some staff model HMOs.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ServiceProviderId",
+					"Description": "The unique identifier of a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NationalProviderId",
+					"Description": "The National Provider ID (NPI) for your provider group or entity. The NPI is the national standard unique health identifier for health care providers. This number is required as of May 23, 2007.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "NationalProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderName",
+					"Description": "The name or business name of a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderTelephoneNumber",
+					"Description": "The Service Provider telephone number.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderTelephoneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderFaxNumber",
+					"Description": "The Service Provider fax number.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderFaxNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 15,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderEmailAddress",
+					"Description": "The Service Provider email address.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderEmailAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderWebPage",
+					"Description": "The Service Provider Web Page as identified by a www URL.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderWebPage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2083,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProfessionalServiceProviderIndicator",
+					"Description": "Indicates a doctor or other practitioner or groups of practitioners who are licensed, certified, or approved by the appropriate agency to render covered services/supplies in their state of practice.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ProfessionalServiceProviderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AffiliatedServiceProviderIndicator",
+					"Description": "Indicates a health care provider or facility that is paid by a health plan to give service to plan members.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "AffiliatedServiceProviderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MandatedServiceProviderIndicator",
+					"Description": "Indicates a provider whose services must be included in coverage offered by a health plan. These mandates can be required by state or federal law.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "MandatedServiceProviderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MedicareAssignmentServiceProviderIndicator",
+					"Description": "Doctors and hospitals who have accepted Medicare patients and agreed not to charge them more than Medicare has approved.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "MedicareAssignmentServiceProviderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BoardCertifiedPhysicianIndicator",
+					"Description": "Indicates whether the physician is board certified.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "BoardCertifiedPhysicianIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BoardEligiblePhysicianIndicator",
+					"Description": "Describes a physician who is eligible to take the specialty board examination by virtue of being graduated from an approved medical school, completing a specific type and length of training, and practicing for a specified amount of time. Some HMOs and other health facilities accept board eligibility as equivalent to board certification, significant in that many managed care companies restrict referrals to physicians without certification.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "BoardEligiblePhysicianIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AcceptingNewPatientsIndicator",
+					"Description": "Indicates that the physician is accepting new patients.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "AcceptingNewPatientsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InstitutionalServiceProviderIndicator",
+					"Description": "Indicates a facility or entity other than a professional provider which is accredited and licensed or certified in the state where located to render Covered Services. \n\nInstitutional Providers may include general acute hospitals, ambulance companies, ambulatory surgical facilities, chemical dependency treatment facilities, home health/home care agencies, hospices, skilled nursing facilities, etc. who typically bill on the UB92 claim form.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "InstitutionalServiceProviderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FederalTaxIdNumber",
+					"Description": "The Federal Tax ID number of a insurer.\n\nA Federal Tax Identification Number (also known as a \"95 Number,\" \"E.I.N. Number,\" or \"Tax I.D. Number\") can be obtained by completing and filing IRS Form SS-4.\n\nThe Federal ID number is the same as the FEIN, or the IRS ID number - an identifying number for corporations, associations and other such entities, regardless of whether the organization is tax exempt, and regardless of whether the organization has employees.\n\nThis number begins with two digits, which usually indicate the state where the organization is located and is followed by seven additional digits, which are given out in numerical order, so can give a rough indication of how long the organization has been in existence.\n\nThe employer's identification number (EIN) is used to identify corporations, partnerships, nonprofit associations, trusts, and similar non-individual entities and must be shown on returns and depository forms used by the employer. An employer without an identification number must apply for one using Form SS-4 (Application for Employer Identification Number). \nAn employer should have one identification number. An employer who has more than one number and is not sure which number to use should check with the IRS Center where his returns are filed. When contacting the IRS concerning the numbers, the employer should be prepared to provide the numbers he has, the name and address to which each is assigned, and the address of his main place of business. \nIf an employer took over another employer's business, the number of the employer whose business was taken over should not be used by the one taking over the business. If the employer taking over the business does not have an employer identification number by the time a return is due, \"Applied for\" and the date the number was applied for should be written in the space provided for the number.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "FederalTaxIdNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderTypeId",
+					"Description": "The unique identifier of a Service Provider Type.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "ServiceProviderTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CmsCertificationNumber",
+					"Description": "The Certification Number as assigned by CMS. The number under which Medicare or Medicaid claims are filed.\n\nThis number was previously known as the Medicaid Provider Number, Medicare Identification Number, Oscar Provider Number and other system specific names. It was renamed by CMS to the CMS Certification Number (CCN) to reduce confusion.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "CmsCertificationNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CcnIdentificationCode",
+					"Description": "The unique identifier of a CCN Identification Code.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "CcnIdentificationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "EmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LegalEntityFormId",
+					"Description": "The unique identifier of the Legal Entity Form.",
+					"BaseAttributeReference": {
+						"Entity": "ServiceProvider.cdm.json/ServiceProvider",
+						"Name": "LegalEntityFormId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ServiceProvider",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ServiceProvider",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ServiceProviderId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderId\"},\"NationalProviderId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"NationalProviderId\"},\"ServiceProviderName\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderName\"},\"LocationId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"LocationId\"},\"ServiceProviderTelephoneNumber\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderTelephoneNumber\"},\"ServiceProviderFaxNumber\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderFaxNumber\"},\"ServiceProviderEmailAddress\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderEmailAddress\"},\"ServiceProviderWebPage\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderWebPage\"},\"ProfessionalServiceProviderIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ProfessionalServiceProviderIndicator\"},\"AffiliatedServiceProviderIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"AffiliatedServiceProviderIndicator\"},\"MandatedServiceProviderIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"MandatedServiceProviderIndicator\"},\"MedicareAssignmentServiceProviderIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"MedicareAssignmentServiceProviderIndicator\"},\"BoardCertifiedPhysicianIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"BoardCertifiedPhysicianIndicator\"},\"BoardEligiblePhysicianIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"BoardEligiblePhysicianIndicator\"},\"AcceptingNewPatientsIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"AcceptingNewPatientsIndicator\"},\"InstitutionalServiceProviderIndicator\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"InstitutionalServiceProviderIndicator\"},\"FederalTaxIdNumber\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"FederalTaxIdNumber\"},\"ServiceProviderTypeId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderTypeId\"},\"CmsCertificationNumber\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"CmsCertificationNumber\"},\"CcnIdentificationCode\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"CcnIdentificationCode\"},\"EmployeeId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"EmployeeId\"},\"PartyId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"PartyId\"},\"LegalEntityFormId\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"LegalEntityFormId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ServiceProvider\",\"path\":\"ServiceProvider.cdm.json/ServiceProvider\"},\"description\":\"A hospital, non-hospital facility, doctor or other provider, accredited, licensed or certified where required in the state of practice, performing within the scope of license or certification.\\n\\nEx:\\n- Dentist\\n- Hospice\\n- Hospital\\n- Laboratory Testing Organization\\n- Nurse\\n- Nursing Facility Organization\\n- Optometrist\\n- Physician\\n- Emergency Medical Technician\\n\\nAll services performed must be within the scope of license or certification to be eligible for reimbursement.\\n\\nThis usually refers to a hospital or doctor who \\\"provides\\\" care. A health plan, managed care company or insurance carrier is not a healthcare provider. These entities are called \\\"Payers\\\".\\n\\nThe lines are sometimes blurred when providers create or manage health plans. At that point, a providers is also a payer. A payer can be provider if the payer owns or manages providers as with some staff model HMOs.\",\"primaryKey\":[\"ServiceProviderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Provider.\",\"isNullable\":false,\"name\":\"ServiceProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"NationalProviderId\"},\"dataType\":\"integer\",\"description\":\"The National Provider ID (NPI) for your provider group or entity. The NPI is the national standard unique health identifier for health care providers. This number is required as of May 23, 2007.\",\"isNullable\":true,\"name\":\"NationalProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name or business name of a Service Provider.\",\"isNullable\":true,\"name\":\"ServiceProviderName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderTelephoneNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"description\":\"The Service Provider telephone number.\",\"isNullable\":true,\"scale\":0,\"name\":\"ServiceProviderTelephoneNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderFaxNumber\"},\"dataType\":\"decimal\",\"dataTypeLength\":15,\"description\":\"The Service Provider fax number.\",\"isNullable\":true,\"scale\":0,\"name\":\"ServiceProviderFaxNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderEmailAddress\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The Service Provider email address.\",\"isNullable\":true,\"name\":\"ServiceProviderEmailAddress\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderWebPage\"},\"dataType\":\"string\",\"dataTypeLength\":2083,\"description\":\"The Service Provider Web Page as identified by a www URL.\",\"isNullable\":true,\"name\":\"ServiceProviderWebPage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ProfessionalServiceProviderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a doctor or other practitioner or groups of practitioners who are licensed, certified, or approved by the appropriate agency to render covered services/supplies in their state of practice.\",\"isNullable\":true,\"name\":\"ProfessionalServiceProviderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"AffiliatedServiceProviderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a health care provider or facility that is paid by a health plan to give service to plan members.\",\"isNullable\":true,\"name\":\"AffiliatedServiceProviderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"MandatedServiceProviderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a provider whose services must be included in coverage offered by a health plan. These mandates can be required by state or federal law.\",\"isNullable\":true,\"name\":\"MandatedServiceProviderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"MedicareAssignmentServiceProviderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Doctors and hospitals who have accepted Medicare patients and agreed not to charge them more than Medicare has approved.\",\"isNullable\":true,\"name\":\"MedicareAssignmentServiceProviderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"BoardCertifiedPhysicianIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the physician is board certified.\",\"isNullable\":true,\"name\":\"BoardCertifiedPhysicianIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"BoardEligiblePhysicianIndicator\"},\"dataType\":\"boolean\",\"description\":\"Describes a physician who is eligible to take the specialty board examination by virtue of being graduated from an approved medical school, completing a specific type and length of training, and practicing for a specified amount of time. Some HMOs and other health facilities accept board eligibility as equivalent to board certification, significant in that many managed care companies restrict referrals to physicians without certification.\",\"isNullable\":true,\"name\":\"BoardEligiblePhysicianIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"AcceptingNewPatientsIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the physician is accepting new patients.\",\"isNullable\":true,\"name\":\"AcceptingNewPatientsIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"InstitutionalServiceProviderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a facility or entity other than a professional provider which is accredited and licensed or certified in the state where located to render Covered Services. \\n\\nInstitutional Providers may include general acute hospitals, ambulance companies, ambulatory surgical facilities, chemical dependency treatment facilities, home health/home care agencies, hospices, skilled nursing facilities, etc. who typically bill on the UB92 claim form.\",\"isNullable\":true,\"name\":\"InstitutionalServiceProviderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"FederalTaxIdNumber\"},\"dataType\":\"integer\",\"description\":\"The Federal Tax ID number of a insurer.\\n\\nA Federal Tax Identification Number (also known as a \\\"95 Number,\\\" \\\"E.I.N. Number,\\\" or \\\"Tax I.D. Number\\\") can be obtained by completing and filing IRS Form SS-4.\\n\\nThe Federal ID number is the same as the FEIN, or the IRS ID number - an identifying number for corporations, associations and other such entities, regardless of whether the organization is tax exempt, and regardless of whether the organization has employees.\\n\\nThis number begins with two digits, which usually indicate the state where the organization is located and is followed by seven additional digits, which are given out in numerical order, so can give a rough indication of how long the organization has been in existence.\\n\\nThe employer's identification number (EIN) is used to identify corporations, partnerships, nonprofit associations, trusts, and similar non-individual entities and must be shown on returns and depository forms used by the employer. An employer without an identification number must apply for one using Form SS-4 (Application for Employer Identification Number). \\nAn employer should have one identification number. An employer who has more than one number and is not sure which number to use should check with the IRS Center where his returns are filed. When contacting the IRS concerning the numbers, the employer should be prepared to provide the numbers he has, the name and address to which each is assigned, and the address of his main place of business. \\nIf an employer took over another employer's business, the number of the employer whose business was taken over should not be used by the one taking over the business. If the employer taking over the business does not have an employer identification number by the time a return is due, \\\"Applied for\\\" and the date the number was applied for should be written in the space provided for the number.\",\"isNullable\":true,\"name\":\"FederalTaxIdNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"ServiceProviderTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Provider Type.\",\"isNullable\":true,\"name\":\"ServiceProviderTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"CmsCertificationNumber\"},\"dataType\":\"integer\",\"description\":\"The Certification Number as assigned by CMS. The number under which Medicare or Medicaid claims are filed.\\n\\nThis number was previously known as the Medicaid Provider Number, Medicare Identification Number, Oscar Provider Number and other system specific names. It was renamed by CMS to the CMS Certification Number (CCN) to reduce confusion.\",\"isNullable\":true,\"name\":\"CmsCertificationNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"CcnIdentificationCode\"},\"dataType\":\"string\",\"dataTypeLength\":1,\"description\":\"The unique identifier of a CCN Identification Code.\",\"isNullable\":true,\"name\":\"CcnIdentificationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"EmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":true,\"name\":\"EmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"name\":\"LegalEntityFormId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Legal Entity Form.\",\"isNullable\":true,\"name\":\"LegalEntityFormId\"}]}}}",
+			"Description": "A hospital, non-hospital facility, doctor or other provider, accredited, licensed or certified where required in the state of practice, performing within the scope of license or certification.\n\nEx:\n- Dentist\n- Hospice\n- Hospital\n- Laboratory Testing Organization\n- Nurse\n- Nursing Facility Organization\n- Optometrist\n- Physician\n- Emergency Medical Technician\n\nAll services performed must be within the scope of license or certification to be eligible for reimbursement.\n\nThis usually refers to a hospital or doctor who \"provides\" care. A health plan, managed care company or insurance carrier is not a healthcare provider. These entities are called \"Payers\".\n\nThe lines are sometimes blurred when providers create or manage health plans. At that point, a providers is also a payer. A payer can be provider if the payer owns or manages providers as with some staff model HMOs.",
+			"DisplayFolderInfo": "{\"name\":\"Service Provider\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ServiceProviderId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

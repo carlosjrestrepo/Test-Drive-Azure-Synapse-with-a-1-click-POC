@@ -1,0 +1,105 @@
+{
+	"name": "InjuredPartyVehicleRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InjuredPartyVehicleRelationshipType",
+		"Description": "The nature of the relationship between the injured party and the associated vehicle.\n\nEx:\n- Struck-by\n- Driver-of\n- Passenger-in\n- Struck-by debris of",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InjuredPartyVehicleRelationshipTypeId",
+					"Description": "The unique identifier of a Injured Party Vehicle Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType",
+						"Name": "InjuredPartyVehicleRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyVehicleRelationshipTypeName",
+					"Description": "The name of a Injured Party Vehicle Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType",
+						"Name": "InjuredPartyVehicleRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyVehicleRelationshipTypeDescription",
+					"Description": "The description of a Injured Party Vehicle Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType",
+						"Name": "InjuredPartyVehicleRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyVehicleRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuredPartyVehicleRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InjuredPartyVehicleRelationshipTypeId\":{\"entity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"name\":\"InjuredPartyVehicleRelationshipTypeId\"},\"InjuredPartyVehicleRelationshipTypeName\":{\"entity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"name\":\"InjuredPartyVehicleRelationshipTypeName\"},\"InjuredPartyVehicleRelationshipTypeDescription\":{\"entity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"name\":\"InjuredPartyVehicleRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InjuredPartyVehicleRelationshipType\",\"path\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\"},\"description\":\"The nature of the relationship between the injured party and the associated vehicle.\\n\\nEx:\\n- Struck-by\\n- Driver-of\\n- Passenger-in\\n- Struck-by debris of\",\"primaryKey\":[\"InjuredPartyVehicleRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"name\":\"InjuredPartyVehicleRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Injured Party Vehicle Relationship Type.\",\"isNullable\":false,\"name\":\"InjuredPartyVehicleRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"name\":\"InjuredPartyVehicleRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Injured Party Vehicle Relationship Type.\",\"isNullable\":true,\"name\":\"InjuredPartyVehicleRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuredPartyVehicleRelationshipType.cdm.json/InjuredPartyVehicleRelationshipType\",\"name\":\"InjuredPartyVehicleRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Injured Party Vehicle Relationship Type.\",\"isNullable\":true,\"name\":\"InjuredPartyVehicleRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the injured party and the associated vehicle.\n\nEx:\n- Struck-by\n- Driver-of\n- Passenger-in\n- Struck-by debris of",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "InjuredPartyVehicleRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

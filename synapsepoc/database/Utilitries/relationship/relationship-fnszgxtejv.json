@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fnszgxtejv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-fnszgxtejv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Arbitration",
+		"ToTableName": "ArbitrationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ArbitrationCaseId",
+				"ToColumnName": "ArbitrationCaseId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Arbitration.cdm.json/Arbitration\",\"toEntity\":\"ArbitrationRelatedParty.cdm.json/ArbitrationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ArbitrationCaseId\",\"toAttribute\":\"ArbitrationCaseId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

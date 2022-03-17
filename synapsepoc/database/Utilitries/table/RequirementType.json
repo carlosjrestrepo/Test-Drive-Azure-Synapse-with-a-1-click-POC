@@ -1,0 +1,105 @@
+{
+	"name": "RequirementType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "RequirementType",
+		"Description": "The requirement type or reason why the associated medical procedure, service, product, item, test, specimen etc. were performed or ordered in conjunction with the encounter.\n\nEx:\n- Prescribed by Physician\n- Required for Hospital Stay\n- Medical Procedure Consumable\n- Service Required\n- Medical Equipment\n- Personal Charged Food\n- Authorized by Nurse",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RequirementTypeId",
+					"Description": "The unique identifier of a Requirement Type.",
+					"BaseAttributeReference": {
+						"Entity": "RequirementType.cdm.json/RequirementType",
+						"Name": "RequirementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RequirementTypeName",
+					"Description": "The name of a Requirement Type.",
+					"BaseAttributeReference": {
+						"Entity": "RequirementType.cdm.json/RequirementType",
+						"Name": "RequirementTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RequirementTypeDescription",
+					"Description": "The description of a Requirement Type.",
+					"BaseAttributeReference": {
+						"Entity": "RequirementType.cdm.json/RequirementType",
+						"Name": "RequirementTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RequirementType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RequirementType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequirementTypeId\":{\"entity\":\"RequirementType.cdm.json/RequirementType\",\"name\":\"RequirementTypeId\"},\"RequirementTypeName\":{\"entity\":\"RequirementType.cdm.json/RequirementType\",\"name\":\"RequirementTypeName\"},\"RequirementTypeDescription\":{\"entity\":\"RequirementType.cdm.json/RequirementType\",\"name\":\"RequirementTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RequirementType\",\"path\":\"RequirementType.cdm.json/RequirementType\"},\"description\":\"The requirement type or reason why the associated medical procedure, service, product, item, test, specimen etc. were performed or ordered in conjunction with the encounter.\\n\\nEx:\\n- Prescribed by Physician\\n- Required for Hospital Stay\\n- Medical Procedure Consumable\\n- Service Required\\n- Medical Equipment\\n- Personal Charged Food\\n- Authorized by Nurse\",\"primaryKey\":[\"RequirementTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequirementType.cdm.json/RequirementType\",\"name\":\"RequirementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Requirement Type.\",\"isNullable\":false,\"name\":\"RequirementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequirementType.cdm.json/RequirementType\",\"name\":\"RequirementTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Requirement Type.\",\"isNullable\":true,\"name\":\"RequirementTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequirementType.cdm.json/RequirementType\",\"name\":\"RequirementTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Requirement Type.\",\"isNullable\":true,\"name\":\"RequirementTypeDescription\"}]}}}",
+			"Description": "The requirement type or reason why the associated medical procedure, service, product, item, test, specimen etc. were performed or ordered in conjunction with the encounter.\n\nEx:\n- Prescribed by Physician\n- Required for Hospital Stay\n- Medical Procedure Consumable\n- Service Required\n- Medical Equipment\n- Personal Charged Food\n- Authorized by Nurse",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "RequirementTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

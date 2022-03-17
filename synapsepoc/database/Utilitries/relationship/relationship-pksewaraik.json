@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pksewaraik",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-pksewaraik",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyChecklist",
+		"ToTableName": "RelatedSafetyChecklist",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyChecklistId",
+				"ToColumnName": "RelatedSafetyChecklistId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"toEntity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"joinPairs\":[{\"fromAttribute\":\"SafetyChecklistId\",\"toAttribute\":\"RelatedSafetyChecklistId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "ContactPurpose",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ContactPurpose",
+		"Description": "The intended purpose of the contact.\n\nEx:\n- Emergency\n- Billing\n- Monthly Consumption Target Exceeded\n- Customer Service\n- Marketing\n- Reminder\n- Alerts\n- Follow-Up\n- Program\n- Program Type\n- Promotion\n- Promotion Type\n- Third Party\n- Transactions",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ContactPurposeId",
+					"Description": "The unique identifier of the Contact Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "ContactPurpose.cdm.json/ContactPurpose",
+						"Name": "ContactPurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ContactPurposeName",
+					"Description": "The name of the Contact Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "ContactPurpose.cdm.json/ContactPurpose",
+						"Name": "ContactPurposeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ContactPurposeDescription",
+					"Description": "The description of the Contact Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "ContactPurpose.cdm.json/ContactPurpose",
+						"Name": "ContactPurposeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ContactPurpose",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ContactPurpose",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ContactPurposeId\":{\"entity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"name\":\"ContactPurposeId\"},\"ContactPurposeName\":{\"entity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"name\":\"ContactPurposeName\"},\"ContactPurposeDescription\":{\"entity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"name\":\"ContactPurposeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ContactPurpose\",\"path\":\"ContactPurpose.cdm.json/ContactPurpose\"},\"description\":\"The intended purpose of the contact.\\n\\nEx:\\n- Emergency\\n- Billing\\n- Monthly Consumption Target Exceeded\\n- Customer Service\\n- Marketing\\n- Reminder\\n- Alerts\\n- Follow-Up\\n- Program\\n- Program Type\\n- Promotion\\n- Promotion Type\\n- Third Party\\n- Transactions\",\"primaryKey\":[\"ContactPurposeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"name\":\"ContactPurposeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Contact Purpose.\",\"isNullable\":false,\"name\":\"ContactPurposeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"name\":\"ContactPurposeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Contact Purpose.\",\"isNullable\":true,\"name\":\"ContactPurposeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ContactPurpose.cdm.json/ContactPurpose\",\"name\":\"ContactPurposeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Contact Purpose.\",\"isNullable\":true,\"name\":\"ContactPurposeDescription\"}]}}}",
+			"Description": "The intended purpose of the contact.\n\nEx:\n- Emergency\n- Billing\n- Monthly Consumption Target Exceeded\n- Customer Service\n- Marketing\n- Reminder\n- Alerts\n- Follow-Up\n- Program\n- Program Type\n- Promotion\n- Promotion Type\n- Third Party\n- Transactions",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "ContactPurposeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

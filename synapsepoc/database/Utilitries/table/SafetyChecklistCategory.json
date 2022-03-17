@@ -1,0 +1,105 @@
+{
+	"name": "SafetyChecklistCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SafetyChecklistCategory",
+		"Description": "A categorization of the safety checklist item based on common characteristics.\n\nEx:\n- Asset / Equipment\n- Work Conditions\n- Employee Type\n- Work Order Type",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyChecklistCategoryId",
+					"Description": "The unique identifier of a Safety Checklist Category Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklistCategory.cdm.json/SafetyChecklistCategory",
+						"Name": "SafetyChecklistCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistCategoryTypeName",
+					"Description": "The name of a Safety Checklist Category Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklistCategory.cdm.json/SafetyChecklistCategory",
+						"Name": "SafetyChecklistCategoryTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistCategoryTypeDescription",
+					"Description": "The description of a Safety Checklist Category Type.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyChecklistCategory.cdm.json/SafetyChecklistCategory",
+						"Name": "SafetyChecklistCategoryTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyChecklistCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyChecklistCategory",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyChecklistCategoryId\":{\"entity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"name\":\"SafetyChecklistCategoryId\"},\"SafetyChecklistCategoryTypeName\":{\"entity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"name\":\"SafetyChecklistCategoryTypeName\"},\"SafetyChecklistCategoryTypeDescription\":{\"entity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"name\":\"SafetyChecklistCategoryTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SafetyChecklistCategory\",\"path\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\"},\"description\":\"A categorization of the safety checklist item based on common characteristics.\\n\\nEx:\\n- Asset / Equipment\\n- Work Conditions\\n- Employee Type\\n- Work Order Type\",\"primaryKey\":[\"SafetyChecklistCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"name\":\"SafetyChecklistCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist Category Type.\",\"isNullable\":false,\"name\":\"SafetyChecklistCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"name\":\"SafetyChecklistCategoryTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Safety Checklist Category Type.\",\"isNullable\":true,\"name\":\"SafetyChecklistCategoryTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"name\":\"SafetyChecklistCategoryTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Safety Checklist Category Type.\",\"isNullable\":true,\"name\":\"SafetyChecklistCategoryTypeDescription\"}]}}}",
+			"Description": "A categorization of the safety checklist item based on common characteristics.\n\nEx:\n- Asset / Equipment\n- Work Conditions\n- Employee Type\n- Work Order Type",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyChecklistCategoryId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

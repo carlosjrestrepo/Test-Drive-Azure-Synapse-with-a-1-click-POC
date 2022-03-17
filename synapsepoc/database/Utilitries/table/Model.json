@@ -1,0 +1,153 @@
+{
+	"name": "Model",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "Model",
+		"Description": "A division of automobiles within a common automobile brand with similar physical design characteristics that are grouped under the associated brand for marketing purposes.\n\nEx:\n\nBrand / Model  \n---------------------\nChevrolet / Avalanche  \nChevrolet / Impala\nGMC / Yukon",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ModelId",
+					"Description": "The unique identifier of a model.",
+					"BaseAttributeReference": {
+						"Entity": "Model.cdm.json/Model",
+						"Name": "ModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerId",
+					"Description": "The unique identifier of a Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "Model.cdm.json/Model",
+						"Name": "ManufacturerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleBrandId",
+					"Description": "The unique identifier of a Vehicle Brand.",
+					"BaseAttributeReference": {
+						"Entity": "Model.cdm.json/Model",
+						"Name": "VehicleBrandId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelYear",
+					"Description": "The year of the associated model.",
+					"BaseAttributeReference": {
+						"Entity": "Model.cdm.json/Model",
+						"Name": "ModelYear"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ModelName",
+					"Description": "The name of the model.",
+					"BaseAttributeReference": {
+						"Entity": "Model.cdm.json/Model",
+						"Name": "ModelName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ModelDescription",
+					"Description": "The description of a the Model.",
+					"BaseAttributeReference": {
+						"Entity": "Model.cdm.json/Model",
+						"Name": "ModelDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Model",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Model",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ModelId\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelId\"},\"ManufacturerId\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ManufacturerId\"},\"VehicleBrandId\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"VehicleBrandId\"},\"ModelYear\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelYear\"},\"ModelName\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelName\"},\"ModelDescription\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Model\",\"path\":\"Model.cdm.json/Model\"},\"description\":\"A division of automobiles within a common automobile brand with similar physical design characteristics that are grouped under the associated brand for marketing purposes.\\n\\nEx:\\n\\nBrand / Model  \\n---------------------\\nChevrolet / Avalanche  \\nChevrolet / Impala\\nGMC / Yukon\",\"primaryKey\":[\"ModelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a model.\",\"isNullable\":false,\"name\":\"ModelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ManufacturerId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Manufacturer.\",\"isNullable\":true,\"name\":\"ManufacturerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"VehicleBrandId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Vehicle Brand.\",\"isNullable\":true,\"name\":\"VehicleBrandId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelYear\"},\"dataType\":\"integer\",\"description\":\"The year of the associated model.\",\"isNullable\":true,\"name\":\"ModelYear\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the model.\",\"isNullable\":true,\"name\":\"ModelName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Model.cdm.json/Model\",\"name\":\"ModelDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a the Model.\",\"isNullable\":true,\"name\":\"ModelDescription\"}]}}}",
+			"Description": "A division of automobiles within a common automobile brand with similar physical design characteristics that are grouped under the associated brand for marketing purposes.\n\nEx:\n\nBrand / Model  \n---------------------\nChevrolet / Avalanche  \nChevrolet / Impala\nGMC / Yukon",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#000F5C\"}",
+			"PrimaryKeys": "ModelId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

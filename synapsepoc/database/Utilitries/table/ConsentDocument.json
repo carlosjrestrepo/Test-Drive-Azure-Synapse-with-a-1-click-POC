@@ -1,0 +1,138 @@
+{
+	"name": "ConsentDocument",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ConsentDocument",
+		"Description": "A document associated with the consent. \n\nThe associated document will outline the details of the consent that was provided. This can include details such as:\n- permitted use of data\n- how data will be used (including process)\n- who will utilize data",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ConsentId",
+					"Description": "The unique identifier of the Consent.",
+					"BaseAttributeReference": {
+						"Entity": "ConsentDocument.cdm.json/ConsentDocument",
+						"Name": "ConsentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "ConsentDocument.cdm.json/ConsentDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "ConsentDocument.cdm.json/ConsentDocument",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated data is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "ConsentDocument.cdm.json/ConsentDocument",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ConsentDocumentNote",
+					"Description": "A note, comment or additional information regarding the Consent Document.",
+					"BaseAttributeReference": {
+						"Entity": "ConsentDocument.cdm.json/ConsentDocument",
+						"Name": "ConsentDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ConsentDocument",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ConsentDocument",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ConsentId\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"ConsentId\"},\"DocumentId\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"DocumentId\"},\"PeriodStartDate\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"PeriodEndDate\"},\"ConsentDocumentNote\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"ConsentDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ConsentDocument\",\"path\":\"ConsentDocument.cdm.json/ConsentDocument\"},\"description\":\"A document associated with the consent. \\n\\nThe associated document will outline the details of the consent that was provided. This can include details such as:\\n- permitted use of data\\n- how data will be used (including process)\\n- who will utilize data\",\"primaryKey\":[\"ConsentId\",\"DocumentId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"ConsentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Consent.\",\"isNullable\":false,\"name\":\"ConsentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated data is effective or 'as-of'.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated data is effective or 'as-of'.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"name\":\"ConsentDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Consent Document.\",\"isNullable\":true,\"name\":\"ConsentDocumentNote\"}]}}}",
+			"Description": "A document associated with the consent. \n\nThe associated document will outline the details of the consent that was provided. This can include details such as:\n- permitted use of data\n- how data will be used (including process)\n- who will utilize data",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "ConsentId,DocumentId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

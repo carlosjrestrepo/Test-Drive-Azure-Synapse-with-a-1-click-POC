@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ikkuftunvf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ikkuftunvf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimDateType",
+		"ToTableName": "ClaimRelatedDate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimDateTypeId",
+				"ToColumnName": "ClaimDateTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimDateType.cdm.json/ClaimDateType\",\"toEntity\":\"ClaimRelatedDate.cdm.json/ClaimRelatedDate\",\"joinPairs\":[{\"fromAttribute\":\"ClaimDateTypeId\",\"toAttribute\":\"ClaimDateTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

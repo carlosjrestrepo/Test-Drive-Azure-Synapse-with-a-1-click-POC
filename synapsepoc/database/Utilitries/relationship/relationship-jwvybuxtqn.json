@@ -1,0 +1,30 @@
+{
+	"name": "relationship-jwvybuxtqn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-jwvybuxtqn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SocialMediaPlatformUser",
+		"ToTableName": "CustomerSocialMediaPlatformUser",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SocialMediaPlatformId",
+				"ToColumnName": "SocialMediaPlatformId"
+			},
+			{
+				"FromColumnName": "SocialMediaPlatformUserId",
+				"ToColumnName": "SocialMediaPlatformUserId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SocialMediaPlatformUser.cdm.json/SocialMediaPlatformUser\",\"toEntity\":\"CustomerSocialMediaPlatformUser.cdm.json/CustomerSocialMediaPlatformUser\",\"joinPairs\":[{\"fromAttribute\":\"SocialMediaPlatformId\",\"toAttribute\":\"SocialMediaPlatformId\"},{\"fromAttribute\":\"SocialMediaPlatformUserId\",\"toAttribute\":\"SocialMediaPlatformUserId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

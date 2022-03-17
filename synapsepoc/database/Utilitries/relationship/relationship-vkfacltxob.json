@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vkfacltxob",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-vkfacltxob",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReserveType",
+		"ToTableName": "ClaimReserve",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReserveTypeId",
+				"ToColumnName": "ReserveTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReserveType.cdm.json/ReserveType\",\"toEntity\":\"ClaimReserve.cdm.json/ClaimReserve\",\"joinPairs\":[{\"fromAttribute\":\"ReserveTypeId\",\"toAttribute\":\"ReserveTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

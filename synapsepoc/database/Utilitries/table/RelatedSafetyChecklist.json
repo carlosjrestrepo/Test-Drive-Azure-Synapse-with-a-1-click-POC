@@ -1,0 +1,120 @@
+{
+	"name": "RelatedSafetyChecklist",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "RelatedSafetyChecklist",
+		"Description": "The relationship of two or more safety checklists.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyChecklistId",
+					"Description": "The unique identifier of a Safety Checklist.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist",
+						"Name": "SafetyChecklistId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedSafetyChecklistId",
+					"Description": "The unique identifier of a Safety Checklist.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist",
+						"Name": "RelatedSafetyChecklistId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistRelationshipTypeId",
+					"Description": "The unique identifier of a claim relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist",
+						"Name": "SafetyChecklistRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistRelatedNote",
+					"Description": "Notes, comments or additional information regarding related safety checklists.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist",
+						"Name": "SafetyChecklistRelatedNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RelatedSafetyChecklist",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/RelatedSafetyChecklist",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyChecklistId\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"SafetyChecklistId\"},\"RelatedSafetyChecklistId\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"RelatedSafetyChecklistId\"},\"SafetyChecklistRelationshipTypeId\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"SafetyChecklistRelationshipTypeId\"},\"SafetyChecklistRelatedNote\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"SafetyChecklistRelatedNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedSafetyChecklist\",\"path\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\"},\"description\":\"The relationship of two or more safety checklists.\",\"primaryKey\":[\"SafetyChecklistId\",\"RelatedSafetyChecklistId\",\"SafetyChecklistRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"SafetyChecklistId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist.\",\"isNullable\":false,\"name\":\"SafetyChecklistId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"RelatedSafetyChecklistId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist.\",\"isNullable\":false,\"name\":\"RelatedSafetyChecklistId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"SafetyChecklistRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a claim relationship.\",\"isNullable\":false,\"name\":\"SafetyChecklistRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSafetyChecklist.cdm.json/RelatedSafetyChecklist\",\"name\":\"SafetyChecklistRelatedNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding related safety checklists.\",\"isNullable\":true,\"name\":\"SafetyChecklistRelatedNote\"}]}}}",
+			"Description": "The relationship of two or more safety checklists.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyChecklistId,RelatedSafetyChecklistId,SafetyChecklistRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

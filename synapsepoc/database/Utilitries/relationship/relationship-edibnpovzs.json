@@ -1,0 +1,26 @@
+{
+	"name": "relationship-edibnpovzs",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-edibnpovzs",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ServiceProviderType",
+		"ToTableName": "ServiceProvider",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceProviderTypeId",
+				"ToColumnName": "ServiceProviderTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ServiceProviderType.cdm.json/ServiceProviderType\",\"toEntity\":\"ServiceProvider.cdm.json/ServiceProvider\",\"joinPairs\":[{\"fromAttribute\":\"ServiceProviderTypeId\",\"toAttribute\":\"ServiceProviderTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,158 @@
+{
+	"name": "ClaimLoss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimLoss",
+		"Description": "The total amount of loss associated with the Claim, which is the measurable dollar cost of damage and/or injury suffered by in conjunction with a claim or reduction in the quality or value of a property, or a legal liability.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLoss.cdm.json/ClaimLoss",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimLossId",
+					"Description": "The unique identifier of a Claim Loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLoss.cdm.json/ClaimLoss",
+						"Name": "ClaimLossId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LossEstimatedAmount",
+					"Description": "The estimated amount of loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLoss.cdm.json/ClaimLoss",
+						"Name": "LossEstimatedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LossAdjustedAmount",
+					"Description": "The adjusted amount of loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLoss.cdm.json/ClaimLoss",
+						"Name": "LossAdjustedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AggregateClaimLossPayoutAmount",
+					"Description": "The aggregate or total amount of adjusted losses for which the associated payout is agreed.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLoss.cdm.json/ClaimLoss",
+						"Name": "AggregateClaimLossPayoutAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LossStatement",
+					"Description": "A statement regarding the associated loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLoss.cdm.json/ClaimLoss",
+						"Name": "LossStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLoss",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLoss",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"ClaimId\"},\"ClaimLossId\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"ClaimLossId\"},\"LossEstimatedAmount\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"LossEstimatedAmount\"},\"LossAdjustedAmount\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"LossAdjustedAmount\"},\"AggregateClaimLossPayoutAmount\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"AggregateClaimLossPayoutAmount\"},\"LossStatement\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"LossStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimLoss\",\"path\":\"ClaimLoss.cdm.json/ClaimLoss\"},\"description\":\"The total amount of loss associated with the Claim, which is the measurable dollar cost of damage and/or injury suffered by in conjunction with a claim or reduction in the quality or value of a property, or a legal liability.\",\"primaryKey\":[\"ClaimId\",\"ClaimLossId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"ClaimLossId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Loss.\",\"isNullable\":false,\"name\":\"ClaimLossId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"LossEstimatedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated amount of loss.\",\"isNullable\":true,\"scale\":2,\"name\":\"LossEstimatedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"LossAdjustedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The adjusted amount of loss.\",\"isNullable\":true,\"scale\":2,\"name\":\"LossAdjustedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"AggregateClaimLossPayoutAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The aggregate or total amount of adjusted losses for which the associated payout is agreed.\",\"isNullable\":true,\"scale\":2,\"name\":\"AggregateClaimLossPayoutAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"name\":\"LossStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the associated loss.\",\"isNullable\":true,\"name\":\"LossStatement\"}]}}}",
+			"Description": "The total amount of loss associated with the Claim, which is the measurable dollar cost of damage and/or injury suffered by in conjunction with a claim or reduction in the quality or value of a property, or a legal liability.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimLossId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

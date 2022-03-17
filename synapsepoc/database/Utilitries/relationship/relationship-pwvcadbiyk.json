@@ -1,0 +1,34 @@
+{
+	"name": "relationship-pwvcadbiyk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-pwvcadbiyk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ModelYearTrim",
+		"ToTableName": "Vehicle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ModelId",
+				"ToColumnName": "ModelId"
+			},
+			{
+				"FromColumnName": "ModelYearId",
+				"ToColumnName": "ModelYearId"
+			},
+			{
+				"FromColumnName": "ModelYearTrimId",
+				"ToColumnName": "ModelYearTrimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ModelYearTrim.cdm.json/ModelYearTrim\",\"toEntity\":\"Vehicle.cdm.json/Vehicle\",\"joinPairs\":[{\"fromAttribute\":\"ModelId\",\"toAttribute\":\"ModelId\"},{\"fromAttribute\":\"ModelYearId\",\"toAttribute\":\"ModelYearId\"},{\"fromAttribute\":\"ModelYearTrimId\",\"toAttribute\":\"ModelYearTrimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

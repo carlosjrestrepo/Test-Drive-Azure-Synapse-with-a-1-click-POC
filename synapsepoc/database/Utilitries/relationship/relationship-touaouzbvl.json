@@ -1,0 +1,26 @@
+{
+	"name": "relationship-touaouzbvl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-touaouzbvl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimCategory",
+		"ToTableName": "Claim",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimCategoryId",
+				"ToColumnName": "ClaimCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimCategory.cdm.json/ClaimCategory\",\"toEntity\":\"Claim.cdm.json/Claim\",\"joinPairs\":[{\"fromAttribute\":\"ClaimCategoryId\",\"toAttribute\":\"ClaimCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "StructureRepairPartyRelationshipType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureRepairPartyRelationshipType",
+		"Description": "The nature of the relationship between the repair and party.\n\nEx:\n- Repair-by Party\n- Authorized-by Party\n- Return-to Party\n- Invoice-to Party\n- Payment-by Party",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureRepairPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Structure Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType",
+						"Name": "StructureRepairPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureRepairPartyRelationshipTypeName",
+					"Description": "The name of a Structure Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType",
+						"Name": "StructureRepairPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureRepairPartyRelationshipTypeDescription",
+					"Description": "The description of a Structure Repair Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType",
+						"Name": "StructureRepairPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepairPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureRepairPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureRepairPartyRelationshipTypeId\":{\"entity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"name\":\"StructureRepairPartyRelationshipTypeId\"},\"StructureRepairPartyRelationshipTypeName\":{\"entity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"name\":\"StructureRepairPartyRelationshipTypeName\"},\"StructureRepairPartyRelationshipTypeDescription\":{\"entity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"name\":\"StructureRepairPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureRepairPartyRelationshipType\",\"path\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\"},\"description\":\"The nature of the relationship between the repair and party.\\n\\nEx:\\n- Repair-by Party\\n- Authorized-by Party\\n- Return-to Party\\n- Invoice-to Party\\n- Payment-by Party\",\"primaryKey\":[\"StructureRepairPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"name\":\"StructureRepairPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Structure Repair Party Relationship Type.\",\"isNullable\":false,\"name\":\"StructureRepairPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"name\":\"StructureRepairPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Structure Repair Party Relationship Type.\",\"isNullable\":true,\"name\":\"StructureRepairPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureRepairPartyRelationshipType.cdm.json/StructureRepairPartyRelationshipType\",\"name\":\"StructureRepairPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Structure Repair Party Relationship Type.\",\"isNullable\":true,\"name\":\"StructureRepairPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the repair and party.\n\nEx:\n- Repair-by Party\n- Authorized-by Party\n- Return-to Party\n- Invoice-to Party\n- Payment-by Party",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "StructureRepairPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

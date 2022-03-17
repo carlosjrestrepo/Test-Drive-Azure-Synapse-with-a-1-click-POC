@@ -1,0 +1,105 @@
+{
+	"name": "StructureSalvageType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "StructureSalvageType",
+		"Description": "The type salvage.\n\nEx:\n- Retrieved\n- Reconditioned\n- Sold",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureSalvageTypeId",
+					"Description": "The unique identifier of a Structure Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureSalvageType.cdm.json/StructureSalvageType",
+						"Name": "StructureSalvageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureSalvageTypeName",
+					"Description": "The name of a Structure Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureSalvageType.cdm.json/StructureSalvageType",
+						"Name": "StructureSalvageTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureSalvageTypeDescription",
+					"Description": "The description of a Structure Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureSalvageType.cdm.json/StructureSalvageType",
+						"Name": "StructureSalvageTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureSalvageType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/StructureSalvageType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureSalvageTypeId\":{\"entity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"name\":\"StructureSalvageTypeId\"},\"StructureSalvageTypeName\":{\"entity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"name\":\"StructureSalvageTypeName\"},\"StructureSalvageTypeDescription\":{\"entity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"name\":\"StructureSalvageTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureSalvageType\",\"path\":\"StructureSalvageType.cdm.json/StructureSalvageType\"},\"description\":\"The type salvage.\\n\\nEx:\\n- Retrieved\\n- Reconditioned\\n- Sold\",\"primaryKey\":[\"StructureSalvageTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"name\":\"StructureSalvageTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Structure Salvage Type.\",\"isNullable\":false,\"name\":\"StructureSalvageTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"name\":\"StructureSalvageTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Structure Salvage Type.\",\"isNullable\":true,\"name\":\"StructureSalvageTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureSalvageType.cdm.json/StructureSalvageType\",\"name\":\"StructureSalvageTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Structure Salvage Type.\",\"isNullable\":true,\"name\":\"StructureSalvageTypeDescription\"}]}}}",
+			"Description": "The type salvage.\n\nEx:\n- Retrieved\n- Reconditioned\n- Sold",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "StructureSalvageTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-homnzcmvty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-homnzcmvty",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OccupationGroup",
+		"ToTableName": "CustomerOccupationGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OccupationGroupId",
+				"ToColumnName": "OccupationGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OccupationGroup.cdm.json/OccupationGroup\",\"toEntity\":\"CustomerOccupationGroup.cdm.json/CustomerOccupationGroup\",\"joinPairs\":[{\"fromAttribute\":\"OccupationGroupId\",\"toAttribute\":\"OccupationGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

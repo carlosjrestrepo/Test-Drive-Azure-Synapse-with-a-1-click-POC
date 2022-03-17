@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wibgwencjg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wibgwencjg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimVehicleLossType",
+		"ToTableName": "ClaimVehicleLoss",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimVehicleLossTypeId",
+				"ToColumnName": "ClaimVehicleLossTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimVehicleLossType.cdm.json/ClaimVehicleLossType\",\"toEntity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"joinPairs\":[{\"fromAttribute\":\"ClaimVehicleLossTypeId\",\"toAttribute\":\"ClaimVehicleLossTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

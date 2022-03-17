@@ -1,0 +1,26 @@
+{
+	"name": "relationship-felsgfexju",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-felsgfexju",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Encounter",
+		"ToTableName": "ClaimInjuredPartyEncounter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterId",
+				"ToColumnName": "EncounterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Encounter.cdm.json/Encounter\",\"toEntity\":\"ClaimInjuredPartyEncounter.cdm.json/ClaimInjuredPartyEncounter\",\"joinPairs\":[{\"fromAttribute\":\"EncounterId\",\"toAttribute\":\"EncounterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

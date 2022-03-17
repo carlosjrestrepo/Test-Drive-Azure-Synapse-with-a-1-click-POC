@@ -1,0 +1,107 @@
+{
+	"name": "AmbulatoryPatientCareCode",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "AmbulatoryPatientCareCode",
+		"Description": "Ambulatory Payment Classification, outpatient reimbursement system based upon methodology developed by 3M for HCFA.\nPayments are based on groupings of similar services requiring similar professional services and supply utilization",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ApcCode",
+					"Description": "The unique identifier of an APC Code.",
+					"BaseAttributeReference": {
+						"Entity": "AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode",
+						"Name": "ApcCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ApcCodeDescription",
+					"Description": "The description of an APC Code.",
+					"BaseAttributeReference": {
+						"Entity": "AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode",
+						"Name": "ApcCodeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReimbursementAmount",
+					"Description": "The reimbursable amount associated with the APC code.",
+					"BaseAttributeReference": {
+						"Entity": "AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode",
+						"Name": "ReimbursementAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/AmbulatoryPatientCareCode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/AmbulatoryPatientCareCode",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ApcCode\":{\"entity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"name\":\"ApcCode\"},\"ApcCodeDescription\":{\"entity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"name\":\"ApcCodeDescription\"},\"ReimbursementAmount\":{\"entity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"name\":\"ReimbursementAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AmbulatoryPatientCareCode\",\"path\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\"},\"description\":\"Ambulatory Payment Classification, outpatient reimbursement system based upon methodology developed by 3M for HCFA.\\nPayments are based on groupings of similar services requiring similar professional services and supply utilization\",\"primaryKey\":[\"ApcCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"name\":\"ApcCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of an APC Code.\",\"isNullable\":false,\"name\":\"ApcCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"name\":\"ApcCodeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an APC Code.\",\"isNullable\":true,\"name\":\"ApcCodeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AmbulatoryPatientCareCode.cdm.json/AmbulatoryPatientCareCode\",\"name\":\"ReimbursementAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The reimbursable amount associated with the APC code.\",\"isNullable\":true,\"scale\":2,\"name\":\"ReimbursementAmount\"}]}}}",
+			"Description": "Ambulatory Payment Classification, outpatient reimbursement system based upon methodology developed by 3M for HCFA.\nPayments are based on groupings of similar services requiring similar professional services and supply utilization",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "ApcCode",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lukgyahtlz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-lukgyahtlz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsuranceServiceType",
+		"ToTableName": "ClaimInsuranceService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsuranceServiceTypeId",
+				"ToColumnName": "InsuranceServiceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsuranceServiceType.cdm.json/InsuranceServiceType\",\"toEntity\":\"ClaimInsuranceService.cdm.json/ClaimInsuranceService\",\"joinPairs\":[{\"fromAttribute\":\"InsuranceServiceTypeId\",\"toAttribute\":\"InsuranceServiceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yohsvznxhx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-yohsvznxhx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ArbitrationType",
+		"ToTableName": "Arbitration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ArbitrationTypeId",
+				"ToColumnName": "ArbitrationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ArbitrationType.cdm.json/ArbitrationType\",\"toEntity\":\"Arbitration.cdm.json/Arbitration\",\"joinPairs\":[{\"fromAttribute\":\"ArbitrationTypeId\",\"toAttribute\":\"ArbitrationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

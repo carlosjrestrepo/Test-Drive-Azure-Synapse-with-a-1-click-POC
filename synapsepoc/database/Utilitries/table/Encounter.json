@@ -1,0 +1,593 @@
+{
+	"name": "Encounter",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "Encounter",
+		"Description": "A contact between an individual and the health care system for a health care service or set of services related to one or more medical conditions involving one or more tests, service, medical procedures, products, items, ancillary services etc. \n\nSome organizations refer to this as an Episode of Care, while others prefer to think of a group of related Encounters as an Episode of Care.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EncounterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "EncounterScheduledTimestamp",
+					"Description": "The planned date and time of the encounter.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EncounterScheduledTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EncounterStartTimestamp",
+					"Description": "The period start timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EncounterStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EncounterEndTimestamp",
+					"Description": "The period end timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EncounterEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ServiceProviderId",
+					"Description": "The unique identifier of a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "ServiceProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PatientId",
+					"Description": "The unique identifier of a Patient.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "PatientId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClinicalTrialId",
+					"Description": "The unique identifier of a clinical trial.\naka 'clinicaltrials.gov identifier'\n\nEx:\nClinicalTrials.gov Identifier:  NCT00040742",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "ClinicalTrialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubjectId",
+					"Description": "The unique identifier of a Subject.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "SubjectId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReferringServiceProviderId",
+					"Description": "The unique identifier of the referring Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "ReferringServiceProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdmittingDiagnosisStatement",
+					"Description": "Words that your doctor uses to describe your condition",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "AdmittingDiagnosisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PrincipalDiagnosisStatement",
+					"Description": "The medical condition that is ultimately determined to have caused a patient's admission to the hospital. The principal diagnosis is used to assign every patient to a diagnosis related group. This diagnosis may differ from the admitting and major diagnoses.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "PrincipalDiagnosisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EndOfEncounterDiagnosisStatement",
+					"Description": "The final diagnosis associated with the encounter, which means identifying a disease by its signs, symptoms, and laboratory findings",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EndOfEncounterDiagnosisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MemberBeneficiaryLiabilityStatement",
+					"Description": "A statement that you are responsible for some treatments or charges.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "MemberBeneficiaryLiabilityStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LengthOfStay",
+					"Description": "LOS expressed in hours refers to the length of stay. It is a term used by insurance companies, case managers and/or employers to describe the amount of time an individual stays in a hospital or in-patient facility.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "LengthOfStay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CaseManagerId",
+					"Description": "The unique identifier of a case manager.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "CaseManagerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TriageClassificationId",
+					"Description": "The unique identifier of a Triage Classification.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "TriageClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdmissionLevelOfCareId",
+					"Description": "The unique identifier of an Admission Level Of Care.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "AdmissionLevelOfCareId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HealthProgramId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "HealthProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MedicaidCaseName",
+					"Description": "The case name assigned by Medicaid.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "MedicaidCaseName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MedicaidCaseNumber",
+					"Description": "The case number assigned by Medicaid.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "MedicaidCaseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EncounterNote",
+					"Description": "Notes, comments or additional information regarding the encounter.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EncounterNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HealthcareFacilityId",
+					"Description": "The unique identifier of a Healthcare Facility.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "HealthcareFacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FacilityFloorplanLocationId",
+					"Description": "The unique identifier of a Facility Floorplan Location.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "FacilityFloorplanLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MemberPreauthorizationCode",
+					"Description": "The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "MemberPreauthorizationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ResultOfWorkRelatedAccidentIndicator",
+					"Description": "Indicates that the encounter is a result of a work-related accident.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "ResultOfWorkRelatedAccidentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "UncompensatedCareIndicator",
+					"Description": "Service provided by physicians and hospitals for which no payment is received from the patient or from third-party payers. \n\nSome costs for these services may be covered through cost-shifting. Not all uncompensated care results from charity care. It also includes bad debts from persons who are not classified as charity cases but who are unable or unwilling to pay their bill. See cost shifting.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "UncompensatedCareIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "OutOfNetworkEncounterIndicator",
+					"Description": "Services performed by a provider who has not signed a contract with the member's health plan to be part of a provider network.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "OutOfNetworkEncounterIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ReferralRequiredIndicator",
+					"Description": "Indicates that a referral is required as a result of the encounter.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "ReferralRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EmploymentIllnessRelatedIndicator",
+					"Description": "Indicates whether the illness was job-related.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EmploymentIllnessRelatedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisabledIndicator",
+					"Description": "Indicates if the encounter is due to a disability.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "DisabledIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ReAdmissionIndicator",
+					"Description": "Indicates whether the Encounter is the result of a re-admission.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "ReAdmissionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EncounterTypeId",
+					"Description": "The unique identifier of an Encounter Type.",
+					"BaseAttributeReference": {
+						"Entity": "Encounter.cdm.json/Encounter",
+						"Name": "EncounterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Encounter",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/Encounter",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterId\"},\"EncounterScheduledTimestamp\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterScheduledTimestamp\"},\"EncounterStartTimestamp\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterStartTimestamp\"},\"EncounterEndTimestamp\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterEndTimestamp\"},\"ServiceProviderId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ServiceProviderId\"},\"PatientId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"PatientId\"},\"ClinicalTrialId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ClinicalTrialId\"},\"SubjectId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"SubjectId\"},\"ReferringServiceProviderId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ReferringServiceProviderId\"},\"AdmittingDiagnosisStatement\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"AdmittingDiagnosisStatement\"},\"PrincipalDiagnosisStatement\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"PrincipalDiagnosisStatement\"},\"EndOfEncounterDiagnosisStatement\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EndOfEncounterDiagnosisStatement\"},\"MemberBeneficiaryLiabilityStatement\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MemberBeneficiaryLiabilityStatement\"},\"LengthOfStay\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"LengthOfStay\"},\"CaseManagerId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"CaseManagerId\"},\"TriageClassificationId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"TriageClassificationId\"},\"AdmissionLevelOfCareId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"AdmissionLevelOfCareId\"},\"HealthProgramId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"HealthProgramId\"},\"MedicaidCaseName\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MedicaidCaseName\"},\"MedicaidCaseNumber\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MedicaidCaseNumber\"},\"EncounterNote\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterNote\"},\"HealthcareFacilityId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"HealthcareFacilityId\"},\"FacilityFloorplanLocationId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"FacilityFloorplanLocationId\"},\"LocationId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"LocationId\"},\"MemberPreauthorizationCode\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MemberPreauthorizationCode\"},\"ResultOfWorkRelatedAccidentIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ResultOfWorkRelatedAccidentIndicator\"},\"UncompensatedCareIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"UncompensatedCareIndicator\"},\"OutOfNetworkEncounterIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"OutOfNetworkEncounterIndicator\"},\"ReferralRequiredIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ReferralRequiredIndicator\"},\"EmploymentIllnessRelatedIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EmploymentIllnessRelatedIndicator\"},\"DisabledIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"DisabledIndicator\"},\"ReAdmissionIndicator\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ReAdmissionIndicator\"},\"EncounterTypeId\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Encounter\",\"path\":\"Encounter.cdm.json/Encounter\"},\"description\":\"A contact between an individual and the health care system for a health care service or set of services related to one or more medical conditions involving one or more tests, service, medical procedures, products, items, ancillary services etc. \\n\\nSome organizations refer to this as an Episode of Care, while others prefer to think of a group of related Encounters as an Episode of Care.\",\"primaryKey\":[\"EncounterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterScheduledTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The planned date and time of the encounter.\",\"isNullable\":true,\"name\":\"EncounterScheduledTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.\",\"isNullable\":true,\"name\":\"EncounterStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.\",\"isNullable\":true,\"name\":\"EncounterEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ServiceProviderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Provider.\",\"isNullable\":true,\"name\":\"ServiceProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"PatientId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Patient.\",\"isNullable\":true,\"name\":\"PatientId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ClinicalTrialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a clinical trial.\\naka 'clinicaltrials.gov identifier'\\n\\nEx:\\nClinicalTrials.gov Identifier:  NCT00040742\",\"isNullable\":true,\"name\":\"ClinicalTrialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"SubjectId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Subject.\",\"isNullable\":true,\"name\":\"SubjectId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ReferringServiceProviderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the referring Service Provider.\",\"isNullable\":true,\"name\":\"ReferringServiceProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"AdmittingDiagnosisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Words that your doctor uses to describe your condition\",\"isNullable\":true,\"name\":\"AdmittingDiagnosisStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"PrincipalDiagnosisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The medical condition that is ultimately determined to have caused a patient's admission to the hospital. The principal diagnosis is used to assign every patient to a diagnosis related group. This diagnosis may differ from the admitting and major diagnoses.\",\"isNullable\":true,\"name\":\"PrincipalDiagnosisStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EndOfEncounterDiagnosisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The final diagnosis associated with the encounter, which means identifying a disease by its signs, symptoms, and laboratory findings\",\"isNullable\":true,\"name\":\"EndOfEncounterDiagnosisStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MemberBeneficiaryLiabilityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement that you are responsible for some treatments or charges.\",\"isNullable\":true,\"name\":\"MemberBeneficiaryLiabilityStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"LengthOfStay\"},\"dataType\":\"integer\",\"description\":\"LOS expressed in hours refers to the length of stay. It is a term used by insurance companies, case managers and/or employers to describe the amount of time an individual stays in a hospital or in-patient facility.\",\"isNullable\":true,\"name\":\"LengthOfStay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"CaseManagerId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a case manager.\",\"isNullable\":true,\"name\":\"CaseManagerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"TriageClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Triage Classification.\",\"isNullable\":true,\"name\":\"TriageClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"AdmissionLevelOfCareId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Admission Level Of Care.\",\"isNullable\":true,\"name\":\"AdmissionLevelOfCareId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"HealthProgramId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":true,\"name\":\"HealthProgramId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MedicaidCaseName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The case name assigned by Medicaid.\",\"isNullable\":true,\"name\":\"MedicaidCaseName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MedicaidCaseNumber\"},\"dataType\":\"integer\",\"description\":\"The case number assigned by Medicaid.\",\"isNullable\":true,\"name\":\"MedicaidCaseNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the encounter.\",\"isNullable\":true,\"name\":\"EncounterNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"HealthcareFacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Healthcare Facility.\",\"isNullable\":true,\"name\":\"HealthcareFacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"FacilityFloorplanLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility Floorplan Location.\",\"isNullable\":true,\"name\":\"FacilityFloorplanLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"MemberPreauthorizationCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.\",\"isNullable\":true,\"name\":\"MemberPreauthorizationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ResultOfWorkRelatedAccidentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the encounter is a result of a work-related accident.\",\"isNullable\":true,\"name\":\"ResultOfWorkRelatedAccidentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"UncompensatedCareIndicator\"},\"dataType\":\"boolean\",\"description\":\"Service provided by physicians and hospitals for which no payment is received from the patient or from third-party payers. \\n\\nSome costs for these services may be covered through cost-shifting. Not all uncompensated care results from charity care. It also includes bad debts from persons who are not classified as charity cases but who are unable or unwilling to pay their bill. See cost shifting.\",\"isNullable\":true,\"name\":\"UncompensatedCareIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"OutOfNetworkEncounterIndicator\"},\"dataType\":\"boolean\",\"description\":\"Services performed by a provider who has not signed a contract with the member's health plan to be part of a provider network.\",\"isNullable\":true,\"name\":\"OutOfNetworkEncounterIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ReferralRequiredIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that a referral is required as a result of the encounter.\",\"isNullable\":true,\"name\":\"ReferralRequiredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EmploymentIllnessRelatedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the illness was job-related.\",\"isNullable\":true,\"name\":\"EmploymentIllnessRelatedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"DisabledIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates if the encounter is due to a disability.\",\"isNullable\":true,\"name\":\"DisabledIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"ReAdmissionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the Encounter is the result of a re-admission.\",\"isNullable\":true,\"name\":\"ReAdmissionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Encounter.cdm.json/Encounter\",\"name\":\"EncounterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Type.\",\"isNullable\":true,\"name\":\"EncounterTypeId\"}]}}}",
+			"Description": "A contact between an individual and the health care system for a health care service or set of services related to one or more medical conditions involving one or more tests, service, medical procedures, products, items, ancillary services etc. \n\nSome organizations refer to this as an Episode of Care, while others prefer to think of a group of related Encounters as an Episode of Care.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "EncounterId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

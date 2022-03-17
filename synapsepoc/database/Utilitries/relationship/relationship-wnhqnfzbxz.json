@@ -1,0 +1,34 @@
+{
+	"name": "relationship-wnhqnfzbxz",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wnhqnfzbxz",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimLossItem",
+		"ToTableName": "ClaimLossItemSalvage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			},
+			{
+				"FromColumnName": "ClaimLossId",
+				"ToColumnName": "ClaimLossId"
+			},
+			{
+				"FromColumnName": "LossItemId",
+				"ToColumnName": "LossItemId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"toEntity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"},{\"fromAttribute\":\"ClaimLossId\",\"toAttribute\":\"ClaimLossId\"},{\"fromAttribute\":\"LossItemId\",\"toAttribute\":\"LossItemId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

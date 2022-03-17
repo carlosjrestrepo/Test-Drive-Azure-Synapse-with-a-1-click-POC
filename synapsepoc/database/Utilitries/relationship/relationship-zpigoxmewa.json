@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zpigoxmewa",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-zpigoxmewa",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimResolutionType",
+		"ToTableName": "ClaimInjuredParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimResolutionTypeId",
+				"ToColumnName": "ClaimResolutionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimResolutionType.cdm.json/ClaimResolutionType\",\"toEntity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"joinPairs\":[{\"fromAttribute\":\"ClaimResolutionTypeId\",\"toAttribute\":\"ClaimResolutionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

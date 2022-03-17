@@ -1,0 +1,236 @@
+{
+	"name": "EmployeeLearningEvent",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EmployeeLearningEvent",
+		"Description": "The Learning Event(s) attended by the Employee.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EmployeeId",
+					"Description": "The unique identifier of an Employee.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "EmployeeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LearningEventId",
+					"Description": "The unique identifier of a Learning Event.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "LearningEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LearningEventStartDate",
+					"Description": "The start date of the learning event in which the employee participated.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "LearningEventStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LearningEventEndDate",
+					"Description": "The end date of the learning event in which the employee participated.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "LearningEventEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledLearningEventId",
+					"Description": "The unique identifier of a Scheduled Learning Event.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "ScheduledLearningEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LearningEventFeeAmount",
+					"Description": "The amount of fees associated with the Learning Event.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "LearningEventFeeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationId",
+					"Description": "The unique identifier of a Safety Observation.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "SafetyObservationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "SafetyChecklistId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyChecklistItemId",
+					"Description": "The unique identifier of a Safety Checklist Item.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "SafetyChecklistItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeLearningEventNote",
+					"Description": "Notes, comments or additional information regarding the Employee attendance of the Learning Event.",
+					"BaseAttributeReference": {
+						"Entity": "EmployeeLearningEvent.cdm.json/EmployeeLearningEvent",
+						"Name": "EmployeeLearningEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EmployeeLearningEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EmployeeLearningEvent",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EmployeeId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"EmployeeId\"},\"LearningEventId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventId\"},\"LearningEventStartDate\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventStartDate\"},\"LearningEventEndDate\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventEndDate\"},\"ScheduledLearningEventId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"ScheduledLearningEventId\"},\"LearningEventFeeAmount\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventFeeAmount\"},\"IncidentId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"IncidentId\"},\"SafetyObservationId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"SafetyObservationId\"},\"SafetyChecklistId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"SafetyChecklistId\"},\"SafetyChecklistItemId\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"SafetyChecklistItemId\"},\"EmployeeLearningEventNote\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"EmployeeLearningEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmployeeLearningEvent\",\"path\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\"},\"description\":\"The Learning Event(s) attended by the Employee.\",\"primaryKey\":[\"EmployeeId\",\"LearningEventId\",\"LearningEventStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"EmployeeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Employee.\",\"isNullable\":false,\"name\":\"EmployeeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Learning Event.\",\"isNullable\":false,\"name\":\"LearningEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The start date of the learning event in which the employee participated.\",\"isNullable\":false,\"name\":\"LearningEventStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The end date of the learning event in which the employee participated.\",\"isNullable\":true,\"name\":\"LearningEventEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"ScheduledLearningEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Scheduled Learning Event.\",\"isNullable\":true,\"name\":\"ScheduledLearningEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"LearningEventFeeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of fees associated with the Learning Event.\",\"isNullable\":true,\"scale\":2,\"name\":\"LearningEventFeeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":true,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"SafetyObservationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Observation.\",\"isNullable\":true,\"name\":\"SafetyObservationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"SafetyChecklistId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":true,\"name\":\"SafetyChecklistId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"SafetyChecklistItemId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Checklist Item.\",\"isNullable\":true,\"name\":\"SafetyChecklistItemId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"name\":\"EmployeeLearningEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Employee attendance of the Learning Event.\",\"isNullable\":true,\"name\":\"EmployeeLearningEventNote\"}]}}}",
+			"Description": "The Learning Event(s) attended by the Employee.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "EmployeeId,LearningEventId,LearningEventStartDate",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

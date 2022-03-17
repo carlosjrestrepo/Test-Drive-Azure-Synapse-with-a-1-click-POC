@@ -1,0 +1,105 @@
+{
+	"name": "InjuryStatus",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "InjuryStatus",
+		"Description": "The current status of the injury.\n\nEx:\n- Treated\n- Congenital\n- In-hospital\n- Out-patient care",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InjuryStatusId",
+					"Description": "The unique identifier of an injury status.",
+					"BaseAttributeReference": {
+						"Entity": "InjuryStatus.cdm.json/InjuryStatus",
+						"Name": "InjuryStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuryStatusName",
+					"Description": "The name of an injury status.",
+					"BaseAttributeReference": {
+						"Entity": "InjuryStatus.cdm.json/InjuryStatus",
+						"Name": "InjuryStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InjuryStatusDescription",
+					"Description": "The description of an injury status.",
+					"BaseAttributeReference": {
+						"Entity": "InjuryStatus.cdm.json/InjuryStatus",
+						"Name": "InjuryStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuryStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/InjuryStatus",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InjuryStatusId\":{\"entity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"name\":\"InjuryStatusId\"},\"InjuryStatusName\":{\"entity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"name\":\"InjuryStatusName\"},\"InjuryStatusDescription\":{\"entity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"name\":\"InjuryStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InjuryStatus\",\"path\":\"InjuryStatus.cdm.json/InjuryStatus\"},\"description\":\"The current status of the injury.\\n\\nEx:\\n- Treated\\n- Congenital\\n- In-hospital\\n- Out-patient care\",\"primaryKey\":[\"InjuryStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"name\":\"InjuryStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury status.\",\"isNullable\":false,\"name\":\"InjuryStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"name\":\"InjuryStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an injury status.\",\"isNullable\":true,\"name\":\"InjuryStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"name\":\"InjuryStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an injury status.\",\"isNullable\":true,\"name\":\"InjuryStatusDescription\"}]}}}",
+			"Description": "The current status of the injury.\n\nEx:\n- Treated\n- Congenital\n- In-hospital\n- Out-patient care",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "InjuryStatusId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

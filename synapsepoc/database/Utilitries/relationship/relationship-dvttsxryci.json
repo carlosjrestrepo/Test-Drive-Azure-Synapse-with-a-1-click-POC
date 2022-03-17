@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dvttsxryci",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dvttsxryci",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HealthcareService",
+		"ToTableName": "EncounterService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ServiceId",
+				"ToColumnName": "ServiceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HealthcareService.cdm.json/HealthcareService\",\"toEntity\":\"EncounterService.cdm.json/EncounterService\",\"joinPairs\":[{\"fromAttribute\":\"ServiceId\",\"toAttribute\":\"ServiceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

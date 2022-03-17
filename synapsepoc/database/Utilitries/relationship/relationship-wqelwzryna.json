@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wqelwzryna",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wqelwzryna",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyObservationCategory",
+		"ToTableName": "SafetyObservationType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyObservationCategoryId",
+				"ToColumnName": "SafetyObservationCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"toEntity\":\"SafetyObservationType.cdm.json/SafetyObservationType\",\"joinPairs\":[{\"fromAttribute\":\"SafetyObservationCategoryId\",\"toAttribute\":\"SafetyObservationCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

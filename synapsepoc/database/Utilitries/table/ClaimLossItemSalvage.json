@@ -1,0 +1,154 @@
+{
+	"name": "ClaimLossItemSalvage",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimLossItemSalvage",
+		"Description": "Damaged property that may be retrieved, reconditioned, and sold to reduce an insured loss.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimLossId",
+					"Description": "The unique identifier of a Claim Loss.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage",
+						"Name": "ClaimLossId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LossItemId",
+					"Description": "The unique identifier of a Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage",
+						"Name": "LossItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SalvageValueAmount",
+					"Description": "The salvage value of the claim loss item.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage",
+						"Name": "SalvageValueAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "SalvageTypeId",
+					"Description": "The unique identifier of a Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage",
+						"Name": "SalvageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SalvageValueStatement",
+					"Description": "A statement regarding the claim loss item salvage.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage",
+						"Name": "SalvageValueStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLossItemSalvage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimLossItemSalvage",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"ClaimId\"},\"ClaimLossId\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"ClaimLossId\"},\"LossItemId\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"LossItemId\"},\"SalvageValueAmount\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"SalvageValueAmount\"},\"SalvageTypeId\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"SalvageTypeId\"},\"SalvageValueStatement\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"SalvageValueStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimLossItemSalvage\",\"path\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\"},\"description\":\"Damaged property that may be retrieved, reconditioned, and sold to reduce an insured loss.\",\"primaryKey\":[\"ClaimId\",\"ClaimLossId\",\"LossItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"ClaimLossId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Loss.\",\"isNullable\":false,\"name\":\"ClaimLossId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"LossItemId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Item.\",\"isNullable\":false,\"name\":\"LossItemId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"SalvageValueAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The salvage value of the claim loss item.\",\"isNullable\":true,\"scale\":2,\"name\":\"SalvageValueAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"SalvageTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Salvage Type.\",\"isNullable\":true,\"name\":\"SalvageTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimLossItemSalvage.cdm.json/ClaimLossItemSalvage\",\"name\":\"SalvageValueStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the claim loss item salvage.\",\"isNullable\":true,\"name\":\"SalvageValueStatement\"}]}}}",
+			"Description": "Damaged property that may be retrieved, reconditioned, and sold to reduce an insured loss.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimLossId,LossItemId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

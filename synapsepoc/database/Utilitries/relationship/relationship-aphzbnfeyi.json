@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aphzbnfeyi",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-aphzbnfeyi",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimEventType",
+		"ToTableName": "ClaimEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimEventTypeId",
+				"ToColumnName": "ClaimEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimEventType.cdm.json/ClaimEventType\",\"toEntity\":\"ClaimEvent.cdm.json/ClaimEvent\",\"joinPairs\":[{\"fromAttribute\":\"ClaimEventTypeId\",\"toAttribute\":\"ClaimEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,105 @@
+{
+	"name": "SalvageType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SalvageType",
+		"Description": "The type of salvage.\n\nEx:\n- Retrieved\n- Reconditioned\n- Sold",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SalvageTypeId",
+					"Description": "The unique identifier of a Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "SalvageType.cdm.json/SalvageType",
+						"Name": "SalvageTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SalvageTypeName",
+					"Description": "The name of a Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "SalvageType.cdm.json/SalvageType",
+						"Name": "SalvageTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SalvageTypeDescription",
+					"Description": "The description of a Salvage Type.",
+					"BaseAttributeReference": {
+						"Entity": "SalvageType.cdm.json/SalvageType",
+						"Name": "SalvageTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SalvageType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SalvageType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SalvageTypeId\":{\"entity\":\"SalvageType.cdm.json/SalvageType\",\"name\":\"SalvageTypeId\"},\"SalvageTypeName\":{\"entity\":\"SalvageType.cdm.json/SalvageType\",\"name\":\"SalvageTypeName\"},\"SalvageTypeDescription\":{\"entity\":\"SalvageType.cdm.json/SalvageType\",\"name\":\"SalvageTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SalvageType\",\"path\":\"SalvageType.cdm.json/SalvageType\"},\"description\":\"The type of salvage.\\n\\nEx:\\n- Retrieved\\n- Reconditioned\\n- Sold\",\"primaryKey\":[\"SalvageTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SalvageType.cdm.json/SalvageType\",\"name\":\"SalvageTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Salvage Type.\",\"isNullable\":false,\"name\":\"SalvageTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SalvageType.cdm.json/SalvageType\",\"name\":\"SalvageTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Salvage Type.\",\"isNullable\":true,\"name\":\"SalvageTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SalvageType.cdm.json/SalvageType\",\"name\":\"SalvageTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Salvage Type.\",\"isNullable\":true,\"name\":\"SalvageTypeDescription\"}]}}}",
+			"Description": "The type of salvage.\n\nEx:\n- Retrieved\n- Reconditioned\n- Sold",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "SalvageTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

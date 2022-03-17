@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mhymqrkuxl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mhymqrkuxl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkOrder",
+		"ToTableName": "SafetyChecklist",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkOrderId",
+				"ToColumnName": "WorkOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkOrder.cdm.json/WorkOrder\",\"toEntity\":\"SafetyChecklist.cdm.json/SafetyChecklist\",\"joinPairs\":[{\"fromAttribute\":\"WorkOrderId\",\"toAttribute\":\"WorkOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

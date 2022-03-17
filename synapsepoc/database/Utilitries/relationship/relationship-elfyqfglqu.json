@@ -1,0 +1,26 @@
+{
+	"name": "relationship-elfyqfglqu",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-elfyqfglqu",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Reinspection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ReinspectionByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Reinspection.cdm.json/Reinspection\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ReinspectionByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

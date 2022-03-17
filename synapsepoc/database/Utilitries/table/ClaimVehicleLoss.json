@@ -1,0 +1,174 @@
+{
+	"name": "ClaimVehicleLoss",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimVehicleLoss",
+		"Description": "The loss incurred in regard to the associated vehicle.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "VehicleId",
+					"Description": "The unique identifier of a Vehicle.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "VehicleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimVehicleLossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "ClaimVehicleLossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LimitAmount",
+					"Description": "The maximum limit amount associated with insurance policy coverage of the associated loss type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "LimitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeductibleAppliedAmount",
+					"Description": "The deductible amount applicable to the loss type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "DeductibleAppliedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimGrantedAmount",
+					"Description": "The amount granted or agreed to be paid.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "ClaimGrantedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LossDamageStatement",
+					"Description": "The statement of loss regarding the loss type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimVehicleLoss.cdm.json/ClaimVehicleLoss",
+						"Name": "LossDamageStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicleLoss",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimVehicleLoss",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"ClaimId\"},\"VehicleId\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"VehicleId\"},\"ClaimVehicleLossTypeId\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"ClaimVehicleLossTypeId\"},\"LimitAmount\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"LimitAmount\"},\"DeductibleAppliedAmount\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"DeductibleAppliedAmount\"},\"ClaimGrantedAmount\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"ClaimGrantedAmount\"},\"LossDamageStatement\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"LossDamageStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimVehicleLoss\",\"path\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\"},\"description\":\"The loss incurred in regard to the associated vehicle.\",\"primaryKey\":[\"ClaimId\",\"VehicleId\",\"ClaimVehicleLossTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"VehicleId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vehicle.\",\"isNullable\":false,\"name\":\"VehicleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"ClaimVehicleLossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":false,\"name\":\"ClaimVehicleLossTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"LimitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum limit amount associated with insurance policy coverage of the associated loss type.\",\"isNullable\":true,\"scale\":2,\"name\":\"LimitAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"DeductibleAppliedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The deductible amount applicable to the loss type.\",\"isNullable\":true,\"scale\":2,\"name\":\"DeductibleAppliedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"ClaimGrantedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount granted or agreed to be paid.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimGrantedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimVehicleLoss.cdm.json/ClaimVehicleLoss\",\"name\":\"LossDamageStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The statement of loss regarding the loss type.\",\"isNullable\":true,\"name\":\"LossDamageStatement\"}]}}}",
+			"Description": "The loss incurred in regard to the associated vehicle.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,VehicleId,ClaimVehicleLossTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

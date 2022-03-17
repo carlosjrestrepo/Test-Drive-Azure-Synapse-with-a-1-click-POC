@@ -1,0 +1,105 @@
+{
+	"name": "ClaimPaymentType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimPaymentType",
+		"Description": "The type of insurance payout associated with a specific claim payout.\n\nEx:\n-  Lump sum\n-  Partial payment\n-  Advanced payment\n\nwhere:\n\nLump sum \nWith a lump-sum payout you receive all of the funds you are entitled to in one payment.\n\nPartial payment \nA partial payment is contingent on certain conditions -Your insurance company may provide only partial payment on your claim if certain conditions are met, such as if a qualified contractor is secured to do necessary repair work on insured property or assets.\n\nAdvance payment\nAn advance payment may be made for an insurance claim for immediate needs, such as safe housing, food and clothing after a natural disaster.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimPaymentTypeId",
+					"Description": "The unique identifier of a claim payment type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimPaymentType.cdm.json/ClaimPaymentType",
+						"Name": "ClaimPaymentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimPaymentTypeName",
+					"Description": "The name of a claim payment type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimPaymentType.cdm.json/ClaimPaymentType",
+						"Name": "ClaimPaymentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimPaymentTypeDescription",
+					"Description": "The description of a claim payment type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimPaymentType.cdm.json/ClaimPaymentType",
+						"Name": "ClaimPaymentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimPaymentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimPaymentType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimPaymentTypeId\":{\"entity\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\",\"name\":\"ClaimPaymentTypeId\"},\"ClaimPaymentTypeName\":{\"entity\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\",\"name\":\"ClaimPaymentTypeName\"},\"ClaimPaymentTypeDescription\":{\"entity\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\",\"name\":\"ClaimPaymentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimPaymentType\",\"path\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\"},\"description\":\"The type of insurance payout associated with a specific claim payout.\\n\\nEx:\\n-  Lump sum\\n-  Partial payment\\n-  Advanced payment\\n\\nwhere:\\n\\nLump sum \\nWith a lump-sum payout you receive all of the funds you are entitled to in one payment.\\n\\nPartial payment \\nA partial payment is contingent on certain conditions -Your insurance company may provide only partial payment on your claim if certain conditions are met, such as if a qualified contractor is secured to do necessary repair work on insured property or assets.\\n\\nAdvance payment\\nAn advance payment may be made for an insurance claim for immediate needs, such as safe housing, food and clothing after a natural disaster.\",\"primaryKey\":[\"ClaimPaymentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\",\"name\":\"ClaimPaymentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a claim payment type.\",\"isNullable\":false,\"name\":\"ClaimPaymentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\",\"name\":\"ClaimPaymentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a claim payment type.\",\"isNullable\":true,\"name\":\"ClaimPaymentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimPaymentType.cdm.json/ClaimPaymentType\",\"name\":\"ClaimPaymentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a claim payment type.\",\"isNullable\":true,\"name\":\"ClaimPaymentTypeDescription\"}]}}}",
+			"Description": "The type of insurance payout associated with a specific claim payout.\n\nEx:\n-  Lump sum\n-  Partial payment\n-  Advanced payment\n\nwhere:\n\nLump sum \nWith a lump-sum payout you receive all of the funds you are entitled to in one payment.\n\nPartial payment \nA partial payment is contingent on certain conditions -Your insurance company may provide only partial payment on your claim if certain conditions are met, such as if a qualified contractor is secured to do necessary repair work on insured property or assets.\n\nAdvance payment\nAn advance payment may be made for an insurance claim for immediate needs, such as safe housing, food and clothing after a natural disaster.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimPaymentTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

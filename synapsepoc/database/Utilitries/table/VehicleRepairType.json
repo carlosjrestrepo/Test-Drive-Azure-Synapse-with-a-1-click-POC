@@ -1,0 +1,105 @@
+{
+	"name": "VehicleRepairType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "VehicleRepairType",
+		"Description": "The type of repair.\n\nEx:\n- Replacement\n- Repair of existing item",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VehicleRepairTypeId",
+					"Description": "The unique identifier of a vehicle repair type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairType.cdm.json/VehicleRepairType",
+						"Name": "VehicleRepairTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRepairTypeName",
+					"Description": "The name of a vehicle repair type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairType.cdm.json/VehicleRepairType",
+						"Name": "VehicleRepairTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VehicleRepairTypeDescription",
+					"Description": "The description of a vehicle repair type.",
+					"BaseAttributeReference": {
+						"Entity": "VehicleRepairType.cdm.json/VehicleRepairType",
+						"Name": "VehicleRepairTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/VehicleRepairType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VehicleRepairTypeId\":{\"entity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"name\":\"VehicleRepairTypeId\"},\"VehicleRepairTypeName\":{\"entity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"name\":\"VehicleRepairTypeName\"},\"VehicleRepairTypeDescription\":{\"entity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"name\":\"VehicleRepairTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VehicleRepairType\",\"path\":\"VehicleRepairType.cdm.json/VehicleRepairType\"},\"description\":\"The type of repair.\\n\\nEx:\\n- Replacement\\n- Repair of existing item\",\"primaryKey\":[\"VehicleRepairTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"name\":\"VehicleRepairTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a vehicle repair type.\",\"isNullable\":false,\"name\":\"VehicleRepairTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"name\":\"VehicleRepairTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a vehicle repair type.\",\"isNullable\":true,\"name\":\"VehicleRepairTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"name\":\"VehicleRepairTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a vehicle repair type.\",\"isNullable\":true,\"name\":\"VehicleRepairTypeDescription\"}]}}}",
+			"Description": "The type of repair.\n\nEx:\n- Replacement\n- Repair of existing item",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "VehicleRepairTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

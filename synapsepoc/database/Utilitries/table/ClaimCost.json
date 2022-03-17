@@ -1,0 +1,172 @@
+{
+	"name": "ClaimCost",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimCost",
+		"Description": "The cost(s) incurred in connection with a claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostTypeId",
+					"Description": "The unique identifier of a Transaction Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimCostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostTimestamp",
+					"Description": "The timestamp of the claim cost.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimCostTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostAmount",
+					"Description": "The amount of the associated claim cost type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimCostNote",
+					"Description": "A note, comment or additional information regarding the claim cost.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimCostNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventTypeId",
+					"Description": "The unique identifier of a Transaction Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ClaimEventTimestamp",
+					"Description": "The timestamp that the event was executed in conjunction with the Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimCost.cdm.json/ClaimCost",
+						"Name": "ClaimEventTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimCost",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimCost",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimId\"},\"ClaimCostTypeId\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostTypeId\"},\"ClaimCostTimestamp\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostTimestamp\"},\"ClaimCostAmount\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostAmount\"},\"ClaimCostNote\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostNote\"},\"ClaimEventTypeId\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimEventTypeId\"},\"ClaimEventTimestamp\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimEventTimestamp\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimCost\",\"path\":\"ClaimCost.cdm.json/ClaimCost\"},\"description\":\"The cost(s) incurred in connection with a claim.\",\"primaryKey\":[\"ClaimId\",\"ClaimCostTypeId\",\"ClaimCostTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Event Type.\",\"isNullable\":false,\"name\":\"ClaimCostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the claim cost.\",\"isNullable\":false,\"name\":\"ClaimCostTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the associated claim cost type.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimCostNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the claim cost.\",\"isNullable\":true,\"name\":\"ClaimCostNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Event Type.\",\"isNullable\":true,\"name\":\"ClaimEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimCost.cdm.json/ClaimCost\",\"name\":\"ClaimEventTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the event was executed in conjunction with the Transaction.\",\"isNullable\":false,\"name\":\"ClaimEventTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"}]}}}",
+			"Description": "The cost(s) incurred in connection with a claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,ClaimCostTypeId,ClaimCostTimestamp",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

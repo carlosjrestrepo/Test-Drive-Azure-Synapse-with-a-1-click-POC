@@ -1,0 +1,105 @@
+{
+	"name": "EncounterType",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "EncounterType",
+		"Description": "The type of encounter.\n\nEx:\n- Emergency\n- Scheduled Examination\n- Scheduled Procedure\n- Scheduled Test\n- Screening\n- Medical Test\n- Experimental Procedure\n- Preventive Care\n- Urgent Care\n- Post-Acute Care\n- Immunizations and Immunization\n- Diagnostic Procedures  \n- Admission\n- Anchor Admission\n- Readmission\n- Well Baby Care\n- Well Woman Care\n- Second Opinion\n- Surgical Second Opinion\n- Remote Session\n- Group Session",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTypeId",
+					"Description": "The unique identifier of an Encounter Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterType.cdm.json/EncounterType",
+						"Name": "EncounterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EncounterTypeName",
+					"Description": "The name of an Encounter Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterType.cdm.json/EncounterType",
+						"Name": "EncounterTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EncounterTypeDescription",
+					"Description": "The description of an Encounter Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterType.cdm.json/EncounterType",
+						"Name": "EncounterTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/EncounterType",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTypeId\":{\"entity\":\"EncounterType.cdm.json/EncounterType\",\"name\":\"EncounterTypeId\"},\"EncounterTypeName\":{\"entity\":\"EncounterType.cdm.json/EncounterType\",\"name\":\"EncounterTypeName\"},\"EncounterTypeDescription\":{\"entity\":\"EncounterType.cdm.json/EncounterType\",\"name\":\"EncounterTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterType\",\"path\":\"EncounterType.cdm.json/EncounterType\"},\"description\":\"The type of encounter.\\n\\nEx:\\n- Emergency\\n- Scheduled Examination\\n- Scheduled Procedure\\n- Scheduled Test\\n- Screening\\n- Medical Test\\n- Experimental Procedure\\n- Preventive Care\\n- Urgent Care\\n- Post-Acute Care\\n- Immunizations and Immunization\\n- Diagnostic Procedures  \\n- Admission\\n- Anchor Admission\\n- Readmission\\n- Well Baby Care\\n- Well Woman Care\\n- Second Opinion\\n- Surgical Second Opinion\\n- Remote Session\\n- Group Session\",\"primaryKey\":[\"EncounterTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterType.cdm.json/EncounterType\",\"name\":\"EncounterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Type.\",\"isNullable\":false,\"name\":\"EncounterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterType.cdm.json/EncounterType\",\"name\":\"EncounterTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Encounter Type.\",\"isNullable\":true,\"name\":\"EncounterTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterType.cdm.json/EncounterType\",\"name\":\"EncounterTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Encounter Type.\",\"isNullable\":true,\"name\":\"EncounterTypeDescription\"}]}}}",
+			"Description": "The type of encounter.\n\nEx:\n- Emergency\n- Scheduled Examination\n- Scheduled Procedure\n- Scheduled Test\n- Screening\n- Medical Test\n- Experimental Procedure\n- Preventive Care\n- Urgent Care\n- Post-Acute Care\n- Immunizations and Immunization\n- Diagnostic Procedures  \n- Admission\n- Anchor Admission\n- Readmission\n- Well Baby Care\n- Well Woman Care\n- Second Opinion\n- Surgical Second Opinion\n- Remote Session\n- Group Session",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "EncounterTypeId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

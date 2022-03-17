@@ -1,0 +1,26 @@
+{
+	"name": "relationship-krlftrqcxg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-krlftrqcxg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StudentStatus",
+		"ToTableName": "CustomerEducation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StudentStatusId",
+				"ToColumnName": "StudentStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StudentStatus.cdm.json/StudentStatus\",\"toEntity\":\"CustomerEducation.cdm.json/CustomerEducation\",\"joinPairs\":[{\"fromAttribute\":\"StudentStatusId\",\"toAttribute\":\"StudentStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

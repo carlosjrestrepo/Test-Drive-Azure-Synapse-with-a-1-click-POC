@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mseasnhvni",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mseasnhvni",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalBill",
+		"ToTableName": "MedicalBillService",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalBillId",
+				"ToColumnName": "MedicalBillId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalBill.cdm.json/MedicalBill\",\"toEntity\":\"MedicalBillService.cdm.json/MedicalBillService\",\"joinPairs\":[{\"fromAttribute\":\"MedicalBillId\",\"toAttribute\":\"MedicalBillId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

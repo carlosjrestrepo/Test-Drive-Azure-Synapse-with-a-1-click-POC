@@ -1,0 +1,26 @@
+{
+	"name": "relationship-viabppypyx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-viabppypyx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerGroupRelationshipType",
+		"ToTableName": "RelatedCustomerGroup",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerGroupRelationshipTypeId",
+				"ToColumnName": "CustomerGroupRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerGroupRelationshipType.cdm.json/CustomerGroupRelationshipType\",\"toEntity\":\"RelatedCustomerGroup.cdm.json/RelatedCustomerGroup\",\"joinPairs\":[{\"fromAttribute\":\"CustomerGroupRelationshipTypeId\",\"toAttribute\":\"CustomerGroupRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

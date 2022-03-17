@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sdndibakyv",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-sdndibakyv",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SafetyChecklistCategory",
+		"ToTableName": "SafetyChecklistItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SafetyChecklistCategoryId",
+				"ToColumnName": "SafetyChecklistCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SafetyChecklistCategory.cdm.json/SafetyChecklistCategory\",\"toEntity\":\"SafetyChecklistItem.cdm.json/SafetyChecklistItem\",\"joinPairs\":[{\"fromAttribute\":\"SafetyChecklistCategoryId\",\"toAttribute\":\"SafetyChecklistCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

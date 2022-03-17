@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wwxfrtjmhq",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-wwxfrtjmhq",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Consent",
+		"ToTableName": "ConsentDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ConsentId",
+				"ToColumnName": "ConsentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Consent.cdm.json/Consent\",\"toEntity\":\"ConsentDocument.cdm.json/ConsentDocument\",\"joinPairs\":[{\"fromAttribute\":\"ConsentId\",\"toAttribute\":\"ConsentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

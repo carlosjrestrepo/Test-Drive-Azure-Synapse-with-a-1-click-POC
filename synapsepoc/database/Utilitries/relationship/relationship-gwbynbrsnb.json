@@ -1,0 +1,30 @@
+{
+	"name": "relationship-gwbynbrsnb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-gwbynbrsnb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimLoss",
+		"ToTableName": "ClaimLossItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			},
+			{
+				"FromColumnName": "ClaimLossId",
+				"ToColumnName": "ClaimLossId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimLoss.cdm.json/ClaimLoss\",\"toEntity\":\"ClaimLossItem.cdm.json/ClaimLossItem\",\"joinPairs\":[{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"},{\"fromAttribute\":\"ClaimLossId\",\"toAttribute\":\"ClaimLossId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

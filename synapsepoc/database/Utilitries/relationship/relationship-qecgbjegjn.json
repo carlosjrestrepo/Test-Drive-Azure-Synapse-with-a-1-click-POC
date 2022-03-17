@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qecgbjegjn",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-qecgbjegjn",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ScheduledLearningEvent",
+		"ToTableName": "EmployeeLearningEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ScheduledLearningEventId",
+				"ToColumnName": "ScheduledLearningEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ScheduledLearningEvent.cdm.json/ScheduledLearningEvent\",\"toEntity\":\"EmployeeLearningEvent.cdm.json/EmployeeLearningEvent\",\"joinPairs\":[{\"fromAttribute\":\"ScheduledLearningEventId\",\"toAttribute\":\"ScheduledLearningEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

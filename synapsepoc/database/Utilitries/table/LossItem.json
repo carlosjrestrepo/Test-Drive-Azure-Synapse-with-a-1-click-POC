@@ -1,0 +1,121 @@
+{
+	"name": "LossItem",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "LossItem",
+		"Description": "A specific item detailed in the claim loss.\n\nEx:\n- Diamond ring\n- TV set\n- Auto damage to fender\n- Hail damage to roof\n- Flood damage personal items\n- Personal injury\n- Fire damage to home\n- Claim related expenses\n- Claim related debt",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LossItemId",
+					"Description": "The unique identifier of a Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "LossItem.cdm.json/LossItem",
+						"Name": "LossItemId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LossItemName",
+					"Description": "The name of a Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "LossItem.cdm.json/LossItem",
+						"Name": "LossItemName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LossItemDescription",
+					"Description": "The description of a Loss Item.",
+					"BaseAttributeReference": {
+						"Entity": "LossItem.cdm.json/LossItem",
+						"Name": "LossItemDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LossTypeId",
+					"Description": "The unique identifier of a Loss Type.",
+					"BaseAttributeReference": {
+						"Entity": "LossItem.cdm.json/LossItem",
+						"Name": "LossTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/LossItem",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/LossItem",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LossItemId\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossItemId\"},\"LossItemName\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossItemName\"},\"LossItemDescription\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossItemDescription\"},\"LossTypeId\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LossItem\",\"path\":\"LossItem.cdm.json/LossItem\"},\"description\":\"A specific item detailed in the claim loss.\\n\\nEx:\\n- Diamond ring\\n- TV set\\n- Auto damage to fender\\n- Hail damage to roof\\n- Flood damage personal items\\n- Personal injury\\n- Fire damage to home\\n- Claim related expenses\\n- Claim related debt\",\"primaryKey\":[\"LossItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossItemId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Item.\",\"isNullable\":false,\"name\":\"LossItemId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossItemName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Loss Item.\",\"isNullable\":true,\"name\":\"LossItemName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossItemDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Loss Item.\",\"isNullable\":true,\"name\":\"LossItemDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LossItem.cdm.json/LossItem\",\"name\":\"LossTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loss Type.\",\"isNullable\":true,\"name\":\"LossTypeId\"}]}}}",
+			"Description": "A specific item detailed in the claim loss.\n\nEx:\n- Diamond ring\n- TV set\n- Auto damage to fender\n- Hail damage to roof\n- Flood damage personal items\n- Personal injury\n- Fire damage to home\n- Claim related expenses\n- Claim related debt",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "LossItemId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hvdkpjkbgx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-hvdkpjkbgx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TradeName",
+		"ToTableName": "CustomerTradeName",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TradeNameId",
+				"ToColumnName": "TradeNameId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TradeName.cdm.json/TradeName\",\"toEntity\":\"CustomerTradeName.cdm.json/CustomerTradeName\",\"joinPairs\":[{\"fromAttribute\":\"TradeNameId\",\"toAttribute\":\"TradeNameId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

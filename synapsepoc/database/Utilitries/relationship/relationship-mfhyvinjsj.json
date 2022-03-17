@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mfhyvinjsj",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mfhyvinjsj",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimPartyRelationshipType",
+		"ToTableName": "ClaimRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimPartyRelationshipTypeId",
+				"ToColumnName": "ClaimPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimPartyRelationshipType.cdm.json/ClaimPartyRelationshipType\",\"toEntity\":\"ClaimRelatedParty.cdm.json/ClaimRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ClaimPartyRelationshipTypeId\",\"toAttribute\":\"ClaimPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

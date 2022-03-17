@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fdawpbnhlp",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-fdawpbnhlp",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureRepairType",
+		"ToTableName": "StructureRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureRepairTypeId",
+				"ToColumnName": "StructureRepairTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureRepairType.cdm.json/StructureRepairType\",\"toEntity\":\"StructureRepair.cdm.json/StructureRepair\",\"joinPairs\":[{\"fromAttribute\":\"StructureRepairTypeId\",\"toAttribute\":\"StructureRepairTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

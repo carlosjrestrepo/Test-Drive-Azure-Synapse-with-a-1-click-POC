@@ -1,0 +1,192 @@
+{
+	"name": "ClaimInjuredParty",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "ClaimInjuredParty",
+		"Description": "A claim-related injury or liability claim.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ClaimId",
+					"Description": "The unique identifier of a Claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "ClaimId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InsuredPartyAccidentStatement",
+					"Description": "The injury report statement.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "InsuredPartyAccidentStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ClaimResolutionTypeId",
+					"Description": "The unique identifier of a Claim Resolution Type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "ClaimResolutionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LimitAmount",
+					"Description": "The maximum limit amount associated with insurance policy coverage of the associated injury type.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "LimitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimedAmount",
+					"Description": "The amount sought or claimed by the injured party.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "ClaimedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeductibleAppliedAmount",
+					"Description": "The deductible amount applicable to the claim.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "DeductibleAppliedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ClaimGrantedAmount",
+					"Description": "The amount granted or agreed to be paid to the injured party.",
+					"BaseAttributeReference": {
+						"Entity": "ClaimInjuredParty.cdm.json/ClaimInjuredParty",
+						"Name": "ClaimGrantedAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimInjuredParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/ClaimInjuredParty",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ClaimId\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimId\"},\"InjuredPartyId\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"InjuredPartyId\"},\"InsuredPartyAccidentStatement\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"InsuredPartyAccidentStatement\"},\"ClaimResolutionTypeId\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimResolutionTypeId\"},\"LimitAmount\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"LimitAmount\"},\"ClaimedAmount\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimedAmount\"},\"DeductibleAppliedAmount\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"DeductibleAppliedAmount\"},\"ClaimGrantedAmount\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimGrantedAmount\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ClaimInjuredParty\",\"path\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\"},\"description\":\"A claim-related injury or liability claim.\",\"primaryKey\":[\"ClaimId\",\"InjuredPartyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Claim.\",\"isNullable\":false,\"name\":\"ClaimId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"InsuredPartyAccidentStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The injury report statement.\",\"isNullable\":true,\"name\":\"InsuredPartyAccidentStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimResolutionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Claim Resolution Type.\",\"isNullable\":true,\"name\":\"ClaimResolutionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"LimitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum limit amount associated with insurance policy coverage of the associated injury type.\",\"isNullable\":true,\"scale\":2,\"name\":\"LimitAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount sought or claimed by the injured party.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"DeductibleAppliedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The deductible amount applicable to the claim.\",\"isNullable\":true,\"scale\":2,\"name\":\"DeductibleAppliedAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ClaimInjuredParty.cdm.json/ClaimInjuredParty\",\"name\":\"ClaimGrantedAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount granted or agreed to be paid to the injured party.\",\"isNullable\":true,\"scale\":2,\"name\":\"ClaimGrantedAmount\"}]}}}",
+			"Description": "A claim-related injury or liability claim.",
+			"DisplayFolderInfo": "{\"name\":\"Claim\",\"colorCode\":\"#022F22\"}",
+			"PrimaryKeys": "ClaimId,InjuredPartyId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

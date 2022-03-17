@@ -1,0 +1,26 @@
+{
+	"name": "relationship-obbqeaizsb",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-obbqeaizsb",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalBill",
+		"ToTableName": "RelatedMedicalBill",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalBillId",
+				"ToColumnName": "MedicalBillId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalBill.cdm.json/MedicalBill\",\"toEntity\":\"RelatedMedicalBill.cdm.json/RelatedMedicalBill\",\"joinPairs\":[{\"fromAttribute\":\"MedicalBillId\",\"toAttribute\":\"MedicalBillId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

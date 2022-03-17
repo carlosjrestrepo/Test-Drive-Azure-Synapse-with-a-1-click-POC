@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zgrpdaahcf",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-zgrpdaahcf",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimCostType",
+		"ToTableName": "ClaimCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimCostTypeId",
+				"ToColumnName": "ClaimCostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimCostType.cdm.json/ClaimCostType\",\"toEntity\":\"ClaimCost.cdm.json/ClaimCost\",\"joinPairs\":[{\"fromAttribute\":\"ClaimCostTypeId\",\"toAttribute\":\"ClaimCostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

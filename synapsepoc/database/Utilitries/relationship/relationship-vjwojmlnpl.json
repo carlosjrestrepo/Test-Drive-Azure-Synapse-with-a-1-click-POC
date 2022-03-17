@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vjwojmlnpl",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-vjwojmlnpl",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InjuryStatus",
+		"ToTableName": "InjuredPartyInjury",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InjuryStatusId",
+				"ToColumnName": "InjuryStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InjuryStatus.cdm.json/InjuryStatus\",\"toEntity\":\"InjuredPartyInjury.cdm.json/InjuredPartyInjury\",\"joinPairs\":[{\"fromAttribute\":\"InjuryStatusId\",\"toAttribute\":\"InjuryStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

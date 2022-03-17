@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mkvpzbunla",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-mkvpzbunla",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemType",
+		"ToTableName": "SafetyChecklistItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemTypeId",
+				"ToColumnName": "ItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemType.cdm.json/ItemType\",\"toEntity\":\"SafetyChecklistItem.cdm.json/SafetyChecklistItem\",\"joinPairs\":[{\"fromAttribute\":\"ItemTypeId\",\"toAttribute\":\"ItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

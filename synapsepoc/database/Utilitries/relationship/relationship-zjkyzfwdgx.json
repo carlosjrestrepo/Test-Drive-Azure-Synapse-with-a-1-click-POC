@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zjkyzfwdgx",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-zjkyzfwdgx",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentMethod",
+		"ToTableName": "CustomerPaymentMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentMethodId",
+				"ToColumnName": "PaymentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"toEntity\":\"CustomerPaymentMethod.cdm.json/CustomerPaymentMethod\",\"joinPairs\":[{\"fromAttribute\":\"PaymentMethodId\",\"toAttribute\":\"PaymentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

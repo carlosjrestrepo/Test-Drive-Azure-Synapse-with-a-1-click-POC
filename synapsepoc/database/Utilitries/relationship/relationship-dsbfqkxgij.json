@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dsbfqkxgij",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-dsbfqkxgij",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IndustryPreference",
+		"ToTableName": "CustomerNationalIndustry",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IndustryPreferenceId",
+				"ToColumnName": "IndustryPreferenceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IndustryPreference.cdm.json/IndustryPreference\",\"toEntity\":\"CustomerNationalIndustry.cdm.json/CustomerNationalIndustry\",\"joinPairs\":[{\"fromAttribute\":\"IndustryPreferenceId\",\"toAttribute\":\"IndustryPreferenceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

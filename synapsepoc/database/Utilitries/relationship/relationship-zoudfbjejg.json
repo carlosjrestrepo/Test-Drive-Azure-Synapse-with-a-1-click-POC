@@ -1,0 +1,34 @@
+{
+	"name": "relationship-zoudfbjejg",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-zoudfbjejg",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ClaimCost",
+		"ToTableName": "ClaimCostRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ClaimCostTimestamp",
+				"ToColumnName": "ClaimCostTimestamp"
+			},
+			{
+				"FromColumnName": "ClaimCostTypeId",
+				"ToColumnName": "ClaimCostTypeId"
+			},
+			{
+				"FromColumnName": "ClaimId",
+				"ToColumnName": "ClaimId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ClaimCost.cdm.json/ClaimCost\",\"toEntity\":\"ClaimCostRelatedParty.cdm.json/ClaimCostRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ClaimCostTimestamp\",\"toAttribute\":\"ClaimCostTimestamp\"},{\"fromAttribute\":\"ClaimCostTypeId\",\"toAttribute\":\"ClaimCostTypeId\"},{\"fromAttribute\":\"ClaimId\",\"toAttribute\":\"ClaimId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

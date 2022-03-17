@@ -1,0 +1,105 @@
+{
+	"name": "SafetyObservationCategory",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "SafetyObservationCategory",
+		"Description": "A categorization of the safety observation type based on common characteristics.\n\nEx:\n- Vehicle\n- Material Handling\n- Unsafe Conditions\n- Unsafe Practice",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SafetyObservationCategoryId",
+					"Description": "The unique identifier of a Safety Observation Category.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationCategory.cdm.json/SafetyObservationCategory",
+						"Name": "SafetyObservationCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationCategoryName",
+					"Description": "The name of a Safety Observation Category.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationCategory.cdm.json/SafetyObservationCategory",
+						"Name": "SafetyObservationCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SafetyObservationCategoryDescription",
+					"Description": "The description of a Safety Observation Category.",
+					"BaseAttributeReference": {
+						"Entity": "SafetyObservationCategory.cdm.json/SafetyObservationCategory",
+						"Name": "SafetyObservationCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyObservationCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlspocpocfs1@pocb4za3rdp45tiopoc.dfs.core.windows.net/Database1/SafetyObservationCategory",
+				"Properties": {
+					"LinkedServiceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SafetyObservationCategoryId\":{\"entity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"name\":\"SafetyObservationCategoryId\"},\"SafetyObservationCategoryName\":{\"entity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"name\":\"SafetyObservationCategoryName\"},\"SafetyObservationCategoryDescription\":{\"entity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"name\":\"SafetyObservationCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SafetyObservationCategory\",\"path\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\"},\"description\":\"A categorization of the safety observation type based on common characteristics.\\n\\nEx:\\n- Vehicle\\n- Material Handling\\n- Unsafe Conditions\\n- Unsafe Practice\",\"primaryKey\":[\"SafetyObservationCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"name\":\"SafetyObservationCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Safety Observation Category.\",\"isNullable\":false,\"name\":\"SafetyObservationCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"name\":\"SafetyObservationCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Safety Observation Category.\",\"isNullable\":true,\"name\":\"SafetyObservationCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SafetyObservationCategory.cdm.json/SafetyObservationCategory\",\"name\":\"SafetyObservationCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Safety Observation Category.\",\"isNullable\":true,\"name\":\"SafetyObservationCategoryDescription\"}]}}}",
+			"Description": "A categorization of the safety observation type based on common characteristics.\n\nEx:\n- Vehicle\n- Material Handling\n- Unsafe Conditions\n- Unsafe Practice",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "SafetyObservationCategoryId",
+			"spark.sql.sources.provider": "parquet"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

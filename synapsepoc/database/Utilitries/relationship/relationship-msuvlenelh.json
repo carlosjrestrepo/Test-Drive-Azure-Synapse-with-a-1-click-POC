@@ -1,0 +1,26 @@
+{
+	"name": "relationship-msuvlenelh",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-msuvlenelh",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TransportationMode",
+		"ToTableName": "CustomerMeansOfTransportation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TransportationModeId",
+				"ToColumnName": "TransportationModeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TransportationMode.cdm.json/TransportationMode\",\"toEntity\":\"CustomerMeansOfTransportation.cdm.json/CustomerMeansOfTransportation\",\"joinPairs\":[{\"fromAttribute\":\"TransportationModeId\",\"toAttribute\":\"TransportationModeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

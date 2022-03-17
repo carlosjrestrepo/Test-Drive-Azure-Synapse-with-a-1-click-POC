@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jqbcylmzjk",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-jqbcylmzjk",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleRepairType",
+		"ToTableName": "VehicleRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleRepairTypeId",
+				"ToColumnName": "VehicleRepairTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleRepairType.cdm.json/VehicleRepairType\",\"toEntity\":\"VehicleRepair.cdm.json/VehicleRepair\",\"joinPairs\":[{\"fromAttribute\":\"VehicleRepairTypeId\",\"toAttribute\":\"VehicleRepairTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

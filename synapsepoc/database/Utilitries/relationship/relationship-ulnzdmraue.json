@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ulnzdmraue",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Utilitries"
+		},
+		"Name": "relationship-ulnzdmraue",
+		"EntityType": "RELATIONSHIP",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VehicleRepairPartyRelationshipType",
+		"ToTableName": "VehicleRepairRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VehicleRepairPartyRelationshipTypeId",
+				"ToColumnName": "VehicleRepairPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VehicleRepairPartyRelationshipType.cdm.json/VehicleRepairPartyRelationshipType\",\"toEntity\":\"VehicleRepairRelatedParty.cdm.json/VehicleRepairRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"VehicleRepairPartyRelationshipTypeId\",\"toAttribute\":\"VehicleRepairPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}
