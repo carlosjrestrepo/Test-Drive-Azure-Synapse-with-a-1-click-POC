@@ -1,0 +1,15 @@
+{
+	"name": "SqlPoolTable1",
+	"properties": {
+		"folder": {
+			"name": "TPC-DS/tpcds001gb"
+		},
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"sqlPool": {
+			"referenceName": "pocb4za3rdp45tiopocws1p1",
+			"type": "SqlPoolReference"
+		}
+	}
+}
