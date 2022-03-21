@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "TPC-DS"
+			"name": "TPC-DS/parquet_raw"
 		},
 		"annotations": [],
 		"type": "Parquet",
