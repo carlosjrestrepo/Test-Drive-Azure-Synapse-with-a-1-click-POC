@@ -2,7 +2,7 @@
 	"name": "TPC_DS",
 	"properties": {
 		"content": {
-			"query": "\n\nCREATE LOGIN mytest WITH PASSWORD = '80091642Javier2022';\nCREATE USER mytest FROM LOGIN mytest;\n--EXEC sp_addrolemember 'db_owner', 'mytest';\n\n\nALTER ROLE db_owner ADD member mytest;\n\n\n--DROP LOGIN mytest;\n--DROP USER mytest;\n\n",
+			"query": "\n\nCREATE LOGIN mytest WITH PASSWORD = '80091642Javier2022';\nCREATE USER mytest FROM LOGIN mytest;\n--EXEC sp_addrolemember 'db_owner', 'mytest';\n\n\nALTER ROLE db_owner ADD member mytest;\n\n\n--DROP LOGIN mytest;\n--DROP USER mytest;\n\n\n\nCREATE SCHEMA tpcds005gb;\nGO\nCREATE SCHEMA tpcds010gb;\nGO\nCREATE SCHEMA tpcds050gb;\nGO\nCREATE SCHEMA tpcds100gb;\nGO\nCREATE SCHEMA tpcds250gb;\nGO",
 			"metadata": {
 				"language": "sql"
 			},
