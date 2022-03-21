@@ -23,11 +23,21 @@
 							"enablePartitionDiscovery": false
 						}
 					},
+					"sink": {
+						"type": "SqlPoolSink",
+						"allowCopyCommand": true
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "call_center",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlPoolTable1",
 						"type": "DatasetReference"
 					}
 				]
