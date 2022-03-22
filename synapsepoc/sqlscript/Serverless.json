@@ -1,8 +1,8 @@
 {
-	"name": "SQL script 1",
+	"name": "Serverless",
 	"properties": {
 		"content": {
-			"query": "IF NOT EXISTS (SELECT * FROM sys.DATABASES WHERE [name] = 'TPCDSDBDemo') \nCREATE DATABASE TPCDSDBDemo\nGO\n\nALTER DATABASE TPCDSDBDemo COLLATE Latin1_General_100_BIN2_UTF8\nGO\n\n\n",
+			"query": "IF NOT EXISTS (SELECT * FROM sys.DATABASES WHERE [name] = 'TPCDSDBDemo') \nCREATE DATABASE TPCDSDBDemo\nGO\n\nALTER DATABASE TPCDSDBDemo COLLATE Latin1_General_100_BIN2_UTF8\nGO\n\n\nUSE [master]\nCREATE LOGIN LoadingUserDemo WITH PASSWORD = 'Msftdemo2022!'\nGO\n\nUSE [TPCDSDBDemo]\nCREATE USER LoadingUserDemo FOR LOGIN LoadingUserDemo; \nGO \n\nALTER ROLE db_owner ADD MEMBER LoadingUserDemo;\nGO\n",
 			"metadata": {
 				"language": "sql"
 			},
