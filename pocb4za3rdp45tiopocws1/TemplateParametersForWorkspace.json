@@ -8,6 +8,18 @@
 		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
 			"value": ""
 		},
+		"pocb4za3rdp45tiopocws1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://pocb4za3rdp45tiopoc.dfs.core.windows.net"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
+			"value": "3ebdb5b2-420d-4275-bfa2-cbf340257977"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"value": "synapseoneclick"
+		},
 		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/trip-data.csv"
 		},
@@ -19,6 +31,12 @@
 		},
 		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
 			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		},
+		"nyc_tlc_fhv_sasUri": {
+			"value": ""
+		},
+		"pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://pocb4za3rdp45tiopoc.dfs.core.windows.net/"
 		}
 	}
 }
