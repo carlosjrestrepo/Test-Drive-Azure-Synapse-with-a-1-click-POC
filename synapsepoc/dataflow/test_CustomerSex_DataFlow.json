@@ -1,0 +1,31 @@
+{
+	"name": "test_CustomerSex_DataFlow",
+	"properties": {
+		"folder": {
+			"name": "test"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
+						"type": "LinkedServiceReference"
+					},
+					"name": "userdata1parquetSource"
+				}
+			],
+			"sinks": [
+				{
+					"name": "CustomerSexSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "SelectCustomerSex"
+				}
+			],
+			"script": "source(output(\n\t\tregistration_dttm as timestamp,\n\t\tid as integer,\n\t\tfirst_name as string,\n\t\tlast_name as string,\n\t\temail as string,\n\t\tgender as string,\n\t\tip_address as string,\n\t\tcc as string,\n\t\tcountry as string,\n\t\tbirthdate as string,\n\t\tsalary as double,\n\t\ttitle as string,\n\t\tcomments as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet',\n\tfileSystem: 'raw',\n\tfileName: 'userdata1.parquet') ~> userdata1parquetSource\nuserdata1parquetSource select(mapColumn(\n\t\tCustomerId = id,\n\t\tCustomerSexNote = gender\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> SelectCustomerSex\nSelectCustomerSex sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tstore: 'synapse',\n\tdatabaseType: 'spark',\n\tformat: 'table',\n\tdatabase: 'Customer360',\n\ttableName: 'CustomerSex',\n\tinput(\n\t\tCustomerId as long,\n\t\tPeriodStartDate as date,\n\t\tPeriodEndDate as date,\n\t\tSexId as integer,\n\t\tCustomerSexNote as string\n\t)) ~> CustomerSexSink"
+		}
+	}
+}

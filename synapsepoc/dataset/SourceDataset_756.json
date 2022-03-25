@@ -2,7 +2,7 @@
 	"name": "SourceDataset_756",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage1",
+			"referenceName": "pocb4za3rdp45tiopocws1-WorkspaceDefaultStorage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

@@ -1,0 +1,60 @@
+{
+	"name": "test_StartingPipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "C0_test",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "C0_test",
+						"type": "PipelineReference"
+					}
+				}
+			},
+			{
+				"name": "C1_test",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "C1_test",
+						"type": "PipelineReference"
+					}
+				}
+			},
+			{
+				"name": "C2_test",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "C2_test",
+						"type": "PipelineReference"
+					}
+				}
+			},
+			{
+				"name": "C3_test",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "C3_test",
+						"type": "PipelineReference"
+					}
+				}
+			}
+		],
+		"concurrency": 1,
+		"folder": {
+			"name": "test"
+		},
+		"annotations": []
+	}
+}
