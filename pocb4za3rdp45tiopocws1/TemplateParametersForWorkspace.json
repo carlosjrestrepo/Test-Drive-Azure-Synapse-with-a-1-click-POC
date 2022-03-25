@@ -11,9 +11,6 @@
 		"pocb4za3rdp45tiopocws1-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://pocb4za3rdp45tiopoc.dfs.core.windows.net"
-		},
 		"AzureMLService1_properties_typeProperties_subscriptionId": {
 			"value": "3ebdb5b2-420d-4275-bfa2-cbf340257977"
 		},
