@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParquetFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] \n\tWITH ( FORMAT_TYPE = PARQUET)\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'raw_pocb4za3rdp45tiopoc_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [raw_pocb4za3rdp45tiopoc_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://raw@pocb4za3rdp45tiopoc.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE call_center_ext (\n\t[cc_call_center_sk] int,\n\t[cc_call_center_id] nvarchar(4000),\n\t[cc_rec_start_date] date,\n\t[cc_rec_end_date] date,\n\t[cc_closed_date_sk] int,\n\t[cc_open_date_sk] int,\n\t[cc_name] nvarchar(4000),\n\t[cc_class] nvarchar(4000),\n\t[cc_employees] int,\n\t[cc_sq_ft] int,\n\t[cc_hours] nvarchar(4000),\n\t[cc_manager] nvarchar(4000),\n\t[cc_mkt_id] int,\n\t[cc_mkt_class] nvarchar(4000),\n\t[cc_mkt_desc] nvarchar(4000),\n\t[cc_market_manager] nvarchar(4000),\n\t[cc_division] int,\n\t[cc_division_name] nvarchar(4000),\n\t[cc_company] int,\n\t[cc_company_name] nvarchar(4000),\n\t[cc_street_number] nvarchar(4000),\n\t[cc_street_name] nvarchar(4000),\n\t[cc_street_type] nvarchar(4000),\n\t[cc_suite_number] nvarchar(4000),\n\t[cc_city] nvarchar(4000),\n\t[cc_county] nvarchar(4000),\n\t[cc_state] nvarchar(4000),\n\t[cc_zip] nvarchar(4000),\n\t[cc_country] nvarchar(4000),\n\t[cc_gmt_offset] numeric(5,2),\n\t[cc_tax_percentage] numeric(5,2)\n\t)\n\tWITH (\n\tLOCATION = 'tpc-ds/source_files_010GB_parquet/call_center/**',\n\tDATA_SOURCE = [raw_pocb4za3rdp45tiopoc_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM call_center_ext\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "TPCDSDBDemo",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
